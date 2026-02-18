@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MathHub Pro | All-in-One Geometry Calculator</title>
+    <meta name="description" content="Free Geometry & Standard Calculator. Calculate Area, Perimeter, and Volume for 8+ shapes with step-by-step formulas.">
+    
+    <style>
+        :root { --primary: #007AFF; --success: #34c759; --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --input-bg: #f2f2f7; }
+        [data-theme="dark"] { --bg: #000000; --card: #1c1c1e; --text: #ffffff; --input-bg: #2c2c2e; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding-bottom: 30px; transition: 0.3s; }
+        
+        #splash { position: fixed; inset: 0; background: var(--primary); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1000; transition: 0.5s; text-align: center; }
+        .nav-btn { background: white; color: var(--primary); padding: 15px 30px; border-radius: 12px; border: none; font-weight: bold; margin: 10px; cursor: pointer; width: 260px; font-size: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        
+        .page { display: none; padding: 20px; max-width: 500px; margin: 0 auto; }
+        .card { background: var(--card); border-radius: 18px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        
+        label { display: block; font-size: 11px; font-weight: 700; color: #8e8e93; text-transform: uppercase; margin-bottom: 5px; margin-top: 10px; }
+        input, select { width: 100%; height: 45px; border-radius: 10px; border: 1px solid #ddd; padding: 0 10px; box-sizing: border-box; background: var(--input-bg); color: var(--text); font-size: 16px; }
+        
+        .res-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 15px; }
+        .res-box { background: var(--card); padding: 10px 5px; border-radius: 15px; text-align: center; border: 1px solid rgba(0,0,0,0.05); }
+        .res-val { display: block; font-size: 12px; font-weight: 800; color: var(--primary); margin-top: 5px; }
+        .res-label { font-size: 9px; font-weight: bold; color: #8e8e93; text-transform: uppercase; }
+        
+        .steps-card { border-left: 5px solid var(--success); font-size: 14px; line-height: 1.6; }
+        
+        /* Calculator Grid */
+        .calc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .btn { height: 55px; border-radius: 12px; border: none; font-weight: bold; cursor: pointer; background: #e5e5ea; color: var(--text); font-size: 18px; }
+        .btn.op { background: var(--primary); color: white; }
+        .btn.ac { background: #ff3b30; color: white; }
+
+        /* Action Buttons */
+        .amazon-btn { background: #232f3e; color: white; width: 100%; padding: 15px; border-radius: 12px; border: none; font-weight: bold; margin-top: 10px; cursor: pointer; display: block; text-decoration: none; text-align: center; }
+        .support-btn { background: #ffdd00; color: black; width: 100%; padding: 15px; border-radius: 12px; border: none; font-weight: bold; margin-top: 10px; cursor: pointer; display: block; text-decoration: none; text-align: center; }
+        .share-btn { background: #E8F2FF; color: var(--primary); width: 100%; padding: 15px; border-radius: 12px; border: none; font-weight: bold; margin-top: 10px; cursor: pointer; }
+    </style>
+</head>
+<body data-theme="light">
+
+<div id="splash">
+    <h1 style="font-size: 36px; margin-bottom: 0;">MathHub Pro</h1>
+    <p style="opacity: 0.9; margin-bottom: 30px;">Complete Geometry Solutions</p>
+    <button class="nav-btn" onclick="openPage('geo')">Geometry Calculator</button>
+    <button class="nav-btn" onclick="openPage('norm')">Standard Calculator</button>
+</div>
+
+<div id="geo" class="page">
+    <div class="header-row">
+        <button onclick="goHome()" style="background:none; border:none; color:var(--primary); font-weight:bold; cursor:pointer;">← Home</button>
+        <button onclick="toggleTheme()" style="background:none; border:none; font-size:20px; cursor:pointer;">🌓</button>
+    </div>
+    
+    <div class="card">
+        <label>Unit of Measurement</label>
+        <select id="unit" onchange="calcGeo()">
+            <option value="Centimetres">Centimetres (cm)</option>
+            <option value="Metres">Metres (m)</option>
+            <option value="Feet">Feet (ft)</option>
+        </select>
+
+        <label>Select Shape</label>
+        <select id="shape" onchange="updateGeo()">
+            <option value="square">Square</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="circle">Circle</option>
+            <option value="triangle">Triangle</option>
+            <option value="rhombus">Rhombus</option>
+            <option value="parallelogram">Parallelogram</option>
+            <option value="trapezoid">Trapezium</option>
+            <option value="cylinder">Cylinder</option>
+        </select>
+
+        <div id="geo-inputs"></div>
+        <div id="depth-container">
+            <label>Extrusion / Depth (for Volume)</label>
+            <input type="number" id="depth" placeholder="0" oninput="calcGeo()">
+        </div>
+    </div>
+
+    <div class="res-grid">
+        <div class="res-box"><span class="res-label" id="l1">Perimeter</span><span class="res-val" id="r1">0</span></div>
+        <div class="res-box"><span class="res-label" id="l2">Area</span><span class="res-val" id="r2">0</span></div>
+        <div class="res-box" style="background:var(--primary); border:none;"><span class="res-label" style="color:white;">Volume</span><span class="res-val" id="r3" style="color:white;">0</span></div>
+    </div>
+
+    <div class="card steps-card">
+        <div style="font-weight:bold; color:var(--success); margin-bottom:5px;">FORMULA BREAKDOWN</div>
+        <div id="solution">Enter values...</div>
+    </div>
+
+    <button class="share-btn" onclick="shareSite()">🔗 Share MathHub Pro</button>
+    <a href="https://www.amazon.in/s?k=scientific+calculator" target="_blank" class="amazon-btn">🛒 Buy Scientific Calculator</a>
+    <button class="support-btn" onclick="alert('Support via UPI: yourid@upi')">☕ Support My Work</button>
+</div>
+
+<div id="norm" class="page">
+    <button onclick="goHome()" style="background:none; border:none; color:var(--primary); font-weight:bold; cursor:pointer; margin-bottom:10px;">← Home</button>
+    <div class="card">
+        <div id="disp" style="font-size:35px; text-align:right; padding:20px; background:var(--input-bg); border-radius:12px; margin-bottom:15px; min-height:40px;">0</div>
+        <div class="calc-grid">
+            <button class="btn ac" onclick="cDisp()">C</button>
+            <button class="btn op" onclick="iDisp('/')">÷</button>
+            <button class="btn op" onclick="iDisp('*')">×</button>
+            <button class="btn op" onclick="backspace()">⌫</button>
+            <button class="btn" onclick="iDisp('7')">7</button><button class="btn" onclick="iDisp('8')">8</button><button class="btn" onclick="iDisp('9')">9</button>
+            <button class="btn op" onclick="iDisp('-')">−</button>
+            <button class="btn" onclick="iDisp('4')">4</button><button class="btn" onclick="iDisp('5')">5</button><button class="btn" onclick="iDisp('6')">6</button>
+            <button class="btn op" onclick="iDisp('+')">+</button>
+            <button class="btn" onclick="iDisp('1')">1</button><button class="btn" onclick="iDisp('2')">2</button><button class="btn" onclick="iDisp('3')">3</button>
+            <button class="btn op" onclick="solve()" style="background:var(--success); grid-row: span 2; height:118px;">=</button>
+            <button class="btn" onclick="iDisp('0')" style="grid-column: span 2;">0</button><button class="btn" onclick="iDisp('.')">.</button>
+        </div>
+    </div>
+</div>
+
+<footer style="text-align:center; padding:20px; font-size:11px; opacity:0.6;">
+    <p>&copy; 2026 MathHub Pro | <a href="mailto:your@email.com">Contact Us</a> | <a href="#">Privacy Policy</a></p>
+</footer>
+
+<script>
+    let expr = "";
+    const PI = 3.14159;
+
+    function openPage(p) { document.getElementById('splash').style.transform = 'translateY(-100%)'; document.querySelectorAll('.page').forEach(pg => pg.style.display='none'); document.getElementById(p).style.display='block'; if(p==='geo') updateGeo(); }
+    function goHome() { document.getElementById('splash').style.transform = 'translateY(0)'; }
+    function toggleTheme() { const b = document.body; b.setAttribute('data-theme', b.getAttribute('data-theme') === 'light' ? 'dark' : 'light'); }
+    
+    // Calculator Logic
+    function iDisp(v) { expr += v; document.getElementById('disp').innerText = expr; }
+    function cDisp() { expr = ""; document.getElementById('disp').innerText = "0"; }
+    function backspace() { expr = expr.slice(0, -1); document.getElementById('disp').innerText = expr || "0"; }
+    function solve() { try { expr = eval(expr).toString(); document.getElementById('disp').innerText = expr; } catch { document.getElementById('disp').innerText = "Error"; expr = ""; } }
+
+    function shareSite() {
+        if (navigator.share) {
+            navigator.share({ title: 'MathHub Pro', text: 'Master Geometry Instantly!', url: window.location.href });
+        } else {
+            alert("Copy this link: " + window.location.href);
+        }
+    }
+
+    function updateGeo() {
+        const s = document.getElementById('shape').value;
+        const cont = document.getElementById('geo-inputs');
+        const dCont = document.getElementById('depth-container');
+        dCont.style.display = (s === 'cylinder') ? 'none' : 'block';
+        const configs = {
+            square: ['Side Length'], rectangle: ['Length', 'Width'], circle: ['Radius'],
+            triangle: ['Base', 'Height', 'Side A', 'Side C'], rhombus: ['Diagonal 1', 'Diagonal 2', 'Side Length'],
+            parallelogram: ['Base', 'Height', 'Slant Side'], trapezoid: ['Top Base (a)', 'Bottom Base (b)', 'Height', 'Side C', 'Side D'],
+            cylinder: ['Radius (r)', 'Height (h)']
+        };
+        cont.innerHTML = configs[s].map((l, i) => `<label>${l}</label><input type="number" id="v${i+1}" placeholder="0" oninput="calcGeo()">`).join('');
+        calcGeo();
+    }
+
+    function calcGeo() {
+        const shape = document.getElementById('shape').value;
+        const unit = document.getElementById('unit').value;
+        const d = parseFloat(document.getElementById('depth').value) || 0;
+        const v = [1,2,3,4,5].map(i => parseFloat(document.getElementById('v'+i)?.value) || 0);
+        let area = 0, perim = 0, vol = 0, aS = "", pS = "";
+        let l1 = "Perimeter", l2 = "Area";
+
+        if(shape === 'square') { area = v[0]**2; perim = 4*v[0]; aS = `Side²`; pS = `4 × Side`; }
+        else if(shape === 'rectangle') { area = v[0]*v[1]; perim = 2*(v[0]+v[1]); aS = `L × W`; pS = `2(L + W)`; }
+        else if(shape === 'circle') { area = PI * (v[0]**2); perim = 2 * PI * v[0]; l1 = "Circumf."; aS = `π × r²`; pS = `2πr`; }
+        else if(shape === 'triangle') { area = 0.5*v[0]*v[1]; perim = v[0]+v[2]+v[3]; aS = `½bh`; pS = `a+b+c`; }
+        else if(shape === 'rhombus') { area = (v[0]*v[1])/2; perim = 4*v[2]; aS = `(d1×d2)/2`; pS = `4s`; }
+        else if(shape === 'parallelogram') { area = v[0]*v[1]; perim = 2*(v[0]+v[2]); aS = `b×h`; pS = `2(b+s)`; }
+        else if(shape === 'trapezoid') { area = 0.5*(v[0]+v[1])*v[2]; perim = v[0]+v[1]+v[3]+v[4]; aS = `½(a+b)h`; pS = `Sum Sides`; }
+        else if(shape === 'cylinder') { area = 2*PI*v[0]*(v[0]+v[1]); vol = PI*(v[0]**2)*v[1]; l1 = "N/A"; l2 = "Surface Area"; aS = `2πr(r+h)`; pS = "N/A"; }
+
+        vol = (shape === 'cylinder') ? vol : area * d;
+        document.getElementById('l1').innerText = l1; document.getElementById('l2').innerText = l2;
+        document.getElementById('r1').innerText = perim.toFixed(2) + " " + unit;
+        document.getElementById('r2').innerText = area.toFixed(2) + " " + unit + "²";
+        document.getElementById('r3').innerText = vol.toFixed(2) + " " + unit + "³";
+        document.getElementById('solution').innerHTML = `<b>${l2} Formula:</b> ${aS}<br><b>${l1} Formula:</b> ${pS}`;
+    }
+</script>
+</body>
+</html>
