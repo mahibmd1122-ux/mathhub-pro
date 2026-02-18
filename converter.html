@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter - MathHub Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f4f8; display: flex; flex-direction: column; align-items: center; padding: 20px; color: #333; }
+        .card { background: white; padding: 25px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 100%; max-width: 480px; border-top: 6px solid #1a73e8; }
+        h1 { color: #1a73e8; text-align: center; margin-bottom: 15px; font-size: 26px; }
+        label { display: block; margin-top: 15px; font-weight: 600; font-size: 14px; color: #555; }
+        input, select { width: 100%; padding: 12px; margin-top: 6px; border: 2px solid #e1e8ed; border-radius: 10px; font-size: 16px; box-sizing: border-box; outline: none; }
+        input:focus, select:focus { border-color: #1a73e8; }
+        .category-header { background: #1a73e8; color: white; border: none; font-weight: bold; cursor: pointer; }
+        #result-box { margin-top: 25px; padding: 20px; background: #f8faff; border-radius: 12px; text-align: center; border: 2px solid #e8f0fe; }
+        .res-label { font-size: 14px; color: #777; margin-bottom: 5px; }
+        .res-val { font-size: 28px; font-weight: bold; color: #1a73e8; word-wrap: break-word; }
+        .footer-links { margin-top: 30px; text-align: center; }
+        .footer-links a { text-decoration: none; color: #1a73e8; font-weight: 500; font-size: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>📲 Unit Converter</h1>
+    
+    <label>Choose Measurement:</label>
+    <select id="category" class="category-header" onchange="updateUnits()">
+        <option value="length">📏 Length (Meters, Feet, etc.)</option>
+        <option value="weight">⚖️ Weight (KG, Pounds, etc.)</option>
+        <option value="volume">🧪 Volume (Liters, Gallons, etc.)</option>
+        <option value="temp">🌡️ Temperature (Celsius, etc.)</option>
+    </select>
+
+    <label>Input Value:</label>
+    <input type="number" id="valInput" placeholder="Enter number..." oninput="doConvert()">
+
+    <div style="display: flex; gap: 10px;">
+        <div style="flex: 1;">
+            <label>From:</label>
+            <select id="fromUnit" onchange="doConvert()"></select>
+        </div>
+        <div style="flex: 1;">
+            <label>To:</label>
+            <select id="toUnit" onchange="doConvert()"></select>
+        </div>
+    </div>
+
+    <div id="result-box">
+        <div class="res-label">Converted Result</div>
+        <div class="res-val" id="resDisplay">0</div>
+    </div>
+
+    <div class="footer-links">
+        <a href="/">← Back to Calculator</a>
+    </div>
+</div>
+
+<script>
+const unitData = {
+    length: [
+        { name: "Meters (m)", factor: 1 },
+        { name: "Centimeters (cm)", factor: 0.01 },
+        { name: "Kilometers (km)", factor: 1000 },
+        { name: "Inches (in)", factor: 0.0254 },
+        { name: "Feet (ft)", factor: 0.3048 },
+        { name: "Yards (yd)", factor: 0.9144 },
+        { name: "Miles (mi)", factor: 1609.34 }
+    ],
+    weight: [
+        { name: "Kilograms (kg)", factor: 1 },
+        { name: "Grams (g)", factor: 0.001 },
+        { name: "Pounds (lb)", factor: 0.453592 },
+        { name: "Ounces (oz)", factor: 0.0283495 },
+        { name: "Metric Tons (t)", factor: 1000 }
+    ],
+    volume: [
+        { name: "Liters (L)", factor: 1 },
+        { name: "Milliliters (mL)", factor: 0.001 },
+        { name: "Gallons (US gal)", factor: 3.78541 },
+        { name: "Quarts (qt)", factor: 0.946353 },
+        { name: "Pints (pt)", factor: 0.473176 },
+        { name: "Cups", factor: 0.236588 }
+    ],
+    temp: [
+        { name: "Celsius (°C)", factor: "C" },
+        { name: "Fahrenheit (°F)", factor: "F" },
+        { name: "Kelvin (K)", factor: "K" }
+    ]
+};
+
+function updateUnits() {
+    const cat = document.getElementById('category').value;
+    const from = document.getElementById('fromUnit');
+    const to = document.getElementById('toUnit');
+    from.innerHTML = ""; to.innerHTML = "";
+    
+    unitData[cat].forEach((u) => {
+        from.add(new Option(u.name, u.factor));
+        to.add(new Option(u.name, u.factor));
+    });
+    
+    from.selectedIndex = 0;
+    to.selectedIndex = 1;
+    doConvert();
+}
+
+function doConvert() {
+    const val = parseFloat(document.getElementById('valInput').value);
+    const cat = document.getElementById('category').value;
+    const from = document.getElementById('fromUnit').value;
+    const to = document.getElementById('toUnit').value;
+    const display = document.getElementById('resDisplay');
+
+    if (isNaN(val)) { display.innerText = "0"; return; }
+
+    if (cat === "temp") {
+        let celsius;
+        // Convert to Celsius first
+        if (from === "C") celsius = val;
+        else if (from === "F") celsius = (val - 32) * 5/9;
+        else if (from === "K") celsius = val - 273.15;
+
+        // Convert Celsius to Target
+        let result;
+        if (to === "C") result = celsius;
+        else if (to === "F") result = (celsius * 9/5) + 32;
+        else if (to === "K") result = celsius + 273.15;
+        display.innerText = result.toFixed(2);
+    } else {
+        const result = (val * parseFloat(from)) / parseFloat(to);
+        display.innerText = result.toLocaleString(undefined, {maximumFractionDigits: 5});
+    }
+}
+
+window.onload = updateUnits;
+</script>
+
+</body>
+</html>
