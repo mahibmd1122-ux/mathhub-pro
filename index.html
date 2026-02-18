@@ -285,6 +285,18 @@ button:hover {
     <p style="color: #777; font-size: 14px;">&copy; 2026 MathHub Pro | Precision Tools for Students</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  // This runs as soon as the page loads
+  window.onload = function() {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#1a73e8', '#34a853', '#fbbc05', '#ea4335'] // Google/AdSense Colors
+    });
+  };
+</script>
 
 </body>
 </html>
