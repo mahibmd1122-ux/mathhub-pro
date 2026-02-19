@@ -113,6 +113,59 @@ button:hover {
         margin-bottom: 10px;
     }
 </style>
+    <div class="tool-container">
+    <h2 style="text-align:center; color:#007bff;">Our Professional Tools</h2>
+    
+    <div class="main-grid">
+        <a href="percentage.html" class="tool-card">
+            <div class="tool-icon">📊</div>
+            <div class="tool-name">GST & Percentage</div>
+        </a>
+
+        <a href="age.html" class="tool-card">
+            <div class="tool-icon">🎂</div>
+            <div class="tool-name">Age Calculator</div>
+        </a>
+
+        <a href="discount.html" class="tool-card">
+            <div class="tool-icon">🛍️</div>
+            <div class="tool-name">Discount Calc</div>
+        </a>
+
+        <a href="converter.html" class="tool-card">
+            <div class="tool-icon">🔄</div>
+            <div class="tool-name">Unit Converter</div>
+        </a>
+    </div>
+</div>
+
+<style>
+    .tool-container { padding: 20px; max-width: 600px; margin: 0 auto; }
+    .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 buttons per row for mobile */
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .tool-card {
+        background: #ffffff;
+        padding: 25px 15px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        transition: 0.3s ease;
+        border: 1px solid #eee;
+    }
+    .tool-card:hover {
+        transform: translateY(-5px);
+        border-color: #007bff;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .tool-icon { font-size: 35px; margin-bottom: 10px; }
+    .tool-name { color: #333; font-weight: bold; font-size: 16px; }
+</style>
+
 
 
 
