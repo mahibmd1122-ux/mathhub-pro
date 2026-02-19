@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Calculator - MathHub Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; margin-bottom: 20px; }
+        h2 { color: #007bff; text-align: center; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background: #007bff; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .res { margin-top: 15px; text-align: center; font-weight: bold; color: #28a745; font-size: 18px; }
+        .seo-blah { max-width: 450px; color: #777; font-size: 13px; line-height: 1.5; border-top: 1px solid #ddd; padding-top: 20px; }
+    </style>
+</head>
+<body>
+    <a href="index.html" style="margin-bottom: 20px; text-decoration: none; color: #007bff;">← Home</a>
+
+    <div class="card">
+        <h2>⭕ Circle Area</h2>
+        <input type="number" id="rad" placeholder="Enter Radius (r)">
+        <button onclick="circle()">Calculate Area</button>
+        <div id="cRes" class="res"></div>
+    </div>
+
+    <div class="card">
+        <h2>⬜ Square Area</h2>
+        <input type="number" id="side" placeholder="Enter Side length">
+        <button onclick="square()" style="background: #6f42c1;">Calculate Area</button>
+        <div id="sRes" class="res"></div>
+    </div>
+
+    <div class="seo-blah">
+        <h4>Geometry Education in Telangana</h4>
+        <p>Mathematics is the backbone of engineering and science. At <strong>MathHub Pro</strong>, we help students visualize geometry. Calculating the area of a circle ($$A = \pi r^2$$) or a square ($$A = a^2$$) is made simple with our precise tools. This tool supports the academic growth of the <strong>Mancherial</strong> community by providing free educational resources.</p>
+    </div>
+
+    <script>
+        function circle() {
+            let r = document.getElementById('rad').value;
+            if(r) { document.getElementById('cRes').innerText = "Area: " + (3.14159 * r * r).toFixed(2); }
+        }
+        function square() {
+            let s = document.getElementById('side').value;
+            if(s) { document.getElementById('sRes').innerText = "Area: " + (s * s).toFixed(2); }
+        }
+    </script>
+</body>
+</html>
