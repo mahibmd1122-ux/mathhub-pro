@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator - MathHub Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; color: #333; margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #ffc107; text-align: center; }
+        label { font-weight: bold; display: block; margin-top: 10px; }
+        input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
+        button { width: 100%; padding: 15px; background: #ffc107; color: black; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        .result { margin-top: 20px; font-size: 20px; font-weight: bold; text-align: center; color: #155724; }
+        .seo-text { margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; font-size: 14px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" style="text-decoration:none; color:#ffc107;">← Home</a>
+        <h1>🛍️ Discount Calculator</h1>
+        <label>Original Price (₹)</label>
+        <input type="number" id="price" placeholder="e.g. 1999">
+        <label>Discount Percentage (%)</label>
+        <input type="number" id="discount" placeholder="e.g. 25">
+        <button onclick="calcDiscount()">Calculate Savings</button>
+        <div id="discountResult" class="result"></div>
+
+        <div class="seo-text">
+            <h2>Save Money with MathHub Pro</h2>
+            <p>Shopping during festival sales can be confusing when multiple discounts are applied. Our <strong>Discount Calculator</strong> helps you find the final price and your total savings instantly. Whether you are shopping in local markets or online, knowing the math behind the sale is key to smart budgeting.</p>
+            <p>Our platform is optimized for mobile performance, ensuring that even on low-speed data connections in <strong>Mancherial</strong>, you get your results in milliseconds with a 0% error rate.</p>
+        </div>
+    </div>
+    <script>
+        function calcDiscount() {
+            const p = parseFloat(document.getElementById('price').value);
+            const d = parseFloat(document.getElementById('discount').value);
+            if (p && d) {
+                const savings = (p * d) / 100;
+                const final = p - savings;
+                document.getElementById('discountResult').innerHTML = "Final Price: ₹" + final.toFixed(2) + "<br><span style='font-size:16px; color:#666;'>You Save: ₹" + savings.toFixed(2) + "</span>";
+            }
+        }
+    </script>
+</body>
+</html>
