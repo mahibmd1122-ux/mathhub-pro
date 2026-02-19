@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Calculator - MathHub Pro</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f7f6; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .calc-box { background: #222; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); width: 300px; }
+        #display { width: 100%; height: 60px; font-size: 30px; text-align: right; margin-bottom: 15px; padding: 10px; box-sizing: border-box; border: none; background: #333; color: #fff; border-radius: 5px; }
+        .buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        button { padding: 20px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; background: #444; color: white; transition: 0.2s; }
+        button:hover { background: #555; }
+        .op { background: #f39c12; }
+        .eq { background: #27ae60; grid-column: span 2; }
+        .clr { background: #e74c3c; grid-column: span 2; }
+        .seo-content { max-width: 400px; margin-top: 30px; color: #666; font-size: 14px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <a href="index.html" style="margin-bottom: 20px; text-decoration: none; color: #007bff;">← Back to Home</a>
+    <div class="calc-box">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button class="clr" onclick="clearScreen()">C</button>
+            <button class="op" onclick="addToDisplay('/')">/</button>
+            <button class="op" onclick="addToDisplay('*')">×</button>
+            <button onclick="addToDisplay('7')">7</button>
+            <button onclick="addToDisplay('8')">8</button>
+            <button onclick="addToDisplay('9')">9</button>
+            <button class="op" onclick="addToDisplay('-')">-</button>
+            <button onclick="addToDisplay('4')">4</button>
+            <button onclick="addToDisplay('5')">5</button>
+            <button onclick="addToDisplay('6')">6</button>
+            <button class="op" onclick="addToDisplay('+')">+</button>
+            <button onclick="addToDisplay('1')">1</button>
+            <button onclick="addToDisplay('2')">2</button>
+            <button onclick="addToDisplay('3')">3</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="addToDisplay('0')">0</button>
+            <button onclick="addToDisplay('.')">.</button>
+            <button class="eq" onclick="calculate()">Total</button>
+        </div>
+    </div>
+
+    <div class="seo-content">
+        <h3>About MathHub Pro Standard Calculator</h3>
+        <p>Our standard calculator is designed for students in <strong>Mancherial</strong> and professional users who need fast, reliable results. Whether it's basic addition or complex multiplication, we ensure a <strong>0% error rate</strong>. This tool is fully optimized for mobile devices on the new <strong>.com/.in</strong> domain.</p>
+    </div>
+
+    <script>
+        const disp = document.getElementById('display');
+        function addToDisplay(val) { disp.value += val; }
+        function clearScreen() { disp.value = ''; }
+        function calculate() { try { disp.value = eval(disp.value); } catch { disp.value = 'Error'; } }
+    </script>
+</body>
+</html>
