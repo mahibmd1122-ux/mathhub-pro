@@ -76,68 +76,97 @@ button:hover {
 </head>
 <body data-theme="light">
 
-<div id="splash">
-    <h1 style="font-size: 36px; margin-bottom: 0;">MathHub Pro</h1>
-    <p style="opacity: 0.9; margin-bottom: 30px;">Complete Geometry Solutions</p>
-    <button class="nav-btn" onclick="openPage('geo')">Geometry Calculator</button>
-    <button class="nav-btn" onclick="openPage('norm')">Standard Calculator</button>
-    <a href="percentage.html" class="calc-btn percentage-theme">
-    <div class="icon">📊</div>
-    <span>Percentage & GST</span>
-</a>
+<div class="tool-grid-container">
+    <h2 class="grid-title">MathHub Pro Tools</h2>
+    
+    <div class="calculator-grid">
+        <a href="standard.html" class="tool-btn">
+            <div class="icon-circle" style="background: #6c757d;">🔢</div>
+            <span>Standard</span>
+        </a>
+
+        <a href="geometry.html" class="tool-btn">
+            <div class="icon-circle" style="background: #007bff;">📐</div>
+            <span>Geometry</span>
+        </a>
+
+        <a href="percentage.html" class="tool-btn">
+            <div class="icon-circle" style="background: #28a745;">📊</div>
+            <span>GST & %</span>
+        </a>
+
+        <a href="age.html" class="tool-btn">
+            <div class="icon-circle" style="background: #e83e8c;">🎂</div>
+            <span>Age Calc</span>
+        </a>
+
+        <a href="discount.html" class="tool-btn">
+            <div class="icon-circle" style="background: #ffc107;">🛍️</div>
+            <span>Discount</span>
+        </a>
+
+        <a href="converter.html" class="tool-btn">
+            <div class="icon-circle" style="background: #17a2b8;">🔄</div>
+            <span>Converter</span>
+        </a>
+    </div>
+</div>
 
 <style>
-    /* Add this CSS if you want it to look exactly like a professional tool card */
-    .calc-btn {
+    /* Professional Grid Styling */
+    .tool-grid-container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 15px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .grid-title {
+        text-align: center;
+        color: #333;
+        margin-bottom: 25px;
+    }
+    .calculator-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 buttons per row */
+        gap: 15px;
+    }
+    .tool-btn {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px;
+        padding: 20px 10px;
         background: #ffffff;
         border-radius: 15px;
         text-decoration: none;
         color: #333;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         transition: 0.3s;
-        border: 2px solid transparent;
+        border: 1px solid #eee;
     }
-
-    .calc-btn:hover {
+    .tool-btn:hover {
         transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         border-color: #007bff;
     }
-
-    .percentage-theme .icon {
-        font-size: 40px;
-        margin-bottom: 10px;
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        margin-bottom: 12px;
+        color: white;
+    }
+    /* Mobile adjustment */
+    @media (max-width: 400px) {
+        .calculator-grid { grid-template-columns: 1fr; } /* 1 button per row on tiny screens */
     }
 </style>
-    <div class="tool-container">
-    <h2 style="text-align:center; color:#007bff;">Our Professional Tools</h2>
-    
-    <div class="main-grid">
-        <a href="percentage.html" class="tool-card">
-            <div class="tool-icon">📊</div>
-            <div class="tool-name">GST & Percentage</div>
-        </a>
 
-        <a href="age.html" class="tool-card">
-            <div class="tool-icon">🎂</div>
-            <div class="tool-name">Age Calculator</div>
-        </a>
-
-        <a href="discount.html" class="tool-card">
-            <div class="tool-icon">🛍️</div>
-            <div class="tool-name">Discount Calc</div>
-        </a>
-
-        <a href="converter.html" class="tool-card">
-            <div class="tool-icon">🔄</div>
-            <div class="tool-name">Unit Converter</div>
-        </a>
-    </div>
-</div>
 
 <style>
     .tool-container { padding: 20px; max-width: 600px; margin: 0 auto; }
