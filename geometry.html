@@ -3,107 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Geometry Lab - MathHub Pro</title>
+    <title>All-in-One Geometry Lab - MathHub Pro</title>
     <style>
-        :root { --primary: #007bff; --secondary: #6f42c1; --bg: #f4f7f6; --card: #ffffff; --text: #333; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; line-height: 1.6; }
-        .container { max-width: 700px; margin: 0 auto; }
-        .card { background: var(--card); padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 25px; border-left: 5px solid var(--primary); }
-        h1 { text-align: center; color: var(--primary); }
-        h2 { color: var(--secondary); margin-top: 0; display: flex; align-items: center; gap: 10px; }
-        label { display: block; margin-top: 10px; font-weight: bold; font-size: 14px; }
-        input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
-        button { width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; }
-        button:hover { background: #0056b3; }
-        .result-box { margin-top: 15px; padding: 15px; background: #eef7ff; border-radius: 8px; display: none; }
-        .res-item { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #d1e3f8; }
-        .res-item:last-child { border: none; }
-        .seo-section { font-size: 14px; color: #666; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px; }
+        :root { --primary: #007bff; --bg: #f4f7f6; --card: #ffffff; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; background: var(--card); padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); margin-top: 0; }
+        
+        label { display: block; margin-top: 15px; font-weight: bold; font-size: 14px; }
+        select, input { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
+        
+        .input-group { display: none; }
+        .active { display: block; animation: fadeIn 0.4s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .result-box { margin-top: 25px; padding: 20px; background: #eef7ff; border-radius: 10px; border-left: 5px solid var(--primary); }
+        .res-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #d1e3f8; }
+        .res-row:last-child { border: none; }
+        .unit-text { font-size: 12px; color: #666; }
+
+        .seo-footer { margin-top: 30px; font-size: 13px; color: #777; line-height: 1.5; border-top: 1px solid #eee; padding-top: 15px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="index.html" style="text-decoration:none; color:var(--primary); font-weight:bold;">← Back to Home</a>
-    <h1>📐 Advanced Geometry Lab</h1>
+    <a href="index.html" style="text-decoration:none; color:var(--primary);">← Back to Home</a>
+    <h1>📐 Geometry Lab</h1>
 
-    <div class="card">
-        <h2>⚪ Circle / Sphere (3D)</h2>
-        <label>Radius (r)</label>
-        <input type="number" id="radius" placeholder="Enter radius..." oninput="calcCircle()">
-        <div id="circleRes" class="result-box">
-            <div class="res-item"><span>Perimeter (Circumference):</span> <span id="c-peri">0</span></div>
-            <div class="res-item"><span>Area (2D):</span> <span id="c-area">0</span></div>
-            <div class="res-item"><span>Sphere Volume (3D):</span> <span id="c-vol">0</span></div>
+    <label>Choose Shape</label>
+    <select id="shapeSelect" onchange="updateUI()">
+        <option value="circle">Circle / Sphere</option>
+        <option value="square">Square / Cube</option>
+        <option value="rectangle">Rectangle / Cuboid</option>
+        <option value="triangle">Triangle (Equilateral/Pyramid)</option>
+        <option value="trapezium">Trapezium</option>
+        <option value="rhombus">Rhombus</option>
+        <option value="parallelogram">Parallelogram</option>
+        <option value="kite">Kite</option>
+    </select>
+
+    <label>Units</label>
+    <select id="unitSelect" onchange="calculate()">
+        <option value="cm">Centimeters (cm)</option>
+        <option value="m">Meters (m)</option>
+        <option value="in">Inches (in)</option>
+        <option value="ft">Feet (ft)</option>
+    </select>
+
+    <div id="inputs">
+        <div id="in-radius" class="input-group active">
+            <label>Radius (r)</label>
+            <input type="number" id="val-r" placeholder="Enter radius" oninput="calculate()">
+        </div>
+        <div id="in-side" class="input-group">
+            <label>Side (a)</label>
+            <input type="number" id="val-a" placeholder="Enter side length" oninput="calculate()">
+        </div>
+        <div id="in-lwh" class="input-group">
+            <label>Length (l)</label>
+            <input type="number" id="val-l" oninput="calculate()">
+            <label>Width (w) / Base (b)</label>
+            <input type="number" id="val-w" oninput="calculate()">
+            <label>Height (h) / 3D</label>
+            <input type="number" id="val-h" oninput="calculate()">
+        </div>
+        <div id="in-diag" class="input-group">
+            <label>Diagonal 1 (d1)</label>
+            <input type="number" id="val-d1" oninput="calculate()">
+            <label>Diagonal 2 (d2)</label>
+            <input type="number" id="val-d2" oninput="calculate()">
+        </div>
+        <div id="in-trap" class="input-group">
+            <label>Base Top (a)</label>
+            <input type="number" id="val-t1" oninput="calculate()">
+            <label>Base Bottom (b)</label>
+            <input type="number" id="val-t2" oninput="calculate()">
+            <label>Height (h)</label>
+            <input type="number" id="val-th" oninput="calculate()">
         </div>
     </div>
 
-    <div class="card" style="border-left-color: #28a745;">
-        <h2>⬜ Square / Cube (3D)</h2>
-        <label>Side Length (a)</label>
-        <input type="number" id="side" placeholder="Enter side length..." oninput="calcSquare()">
-        <div id="squareRes" class="result-box">
-            <div class="res-item"><span>Perimeter:</span> <span id="s-peri">0</span></div>
-            <div class="res-item"><span>Area (2D):</span> <span id="s-area">0</span></div>
-            <div class="res-item"><span>Cube Volume (3D):</span> <span id="s-vol">0</span></div>
-        </div>
+    <div class="result-box">
+        <div class="res-row"><span>Perimeter:</span> <span id="res-peri">-</span></div>
+        <div class="res-row"><span>Area (2D):</span> <span id="res-area">-</span></div>
+        <div class="res-row"><span>Volume (3D):</span> <span id="res-vol">-</span></div>
     </div>
 
-    <div class="card" style="border-left-color: #ffc107;">
-        <h2>▭ Rectangle / Cuboid (3D)</h2>
-        <label>Length (l)</label>
-        <input type="number" id="rectL" placeholder="Length" oninput="calcRect()">
-        <label>Width (w)</label>
-        <input type="number" id="rectW" placeholder="Width" oninput="calcRect()">
-        <label>Height (h) - For 3D Volume</label>
-        <input type="number" id="rectH" placeholder="Height" oninput="calcRect()">
-        <div id="rectRes" class="result-box">
-            <div class="res-item"><span>Perimeter:</span> <span id="r-peri">0</span></div>
-            <div class="res-item"><span>Area (2D):</span> <span id="r-area">0</span></div>
-            <div class="res-item"><span>Volume (3D):</span> <span id="r-vol">0</span></div>
-        </div>
-    </div>
-
-    <div class="seo-section">
-        <h3>Comprehensive Geometry Formulas</h3>
-        <p>At <strong>MathHub Pro</strong>, we believe in providing all the data a student needs in one place. Whether you are calculating the <strong>Perimeter of a square</strong>, the <strong>Area of a Circle</strong> ($$A = \pi r^2$$), or the <strong>Volume of a Sphere</strong> ($$V = \frac{4}{3} \pi r^3$$), our tool delivers instant results with a 0% error rate.</p>
-        <p>This resource is specially designed for students in <strong>Mancherial, Telangana</strong> to excel in their academic journeys. Optimized for our new <strong>.com/.in</strong> domain launching tomorrow!</p>
+    <div class="seo-footer">
+        <p><strong>MathHub Pro Geometry Guide:</strong> Our tool calculates properties for <strong>8+ shapes</strong> including Trapeziums, Kites, and Rhombuses. Perfect for students in <strong>Mancherial</strong> preparing for competitive exams. Using formulas like $$Area = \frac{1}{2}(a+b)h$$ for Trapeziums ensures accuracy for all academic needs on your new <strong>.com/.in</strong> domain.</p>
     </div>
 </div>
 
 <script>
-    function showRes(id) { document.getElementById(id).style.display = 'block'; }
-
-    function calcCircle() {
-        const r = parseFloat(document.getElementById('radius').value);
-        if (r > 0) {
-            showRes('circleRes');
-            document.getElementById('c-peri').innerText = (2 * Math.PI * r).toFixed(2);
-            document.getElementById('c-area').innerText = (Math.PI * r * r).toFixed(2);
-            document.getElementById('c-vol').innerText = ((4/3) * Math.PI * Math.pow(r, 3)).toFixed(2);
-        }
+    function updateUI() {
+        const shape = document.getElementById('shapeSelect').value;
+        document.querySelectorAll('.input-group').forEach(g => g.classList.remove('active'));
+        
+        if (shape === 'circle') document.getElementById('in-radius').classList.add('active');
+        else if (shape === 'square') document.getElementById('in-side').classList.add('active');
+        else if (shape === 'rhombus' || shape === 'kite') document.getElementById('in-diag').classList.add('active');
+        else if (shape === 'trapezium') document.getElementById('in-trap').classList.add('active');
+        else document.getElementById('in-lwh').classList.add('active');
+        
+        calculate();
     }
 
-    function calcSquare() {
-        const a = parseFloat(document.getElementById('side').value);
-        if (a > 0) {
-            showRes('squareRes');
-            document.getElementById('s-peri').innerText = (4 * a).toFixed(2);
-            document.getElementById('s-area').innerText = (a * a).toFixed(2);
-            document.getElementById('s-vol').innerText = (Math.pow(a, 3)).toFixed(2);
-        }
-    }
+    function calculate() {
+        const shape = document.getElementById('shapeSelect').value;
+        const u = document.getElementById('unitSelect').value;
+        let p=0, a=0, v=0;
 
-    function calcRect() {
-        const l = parseFloat(document.getElementById('rectL').value);
-        const w = parseFloat(document.getElementById('rectW').value);
-        const h = parseFloat(document.getElementById('rectH').value) || 0;
-        if (l > 0 && w > 0) {
-            showRes('rectRes');
-            document.getElementById('r-peri').innerText = (2 * (l + w)).toFixed(2);
-            document.getElementById('r-area').innerText = (l * w).toFixed(2);
-            document.getElementById('r-vol').innerText = (l * w * h).toFixed(2);
+        if (shape === 'circle') {
+            let r = parseFloat(document.getElementById('val-r').value) || 0;
+            p = 2 * Math.PI * r; a = Math.PI * r * r; v = (4/3) * Math.PI * Math.pow(r, 3);
+        } else if (shape === 'square') {
+            let s = parseFloat(document.getElementById('val-a').value) || 0;
+            p = 4 * s; a = s * s; v = Math.pow(s, 3);
+        } else if (shape === 'rectangle' || shape === 'parallelogram') {
+            let l = parseFloat(document.getElementById('val-l').value) || 0;
+            let w = parseFloat(document.getElementById('val-w').value) || 0;
+            let h = parseFloat(document.getElementById('val-h').value) || 0;
+            p = 2 * (l + w); a = l * w; v = l * w * h;
+        } else if (shape === 'trapezium') {
+            let a1 = parseFloat(document.getElementById('val-t1').value) || 0;
+            let b1 = parseFloat(document.getElementById('val-t2').value) || 0;
+            let h1 = parseFloat(document.getElementById('val-th').value) || 0;
+            p = "Requires sides"; a = 0.5 * (a1 + b1) * h1; v = "N/A";
+        } else if (shape === 'rhombus' || shape === 'kite') {
+            let d1 = parseFloat(document.getElementById('val-d1').value) || 0;
+            let d2 = parseFloat(document.getElementById('val-d2').value) || 0;
+            a = 0.5 * d1 * d2; p = shape === 'rhombus' ? 4 * Math.sqrt(Math.pow(d1/2,2)+Math.pow(d2/2,2)) : "Mixed Sides";
         }
+
+        document.getElementById('res-peri').innerText = isNaN(p) ? p : p.toFixed(2) + " " + u;
+        document.getElementById('res-area').innerText = a.toFixed(2) + " " + u + "²";
+        document.getElementById('res-vol').innerText = isNaN(v) ? v : v.toFixed(2) + " " + u + "³";
     }
 </script>
 
