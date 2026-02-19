@@ -3,48 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geometry Calculator - MathHub Pro</title>
+    <title>Advanced Geometry Lab - MathHub Pro</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; padding: 20px; display: flex; flex-direction: column; align-items: center; }
-        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; margin-bottom: 20px; }
-        h2 { color: #007bff; text-align: center; }
-        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
-        button { width: 100%; padding: 15px; background: #007bff; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
-        .res { margin-top: 15px; text-align: center; font-weight: bold; color: #28a745; font-size: 18px; }
-        .seo-blah { max-width: 450px; color: #777; font-size: 13px; line-height: 1.5; border-top: 1px solid #ddd; padding-top: 20px; }
+        :root { --primary: #007bff; --secondary: #6f42c1; --bg: #f4f7f6; --card: #ffffff; --text: #333; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 700px; margin: 0 auto; }
+        .card { background: var(--card); padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 25px; border-left: 5px solid var(--primary); }
+        h1 { text-align: center; color: var(--primary); }
+        h2 { color: var(--secondary); margin-top: 0; display: flex; align-items: center; gap: 10px; }
+        label { display: block; margin-top: 10px; font-weight: bold; font-size: 14px; }
+        input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+        button:hover { background: #0056b3; }
+        .result-box { margin-top: 15px; padding: 15px; background: #eef7ff; border-radius: 8px; display: none; }
+        .res-item { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #d1e3f8; }
+        .res-item:last-child { border: none; }
+        .seo-section { font-size: 14px; color: #666; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px; }
     </style>
 </head>
 <body>
-    <a href="index.html" style="margin-bottom: 20px; text-decoration: none; color: #007bff;">← Home</a>
+
+<div class="container">
+    <a href="index.html" style="text-decoration:none; color:var(--primary); font-weight:bold;">← Back to Home</a>
+    <h1>📐 Advanced Geometry Lab</h1>
 
     <div class="card">
-        <h2>⭕ Circle Area</h2>
-        <input type="number" id="rad" placeholder="Enter Radius (r)">
-        <button onclick="circle()">Calculate Area</button>
-        <div id="cRes" class="res"></div>
+        <h2>⚪ Circle / Sphere (3D)</h2>
+        <label>Radius (r)</label>
+        <input type="number" id="radius" placeholder="Enter radius..." oninput="calcCircle()">
+        <div id="circleRes" class="result-box">
+            <div class="res-item"><span>Perimeter (Circumference):</span> <span id="c-peri">0</span></div>
+            <div class="res-item"><span>Area (2D):</span> <span id="c-area">0</span></div>
+            <div class="res-item"><span>Sphere Volume (3D):</span> <span id="c-vol">0</span></div>
+        </div>
     </div>
 
-    <div class="card">
-        <h2>⬜ Square Area</h2>
-        <input type="number" id="side" placeholder="Enter Side length">
-        <button onclick="square()" style="background: #6f42c1;">Calculate Area</button>
-        <div id="sRes" class="res"></div>
+    <div class="card" style="border-left-color: #28a745;">
+        <h2>⬜ Square / Cube (3D)</h2>
+        <label>Side Length (a)</label>
+        <input type="number" id="side" placeholder="Enter side length..." oninput="calcSquare()">
+        <div id="squareRes" class="result-box">
+            <div class="res-item"><span>Perimeter:</span> <span id="s-peri">0</span></div>
+            <div class="res-item"><span>Area (2D):</span> <span id="s-area">0</span></div>
+            <div class="res-item"><span>Cube Volume (3D):</span> <span id="s-vol">0</span></div>
+        </div>
     </div>
 
-    <div class="seo-blah">
-        <h4>Geometry Education in Telangana</h4>
-        <p>Mathematics is the backbone of engineering and science. At <strong>MathHub Pro</strong>, we help students visualize geometry. Calculating the area of a circle ($$A = \pi r^2$$) or a square ($$A = a^2$$) is made simple with our precise tools. This tool supports the academic growth of the <strong>Mancherial</strong> community by providing free educational resources.</p>
+    <div class="card" style="border-left-color: #ffc107;">
+        <h2>▭ Rectangle / Cuboid (3D)</h2>
+        <label>Length (l)</label>
+        <input type="number" id="rectL" placeholder="Length" oninput="calcRect()">
+        <label>Width (w)</label>
+        <input type="number" id="rectW" placeholder="Width" oninput="calcRect()">
+        <label>Height (h) - For 3D Volume</label>
+        <input type="number" id="rectH" placeholder="Height" oninput="calcRect()">
+        <div id="rectRes" class="result-box">
+            <div class="res-item"><span>Perimeter:</span> <span id="r-peri">0</span></div>
+            <div class="res-item"><span>Area (2D):</span> <span id="r-area">0</span></div>
+            <div class="res-item"><span>Volume (3D):</span> <span id="r-vol">0</span></div>
+        </div>
     </div>
 
-    <script>
-        function circle() {
-            let r = document.getElementById('rad').value;
-            if(r) { document.getElementById('cRes').innerText = "Area: " + (3.14159 * r * r).toFixed(2); }
+    <div class="seo-section">
+        <h3>Comprehensive Geometry Formulas</h3>
+        <p>At <strong>MathHub Pro</strong>, we believe in providing all the data a student needs in one place. Whether you are calculating the <strong>Perimeter of a square</strong>, the <strong>Area of a Circle</strong> ($$A = \pi r^2$$), or the <strong>Volume of a Sphere</strong> ($$V = \frac{4}{3} \pi r^3$$), our tool delivers instant results with a 0% error rate.</p>
+        <p>This resource is specially designed for students in <strong>Mancherial, Telangana</strong> to excel in their academic journeys. Optimized for our new <strong>.com/.in</strong> domain launching tomorrow!</p>
+    </div>
+</div>
+
+<script>
+    function showRes(id) { document.getElementById(id).style.display = 'block'; }
+
+    function calcCircle() {
+        const r = parseFloat(document.getElementById('radius').value);
+        if (r > 0) {
+            showRes('circleRes');
+            document.getElementById('c-peri').innerText = (2 * Math.PI * r).toFixed(2);
+            document.getElementById('c-area').innerText = (Math.PI * r * r).toFixed(2);
+            document.getElementById('c-vol').innerText = ((4/3) * Math.PI * Math.pow(r, 3)).toFixed(2);
         }
-        function square() {
-            let s = document.getElementById('side').value;
-            if(s) { document.getElementById('sRes').innerText = "Area: " + (s * s).toFixed(2); }
+    }
+
+    function calcSquare() {
+        const a = parseFloat(document.getElementById('side').value);
+        if (a > 0) {
+            showRes('squareRes');
+            document.getElementById('s-peri').innerText = (4 * a).toFixed(2);
+            document.getElementById('s-area').innerText = (a * a).toFixed(2);
+            document.getElementById('s-vol').innerText = (Math.pow(a, 3)).toFixed(2);
         }
-    </script>
+    }
+
+    function calcRect() {
+        const l = parseFloat(document.getElementById('rectL').value);
+        const w = parseFloat(document.getElementById('rectW').value);
+        const h = parseFloat(document.getElementById('rectH').value) || 0;
+        if (l > 0 && w > 0) {
+            showRes('rectRes');
+            document.getElementById('r-peri').innerText = (2 * (l + w)).toFixed(2);
+            document.getElementById('r-area').innerText = (l * w).toFixed(2);
+            document.getElementById('r-vol').innerText = (l * w * h).toFixed(2);
+        }
+    }
+</script>
+
 </body>
 </html>
