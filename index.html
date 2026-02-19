@@ -81,7 +81,41 @@ button:hover {
     <p style="opacity: 0.9; margin-bottom: 30px;">Complete Geometry Solutions</p>
     <button class="nav-btn" onclick="openPage('geo')">Geometry Calculator</button>
     <button class="nav-btn" onclick="openPage('norm')">Standard Calculator</button>
-    <a href="percentage.html" style="padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px;">Percentage Calculator</a>
+    <a href="percentage.html" class="tool-button">
+    <span class="icon">📊</span>
+    Percentage Calculator
+</a>
+
+<style>
+    .tool-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #007bff; /* Professional Blue */
+        color: white;
+        padding: 15px 25px;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: transform 0.2s, background-color 0.2s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .tool-button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: translateY(-2px); /* Slight lift effect */
+    }
+
+    .tool-button .icon {
+        margin-right: 10px;
+        font-size: 22px;
+    }
+</style>
+
 
     <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px;">
 
