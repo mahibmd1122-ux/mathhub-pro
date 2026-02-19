@@ -81,40 +81,39 @@ button:hover {
     <p style="opacity: 0.9; margin-bottom: 30px;">Complete Geometry Solutions</p>
     <button class="nav-btn" onclick="openPage('geo')">Geometry Calculator</button>
     <button class="nav-btn" onclick="openPage('norm')">Standard Calculator</button>
-    <a href="percentage.html" class="tool-button">
-    <span class="icon">📊</span>
-    Percentage Calculator
+    <a href="percentage.html" class="calc-btn percentage-theme">
+    <div class="icon">📊</div>
+    <span>Percentage & GST</span>
 </a>
 
 <style>
-    .tool-button {
-        display: inline-flex;
+    /* Add this CSS if you want it to look exactly like a professional tool card */
+    .calc-btn {
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #007bff; /* Professional Blue */
-        color: white;
-        padding: 15px 25px;
-        font-size: 18px;
-        font-weight: bold;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 15px;
         text-decoration: none;
-        border-radius: 8px;
-        transition: transform 0.2s, background-color 0.2s;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        margin: 10px;
-        border: none;
-        cursor: pointer;
+        color: #333;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        border: 2px solid transparent;
     }
 
-    .tool-button:hover {
-        background-color: #0056b3; /* Darker blue on hover */
-        transform: translateY(-2px); /* Slight lift effect */
+    .calc-btn:hover {
+        transform: translateY(-5px);
+        border-color: #007bff;
     }
 
-    .tool-button .icon {
-        margin-right: 10px;
-        font-size: 22px;
+    .percentage-theme .icon {
+        font-size: 40px;
+        margin-bottom: 10px;
     }
 </style>
+
 
 
     <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px;">
