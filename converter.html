@@ -4,38 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Converter - MathHub Pro</title>
-    <meta name="description" content="Free online unit converter for students. Convert meters, centimeters, kilometers, and more instantly with MathHub Pro.">
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
-        header { background: #007bff; color: white; padding: 1rem; text-align: center; }
-        .container { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .converter-card { background: #fff; padding: 30px; border: 2px solid #007bff; border-radius: 15px; margin-bottom: 30px; }
-        input, select, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; box-sizing: border-box; }
-        button { background: #007bff; color: white; border: none; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        button:hover { background: #0056b3; }
-        #resultDisplay { background: #e9ecef; padding: 15px; text-align: center; font-weight: bold; border-radius: 5px; margin-top: 10px; min-height: 24px; }
-        footer { text-align: center; padding: 20px; font-size: 14px; color: #666; }
-        a { color: #007bff; text-decoration: none; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; }
+        header { background: #007bff; color: white; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .container { max-width: 600px; margin: 30px auto; padding: 20px; }
+        
+        /* Converter Box */
+        .converter-box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #e1e4e8; }
+        h2 { text-align: center; color: #007bff; margin-top: 0; }
+        
+        label { display: block; margin: 10px 0 5px; font-weight: bold; font-size: 14px; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 16px; box-sizing: border-box; outline: none; transition: border 0.3s; }
+        input:focus { border-color: #007bff; }
+
+        /* THE DYNAMIC BUTTON */
+        #resultButton { 
+            width: 100%; padding: 18px; background: #007bff; color: white; border: none; 
+            border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 20px; 
+            transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,123,255,0.2);
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* SEO Content Area */
+        .seo-content { margin-top: 40px; line-height: 1.8; color: #555; font-size: 15px; }
+        .seo-content h3 { color: #333; border-bottom: 2px solid #007bff; display: inline-block; }
+        
+        footer { text-align: center; padding: 30px; font-size: 13px; color: #888; }
+        footer a { color: #007bff; text-decoration: none; margin: 0 10px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>MathHub Pro</h1>
-    <p>Your Academic Calculation Partner</p>
+    <p>Smart Tools for Smart Students</p>
 </header>
 
 <div class="container">
-    <div class="converter-card">
-        <h2 style="text-align: center; color: #007bff;">Unit Converter</h2>
+    <div class="converter-box">
+        <h2>Unit Converter</h2>
         
-        <label for="valInput">Enter Value:</label>
-        <input type="number" id="valInput" placeholder="Enter number here..." oninput="calculate()">
+        <label>Enter Value:</label>
+        <input type="number" id="unitValue" placeholder="e.g. 5" oninput="convert()">
 
         <div style="display: flex; gap: 10px;">
             <div style="flex: 1;">
                 <label>From:</label>
-                <select id="fromUnit" onchange="calculate()">
+                <select id="fromUnit" onchange="convert()">
                     <option value="m">Meters (m)</option>
                     <option value="cm">Centimeters (cm)</option>
                     <option value="km">Kilometers (km)</option>
@@ -44,7 +59,7 @@
             </div>
             <div style="flex: 1;">
                 <label>To:</label>
-                <select id="toUnit" onchange="calculate()">
+                <select id="toUnit" onchange="convert()">
                     <option value="cm">Centimeters (cm)</option>
                     <option value="m">Meters (m)</option>
                     <option value="km">Kilometers (km)</option>
@@ -53,22 +68,16 @@
             </div>
         </div>
 
-        <div id="resultDisplay">Result will appear here</div>
+        <label>Result:</label>
+        <button id="resultButton">Convert</button>
     </div>
 
-    <section style="margin-top: 40px; border-top: 1px solid #eee; pt-20px;">
-        <h2 style="color: #2c3e50;">Why Use Our Online Unit Converter?</h2>
-        <p>In <strong>Class 9 and 10 Physics</strong>, many problems require you to convert units before applying a formula. For example, if the radius of a cylinder is in <em>cm</em> but the height is in <em>meters</em>, your volume calculation will be wrong unless you standardize the units first.</p>
-
-        <h3 style="color: #007bff;">Common Conversion Factors</h3>
-        <ul style="background: #f8f9fa; padding: 20px; border-radius: 10px; list-style-type: '✔ ';">
-            <li><strong>1 Kilometer (km)</strong> = 1,000 Meters</li>
-            <li><strong>1 Meter (m)</strong> = 100 Centimeters</li>
-            <li><strong>1 Centimeter (cm)</strong> = 10 Millimeters</li>
-        </ul>
-
-        <p>Our tool helps students from <strong>Mancherial to the USA</strong> solve geometry and physics homework faster. By using <strong>MathHub Pro</strong>, you eliminate the risk of manual calculation errors during exam preparation.</p>
-    </section>
+    <div class="seo-content">
+        <h3>How to Convert Units Instantly</h3>
+        <p>Mathematical precision is vital for school exams and engineering projects. Our <strong>Unit Converter</strong> allows you to switch between metric units like <strong>Meters, Centimeters, and Kilometers</strong> with zero errors.</p>
+        
+        <p>Whether you are calculating the area for a geometry project or solving a physics problem in Class 10, standardizing your units is the first step. For example, to convert <strong>Meters to Centimeters</strong>, our tool multiplies the value by 100, saving you time during study sessions.</p>
+    </div>
 </div>
 
 <footer>
@@ -80,18 +89,20 @@
 </footer>
 
 <script>
-function calculate() {
-    const val = parseFloat(document.getElementById('valInput').value);
+function convert() {
+    const val = parseFloat(document.getElementById('unitValue').value);
     const from = document.getElementById('fromUnit').value;
     const to = document.getElementById('toUnit').value;
-    const display = document.getElementById('resultDisplay');
+    const btn = document.getElementById('resultButton');
 
+    // Default state if no number is entered
     if (isNaN(val)) {
-        display.innerHTML = "Waiting for input...";
+        btn.innerHTML = "Convert";
+        btn.style.background = "#007bff";
         return;
     }
 
-    // Reference Table (1 meter is base)
+    // Reference Table (1 meter is base unit)
     const rates = {
         'm': 1,
         'cm': 0.01,
@@ -99,10 +110,15 @@ function calculate() {
         'mm': 0.001
     };
 
+    // Calculation
     const result = (val * rates[from]) / rates[to];
+
+    // UPDATING THE BUTTON NAME TO THE VALUE GOT
+    // We use toFixed(2) to keep the answer clean but precise
+    btn.innerHTML = result.toLocaleString() + " " + to;
     
-    // Formatting the output
-    display.innerHTML = `${val} ${from} = <span style="color: #28a745;">${result.toLocaleString()} ${to}</span>`;
+    // Change button color to show success
+    btn.style.background = "#28a745";
 }
 </script>
 
