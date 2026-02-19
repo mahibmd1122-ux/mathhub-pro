@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator - MathHub Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; color: #333; margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #28a745; text-align: center; }
+        input { width: 100%; padding: 12px; margin: 15px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
+        button { width: 100%; padding: 15px; background: #28a745; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .result { margin-top: 20px; font-size: 20px; font-weight: bold; text-align: center; color: #2c3e50; }
+        .seo-text { margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; font-size: 14px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" style="text-decoration:none; color:#28a745;">← Home</a>
+        <h1>🎂 Age Calculator</h1>
+        <p style="text-align:center;">Find your exact age for job applications and exams.</p>
+        <input type="date" id="dob">
+        <button onclick="calculateAge()">Find My Age</button>
+        <div id="ageResult" class="result"></div>
+
+        <div class="seo-text">
+            <h2>Why Use an Age Calculator?</h2>
+            <p>At <strong>MathHub Pro</strong>, we provide tools designed for precision. In 2026, many government exams in <strong>Telangana</strong> and across India require your exact age as of a specific date. Human calculation can lead to errors that might disqualify an application.</p>
+            <p>Our tool uses high-accuracy algorithms to calculate years, months, and days perfectly. This is essential for students in <strong>Mancherial</strong> applying for recruitment drives or school admissions.</p>
+        </div>
+    </div>
+    <script>
+        function calculateAge() {
+            const birthDate = new Date(document.getElementById('dob').value);
+            if (!birthDate.getTime()) return;
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
+            document.getElementById('ageResult').innerText = "You are " + age + " years old!";
+        }
+    </script>
+</body>
+</html>
