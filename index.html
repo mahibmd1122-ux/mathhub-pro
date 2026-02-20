@@ -3,49 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathHub Pro | Free Online Calculators & Math Tools</title>
+    <title>MathHub Pro | Professional Mathematical Tools</title>
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
+
     <style>
-        :root { --primary: #2563eb; --secondary: #3b82f6; --text: #1f2937; --bg: #f9fafb; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; }
-        .hero { background: white; padding: 60px 20px; text-align: center; border-bottom: 1px solid #e5e7eb; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        .card { background: white; padding: 30px 15px; border-radius: 12px; text-decoration: none; color: inherit; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: 0.3s; text-align: center; border: 1px solid #e5e7eb; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); border-color: var(--primary); }
-        .icon { font-size: 40px; margin-bottom: 12px; }
-        footer { background: white; padding: 40px 20px; text-align: center; border-top: 1px solid #e5e7eb; margin-top: 60px; }
-        .footer-links a { margin: 0 15px; color: var(--primary); text-decoration: none; font-size: 14px; }
+        :root {
+            --primary: #2563eb;
+            --hover-bg: #eff6ff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --bg-color: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 { margin: 0; font-size: 2.2rem; color: var(--primary); }
+        .tagline { color: var(--text-sub); margin-top: 10px; font-size: 1.1rem; }
+
+        /* THE VERTICAL STACK */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            gap: 16px; /* Space between buttons */
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tool-link {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background: white;
+            padding: 18px 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-main);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-sizing: border-box;
+        }
+
+        .tool-link:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            background-color: var(--hover-bg);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.1);
+        }
+
+        .icon {
+            font-size: 30px;
+            margin-right: 20px;
+            background: #f1f5f9;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .tool-name { font-size: 1.1rem; font-weight: 600; }
+
+        /* FOOTER FOR ADSENSE APPROVAL */
+        footer {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            margin-top: auto;
+        }
+
+        .footer-nav { margin-bottom: 20px; }
+        .footer-nav a {
+            color: var(--text-sub);
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .footer-nav a:hover { color: var(--primary); }
+
+        .copyright { font-size: 0.85rem; color: #94a3b8; }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>MathHub Pro</h1>
-        <p>Precise mathematical tools for students and professionals in Mancherial.</p>
-    </div>
 
-    <div class="grid">
-        <a href="standard.html" class="card"><div class="icon">🔢</div><div class="name">Standard Calc</div></a>
-        <br>
-        <a href="geometry.html" class="card"><div class="icon">📐</div><div class="name">Geometry Lab</div></a>
-        <br>
-        <a href="percentage.html" class="card"><div class="icon">📊</div><div class="name">GST & Percent</div></a>
-        <br>
-        <a href="age.html" class="card"><div class="icon">🎂</div><div class="name">Age Calculator</div></a>
-        <br>
-        <a href="discount.html" class="card"><div class="icon">🛍️</div><div class="name">Discount Calc</div></a>
-        <br>
-        <a href="converter.html" class="card"><div class="icon">🔄</div><div class="name">Unit Converter</div></a>
-        <br>
-    </div>
+    <header>
+        <h1>MathHub Pro</h1>
+        <p class="tagline">Calculators for Mancherial's Students & Professionals</p>
+    </header>
+
+    <main class="main-content">
+        <a href="standard.html" class="tool-link">
+            <div class="icon">🔢</div>
+            <div class="tool-name">Standard Calculator</div>
+        </a>
+
+        <a href="geometry.html" class="tool-link">
+            <div class="icon">📐</div>
+            <div class="tool-name">Geometry Lab (2D & 3D)</div>
+        </a>
+
+        <a href="percentage.html" class="tool-link">
+            <div class="icon">📊</div>
+            <div class="tool-name">GST & Percentage Tool</div>
+        </a>
+
+        <a href="age.html" class="tool-link">
+            <div class="icon">🎂</div>
+            <div class="tool-name">Precise Age Calculator</div>
+        </a>
+
+        <a href="discount.html" class="tool-link">
+            <div class="icon">🛍️</div>
+            <div class="tool-name">Discount & Savings</div>
+        </a>
+
+        <a href="converter.html" class="tool-link">
+            <div class="icon">🔄</div>
+            <div class="tool-name">Universal Unit Converter</div>
+        </a>
+    </main>
 
     <footer>
-        <div class="footer-links">
+        <nav class="footer-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="privacy.html">Privacy Policy</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <p style="font-size: 12px; color: #6b7280; margin-top: 20px;">&copy; 2026 MathHub Pro. All Rights Reserved.</p>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <p class="copyright">&copy; 2026 MathHub Pro. All educational content is verified for accuracy.</p>
     </footer>
+
 </body>
 </html>
