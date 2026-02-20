@@ -4,22 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - MathHub Pro</title>
-    <link rel="icon" href="https://share.google/images/Rp6rkkgATphOVmv9v">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; padding: 20px; background: #f4f7f9; text-align: center; }
-        .contact-card { max-width: 500px; margin: 50px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h1 { color: #1a73e8; }
-        .email-link { font-size: 20px; color: #d93025; font-weight: bold; text-decoration: none; }
+        :root { --primary: #2563eb; --text: #1e293b; --bg: #f8fafc; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background: white; padding: 30px 20px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+        .container { max-width: 600px; margin: 40px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; }
+        h1 { color: var(--primary); }
+        .contact-info { margin: 30px 0; font-size: 1.1rem; }
+        .email-link { display: inline-block; background: var(--primary); color: white; padding: 15px 30px; border-radius: 12px; text-decoration: none; font-weight: bold; transition: 0.3s; margin-top: 20px; }
+        .email-link:hover { transform: translateY(-3px); box-shadow: 0 10px 15px rgba(37, 99, 235, 0.2); }
+        .back-btn { text-decoration: none; color: var(--primary); font-weight: 600; display: block; margin-bottom: 20px; }
+        footer { margin-top: auto; padding: 30px; text-align: center; color: #64748b; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <div class="contact-card">
-        <h1>Contact Us</h1>
-        <p>Have a suggestion or found a bug? We'd love to hear from you!</p>
-        <p>Email us at:</p>
-        <a href="mailto:support@mathhubpro.com" class="email-link">support@mathhubpro.com</a>
-        <br><br>
-        <a href="index.html" style="color: #666; text-decoration: none;">← Back to Home</a>
+
+    <header>
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        <h1>Get in Touch</h1>
+    </header>
+
+    <div class="container">
+        <p>Have a suggestion for a new calculator? Or did you find a bug? We would love to hear from you!</p>
+        
+        <div class="contact-info">
+            <p><strong>Location:</strong> Mancherial, Telangana, India</p>
+            <p><strong>Response Time:</strong> Within 24 Hours</p>
+        </div>
+
+        <p>You can reach Mahib at:</p>
+        <a href="mailto:moizcity123@gmail.com" class="email-link">📧 Send us an Email</a>
+        
+        <p style="margin-top: 30px; font-size: 0.9rem; color: #64748b;">
+            Direct Email: <strong>mahib112@gmail.com</strong>
+        </p>
     </div>
+
+    <footer>
+        &copy; 2026 MathHub Pro | Serving the Educational Community
+    </footer>
+
 </body>
 </html>
