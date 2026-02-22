@@ -4,33 +4,47 @@
     <title>Math Master 100 | MathHub Pro</title>
     <style>
         body { font-family: 'Poppins', sans-serif; text-align: center; background: #1a1a2e; color: white; margin: 0; overflow: hidden; }
-        #game-container { max-width: 600px; margin: 5vh auto; padding: 20px; border-radius: 20px; background: #16213e; border: 3px solid #0f3460; }
-        .stats { display: flex; justify-content: space-between; font-size: 1.2rem; margin-bottom: 20px; color: #4ecca3; }
-        #question { font-size: 80px; font-weight: bold; margin: 40px 0; text-shadow: 0 0 20px #4ecca3; }
-        input { background: #0f3460; border: none; border-bottom: 4px solid #4ecca3; color: white; font-size: 40px; width: 200px; text-align: center; outline: none; padding: 10px; }
-        #progress-wrapper { width: 100%; height: 20px; background: #0f3460; border-radius: 10px; margin-top: 30px; overflow: hidden; position: relative; }
-        #progress-bar { height: 100%; width: 0%; background: #4ecca3; transition: 0.3s; }
-        /* Timer bar style */
-        #timer-bar { position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: rgba(233, 69, 96, 0.3); z-index: 1; transition: width 1s linear; }
-        .level-badge { background: #e94560; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; }
-        #timer-text { color: #e94560; font-weight: bold; }
+        #game-container { max-width: 600px; margin: 5vh auto; padding: 20px; border-radius: 20px; background: #16213e; border: 3px solid #0f3460; position: relative; }
+        
+        /* Time Bar at the very top */
+        #time-wrapper { width: 100%; height: 8px; background: #0f3460; border-radius: 10px; margin-bottom: 20px; overflow: hidden; }
+        #time-bar { height: 100%; width: 100%; background: #e94560; transition: width 1s linear; box-shadow: 0 0 10px #e94560; }
+
+        .stats { display: flex; justify-content: space-between; font-size: 1.1rem; color: #4ecca3; margin-bottom: 10px; }
+        #question { font-size: 85px; font-weight: bold; margin: 30px 0; text-shadow: 0 0 20px #4ecca3; }
+        input { background: #0f3460; border: none; border-bottom: 4px solid #4ecca3; color: white; font-size: 45px; width: 180px; text-align: center; outline: none; padding: 10px; border-radius: 10px 10px 0 0; }
+        
+        /* Level Progress Bar at the bottom */
+        .progress-label { display: flex; justify-content: space-between; font-size: 0.8rem; color: #6c757d; margin-top: 25px; margin-bottom: 5px; }
+        #level-wrapper { width: 100%; height: 12px; background: #0f3460; border-radius: 10px; overflow: hidden; border: 1px solid #1a1a2e; }
+        #level-bar { height: 100%; width: 1%; background: #4ecca3; transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 0 10px #4ecca3; }
+        
+        .level-badge { background: #e94560; padding: 3px 12px; border-radius: 20px; font-size: 0.8rem; color: white; }
     </style>
 </head>
 <body>
 
 <div id="game-container">
+    <div id="time-wrapper">
+        <div id="time-bar"></div>
+    </div>
+
     <div class="stats">
-        <span>LVL <b id="level">1</b>/100</span>
-        <span id="timer-text">TIME: <b id="seconds">25</b>s</span>
         <span>SCORE: <b id="score">0</b></span>
+        <span class="level-badge" id="difficulty">EASY</span>
+        <span>TIME: <b id="seconds">25</b>s</span>
     </div>
 
     <div id="question">? + ?</div>
-    <input type="number" id="answer" placeholder="Ans" autofocus autocomplete="off">
+    <input type="number" id="answer" placeholder="?" autofocus autocomplete="off">
 
-    <div id="progress-wrapper">
-        <div id="timer-bar"></div> <div id="progress-bar" style="position: relative; z-index: 2;"></div> </div>
-    <p id="msg" style="color: #6c757d; margin-top: 10px;">Difficulty: <span id="difficulty">EASY</span></p>
+    <div class="progress-label">
+        <span>Progress to Level 100</span>
+        <span>LVL <b id="level">1</b></span>
+    </div>
+    <div id="level-wrapper">
+        <div id="level-bar"></div>
+    </div>
 </div>
 
 <script>
@@ -43,7 +57,7 @@
         timerInterval = setInterval(() => {
             timeLeft--;
             document.getElementById('seconds').innerText = timeLeft;
-            document.getElementById('timer-bar').style.width = (timeLeft / 25 * 100) + "%";
+            document.getElementById('time-bar').style.width = (timeLeft / 25 * 100) + "%";
 
             if (timeLeft <= 0) {
                 endGame();
@@ -54,8 +68,8 @@
     function endGame() {
         gameActive = false;
         clearInterval(timerInterval);
-        alert("Time is up! 🕒\nFinal Score: " + score + "\nLevel: " + level);
-        location.reload(); // Restarts the game
+        alert("GAME OVER! 🏁\nLevel Reached: " + level + "\nFinal Score: " + score);
+        location.reload();
     }
 
     function generateTask() {
@@ -80,14 +94,13 @@
             n2 = Math.floor(Math.random() * n1);
             currentAns = n1 - n2;
         } else if (op === '*') {
-            n1 = Math.floor(Math.random() * (level > 50 ? 15 : 10)) + 2;
-            n2 = Math.floor(Math.random() * (level > 70 ? 12 : 8)) + 2;
+            n1 = Math.floor(Math.random() * (level > 50 ? 12 : 8)) + 2;
+            n2 = Math.floor(Math.random() * (level > 70 ? 10 : 6)) + 2;
             currentAns = n1 * n2;
         } else if (op === '/') {
-            n2 = Math.floor(Math.random() * 9) + 2;
+            n2 = Math.floor(Math.random() * 8) + 2;
             currentAns = Math.floor(Math.random() * 10) + 1;
             n1 = n2 * currentAns;
-            currentAns = n1 / n2;
         }
 
         document.getElementById('question').innerText = `${n1} ${op} ${n2}`;
@@ -109,12 +122,12 @@
             score += 10;
             if (level < 100) level++;
             
-            // Give a small time bonus for correct answers (+2 seconds)
-            timeLeft = Math.min(timeLeft + 2, 25); 
+            // +1 second bonus for correct answers
+            timeLeft = Math.min(timeLeft + 1, 25); 
             
             document.getElementById('score').innerText = score;
             document.getElementById('level').innerText = level;
-            document.getElementById('progress-bar').style.width = level + "%";
+            document.getElementById('level-bar').style.width = level + "%";
             
             e.target.value = '';
             generateTask();
