@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Master | MathHub Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; background: #f0f2f5; }
+        #game-container { background: white; max-width: 500px; margin: 50px auto; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .stat-box { display: flex; justify-content: space-around; font-weight: bold; color: #555; }
+        #question { font-size: 60px; margin: 20px 0; color: #2c3e50; }
+        input { font-size: 30px; width: 150px; padding: 10px; border: 3px solid #3498db; border-radius: 10px; text-align: center; outline: none; }
+        .btn { background: #3498db; color: white; padding: 15px 30px; border: none; border-radius: 10px; font-size: 20px; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: #2980b9; transform: scale(1.05); }
+        #timer-bar { height: 10px; background: #e74c3c; width: 100%; border-radius: 5px; margin-top: 20px; transition: width 0.1s linear; }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div class="stat-box">
+            <span>Level: <span id="level">1</span></span>
+            <span>Score: <span id="score">0</span></span>
+            <span>High Score: <span id="highScore">0</span></span>
+        </div>
+        
+        <div id="game-ui">
+            <div id="question">? + ?</div>
+            <input type="number" id="answer" placeholder="?" autofocus>
+            <div id="timer-bar"></div>
+        </div>
+
+        <div id="start-screen" style="display:none;">
+            <h1>Math Master 🚀</h1>
+            <button class="btn" onclick="startGame()">Start Challenge</button>
+        </div>
+    </div>
+
+    <script>
+        let score = 0; let level = 1; let timeLeft = 10; let timer; let currentAns;
+        const highScore = localStorage.getItem('mathHubHS') || 0;
+        document.getElementById('highScore').innerText = highScore;
+
+        function generateQuestion() {
+            let max = level * 5; // Difficulty increases with levels
+            let n1 = Math.floor(Math.random() * max) + 1;
+            let n2 = Math.floor(Math.random() * max) + 1;
+            let ops = ['+', '-', '*'];
+            let op = ops[Math.floor(Math.random() * (level > 3 ? 3 : 2))]; // Multi introduced at lvl 4
+            
+            if (op === '+') currentAns = n1 + n2;
+            else if (op === '-') { currentAns = n1; n1 = n1 + n2; } // Avoid negative answers
+            else currentAns = n1 * n2;
+
+            document.getElementById('question').innerText = `${n1} ${op} ${n2}`;
+            resetTimer();
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            timeLeft = 10;
+            timer = setInterval(() => {
+                timeLeft -= 0.1;
+                document.getElementById('timer-bar').style.width = (timeLeft * 10) + "%";
+                if (timeLeft <= 0) gameOver();
+            }, 100);
+        }
+
+        function gameOver() {
+            clearInterval(timer);
+            if (score > highScore) localStorage.setItem('mathHubHS', score);
+            alert(`Time's Up! Final Score: ${score}\nLevel Reached: ${level}`);
+            location.reload();
+        }
+
+        document.getElementById('answer').addEventListener('input', (e) => {
+            if (parseInt(e.target.value) === currentAns) {
+                score += level;
+                if (score % 5 === 0) level++; // Level up every 5 points
+                document.getElementById('score').innerText = score;
+                document.getElementById('level').innerText = level;
+                e.target.value = '';
+                generateQuestion();
+            }
+        });
+
+        function startGame() { generateQuestion(); }
+        window.onload = startGame;
+    </script>
+</body>
+</html>
