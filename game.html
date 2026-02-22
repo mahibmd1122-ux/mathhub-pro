@@ -8,9 +8,12 @@
         .stats { display: flex; justify-content: space-between; font-size: 1.2rem; margin-bottom: 20px; color: #4ecca3; }
         #question { font-size: 80px; font-weight: bold; margin: 40px 0; text-shadow: 0 0 20px #4ecca3; }
         input { background: #0f3460; border: none; border-bottom: 4px solid #4ecca3; color: white; font-size: 40px; width: 200px; text-align: center; outline: none; padding: 10px; }
-        #progress-wrapper { width: 100%; height: 20px; background: #0f3460; border-radius: 10px; margin-top: 30px; overflow: hidden; }
+        #progress-wrapper { width: 100%; height: 20px; background: #0f3460; border-radius: 10px; margin-top: 30px; overflow: hidden; position: relative; }
         #progress-bar { height: 100%; width: 0%; background: #4ecca3; transition: 0.3s; }
+        /* Timer bar style */
+        #timer-bar { position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: rgba(233, 69, 96, 0.3); z-index: 1; transition: width 1s linear; }
         .level-badge { background: #e94560; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; }
+        #timer-text { color: #e94560; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -18,7 +21,7 @@
 <div id="game-container">
     <div class="stats">
         <span>LVL <b id="level">1</b>/100</span>
-        <span class="level-badge" id="difficulty">EASY</span>
+        <span id="timer-text">TIME: <b id="seconds">25</b>s</span>
         <span>SCORE: <b id="score">0</b></span>
     </div>
 
@@ -26,20 +29,41 @@
     <input type="number" id="answer" placeholder="Ans" autofocus autocomplete="off">
 
     <div id="progress-wrapper">
-        <div id="progress-bar"></div>
-    </div>
-    <p style="color: #6c757d; margin-top: 10px;">Answer quickly to rank up!</p>
+        <div id="timer-bar"></div> <div id="progress-bar" style="position: relative; z-index: 2;"></div> </div>
+    <p id="msg" style="color: #6c757d; margin-top: 10px;">Difficulty: <span id="difficulty">EASY</span></p>
 </div>
 
 <script>
     let level = 1; let score = 0; let currentAns = 0;
+    let timeLeft = 25;
+    let gameActive = true;
+    let timerInterval;
+
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            document.getElementById('seconds').innerText = timeLeft;
+            document.getElementById('timer-bar').style.width = (timeLeft / 25 * 100) + "%";
+
+            if (timeLeft <= 0) {
+                endGame();
+            }
+        }, 1000);
+    }
+
+    function endGame() {
+        gameActive = false;
+        clearInterval(timerInterval);
+        alert("Time is up! 🕒\nFinal Score: " + score + "\nLevel: " + level);
+        location.reload(); // Restarts the game
+    }
 
     function generateTask() {
+        if(!gameActive) return;
+        
         let n1, n2, op;
-        // Increase range as level grows
         let range = 5 + (level * 2); 
         
-        // Decide Operators based on level
         let ops = ['+'];
         if (level > 5) ops.push('-');
         if (level > 15) ops.push('*');
@@ -53,7 +77,7 @@
             currentAns = n1 + n2;
         } else if (op === '-') {
             n1 = Math.floor(Math.random() * range) + 10;
-            n2 = Math.floor(Math.random() * n1); // Avoid negative
+            n2 = Math.floor(Math.random() * n1);
             currentAns = n1 - n2;
         } else if (op === '*') {
             n1 = Math.floor(Math.random() * (level > 50 ? 15 : 10)) + 2;
@@ -62,7 +86,8 @@
         } else if (op === '/') {
             n2 = Math.floor(Math.random() * 9) + 2;
             currentAns = Math.floor(Math.random() * 10) + 1;
-            n1 = n2 * currentAns; // Ensures whole number
+            n1 = n2 * currentAns;
+            currentAns = n1 / n2;
         }
 
         document.getElementById('question').innerText = `${n1} ${op} ${n2}`;
@@ -78,9 +103,14 @@
     }
 
     document.getElementById('answer').addEventListener('input', (e) => {
+        if (!gameActive) return;
+        
         if (parseInt(e.target.value) === currentAns) {
             score += 10;
             if (level < 100) level++;
+            
+            // Give a small time bonus for correct answers (+2 seconds)
+            timeLeft = Math.min(timeLeft + 2, 25); 
             
             document.getElementById('score').innerText = score;
             document.getElementById('level').innerText = level;
@@ -91,7 +121,10 @@
         }
     });
 
-    window.onload = generateTask;
+    window.onload = () => {
+        generateTask();
+        startTimer();
+    };
 </script>
 </body>
 </html>
