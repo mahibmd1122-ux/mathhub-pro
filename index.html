@@ -181,44 +181,48 @@
             <div class="icon">🔄</div>
             <div class="tool-name">Universal Unit Converter</div>
         </a>
-
-            <div class="tool-card" onclick="location.href='currency.html'">
+<div class="tool-card" onclick="location.href='currency.html'">
     <div class="icon">🌍</div>
     <h3>Currency Converter</h3>
-    <p>Check live global exchange rates.</p>
-    <button class="white-link-btn">Open Tool</button>
+    <p>Check live rates for 160+ countries.</p>
+    <button class="bordered-white-btn">Open Tool</button>
 </div>
 
 <style>
     .tool-card {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
-        padding: 20px;
+        padding: 25px;
         border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         text-align: center;
         cursor: pointer;
         transition: 0.3s;
-        width: 250px;
+        width: 260px;
     }
 
-    .tool-card:hover {
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.15);
-    }
-
-    .white-link-btn {
+    /* THE BORDERED WHITE BUTTON */
+    .bordered-white-btn {
         background: #ffffff;
         color: #1a1a2e;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 8px;
+        border: 2px solid #4ecca3; /* Subtle green border to match result color */
+        padding: 12px 20px;
+        border-radius: 12px;
         font-weight: bold;
         margin-top: 15px;
         cursor: pointer;
         width: 100%;
+        transition: 0.3s;
+    }
+
+    .bordered-white-btn:hover {
+        background: #f0f0f0;
+        border-color: #ffffff; /* Border changes on hover */
+        transform: translateY(-3px);
     }
 </style>
+
+            
 
   </a>
         
