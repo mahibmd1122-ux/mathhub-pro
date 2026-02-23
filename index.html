@@ -182,54 +182,60 @@
             <div class="tool-name">Universal Unit Converter</div>
         </a>
 
-            <div class="card" onclick="location.href'currency.html">
-    <div class="icon">🌍</div>
-    <h3>Currency Pro</h3>
-    <p>Live exchange rates for 160+ countries. Updates every 15 mins.</p>
-    <button class="launch-btn">Open Tool</button>
+            <div class="tool-card" onclick="location.href='currency.html'">
+    <div class="tool-icon">💵</div>
+    <h3>Global Currency</h3>
+    <p>Real-time exchange rates for 160+ world currencies.</p>
+    <button class="main-action-btn">Open Converter</button>
 </div>
 
 <style>
-    .card {
+    /* Styling to match your "Other" buttons */
+    .tool-card {
         background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(15px);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 20px;
+        padding: 25px;
         border-radius: 20px;
         text-align: center;
         cursor: pointer;
-        transition: 0.3s;
-        animation: fadeIn 1s ease;
+        transition: all 0.4s ease;
+        margin: 15px;
+        display: inline-block;
+        width: 280px;
     }
 
-    .card:hover {
-        transform: translateY(-10px);
+    .tool-card:hover {
+        transform: translateY(-10px) scale(1.02);
         background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
     }
 
-    .icon { font-size: 40px; margin-bottom: 10px; }
+    .tool-icon { font-size: 45px; margin-bottom: 10px; }
     
-    h3 { margin: 10px 0; color: #4ecca3; }
+    h3 { color: #4ecca3; margin: 10px 0; font-size: 22px; }
     
-    p { font-size: 14px; color: #ccc; }
+    p { color: #ccc; font-size: 13px; line-height: 1.5; }
 
-    .launch-btn {
-        background: #e94560;
+    .main-action-btn {
+        background: #e94560; /* Matches your red buttons */
         color: white;
         border: none;
-        padding: 10px 20px;
-        border-radius: 10px;
+        padding: 12px 24px;
+        border-radius: 12px;
         margin-top: 15px;
         font-weight: bold;
         cursor: pointer;
+        width: 100%;
+        transition: 0.3s;
     }
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.9); }
-        to { opacity: 1; transform: scale(1); }
+    .main-action-btn:hover {
+        background: #ff4d6d;
+        box-shadow: 0 0 15px rgba(233, 69, 96, 0.5);
     }
 </style>
+
 
             
   </a>
