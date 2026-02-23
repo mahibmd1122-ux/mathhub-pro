@@ -180,6 +180,56 @@
         <a href="converter.html" class="tool-link">
             <div class="icon">🔄</div>
             <div class="tool-name">Universal Unit Converter</div>
+
+            <div class="card" onclick="location.href='currency-converter.html'">
+    <div class="icon">🌍</div>
+    <h3>Currency Pro</h3>
+    <p>Live exchange rates for 160+ countries. Updates every 15 mins.</p>
+    <button class="launch-btn">Open Tool</button>
+</div>
+
+<style>
+    .card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.3s;
+        animation: fadeIn 1s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .icon { font-size: 40px; margin-bottom: 10px; }
+    
+    h3 { margin: 10px 0; color: #4ecca3; }
+    
+    p { font-size: 14px; color: #ccc; }
+
+    .launch-btn {
+        background: #e94560;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin-top: 15px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+</style>
+
             
   </a>
         
