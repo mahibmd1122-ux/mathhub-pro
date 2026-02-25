@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mathhub.pro/sitemap.xml
+Sitemap: https://www.mathhub.pro/sitemap.xml
