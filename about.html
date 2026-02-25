@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | MathHub Pro - Our Mission & Accuracy Standards</title>
+    <title>MathHub Pro | Professional Mathematical Tools</title>
     
     <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdcpxm4Sz4BcQjo9iMs4xyHuSI8wq6Vl9s7bSjx9bs-Eeiy4XbNzdzmSg&s">
+    <link rel="shortcut icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdcpxm4Sz4BcQjo9iMs4xyHuSI8wq6Vl9s7bSjx9bs-Eeiy4XbNzdzmSg&s">
     
-    <meta name="description" content="Learn about MathHub Pro, our commitment to 100% mathematical accuracy, and our mission to provide free, high-speed calculation tools to students in Mancherial and worldwide.">
+    <link rel="canonical" href="https://www.mathhub.pro/" />
+    
+    <meta name="description" content="MathHub Pro offers a suite of high-precision mathematical tools including age calculators, currency converters, and geometry solvers for students and professionals.">
+
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C5KMGS6VML', { 'page_path': location.pathname });
+    </script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
 
     <style>
         :root {
             --primary: #2563eb;
             --secondary: #1A5276;
             --text-main: #1e293b;
-            --text-sub: #475569;
+            --text-sub: #334155;
             --bg-color: #f8fafc;
         }
 
@@ -23,7 +36,9 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
-            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
@@ -34,40 +49,101 @@
         }
 
         h1 { margin: 0; font-size: 2.2rem; color: var(--primary); }
-        h2 { color: var(--secondary); margin-top: 30px; font-size: 1.5rem; border-left: 4px solid var(--primary); padding-left: 15px; }
+        .tagline { color: var(--text-sub); margin-top: 10px; font-size: 1.1rem; }
 
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 40px;
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            gap: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tool-link {
+            display: flex;
+            align-items: center;
+            width: 100%;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 18px 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-main);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-sizing: border-box;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-            text-align: center;
+        .tool-link:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            background-color: #eff6ff;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.1);
         }
 
-        .stat-card {
-            padding: 20px;
+        .icon {
+            font-size: 30px;
+            margin-right: 20px;
             background: #f1f5f9;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 12px;
         }
 
-        .stat-number { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: block; }
-        .stat-label { font-size: 0.85rem; color: var(--text-sub); text-transform: uppercase; }
+        .tool-name { font-size: 1.1rem; font-weight: 600; }
+
+        .feature-box {
+            background: #fff;
+            border: 2px solid #3498db;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .play-btn {
+            background: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(26, 82, 118, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(26, 82, 118, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(26, 82, 118, 0); }
+        }
+
+        .seo-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            line-height: 1.8;
+            color: #1e293b;
+            background: #ffffff;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+        }
 
         footer {
             background: white;
             padding: 40px 20px;
             text-align: center;
             border-top: 1px solid #e2e8f0;
-            margin-top: 40px;
+            margin-top: auto;
         }
 
         .footer-nav a {
@@ -77,60 +153,65 @@
             font-size: 0.9rem;
         }
 
-        .back-home {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
+        .copyright { font-size: 0.85rem; color: #475569; margin-top: 15px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>About MathHub Pro</h1>
-    <p>The Standard for Mathematical Precision</p>
+    <h1>MathHub Pro</h1>
+    <p class="tagline">Fast and Accurate Calculators</p>
 </header>
 
-<div class="container">
-    <a href="index.html" class="back-home">← Back to Tools</a>
-
-    <h2>Our Mission</h2>
-    <p>At <strong>MathHub Pro</strong>, we believe that high-quality mathematical tools should be accessible to everyone, everywhere. Founded in <strong>Mancherial, Telangana</strong>, our platform was created to bridge the gap between complex academic formulas and daily practical needs. We are dedicated to providing a "Zero-Error" environment for students, educators, and business owners.</p>
-
-    <div class="stats-grid">
-        <div class="stat-card">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Accuracy Rate</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number">631ms</span>
-            <span class="stat-label">Avg. Load Time</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number">15+</span>
-            <span class="stat-label">Pro Tools</span>
-        </div>
-    </div>
-
-    <h2>What Makes Us Different?</h2>
-    <p>While many websites offer basic calculators, MathHub Pro is engineered for <strong>Performance</strong> and <strong>Privacy</strong>. Our 2026 infrastructure is built on the global Cloudflare network, ensuring that users in India, the United States, and France experience the same lightning-fast response times.</p>
-    
-    <ul>
-        <li><strong>Privacy First:</strong> We do not store your calculation data or personal inputs. Your work remains yours.</li>
-        <li><strong>Mobile Optimized:</strong> Our tools are designed to work perfectly on limited data connections and older mobile devices.</li>
-        <li><strong>Verified Logic:</strong> Every tool, from our Geometry Lab to our Currency Converter, is cross-checked against standard mathematical proofs.</li>
-    </ul>
-
-    <h2>Our Local Roots, Global Vision</h2>
-    <p>While our servers serve thousands of global requests daily, our heart remains in our local community. We specifically optimize our tools (like the GST and Percentage calculators) to help small business owners and students in the <strong>Telangana region</strong> navigate their daily financial and academic challenges with confidence.</p>
-
-    <h2>The Technology</h2>
-    <p>MathHub Pro utilizes state-of-the-art web technology to deliver an elite user experience. By maintaining 100% "Good" Core Web Vitals, we ensure that our platform stays at the top of search engine rankings, making reliable math help available to anyone with an internet connection.</p>
-    
-    <p style="font-style: italic; color: var(--text-sub); border-top: 1px solid #eee; padding-top: 20px;">"Mathematics is the music of reason. At MathHub Pro, we make sure that music is clear, accurate, and available to all." — The MathHub Team</p>
+<div class="feature-box">
+  <h2 style="color: #1e293b; margin-top: 0;">🎮 NEW: Math Master Challenge</h2>
+  <p style="color: #334155;">Test your brain! Can you reach Level 100?</p>
+  <a href="game.html" class="play-btn">Play Now</a>
 </div>
+
+<main class="main-content">
+    <a href="standard.html" class="tool-link">
+        <div class="icon">🔢</div>
+        <div class="tool-name">Standard Calculator</div>
+    </a>
+    <a href="geometry.html" class="tool-link">
+        <div class="icon">📐</div>
+        <div class="tool-name">Geometry Lab (2D & 3D)</div>
+    </a>
+    <a href="percentage.html" class="tool-link">
+        <div class="icon">📊</div>
+        <div class="tool-name">GST & Percentage Tool</div>
+    </a>
+    <a href="age.html" class="tool-link">
+        <div class="icon">🎂</div>
+        <div class="tool-name">Precise Age Calculator</div>
+    </a>
+    <a href="discount.html" class="tool-link">
+        <div class="icon">🛍️</div>
+        <div class="tool-name">Discount & Savings</div>
+    </a>
+    <a href="converter.html" class="tool-link">
+        <div class="icon">🔄</div>
+        <div class="tool-name">Universal Unit Converter</div>
+    </a>
+    <a href="currency.html" class="tool-link">
+        <div class="icon">🌍</div>
+        <div class="tool-name">Currency Converter</div>
+    </a>
+</main>
+
+<section style="max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.8; color: #1e293b; background: #ffffff; border-radius: 15px; border: 1px solid #e2e8f0;">
+    <h2 style="color: var(--primary); font-size: 1.8rem;">Your All-in-One Digital Math Suite</h2>
+    
+    <p>Welcome to <strong>MathHub Pro</strong>, the ultimate online destination for high-precision calculation tools. Our mission is to simplify the complex world of mathematics by providing students, educators, and professionals with a centralized hub for every numerical need. From basic arithmetic to advanced geometric modeling, our suite is engineered for 100% accuracy and lightning-fast performance.</p>
+    
+    <p>Our <strong>Standard Calculator</strong> provides a familiar interface for daily tasks, while our <strong>Geometry Lab</strong> allows for the exploration of both 2D and 3D shapes, providing instant area, volume, and perimeter results. For those in the business sector, our <strong>GST & Percentage Tool</strong> and <strong>Discount & Savings</strong> calculator help you manage finances with confidence and speed.</p>
+    
+    <p>We understand that precision matters most when it counts. Whether you are a student preparing for exams, a developer needing unit conversions, or a curious mind looking for a <strong>Precise Age breakdown</strong>, MathHub Pro delivers results you can trust. Our tools are optimized for mobile devices, ensuring that even on limited data connections, you experience zero lag and a <strong>631ms load time</strong>.</p>
+    
+    <p>As a privacy-focused platform, we ensure that your calculations remain secure and your experience remains fluid. We are proud to serve a global community, from our local roots in <strong>Mancherial, Telangana</strong>, to users in <strong>France, the USA, and India</strong>. Explore our range of professional calculators today and discover why thousands of users trust MathHub Pro for their daily mathematical challenges.</p>
+</section>
+
 
 <footer>
     <nav class="footer-nav">
@@ -139,7 +220,7 @@
         <a href="privacy.html">Privacy Policy</a>
         <a href="contact.html">Contact Us</a>
     </nav>
-    <p class="copyright">&copy; 2026 MathHub Pro. All Rights Reserved.</p>
+    <p class="copyright">&copy; 2026 MathHub Pro. All educational content is verified for accuracy.</p>
 </footer>
 
 </body>
