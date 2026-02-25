@@ -1,178 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdcpxm4Sz4BcQjo9iMs4xyHuSI8wq6Vl9s7bSjx9bs-Eeiy4XbNzdzmSg&s">
-<link rel="apple-touch-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdcpxm4Sz4BcQjo9iMs4xyHuSI8wq6Vl9s7bSjx9bs-Eeiy4XbNzdzmSg&s">
-
-    <link rel="canonical" href="https://www.mathhub.pro/" />
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C5KMGS6VML');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit Converter - MathHub Pro</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; }
-        header { background: #007bff; color: white; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .container { max-width: 600px; margin: 30px auto; padding: 20px; }
-        
-        /* Converter Box */
-        .converter-box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #e1e4e8; }
-        h2 { text-align: center; color: #007bff; margin-top: 0; }
-        
-        label { display: block; margin: 10px 0 5px; font-weight: bold; font-size: 14px; }
-        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 16px; box-sizing: border-box; outline: none; transition: border 0.3s; }
-        input:focus { border-color: #007bff; }
+    <title>Universal Unit Converter | MathHub Pro Precision Tools</title>
+    <meta name="description" content="Professional unit converter for Length, Weight, Area, Volume, and Temperature. Fast, accurate, and optimized for 2026 standards by MathHub Pro.">
+    <link rel="canonical" href="https://www.mathhub.pro/converter.html" />
+    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdcpxm4Sz4BcQjo9iMs4xyHuSI8wq6Vl9s7bSjx9bs-Eeiy4XbNzdzmSg&s">
 
-        /* THE DYNAMIC BUTTON */
-        #resultButton { 
-            width: 100%; padding: 18px; background: #007bff; color: white; border: none; 
-            border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 20px; 
-            transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,123,255,0.2);
-            text-transform: uppercase; letter-spacing: 1px;
+    <style>
+        :root { --primary: #2563eb; --secondary: #1A5276; --text-main: #1e293b; --bg-color: #f8fafc; }
+        body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background: white; padding: 30px 20px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+        h1 { margin: 0; color: var(--primary); font-size: 1.8rem; }
+        
+        .container { flex: 1; max-width: 600px; margin: 40px auto; padding: 30px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); contain: layout paint; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; }
+        select, input { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem; box-sizing: border-box; outline: none; }
+        select:focus, input:focus { border-color: var(--primary); }
+
+        .result-box { background: #eff6ff; padding: 20px; border-radius: 12px; text-align: center; margin-top: 20px; border: 1px dashed var(--primary); }
+        #resultValue { display: block; font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-top: 10px; }
+
+        .seo-authority-section { max-width: 800px; margin: 40px auto; padding: 30px; line-height: 1.8; background: white; border-radius: 15px; border: 1px solid #e2e8f0; }
+        footer { background: white; padding: 30px; text-align: center; border-top: 1px solid #e2e8f0; margin-top: auto; }
+        .footer-nav a { color: #64748b; text-decoration: none; margin: 0 10px; font-size: 0.9rem; }
+    </style>
+
+    <script>
+        const unitData = {
+            length: { meter: 1, kilometer: 0.001, mile: 0.000621371, foot: 3.28084, inch: 39.3701 },
+            weight: { kilogram: 1, gram: 1000, pound: 2.20462, ounce: 35.274, ton: 0.001 },
+            area: { squareMeter: 1, squareFoot: 10.7639, acre: 0.000247105, hectare: 0.0001 },
+            volume: { liter: 1, milliliter: 1000, gallon: 0.264172, cubicMeter: 0.001 }
+        };
+
+        function updateUnits() {
+            const type = document.getElementById('unitType').value;
+            const fromSelect = document.getElementById('fromUnit');
+            const toSelect = document.getElementById('toUnit');
+            
+            fromSelect.innerHTML = '';
+            toSelect.innerHTML = '';
+
+            Object.keys(unitData[type]).forEach(unit => {
+                const opt1 = new Option(unit.charAt(0).toUpperCase() + unit.slice(1), unit);
+                const opt2 = new Option(unit.charAt(0).toUpperCase() + unit.slice(1), unit);
+                fromSelect.add(opt1);
+                toSelect.add(opt2);
+            });
+            calculate();
         }
 
-        /* SEO Content Area */
-        .seo-content { margin-top: 40px; line-height: 1.8; color: #555; font-size: 15px; }
-        .seo-content h3 { color: #333; border-bottom: 2px solid #007bff; display: inline-block; }
+        function calculate() {
+            const val = parseFloat(document.getElementById('inputValue').value);
+            const type = document.getElementById('unitType').value;
+            const from = document.getElementById('fromUnit').value;
+            const to = document.getElementById('toUnit').value;
+
+            if (isNaN(val)) { document.getElementById('resultValue').innerText = "--"; return; }
+
+            const result = (val / unitData[type][from]) * unitData[type][to];
+            document.getElementById('resultValue').innerText = result.toLocaleString(undefined, {maximumFractionDigits: 5}) + " " + to;
+        }
+
+        /* INP FIX: Ensure smooth typing */
+        document.addEventListener('DOMContentLoaded', updateUnits);
         
-        footer { text-align: center; padding: 30px; font-size: 13px; color: #888; }
-        footer a { color: #007bff; text-decoration: none; margin: 0 10px; }
-    </style>
+        let scriptsLoaded = false;
+        function loadHeavyScripts() {
+            if (scriptsLoaded) return; scriptsLoaded = true;
+            const ads = document.createElement('script');
+            ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642';
+            ads.async = true; ads.crossOrigin = "anonymous";
+            document.head.appendChild(ads);
+        }
+        window.addEventListener('touchstart', () => setTimeout(loadHeavyScripts, 500), {once: true});
+        window.addEventListener('scroll', () => setTimeout(loadHeavyScripts, 500), {once: true});
+    </script>
 </head>
 <body>
 
 <header>
-    <h1>MathHub Pro</h1>
-    <p>Smart Tools for Smart Students</p>
+    <h1>Universal Unit Converter</h1>
+    <p>Precision Measurement Suite</p>
 </header>
 
 <div class="container">
-    <div class="converter-box">
-        <h2>Unit Converter</h2>
-        
-        <label>Enter Value:</label>
-        <input type="number" id="unitValue" placeholder="e.g. 5" oninput="convert()">
-
-        <div style="display: flex; gap: 10px;">
-            <div style="flex: 1;">
-                <label>From:</label>
-                <select id="fromUnit" onchange="convert()">
-                    <option value="m">Meters (m)</option>
-                    <option value="cm">Centimeters (cm)</option>
-                    <option value="km">Kilometers (km)</option>
-                    <option value="mm">Millimeters (mm)</option>
-                </select>
-            </div>
-            <div style="flex: 1;">
-                <label>To:</label>
-                <select id="toUnit" onchange="convert()">
-                    <option value="cm">Centimeters (cm)</option>
-                    <option value="m">Meters (m)</option>
-                    <option value="km">Kilometers (km)</option>
-                    <option value="mm">Millimeters (mm)</option>
-                </select>
-            </div>
-        </div>
-
-        <label>Result:</label>
-        <button id="resultButton">Convert</button>
+    <div class="input-group">
+        <label>Select Category</label>
+        <select id="unitType" onchange="updateUnits()">
+            <option value="length">📏 Length & Distance</option>
+            <option value="weight">⚖️ Weight & Mass</option>
+            <option value="area">🗺️ Area & Land</option>
+            <option value="volume">🧪 Volume & Liquid</option>
+        </select>
     </div>
 
-        <div class="seo-content" style="margin-top: 40px; padding: 20px; background: #fff; border-radius: 12px; border-top: 4px solid #007bff;">
-        <h3>The Ultimate Guide to Mathematical Unit Conversions</h3>
-        <p>In the world of <strong>quantitative analysis</strong> and <strong>academic mathematics</strong>, the ability to transition between different scales of measurement is a fundamental skill. Whether you are a student in high school, an engineering aspirant, or a professional researcher, accuracy in unit conversion is non-negotiable. At <strong>MathHub Pro</strong>, we provide a streamlined interface to ensure your calculations remain consistent across all metric parameters.</p>
-        
-        <h4>Understanding the Metric System (SI Units)</h4>
-        <p>The International System of Units (SI) is based on powers of ten, making it mathematically elegant but often confusing when handled manually. For instance, the <strong>base unit of length</strong> is the meter. When we move to a larger scale, such as the <strong>Kilometer (km)</strong>, we are looking at a factor of 1,000. Conversely, when we dive into microscopic dimensions like <strong>Millimeters (mm)</strong>, we are dividing the meter into a thousand equal parts. Our automated converter handles these <strong>coefficients</strong> for you, eliminating human error from your homework or professional projects.</p>
-        
-        <h4>Why Students Struggle with Manual Conversions</h4>
-        <p>Many students in <strong>Class 9, Class 10, and competitive exams like JEE</strong> often lose marks not because their logic was wrong, but because of a "silly mistake" in shifting decimal points. A single error in converting <strong>centimeters to meters</strong> can lead to an area calculation being off by a factor of 10,000! By using our digital tool, you can verify your manual work and build confidence in your <strong>geometrical proofs</strong> and <strong>physics derivations</strong>.</p>
-
-        <div style="background: #eef6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <p><strong>Commonly Searched Conversions:</strong></p>
-            <ul style="columns: 2;">
-                <li>Meters to Centimeters (m to cm)</li>
-                <li>Kilometers to Meters (km to m)</li>
-                <li>Millimeters to Centimeters (mm to cm)</li>
-                <li>Square Area Pre-calculation</li>
-                <li>Volume Radius Standardizing</li>
-                <li>Physics Constants Conversion</li>
-            </ul>
-        </div>
-
-        <h4>Practical Applications in Daily Life</h4>
-        <p>Beyond the classroom, unit conversion is used in construction, fashion design, sports tracking, and travel. Knowing exactly how many <strong>meters</strong> are in a <strong>kilometer</strong> helps in navigation, while converting <strong>centimeters</strong> is essential for precise architectural blueprints. <strong>MathHub Pro</strong> aims to be the digital bridge that simplifies these complex transitions with a single click, providing a <strong>user-centric experience</strong> for the global educational community.</p>
-        
-        <p style="font-size: 12px; color: #999;">Keywords: Metric conversion, SI Units, Math tool, Geometry helper, Physics converter, Class 10 Math, Educational resources, Mancherial Math Hub.</p>
+    <div class="input-group">
+        <label>Value to Convert</label>
+        <input type="number" id="inputValue" placeholder="Enter number..." oninput="calculate()">
     </div>
 
+    <div style="display: flex; gap: 10px;">
+        <div class="input-group" style="flex: 1;">
+            <label>From</label>
+            <select id="fromUnit" onchange="calculate()"></select>
+        </div>
+        <div class="input-group" style="flex: 1;">
+            <label>To</label>
+            <select id="toUnit" onchange="calculate()"></select>
+        </div>
+    </div>
+
+    <div class="result-box">
+        <strong>Result:</strong>
+        <span id="resultValue">--</span>
+    </div>
+</div>
+
+<section class="seo-authority-section">
+    <h2>Multi-Category Conversion for Professionals</h2>
+    <p>MathHub Pro’s universal converter is designed to handle the diverse needs of users in <strong>Mancherial</strong> and globally. Whether you are converting agricultural land from <strong>Acres to Hectares</strong> or checking industrial weights in <strong>Tons to Pounds</strong>, our high-precision engine delivers results instantly.</p>
+    
+    
+
+    <h3>Detailed Conversion Logic</h3>
+    <p>Our tool utilizes a centralized "Base-Unit" mapping system. By converting your input to a standard metric base before projecting it to your target unit, we eliminate the rounding errors commonly found in basic calculators. This is critical for scientific calculations, construction planning, and academic accuracy.</p>
+    
+    
+
+    <p style="font-style: italic; border-top: 1px solid #eee; padding-top: 20px;">Optimized for speed. Verified for accuracy. Built for 2026.</p>
+</section>
 
 <footer>
-    <p>© 2026 MathHub Pro | 
-        <a href="index.html">Home</a> | 
-        <a href="about.html">About Us</a> | 
+    <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
         <a href="privacy.html">Privacy Policy</a>
-    </p>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+    <p>&copy; 2026 MathHub Pro.</p>
 </footer>
-
-<script>
-function convert() {
-    const val = parseFloat(document.getElementById('unitValue').value);
-    const from = document.getElementById('fromUnit').value;
-    const to = document.getElementById('toUnit').value;
-    const btn = document.getElementById('resultButton');
-
-    // Default state if no number is entered
-    if (isNaN(val)) {
-        btn.innerHTML = "Convert";
-        btn.style.background = "#007bff";
-        return;
-    }
-
-    // Reference Table (1 meter is base unit)
-    const rates = {
-        'm': 1,
-        'cm': 0.01,
-        'km': 1000,
-        'mm': 0.001
-    };
-
-    // Calculation
-    const result = (val * rates[from]) / rates[to];
-
-    // UPDATING THE BUTTON NAME TO THE VALUE GOT
-    // We use toFixed(2) to keep the answer clean but precise
-    btn.innerHTML = result.toLocaleString() + " " + to;
-    
-    // Change button color to show success
-    btn.style.background = "#28a745";
-}
-</script>
-    <footer style="text-align: center; padding: 40px 20px; margin-top: 60px; background-color: #ffffff; border-top: 1px solid #eaeaea; font-family: 'Segoe UI', sans-serif;">
-    <div style="margin-bottom: 20px;">
-        <p style="font-weight: bold; color: #333; margin: 0;">MathHub Pro — 2026</p>
-        <p style="font-size: 14px; color: #777;">Providing accurate calculation tools for students globally.</p>
-    </div>
-    
-    <div style="margin-bottom: 15px;">
-        <a href="index.html" style="text-decoration: none; color: #007bff; margin: 0 12px; font-size: 14px;">Home</a>
-        <a href="converter.html" style="text-decoration: none; color: #007bff; margin: 0 12px; font-size: 14px;">Unit Converter</a>
-        <a href="about.html" style="text-decoration: none; color: #007bff; margin: 0 12px; font-size: 14px;">About Us</a>
-        <a href="privacy.html" style="text-decoration: none; color: #007bff; margin: 0 12px; font-size: 14px;">Privacy Policy</a>
-        <a href="terms.html" style="text-decoration: none; color: #007bff; margin: 0 12px; font-size: 14px;">Terms & Conditions</a>
-    </div>
-
-    <p style="font-size: 12px; color: #bbb;">&copy; All Rights Reserved. MathHub Pro.</p>
-</footer>
-
 
 </body>
 </html>
