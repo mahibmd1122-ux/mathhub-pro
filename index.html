@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdcpxm4Sz4BcQjo9iMs4xyHuSI8wq6Vl9s7bSjx9bs-Eeiy4XbNzdzmSg&s">
     <link rel="canonical" href="https://www.mathhub.pro/" />
     
-    <meta name="description" content="MathHub Pro offers a suite of high-precision mathematical tools including age calculators, currency converters, and geometry solvers for students and professionals.">
+    <meta name="description" content="MathHub Pro offers high-precision mathematical tools including age calculators, currency converters, and geometry solvers. Trusted in Mancherial, Telangana, and globally.">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
     <script>
@@ -25,6 +25,206 @@
             --primary: #2563eb;
             --hover-bg: #eff6ff;
             --text-main: #1e293b;
-            --text-sub: #34495e; /* Darker for better contrast */
+            --text-sub: #34495e;
             --bg-color: #f8fafc;
         }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 { margin: 0; font-size: 2.2rem; color: var(--primary); }
+        .tagline { color: var(--text-sub); margin-top: 10px; font-size: 1.1rem; }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            gap: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tool-link {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background: white;
+            padding: 18px 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-main);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-sizing: border-box;
+        }
+
+        .tool-link:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            background-color: var(--hover-bg);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.1);
+        }
+
+        .icon {
+            font-size: 30px;
+            margin-right: 20px;
+            background: #f1f5f9;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .tool-name { font-size: 1.1rem; font-weight: 600; }
+
+        .feature-box {
+            background: #fff;
+            border: 2px solid #3498db;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .play-btn {
+            background: #1A5276; 
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(26, 82, 118, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(26, 82, 118, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(26, 82, 118, 0); }
+        }
+
+        .seo-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            line-height: 1.8;
+            color: #1e293b;
+            background: #ffffff;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        footer {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            margin-top: auto;
+        }
+
+        .footer-nav a {
+            color: var(--text-sub);
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.9rem;
+        }
+
+        .copyright { font-size: 0.85rem; color: #64748b; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MathHub Pro</h1>
+    <p class="tagline">Fast and Accurate Calculators</p>
+</header>
+
+<div class="feature-box">
+  <h2 style="color: #2c3e50; margin-top: 0;">🎮 NEW: Math Master Challenge</h2>
+  <p style="color: #2c3e50;">Test your brain! Can you reach Level 100?</p>
+  <a href="game.html" class="play-btn">Play Now</a>
+</div>
+
+<main class="main-content">
+    <a href="standard.html" class="tool-link">
+        <div class="icon">🔢</div>
+        <div class="tool-name">Standard Calculator</div>
+    </a>
+
+    <a href="geometry.html" class="tool-link">
+        <div class="icon">📐</div>
+        <div class="tool-name">Geometry Lab (2D & 3D)</div>
+    </a>
+
+    <a href="percentage.html" class="tool-link">
+        <div class="icon">📊</div>
+        <div class="tool-name">GST & Percentage Tool</div>
+    </a>
+
+    <a href="age.html" class="tool-link">
+        <div class="icon">🎂</div>
+        <div class="tool-name">Precise Age Calculator</div>
+    </a>
+
+    <a href="discount.html" class="tool-link">
+        <div class="icon">🛍️</div>
+        <div class="tool-name">Discount & Savings</div>
+    </a>
+
+    <a href="converter.html" class="tool-link">
+        <div class="icon">🔄</div>
+        <div class="tool-name">Universal Unit Converter</div>
+    </a>
+
+    <a href="currency.html" class="tool-link">
+        <div class="icon">🌍</div>
+        <div class="tool-name">Currency Converter</div>
+    </a>
+</main>
+
+<section class="seo-section">
+    <h2 style="color: var(--primary); font-size: 1.8rem;">Your All-in-One Digital Math Suite</h2>
+    
+    <p>Welcome to <strong>MathHub Pro</strong>, the ultimate online destination for high-precision calculation tools. Our mission is to simplify the complex world of mathematics by providing students, educators, and professionals with a centralized hub for every numerical need. From basic arithmetic to advanced geometric modeling, our suite is engineered for 100% accuracy and lightning-fast performance.</p>
+    
+    <p>Our <strong>Standard Calculator</strong> provides a familiar interface for daily tasks, while our <strong>Geometry Lab</strong> allows for the exploration of both 2D and 3D shapes, providing instant area, volume, and perimeter results. For those in the business sector, our <strong>GST & Percentage Tool</strong> and <strong>Discount & Savings</strong> calculator help you manage finances with confidence and speed.</p>
+    
+    <p>We understand that precision matters most when it counts. Whether you are a student preparing for exams, a developer needing unit conversions, or a curious mind looking for a <strong>precise age breakdown</strong> for government exams, MathHub Pro delivers results you can trust. Our tools are optimized for mobile performance, ensuring that high-quality mathematical resources are accessible even on limited data connections.</p>
+    
+    <p>By combining academic rigor with modern web technology, we aim to foster mathematical literacy and financial accuracy. We are proud to serve a global community, from our local roots in <strong>Mancherial, Telangana</strong>, to users in <strong>France, the USA, and India</strong>. Explore our range of professional calculators today and discover why thousands of users trust MathHub Pro for their daily challenges.</p>
+</section>
+
+<footer>
+    <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+    <p class="copyright">&copy; 2026 MathHub Pro. All educational content is verified for accuracy.</p>
+</footer>
+
+</body>
+</html>
