@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathHub Pro | Professional Mathematical Tools & Calculators</title>
+    <title>MathHub Pro | 6-Tool Precision Suite</title>
     
-    <meta name="description" content="MathHub Pro provides 100% accurate mathematical tools including geometry solvers, age calculators, and unit converters. Engineered for speed and precision in Mancherial and worldwide.">
-    <link rel="canonical" href="https://www.mathhub.pro/" />
+    <meta name="description" content="Professional mathematical suite featuring 6 precision tools: Standard, Geometry, GST, Age, Unit, and Currency converters. Engineered for Mancherial users.">
     <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdcpxm4Sz4BcQjo9iMs4xyHuSI8wq6Vl9s7bSjx9bs-Eeiy4XbNzdzmSg&s">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -18,7 +21,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
@@ -28,131 +31,151 @@
         }
 
         header { background: white; padding: 40px 20px; text-align: center; border-bottom: 1px solid #e2e8f0; }
-        h1 { margin: 0; color: var(--primary); }
+        h1 { margin: 0; color: var(--primary); font-size: 2.4rem; letter-spacing: -1px; }
 
-        /* INP & REFLOW FIX: This kills the 632ms lag and the "Forced Reflow" error */
+        /* CORE WEB VITALS FIX: Layout Containment */
         .feature-box { 
-            background: #fff; 
-            border: 2px solid #3498db; 
-            border-radius: 15px; 
-            padding: 20px; 
-            margin: 20px auto; 
-            max-width: 600px; 
-            text-align: center;
-            contain: layout paint; /* Critical: Prevents the button click from shaking the whole page */
+            background: #fff; border: 2px solid #3498db; border-radius: 15px; 
+            padding: 30px; margin: 20px auto; max-width: 600px; text-align: center;
+            contain: content; min-height: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .play-btn { 
-            background: var(--secondary); 
-            color: white; 
-            padding: 12px 30px; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            display: inline-block; 
-            font-weight: bold;
-            touch-action: manipulation; /* Fixes 300ms mobile tap delay */
-            will-change: transform;
+            background: var(--secondary); color: white; padding: 14px 40px; 
+            text-decoration: none; border-radius: 8px; display: inline-block; 
+            font-weight: bold; touch-action: manipulation;
         }
 
+        /* 6-TOOL GRID */
         .main-content {
-            flex: 1; display: flex; flex-direction: column; align-items: center;
-            padding: 40px 20px; gap: 16px; max-width: 500px; margin: 0 auto; width: 100%; box-sizing: border-box;
+            flex: 1; display: grid; grid-template-columns: 1fr;
+            gap: 16px; max-width: 800px; margin: 0 auto; width: 100%; 
+            padding: 20px; box-sizing: border-box;
         }
 
         .tool-link {
-            display: flex; align-items: center; width: 100%; background: white; padding: 18px 24px;
+            display: flex; align-items: center; background: white; padding: 20px 24px;
             border-radius: 16px; text-decoration: none; color: var(--text-main); border: 1px solid #e2e8f0;
-            transition: transform 0.2s;
+            transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .tool-link:hover { transform: translateY(-3px); border-color: var(--primary); }
-        .icon { font-size: 30px; margin-right: 20px; background: #f1f5f9; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; }
+        .tool-link:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        
+        /* ICON STABILITY FIX */
+        .icon { 
+            font-size: 24px; margin-right: 20px; background: #f1f5f9; 
+            width: 55px; height: 55px; min-width: 55px;
+            display: flex; align-items: center; justify-content: center; border-radius: 14px; 
+        }
 
-        /* THE BIG BLAH (SEO Authority Content) */
+        .tool-info h3 { margin: 0; font-size: 1.1rem; color: var(--text-main); }
+        .tool-info p { margin: 4px 0 0; font-size: 0.85rem; color: #64748b; }
+
         .seo-authority-section { 
             max-width: 800px; margin: 40px auto; padding: 30px; line-height: 1.8; 
             background: white; border-radius: 15px; border: 1px solid #e2e8f0;
+            content-visibility: auto; /* Performance optimization for below-fold */
         }
 
-        footer { background: white; padding: 30px; text-align: center; border-top: 1px solid #e2e8f0; margin-top: auto; }
-        .footer-nav a { color: #64748b; text-decoration: none; margin: 0 10px; font-size: 0.9rem; }
+        footer { background: white; padding: 40px 20px; text-align: center; border-top: 1px solid #e2e8f0; }
+
+        /* RESPONSIVE TABLET/DESKTOP GRID */
+        @media (min-width: 650px) {
+            .main-content { grid-template-columns: 1fr 1fr; }
+        }
     </style>
-
-    <script>
-        /* THE "INSTANT FEEL" LOGIC: Prioritizes the UI before AdSense loads */
-        document.addEventListener('click', function(e) {
-            if(e.target.classList.contains('play-btn') || e.target.closest('.tool-link')) {
-                // Tells the browser to show the "button press" before doing heavy work
-                requestAnimationFrame(() => {}); 
-            }
-        }, {passive: true});
-
-        let scriptsLoaded = false;
-        function loadHeavyScripts() {
-            if (scriptsLoaded) return;
-            scriptsLoaded = true;
-
-            // Load Google Tag Manager & AdSense
-            const gtm = document.createElement('script');
-            gtm.src = 'https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML';
-            gtm.async = true;
-            document.head.appendChild(gtm);
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-C5KMGS6VML');
-
-            const ads = document.createElement('script');
-            ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642';
-            ads.async = true;
-            ads.crossOrigin = "anonymous";
-            document.head.appendChild(ads);
-        }
-
-        /* DELAYED LOADING: Gives the user 500ms to click before AdSense starts blocking threads */
-        window.addEventListener('scroll', () => setTimeout(loadHeavyScripts, 500), {once: true});
-        window.addEventListener('touchstart', () => setTimeout(loadHeavyScripts, 500), {once: true});
-        setTimeout(loadHeavyScripts, 4000); 
-    </script>
 </head>
 <body>
 
 <header>
     <h1>MathHub Pro</h1>
-    <p>Precision Calculation Engine</p>
+    <p style="color: #64748b; margin-top: 5px;">Elite Mathematical Ecosystem</p>
 </header>
 
 <div class="feature-box">
-  <h2>🎮 NEW: Math Master Challenge</h2>
-  <p>Test your brain! Can you reach Level 100?</p>
-  <a href="game.html" class="play-btn">Play Now</a>
+  <h2>🎮 Math Master Challenge</h2>
+  <p>Test your speed and logic in our 2026 Competitive Arena.</p>
+  <a href="game.html" class="play-btn">START SESSION</a>
 </div>
 
 <main class="main-content">
-    <a href="standard.html" class="tool-link"><div class="icon">🔢</div><div>Standard Calculator</div></a>
-    <a href="geometry.html" class="tool-link"><div class="icon">📐</div><div>Geometry Lab</div></a>
-    <a href="percentage.html" class="tool-link"><div class="icon">📊</div><div>GST & Percentage</div></a>
-    <a href="age.html" class="tool-link"><div class="icon">🎂</div><div>Age Calculator</div></a>
-    <a href="converter.html" class="tool-link"><div class="icon">🔄</div><div>Unit Converter</div></a>
-    <a href="currency.html" class="tool-link"><div class="icon">🌍</div><div>Currency Converter</div></a>
+    <a href="standard.html" class="tool-link">
+        <div class="icon">🔢</div>
+        <div class="tool-info"><h3>Standard Calculator</h3><p>Fast arithmetic engine.</p></div>
+    </a>
+    
+    <a href="geometry.html" class="tool-link">
+        <div class="icon">📐</div>
+        <div class="tool-info"><h3>Geometry Lab</h3><p>Shapes & volume solvers.</p></div>
+    </a>
+    
+    <a href="percentage.html" class="tool-link">
+        <div class="icon">📊</div>
+        <div class="tool-info"><h3>GST & Percentage</h3><p>Financial precision tools.</p></div>
+    </a>
+    
+    <a href="age.html" class="tool-link">
+        <div class="icon">🎂</div>
+        <div class="tool-info"><h3>Age Calculator</h3><p>Precise date differentials.</p></div>
+    </a>
+    
+    <a href="converter.html" class="tool-link">
+        <div class="icon">🔄</div>
+        <div class="tool-info"><h3>Unit Converter</h3><p>Universal metric switch.</p></div>
+    </a>
+    
+    <a href="currency.html" class="tool-link">
+        <div class="icon">🌍</div>
+        <div class="tool-info"><h3>Currency Converter</h3><p>Real-time global rates.</p></div>
+    </a>
 </main>
 
 <section class="seo-authority-section">
-    <h2 style="color: var(--secondary);">Expert Mathematical Solutions from Mancherial</h2>
-    <p>Welcome to <strong>MathHub Pro</strong>, the leading provider of high-speed calculation tools. Our mission is to provide students and professionals with a distraction-free environment for complex math. From 3D geometry proofs to real-time currency fluctuations, our 2026 engine is optimized for 100% accuracy and sub-second response times.</p>
-    <p>Serving our community in <strong>Mancherial, Telangana</strong>, and users across the globe, we prioritize a "user-first" experience by eliminating lag and ensuring our tools are accessible to everyone, regardless of their device speed.</p>
+    <h2 style="color: var(--secondary);">Professional Math Solutions in Mancherial</h2>
+    <p>MathHub Pro is the definitive digital archive for students and professionals. Our <strong>6-Tool Suite</strong> is meticulously calibrated for accuracy, ensuring that whether you are calculating 3D geometry in <strong>Mancherial, Telangana</strong> or performing global currency conversions, you receive sub-second response times with 100% data integrity.</p>
 </section>
 
 <footer>
-    <nav class="footer-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="contact.html">Contact Us</a>
+    <nav style="margin-bottom: 20px;">
+        <a href="about.html" style="margin: 0 15px; color: #64748b; text-decoration: none; font-size: 0.9rem;">About</a>
+        <a href="privacy.html" style="margin: 0 15px; color: #64748b; text-decoration: none; font-size: 0.9rem;">Privacy</a>
+        <a href="contact.html" style="margin: 0 15px; color: #64748b; text-decoration: none; font-size: 0.9rem;">Contact</a>
     </nav>
-    <p>&copy; 2026 MathHub Pro. All tools verified for professional precision.</p>
+    <p style="color: #94a3b8; font-size: 0.8rem;">&copy; 2026 MathHub Pro. All tools verified for 2026 academic standards.</p>
 </footer>
+
+<script>
+    let scriptsLoaded = false;
+    function loadHeavyScripts() {
+        if (scriptsLoaded) return;
+        scriptsLoaded = true;
+
+        // Analytics (G-C5KMGS6VML)
+        const gtm = document.createElement('script');
+        gtm.src = 'https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML';
+        gtm.async = true;
+        document.head.appendChild(gtm);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C5KMGS6VML');
+
+        // AdSense (ca-pub-8159480759292642)
+        const ads = document.createElement('script');
+        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642';
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+    }
+
+    // Protection against LCP lag: Load only after user interaction or 3.5s
+    window.addEventListener('scroll', loadHeavyScripts, {once: true, passive: true});
+    window.addEventListener('touchstart', loadHeavyScripts, {once: true, passive: true});
+    window.addEventListener('mousemove', loadHeavyScripts, {once: true, passive: true});
+    setTimeout(loadHeavyScripts, 3500);
+</script>
 
 </body>
 </html>
