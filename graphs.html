@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C5KMGS6VML');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
+
+    <title>Graph Plotter | MathHub Pro Elite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon-cyan: #00f2ff; --neon-purple: #bc13fe; --dark-core: #050505; }
+        @keyframes gridMove { from { background-position: 0 0; } to { background-position: 50px 50px; } }
+        body { margin: 0; background: var(--dark-core); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px); background-size: 50px 50px; animation: gridMove 4s linear infinite; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        .container { width: 95%; max-width: 600px; margin: 20px auto; padding: 25px; background: rgba(0,0,0,0.9); border: 1px solid rgba(0, 242, 255, 0.2); border-top: 4px solid var(--neon-cyan); border-radius: 15px; backdrop-filter: blur(10px); }
+        .back-link { color: var(--neon-purple); text-decoration: none; font-family: 'Orbitron'; font-size: 0.7rem; letter-spacing: 1px; }
+        h1 { font-family: 'Orbitron'; text-align: center; color: #fff; text-shadow: 0 0 10px var(--neon-cyan); margin: 15px 0; font-size: 1.5rem; text-transform: uppercase; }
+        .input-row { display: flex; gap: 10px; margin-bottom: 15px; }
+        input { width: 100%; padding: 12px; background: #000; border: 1px solid var(--neon-purple); color: #fff; font-family: 'Rajdhani'; font-size: 1rem; border-radius: 5px; outline: none; }
+        canvas { background: #000; border: 1px solid #222; width: 100%; height: 300px; border-radius: 8px; margin-top: 10px; }
+        .calc-btn { width: 100%; padding: 15px; background: transparent; border: 1px solid var(--neon-cyan); color: #fff; font-family: 'Orbitron'; cursor: pointer; transition: 0.3s; letter-spacing: 2px; }
+        .calc-btn:hover { background: var(--neon-cyan); color: #000; box-shadow: 0 0 20px var(--neon-cyan); }
+        .seo-terminal { margin-top: 30px; border-top: 1px solid #333; padding-top: 20px; color: #888; font-size: 0.9rem; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">[ RETURN_TO_HUB ]</a>
+        <h1>GRAPH PLOTTER</h1>
+        <p style="font-size: 0.8rem; text-align: center; color: var(--neon-cyan);">FUNCTION: y = ax² + bx + c</p>
+        <div class="input-row">
+            <input type="number" id="ga" placeholder="a (e.g. 0.1)">
+            <input type="number" id="gb" placeholder="b (0)">
+            <input type="number" id="gc" placeholder="c (0)">
+        </div>
+        <button class="calc-btn" onclick="plot()">MAP COORDINATES</button>
+        <canvas id="graphCanvas"></canvas>
+        <div class="seo-terminal">
+            <h2>Visual Mapping for 2026 Boards</h2>
+            <p>Our <b>Graph Plotter</b> provides real-time visualization for <b>Quadratic Functions</b> and linear equations. Essential for Class 11 students mastering coordinate geometry and calculus visualizers.</p>
+        </div>
+    </div>
+    
+    <script>
+        function plot() {
+            const canvas = document.getElementById('graphCanvas');
+            const ctx = canvas.getContext('2d');
+            const a = parseFloat(document.getElementById('ga').value) || 0;
+            const b = parseFloat(document.getElementById('gb').value) || 0;
+            const c = parseFloat(document.getElementById('gc').value) || 0;
+            
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            const w = canvas.width;
+            const h = canvas.height;
+            
+            ctx.clearRect(0, 0, w, h);
+            ctx.strokeStyle = '#333';
+            ctx.beginPath(); ctx.moveTo(w/2, 0); ctx.lineTo(w/2, h); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(0, h/2); ctx.lineTo(w, h/2); ctx.stroke();
+            
+            ctx.strokeStyle = '#00f2ff';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            for(let x = -w/2; x < w/2; x++) {
+                let scaledX = x / 20;
+                let scaledY = a * (scaledX * scaledX) + b * scaledX + c;
+                let plotX = w/2 + x;
+                let plotY = h/2 - (scaledY * 20);
+                if(x === -w/2) ctx.moveTo(plotX, plotY);
+                else ctx.lineTo(plotX, plotY);
+            }
+            ctx.stroke();
+        }
+        window.onload = plot;
+    </script>
+</body>
+</html>

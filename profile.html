@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathHub Pro | User Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon-cyan: #00f2ff; --neon-purple: #bc13fe; --dark-void: #020202; }
+        body { 
+            margin: 0; background: var(--dark-void); color: #e0e0e0; font-family: 'Rajdhani', sans-serif;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .container { max-width: 800px; margin: 50px auto; padding: 20px; }
+        .profile-card {
+            background: rgba(0,0,0,0.8); border: 1px solid var(--neon-cyan);
+            padding: 30px; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+        }
+        h1, h2 { font-family: 'Orbitron'; color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
+        .history-item {
+            background: rgba(255,255,255,0.05); border-left: 4px solid var(--neon-purple);
+            margin: 10px 0; padding: 15px; font-family: 'Orbitron'; font-size: 0.8rem;
+        }
+        .status-badge { color: var(--neon-purple); font-weight: bold; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <h1>> USER_PROFILE</h1>
+            <p>EMAIL: <span id="user-email" class="status-badge">LOADING...</span></p>
+            <p>RANK: <span class="status-badge">ELITE_MEMBER</span></p>
+            
+            <hr style="border: 0.5px solid #333; margin: 30px 0;">
+            
+            <h2>> CALCULATION_HISTORY</h2>
+            <div id="history-list">
+                <p>No data stored in local node yet...</p>
+            </div>
+            
+            <button onclick="window.location.href='index.html'" style="margin-top: 20px; background: var(--neon-cyan); border: none; padding: 10px 20px; font-family: 'Orbitron'; cursor: pointer;">BACK TO DASHBOARD</button>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCyeLN2tzrst4KTPA6vbLArf6AVgb1PxDo",
+            authDomain: "math-hub-123.firebaseapp.com",
+            projectId: "math-hub-123",
+            storageBucket: "math-hub-123.firebasestorage.app",
+            messagingSenderId: "649705586460",
+            appId: "1:649705586460:web:ce86e65db4bd6b275404d9"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                document.getElementById('user-email').innerText = user.email.toUpperCase();
+                loadHistory(user.uid);
+            } else {
+                window.location.href = "auth.html"; // Kick out if not logged in
+            }
+        });
+
+        async function loadHistory(uid) {
+            const hList = document.getElementById('history-list');
+            const q = query(collection(db, "calculations"), where("userId", "==", uid));
+            const querySnapshot = await getDocs(q);
+            
+            if (!querySnapshot.empty) {
+                hList.innerHTML = "";
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    hList.innerHTML += `
+                        <div class="history-item">
+                            [${data.type}] Result: ${data.result} <br>
+                            <small style="color:#555">${data.timestamp.toDate().toLocaleString()}</small>
+                        </div>`;
+                });
+            }
+        }
+    </script>
+</body>
+</html>

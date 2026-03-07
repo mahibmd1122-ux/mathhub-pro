@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C5KMGS6VML');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
+
+    <title>Trigonometry | MathHub Pro Elite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon-cyan: #00f2ff; --neon-purple: #bc13fe; --dark-core: #050505; }
+        @keyframes gridMove { from { background-position: 0 0; } to { background-position: 50px 50px; } }
+        body {
+            margin: 0; background: var(--dark-core); color: #e0e0e0; font-family: 'Rajdhani', sans-serif;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px; animation: gridMove 4s linear infinite;
+            display: flex; flex-direction: column; align-items: center; min-height: 100vh;
+        }
+        .container { width: 90%; max-width: 600px; margin: 50px auto; padding: 40px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--neon-cyan); border-top: 4px solid var(--neon-cyan); backdrop-filter: blur(10px); border-radius: 15px; }
+        h1 { font-family: 'Orbitron'; color: #fff; text-shadow: 0 0 10px var(--neon-cyan); text-align: center; }
+        .input-group { margin: 20px 0; }
+        label { display: block; font-family: 'Orbitron'; font-size: 0.8rem; color: var(--neon-cyan); margin-bottom: 10px; }
+        input, select { width: 100%; padding: 15px; background: rgba(0,0,0,0.5); border: 1px solid var(--neon-purple); color: #fff; font-family: 'Rajdhani'; font-size: 1.2rem; border-radius: 5px; }
+        .calc-btn { width: 100%; padding: 15px; background: transparent; border: 1px solid var(--neon-cyan); color: #fff; font-family: 'Orbitron'; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        .calc-btn:hover { background: var(--neon-cyan); color: #000; box-shadow: 0 0 20px var(--neon-cyan); }
+        .result-display { margin-top: 30px; text-align: center; padding: 20px; border: 1px dashed var(--neon-purple); }
+        .big-text { font-family: 'Orbitron'; font-size: 3rem; color: var(--neon-cyan); display: block; }
+        .seo-box { margin-top: 50px; padding: 30px; border-top: 1px solid #333; color: #777; font-size: 0.9rem; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" style="color:var(--neon-purple); text-decoration:none; font-family:Orbitron; font-size:0.7rem;">< RETURN TO HUB</a>
+        <h1>TRIGONOMETRY</h1>
+        <div class="input-group">
+            <label>SELECT FUNCTION</label>
+            <select id="func"><option value="sin">SIN</option><option value="cos">COS</option><option value="tan">TAN</option></select>
+        </div>
+        <div class="input-group">
+            <label>ANGLE (DEGREES)</label>
+            <input type="number" id="angle" placeholder="e.g. 45">
+        </div>
+        <button class="calc-btn" onclick="calcTrig()">CALCULATE VECTOR</button>
+        <div class="result-display" id="result-area" style="display:none;">
+            <label>OUTPUT VALUE:</label>
+            <span class="big-text" id="trig-output">0.000</span>
+        </div>
+        <div class="seo-box">
+            <h2>NCERT Class 10 & 11 Trigonometry Solutions</h2>
+            <p>Our <b>Free Trigonometry Calculator</b> is designed for Indian students tackling <b>Chapter 8 & 9 of Class 10 Math</b>. Whether you are solving for "Heights and Distances" or proving trigonometric identities, MathHub Pro provides instant, high-precision values. Ideal for <b>Class 11 & 12 PCM</b> students preparing for competitive exams like JEE, our toolkit ensures you never miss a vector calculation. Master Sin, Cos, and Tan with Elite Precision.</p>
+        </div>
+    </div>
+    <script>
+        function calcTrig() {
+            const f = document.getElementById('func').value;
+            const a = document.getElementById('angle').value * (Math.PI / 180);
+            let res = 0;
+            if(f === 'sin') res = Math.sin(a);
+            if(f === 'cos') res = Math.cos(a);
+            if(f === 'tan') res = Math.tan(a);
+            document.getElementById('result-area').style.display = 'block';
+            document.getElementById('trig-output').innerText = res.toFixed(4);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C5KMGS6VML');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
+
+    <title>Age Calculator | MathHub Pro Elite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon-cyan: #00f2ff; --neon-purple: #bc13fe; --dark-core: #050505; }
+        @keyframes gridMove { from { background-position: 0 0; } to { background-position: 50px 50px; } }
+        body { margin: 0; background: var(--dark-core); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px); background-size: 50px 50px; animation: gridMove 4s linear infinite; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        .container { width: 90%; max-width: 600px; margin: 40px auto; padding: 30px; background: rgba(0,0,0,0.85); border: 1px solid rgba(0, 242, 255, 0.2); border-top: 4px solid var(--neon-cyan); border-radius: 15px; backdrop-filter: blur(10px); }
+        .back-link { color: var(--neon-purple); text-decoration: none; font-family: 'Orbitron'; font-size: 0.7rem; letter-spacing: 1px; }
+        h1 { font-family: 'Orbitron'; text-align: center; color: #fff; text-shadow: 0 0 10px var(--neon-cyan); margin: 20px 0; font-size: 1.8rem; text-transform: uppercase; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; font-family: 'Orbitron'; font-size: 0.75rem; color: var(--neon-cyan); margin-bottom: 8px; }
+        input { width: 100%; padding: 15px; background: #000; border: 1px solid var(--neon-purple); color: #fff; font-family: 'Rajdhani'; font-size: 1.2rem; border-radius: 5px; box-sizing: border-box; outline: none; }
+        .calc-btn { width: 100%; padding: 18px; background: transparent; border: 1px solid var(--neon-cyan); color: #fff; font-family: 'Orbitron'; cursor: pointer; transition: 0.3s; letter-spacing: 2px; margin-top: 10px; }
+        .calc-btn:hover { background: var(--neon-cyan); color: #000; box-shadow: 0 0 20px var(--neon-cyan); }
+        .result-box { margin-top: 30px; padding: 25px; border: 1px dashed var(--neon-purple); text-align: center; display: none; background: rgba(188, 19, 254, 0.05); }
+        .big-output { font-family: 'Orbitron'; font-size: 3rem; color: var(--neon-cyan); display: block; text-shadow: 0 0 15px var(--neon-cyan); }
+        .seo-terminal { margin-top: 40px; border-top: 1px solid #333; padding-top: 25px; color: #888; font-size: 0.95rem; line-height: 1.8; }
+        .seo-terminal b { color: var(--neon-cyan); }
+    </style>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">[ RETURN_TO_HUB ]</a>
+        <h1>QUADRATIC ENGINE</h1>
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <input type="number" id="qa" placeholder="a">
+            <input type="number" id="qb" placeholder="b">
+            <input type="number" id="qc" placeholder="c">
+        </div>
+        <button class="calc-btn" onclick="calc()">SOLVE VARIABLE X</button>
+        <div class="result-box" id="rb">
+            <label>ROOTS (x₁, x₂):</label>
+            <span class="big-output" id="out" style="font-size: 1.5rem;">--</span>
+        </div>
+        <div class="seo-terminal">
+            <h2>Solving Quadratic Equations for Class 10</h2>
+            <p>Analyze <b>Quadratic Equations (ax² + bx + c)</b> using the discriminant method. Get instant roots for your <b>NCERT Algebra</b> homework. A core tool for every student's tactical arsenal.</p>
+        </div>
+    </div>
+    <script>
+        function calc() {
+            let a = document.getElementById('qa').value;
+            let b = document.getElementById('qb').value;
+            let c = document.getElementById('qc').value;
+            let d = (b * b) - (4 * a * c);
+            if(d < 0) document.getElementById('out').innerText = "Imaginary Roots";
+            else {
+                let r1 = ((-b + Math.sqrt(d)) / (2 * a)).toFixed(2);
+                let r2 = ((-b - Math.sqrt(d)) / (2 * a)).toFixed(2);
+                document.getElementById('out').innerText = "x1: " + r1 + " | x2: " + r2;
+            }
+            document.getElementById('rb').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C5KMGS6VML');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+<link rel="apple-touch-icon" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+
+    <title>Math Cheat Sheet | Class 10, 11, 12 Formulas - MathHub Pro</title>
+    <meta name="description" content="Ultimate last-minute revision math cheat sheet for Class 10, 11, and 12. All formulas for Algebra, Calculus, Trigonometry, and Geometry in one place.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --neon-cyan: #00f2ff;
+            --neon-purple: #bc13fe;
+            --dark-void: #020202;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(0, 242, 255, 0.15);
+        }
+
+        body {
+            margin: 0; background: var(--dark-void); color: #e0e0e0; font-family: 'Rajdhani', sans-serif;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* SIDEBAR (NCERT LINKS) */
+        .sidebar {
+            width: 70px; height: 100vh; background: rgba(0, 0, 0, 0.95); border-right: 1px solid var(--neon-cyan);
+            position: fixed; top: 0; left: 0; z-index: 1000; display: flex; flex-direction: column;
+            transition: width 0.4s; overflow: hidden; backdrop-filter: blur(20px);
+        }
+        .sidebar:hover { width: 280px; }
+        .side-logo { padding: 25px 15px; border-bottom: 1px solid var(--border); text-align: center; }
+        .side-logo img { width: 40px; filter: drop-shadow(0 0 10px var(--neon-cyan)); }
+        .nav-item { display: flex; align-items: center; padding: 20px 25px; text-decoration: none; color: #888; transition: 0.3s; white-space: nowrap; }
+        .nav-label { margin-left: 25px; font-family: 'Orbitron'; font-size: 0.75rem; opacity: 0; }
+        .sidebar:hover .nav-label { opacity: 1; }
+
+        /* HERO */
+        .hero {
+            margin-left: 70px; padding: 80px 20px; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1454165205744-3b78555e5572?w=1200');
+            background-size: cover; border-bottom: 2px solid var(--neon-purple);
+        }
+        .hero h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 8vw, 3.5rem); color: #fff; text-shadow: 0 0 20px var(--neon-cyan); margin: 0; }
+        .hero p { color: var(--neon-cyan); font-family: 'Orbitron'; font-size: 0.9rem; letter-spacing: 4px; margin-top: 10px; }
+
+        /* CONTENT AREA */
+        .revision-hub { margin-left: 70px; padding: 40px; max-width: 1100px; margin-right: auto; }
+        
+        .class-section { margin-bottom: 60px; }
+        .class-header { 
+            font-family: 'Orbitron'; font-size: 1.8rem; color: var(--neon-cyan); 
+            border-left: 4px solid var(--neon-purple); padding-left: 15px; margin-bottom: 30px;
+            background: rgba(188, 19, 254, 0.05); padding-top: 10px; padding-bottom: 10px;
+        }
+
+        .formula-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .formula-card { 
+            background: var(--glass); border: 1px solid var(--border); border-radius: 10px; padding: 20px;
+            transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .formula-card:hover { border-color: var(--neon-cyan); transform: scale(1.02); }
+        .formula-card h3 { font-family: 'Orbitron'; font-size: 0.9rem; color: var(--neon-purple); margin-top: 0; text-transform: uppercase; }
+        .formula-card p { font-family: 'Courier New', monospace; font-size: 1.1rem; color: #fff; line-height: 1.6; }
+
+        /* SEO SECTION */
+        .big-seo { margin-left: 70px; padding: 80px 40px; background: #050505; border-top: 1px solid var(--border); }
+        .seo-box h2 { font-family: 'Orbitron'; color: var(--neon-cyan); margin-bottom: 20px; }
+        .seo-box p { font-size: 1rem; line-height: 1.8; color: #888; margin-bottom: 20px; }
+        .keyword-tag { display: inline-block; padding: 4px 10px; border: 1px solid var(--neon-purple); border-radius: 4px; font-size: 0.7rem; margin: 3px; color: var(--neon-purple); }
+
+        footer { margin-left: 70px; padding: 40px; text-align: center; border-top: 1px solid var(--border); }
+
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .hero, .revision-hub, .big-seo, footer { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="side-logo">
+            <img src="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg" alt="Logo">
+        </div>
+        <div style="flex:1; overflow-y:auto;">
+            <script>
+                for(let i=1; i<=12; i++) {
+                    document.write(`<a href="ncert-class-${i}.html" class="nav-item"><i>${i.toString().padStart(2, '0')}</i><span class="nav-label">CLASS ${i} NCERT</span></a>`);
+                }
+            </script>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>LEGENDARY CHEAT SHEET</h1>
+        <p>REVISION PROTOCOL: CLASS 10 | 11 | 12</p>
+    </div>
+
+    <main class="revision-hub">
+
+        <section class="class-section">
+            <div class="class-header">CLASS 10: FOUNDATION BUFFS</div>
+            <div class="formula-grid">
+                <div class="formula-card">
+                    <h3>Quadratic Equations</h3>
+                    <p>Roots: x = [-b ± √(b² - 4ac)] / 2a<br>Discriminant: D = b² - 4ac</p>
+                </div>
+                <div class="formula-card">
+                    <h3>Trig Identities</h3>
+                    <p>sin²θ + cos²θ = 1<br>1 + tan²θ = sec²θ<br>1 + cot²θ = cosec²θ</p>
+                </div>
+                <div class="formula-card">
+                    <h3>Arithmetic Progression</h3>
+                    <p>aₙ = a + (n-1)d<br>Sₙ = n/2 [2a + (n-1)d]</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="class-section">
+            <div class="class-header">CLASS 11: INTERMEDIATE RAID</div>
+            <div class="formula-grid">
+                <div class="formula-card">
+                    <h3>Complex Numbers</h3>
+                    <p>z = a + ib<br>|z| = √(a² + b²)<br>Argument: θ = tan⁻¹(b/a)</p>
+                </div>
+                <div class="formula-card">
+                    <h3>Conic Sections</h3>
+                    <p>Parabola: y² = 4ax<br>Ellipse: x²/a² + y²/b² = 1<br>Hyperbola: x²/a² - y²/b² = 1</p>
+                </div>
+                <div class="formula-card">
+                    <h3>Limits & Derivatives</h3>
+                    <p>d/dx(xⁿ) = nxⁿ⁻¹<br>d/dx(sin x) = cos x<br>d/dx(cos x) = -sin x</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="class-section">
+            <div class="class-header">CLASS 12: ELITE CALCULUS</div>
+            <div class="formula-grid">
+                <div class="formula-card">
+                    <h3>Integration Hub</h3>
+                    <p>∫ xⁿ dx = xⁿ⁺¹/(n+1) + C<br>∫ 1/x dx = log|x| + C<br>∫ eˣ dx = eˣ + C</p>
+                </div>
+                <div class="formula-card">
+                    <h3>Matrices & Det</h3>
+                    <p>A⁻¹ = (1/|A|) * adj(A)<br>|A| = a₁₁(a₂₂a₃₃ - a₃₂a₂₃)...</p>
+                </div>
+                <div class="formula-card">
+                    <h3>Vector & 3D</h3>
+                    <p>a·b = |a||b|cosθ<br>a×b = |a||b|sinθ n̂<br>Dist: |ax₁+by₁+cz₁+d|/√(a²+b²+c²)</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <section class="big-seo">
+        <div class="seo-box">
+            <h2>The Ultimate Revision Guide for Mancherial & Global Students</h2>
+            <p>
+                Preparing for <strong>Board Exams 2026</strong> requires precision. Our MathHub Pro Cheat Sheet is the most downloaded resource for students in <strong>Mancherial, Telangana</strong>, and across India. We cover the entire <strong>NCERT syllabus</strong> for Classes 10, 11, and 12, ensuring that every identity, theorem, and formula is at your fingertips.
+            </p>
+            <p>
+                Whether you are studying for <strong>JEE Mains, NEET, or TS SSC</strong> exams, this revision protocol is optimized for quick recall. Our formulas include detailed breakdowns of Calculus, Algebra, Trigonometry, and Coordinate Geometry. Save this page for your final hour revision and boost your GPA with MathHub Pro's elite data injection.
+            </p>
+            <div style="margin-top:30px;">
+                <span class="keyword-tag">CLASS 10 MATH FORMULAS</span>
+                <span class="keyword-tag">CLASS 11 MATH NOTES</span>
+                <span class="keyword-tag">CLASS 12 CALCULUS CHEAT SHEET</span>
+                <span class="keyword-tag">NCERT SOLUTIONS PDF</span>
+                <span class="keyword-tag">BOARD EXAM REVISION 2026</span>
+                <span class="keyword-tag">MANCHERIAL EDUCATION HUB</span>
+                <span class="keyword-tag">FREE MATH TOOLS ONLINE</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="font-family: 'Orbitron'; font-size: 0.7rem; color: #444;">© 2026 MATHHUB PRO | SYSTEM CALIBRATED FOR .COM MIGRATION</p>
+    </footer>
+
+</body>
+</html>

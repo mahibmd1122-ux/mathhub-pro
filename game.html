@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Matrix Pro | 100 Levels of Elite Calculation</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C5KMGS6VML');</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --neon-cyan: #00f2ff;
+            --neon-purple: #bc13fe;
+            --dark-void: #020202;
+            --grid-color: rgba(0, 242, 255, 0.1);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0; padding: 0; background: var(--dark-void);
+            color: #fff; font-family: 'Rajdhani', sans-serif;
+            height: 100vh; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        /* ANIMATED GAMING BACKGROUND */
+        .bg-animation {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: perspective(500px) rotateX(60deg);
+            transform-origin: center top;
+            animation: moveGrid 3s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes moveGrid {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 50px; }
+        }
+
+        .terminal {
+            width: 95%; max-width: 500px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid var(--neon-cyan);
+            border-radius: 15px; padding: 30px;
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.3);
+            position: relative; backdrop-filter: blur(15px);
+        }
+
+        .header { display: flex; justify-content: space-between; font-family: 'Orbitron'; font-size: 0.9rem; margin-bottom: 10px; color: var(--neon-cyan); }
+
+        .bar-container { width: 100%; height: 8px; background: #111; border-radius: 4px; margin-bottom: 20px; overflow: hidden; border: 1px solid #333; }
+        #level-bar { width: 1%; height: 100%; background: var(--neon-purple); box-shadow: 0 0 10px var(--neon-purple); transition: 0.4s; }
+        #timer-bar { width: 100%; height: 100%; background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); transition: 0.1s linear; }
+
+        .question-area { font-family: 'Orbitron'; font-size: 2.8rem; text-align: center; margin: 20px 0; text-shadow: 0 0 15px var(--neon-cyan); }
+
+        input {
+            width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--neon-purple);
+            padding: 15px; color: #fff; font-family: 'Orbitron'; font-size: 1.8rem;
+            text-align: center; outline: none; border-radius: 8px; transition: 0.3s;
+        }
+        input:focus { box-shadow: 0 0 20px var(--neon-purple); }
+
+        .overlay {
+            display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.98); border-radius: 13px;
+            flex-direction: column; align-items: center; justify-content: center; z-index: 100;
+        }
+        .overlay h2 { font-family: 'Orbitron'; color: #ff0055; font-size: 2.2rem; margin-bottom: 10px; }
+
+        .btn {
+            background: transparent; border: 1px solid var(--neon-cyan); color: var(--neon-cyan);
+            padding: 12px 30px; font-family: 'Orbitron'; cursor: pointer; margin: 10px;
+            transition: 0.3s; font-size: 0.8rem;
+        }
+        .btn:hover { background: var(--neon-cyan); color: #000; box-shadow: 0 0 20px var(--neon-cyan); }
+        .btn-share { border-color: var(--neon-purple); color: var(--neon-purple); }
+
+        .stats-info { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animation"></div>
+
+    <div class="terminal">
+        <div class="header">
+            <span>PROGRESS: LVL <span id="lvl-num">1</span>/100</span>
+            <span>SCORE: <span id="score">0</span></span>
+        </div>
+        <div class="bar-container"><div id="level-bar"></div></div>
+
+        <div class="header" style="font-size: 0.7rem;"><span>TIME_REMAINING</span><span id="timer-text">20s</span></div>
+        <div class="bar-container"><div id="timer-bar"></div></div>
+
+        <div class="question-area" id="q-display">LOADING...</div>
+        <input type="number" id="ans-input" placeholder="RESULT?" autofocus autocomplete="off">
+
+        <div class="overlay" id="end-screen">
+            <h2>SYSTEM FAILURE</h2>
+            <p class="stats-info" id="final-stats">LEVEL: 1</p>
+            <div style="display:flex;">
+                <button class="btn" onclick="initGame()">RETRY_CORE</button>
+                <button class="btn btn-share" onclick="share()">SHARE_SCORE</button>
+            </div>
+            <a href="index.html" style="color:#444; text-decoration:none; margin-top:20px; font-size:0.7rem; font-family:'Orbitron'">> DISCONNECT</a>
+        </div>
+    </div>
+
+    <script>
+        let level = 1, score = 0, timeLeft = 20, timer, ans;
+        const input = document.getElementById('ans-input'),
+              qDisplay = document.getElementById('q-display'),
+              tBar = document.getElementById('timer-bar'),
+              lBar = document.getElementById('level-bar');
+
+        function generateQuestion() {
+            let n1, n2, op;
+            const ops = ['+', '-', '*', '/'];
+            
+            // Logic to prevent negative and non-integers
+            if(level <= 15) { 
+                n1 = rand(1, 15); n2 = rand(1, 15); op = ops[rand(0,1)]; 
+            } else if(level <= 35) { 
+                n1 = rand(10, 50); n2 = rand(10, 40); op = ops[rand(0,2)]; 
+            } else if(level <= 60) {
+                if(Math.random() > 0.75) return genPercent(); // Percentage integration
+                n1 = rand(10, 100); n2 = rand(2, 10); op = '*';
+            } else {
+                n1 = rand(50, 200); n2 = rand(10, 50); op = ops[rand(0,3)];
+            }
+
+            // Subtraction: No negatives
+            if(op === '-' && n1 < n2) { [n1, n2] = [n2, n1]; }
+            
+            // Division: No decimals (integers only)
+            if(op === '/') { 
+                let temp = rand(2, 12);
+                n2 = rand(2, 10);
+                n1 = temp * n2; 
+            }
+
+            qDisplay.innerText = `${n1} ${op} ${n2}`;
+            ans = eval(`${n1} ${op} ${n2}`);
+        }
+
+        function genPercent() {
+            // Easy integers for percentages (10, 20, 25, 50)
+            let p = [10, 20, 25, 50][rand(0,3)];
+            let n = rand(1, 20) * (p === 25 ? 4 : 10); // Ensure result is integer
+            qDisplay.innerText = `${p}% of ${n}`;
+            ans = (p / 100) * n;
+        }
+
+        function rand(min, max) { return Math.floor(Math.random() * (max - min + 1) + min); }
+
+        function startTimer() {
+            timeLeft = 20;
+            clearInterval(timer);
+            timer = setInterval(() => {
+                timeLeft -= 0.1;
+                tBar.style.width = (timeLeft / 20) * 100 + "%";
+                document.getElementById('timer-text').innerText = Math.ceil(timeLeft) + "s";
+                if(timeLeft <= 0) endGame();
+            }, 100);
+        }
+
+        function initGame() {
+            level = 1; score = 0;
+            document.getElementById('end-screen').style.display = 'none';
+            input.value = ''; input.focus();
+            updateUI();
+            nextRound();
+        }
+
+        function nextRound() {
+            generateQuestion();
+            startTimer();
+        }
+
+        function updateUI() {
+            document.getElementById('lvl-num').innerText = level;
+            document.getElementById('score').innerText = score;
+            lBar.style.width = level + "%";
+        }
+
+        function endGame() {
+            clearInterval(timer);
+            document.getElementById('end-screen').style.display = 'flex';
+            document.getElementById('final-stats').innerText = `LEVEL REACHED: ${level} | SCORE: ${score}`;
+        }
+
+        input.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter') {
+                if(parseFloat(input.value) === ans) {
+                    level++; score += Math.ceil(timeLeft * 10);
+                    input.value = ''; updateUI();
+                    if(level > 100) { alert("TERMINAL_COMPLETE: GOD_MODE"); initGame(); } 
+                    else nextRound();
+                } else {
+                    endGame();
+                }
+            }
+        });
+
+        function share() {
+            const msg = `MathHub Pro Challenge: Level ${level} cleared! Think you're faster? https://mathhub.pro/math-game.html`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`);
+        }
+
+        initGame();
+    </script>
+</body>
+</html>

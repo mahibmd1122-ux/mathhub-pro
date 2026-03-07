@@ -1,0 +1,171 @@
+/* --- CORE SYSTEM VARIABLES --- */
+:root {
+    --neon-cyan: #00f2ff;
+    --neon-purple: #bc13fe;
+    --dark-core: #050505;
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(0, 242, 255, 0.2);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes gridMove {
+    from { background-position: 0 0; }
+    to { background-position: 50px 50px; }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px var(--neon-cyan); }
+    50% { box-shadow: 0 0 20px var(--neon-cyan); }
+}
+
+/* --- GLOBAL LAYOUT --- */
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--dark-core);
+    color: #e0e0e0;
+    font-family: 'Rajdhani', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Consistent Background with Index */
+    background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 4s linear infinite;
+}
+
+/* --- TOOL CONTAINER (The Glass Terminal) --- */
+.tool-container {
+    width: 90%;
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--neon-purple);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+/* --- HEADER & BACK BUTTON --- */
+.tool-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tool-header h1 {
+    font-family: 'Orbitron';
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: var(--neon-cyan);
+    font-family: 'Orbitron';
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* --- INPUT STYLING --- */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-family: 'Orbitron';
+    font-size: 0.75rem;
+    color: var(--neon-cyan);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+input, select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    padding: 12px;
+    color: #fff;
+    font-family: 'Rajdhani';
+    font-size: 1.1rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+/* --- ACTION BUTTON --- */
+.calc-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--neon-purple);
+    color: #fff;
+    padding: 15px;
+    font-family: 'Orbitron';
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.4s;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.calc-btn:hover {
+    background: var(--neon-purple);
+    box-shadow: 0 0 20px var(--neon-purple);
+    transform: translateY(-2px);
+}
+
+/* --- RESULT DISPLAY (The Output Terminal) --- */
+.result-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(0, 242, 255, 0.05);
+    border-left: 4px solid var(--neon-cyan);
+    display: none; /* Hidden until calculation */
+}
+
+.result-box h2 {
+    font-family: 'Orbitron';
+    font-size: 0.8rem;
+    margin: 0 0 10px 0;
+    color: var(--neon-cyan);
+}
+
+.result-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* --- FOOTER INFO --- */
+.status-bar {
+    margin-top: 25px;
+    font-size: 0.65rem;
+    color: #444;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}

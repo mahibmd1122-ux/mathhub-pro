@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C5KMGS6VML');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+<link rel="apple-touch-icon" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+
+    <title>Compound Interest Calculator | MathHub Pro Elite Finance</title>
+    <meta name="description" content="Free professional Compound Interest Calculator. Calculate wealth growth, annual yields, and investment returns with MathHub Pro's elite financial engine.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --neon-cyan: #00f2ff;
+            --neon-purple: #bc13fe;
+            --dark-void: #020202;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(0, 242, 255, 0.15);
+        }
+
+        body {
+            margin: 0; background: var(--dark-void); color: #e0e0e0; font-family: 'Rajdhani', sans-serif;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 70px; height: 100vh; background: rgba(0, 0, 0, 0.95); border-right: 1px solid var(--neon-cyan);
+            position: fixed; top: 0; left: 0; z-index: 1000; display: flex; flex-direction: column;
+            transition: width 0.4s; overflow: hidden; backdrop-filter: blur(20px);
+        }
+        .sidebar:hover { width: 280px; }
+        .side-logo { padding: 25px 15px; border-bottom: 1px solid var(--border); text-align: center; }
+        .side-logo img { width: 40px; border-radius: 8px; filter: drop-shadow(0 0 10px var(--neon-cyan)); }
+        .nav-item { display: flex; align-items: center; padding: 20px 25px; text-decoration: none; color: #888; transition: 0.3s; white-space: nowrap; }
+        .nav-label { margin-left: 25px; font-family: 'Orbitron'; font-size: 0.75rem; opacity: 0; }
+        .sidebar:hover .nav-label { opacity: 1; }
+
+        /* HERO */
+        .hero {
+            margin-left: 70px; padding: 60px 20px; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200');
+            background-size: cover; border-bottom: 2px solid var(--neon-purple);
+        }
+        .hero h1 { font-family: 'Orbitron'; font-size: 2.5rem; color: #fff; text-shadow: 0 0 20px var(--neon-cyan); margin: 0; }
+
+        /* CALCULATOR BOX */
+        .tool-container { margin-left: 70px; padding: 40px; display: flex; justify-content: center; }
+        .calc-card {
+            background: rgba(0,0,0,0.8); border: 1px solid var(--neon-cyan); border-radius: 15px;
+            padding: 30px; width: 100%; max-width: 500px; box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
+        }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; font-family: 'Orbitron'; font-size: 0.8rem; color: var(--neon-cyan); margin-bottom: 10px; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; background: #111; border: 1px solid var(--border);
+            color: #fff; border-radius: 5px; font-family: 'Rajdhani'; font-size: 1.1rem; outline: none;
+        }
+        .input-group input:focus { border-color: var(--neon-purple); box-shadow: 0 0 10px rgba(188, 19, 254, 0.3); }
+
+        .btn-calc {
+            width: 100%; padding: 15px; background: var(--neon-cyan); border: none; color: #000;
+            font-family: 'Orbitron'; font-weight: bold; cursor: pointer; border-radius: 5px; transition: 0.3s;
+        }
+        .btn-calc:hover { background: var(--neon-purple); color: #fff; transform: scale(1.02); }
+
+        .result-display {
+            margin-top: 30px; padding: 20px; border-top: 1px solid var(--border); text-align: center; display: none;
+        }
+        .result-val { font-family: 'Orbitron'; font-size: 1.8rem; color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
+
+        /* SEO SECTION */
+        .big-seo { margin-left: 70px; padding: 60px 40px; background: #050505; border-top: 1px solid var(--border); }
+        .seo-box h2 { font-family: 'Orbitron'; color: var(--neon-cyan); font-size: 1.5rem; margin-bottom: 20px; }
+        .seo-box p { font-size: 1rem; line-height: 1.8; color: #888; }
+        .keyword-tag { display: inline-block; padding: 4px 10px; border: 1px solid var(--neon-purple); border-radius: 4px; font-size: 0.7rem; margin: 3px; color: var(--neon-purple); }
+
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .hero, .tool-container, .big-seo { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="side-logo">
+            <img src="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg" alt="Logo">
+        </div>
+        <div style="flex:1; overflow-y:auto;">
+            <script>
+                for(let i=1; i<=12; i++) {
+                    document.write(`<a href="ncert-class-${i}.html" class="nav-item"><i>${i.toString().padStart(2, '0')}</i><span class="nav-label">CLASS ${i} NCERT</span></a>`);
+                }
+            </script>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>WEALTH GROWTH ENGINE</h1>
+        <p>COMPOUND INTEREST PROTOCOL [ACTIVE]</p>
+    </div>
+
+    <main class="tool-container">
+        <div class="calc-card">
+            <div class="input-group">
+                <label>PRINCIPAL AMOUNT ($/₹)</label>
+                <input type="number" id="principal" placeholder="Initial Investment">
+            </div>
+            <div class="input-group">
+                <label>ANNUAL INTEREST RATE (%)</label>
+                <input type="number" id="rate" placeholder="e.g. 10">
+            </div>
+            <div class="input-group">
+                <label>TIME PERIOD (YEARS)</label>
+                <input type="number" id="years" placeholder="Investment Duration">
+            </div>
+            <div class="input-group">
+                <label>COMPOUNDING INTERVAL</label>
+                <select id="frequency">
+                    <option value="1">Annually</option>
+                    <option value="12">Monthly</option>
+                    <option value="4">Quarterly</option>
+                    <option value="365">Daily</option>
+                </select>
+            </div>
+            <button class="btn-calc" onclick="calculateCI()">INITIATE GROWTH SYNC</button>
+
+            <div class="result-display" id="resultBox">
+                <p style="font-size: 0.8rem; color: #888; margin: 0;">TOTAL MATURITY VALUE</p>
+                <div class="result-val" id="totalAmount">0.00</div>
+                <p style="color: var(--neon-purple); font-size: 0.9rem; margin-top: 10px;">Interest Earned: <span id="interestEarned">0.00</span></p>
+            </div>
+        </div>
+    </main>
+
+    <section class="big-seo">
+        <div class="seo-box">
+            <h2>Compound Interest Secrets for 2026 Financial Growth</h2>
+            <p>
+                Understand the "Eighth Wonder of the World" with the <strong>MathHub Pro Compound Interest Calculator</strong>. Unlike simple interest, compound interest allows your wealth to grow exponentially by earning interest on your interest. This tool is essential for students in <strong>Mancherial</strong> and global investors looking to project their savings for <strong>NCERT Economics</strong> projects or real-world retirement planning.
+            </p>
+            <p>
+                Our engine uses the standard formula $$A = P(1 + r/n)^{nt}$$ where P is the principal, r is the annual rate, n is the compounding frequency, and t is time. By using this tool on our new <strong>.com/.in domain</strong>, you ensure high-precision financial data for your bank savings, fixed deposits, and stock market projections.
+            </p>
+            <div style="margin-top:20px;">
+                <span class="keyword-tag">COMPOUND INTEREST CALCULATOR</span>
+                <span class="keyword-tag">FINANCIAL MATH TOOLS</span>
+                <span class="keyword-tag">SAVINGS PROJECTION 2026</span>
+                <span class="keyword-tag">NCERT MATH CLASS 8-12</span>
+                <span class="keyword-tag">INVESTMENT GROWTH ENGINE</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function calculateCI() {
+            const P = parseFloat(document.getElementById('principal').value);
+            const r = parseFloat(document.getElementById('rate').value) / 100;
+            const t = parseFloat(document.getElementById('years').value);
+            const n = parseFloat(document.getElementById('frequency').value);
+
+            if (P > 0 && r > 0 && t > 0) {
+                const amount = P * Math.pow((1 + r/n), (n * t));
+                const interest = amount - P;
+
+                document.getElementById('totalAmount').innerText = amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                document.getElementById('interestEarned').innerText = interest.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                document.getElementById('resultBox').style.display = 'block';
+            } else {
+                alert("Please enter valid positive values for all fields.");
+            }
+        }
+    </script>
+
+    <footer style="padding: 40px; text-align: center; border-top: 1px solid var(--border);">
+        <p style="color:#444; font-family: 'Orbitron'; font-size: 0.7rem;">© 2026 MATHHUB PRO | ELITE FINANCE NODE</p>
+    </footer>
+</body>
+</html>

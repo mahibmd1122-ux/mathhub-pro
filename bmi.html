@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+<link rel="apple-touch-icon" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C5KMGS6VML');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
+
+    <title>BMI Tracker | MathHub Pro Elite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Exact Same Style as Above for Consistency */
+        :root { --neon-cyan: #00f2ff; --neon-purple: #bc13fe; --dark-core: #050505; }
+        @keyframes gridMove { from { background-position: 0 0; } to { background-position: 50px 50px; } }
+        body {
+            margin: 0; background: var(--dark-core); color: #e0e0e0; font-family: 'Rajdhani', sans-serif;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px; animation: gridMove 4s linear infinite;
+            display: flex; flex-direction: column; align-items: center; min-height: 100vh;
+        }
+        .container { width: 90%; max-width: 600px; margin: 50px auto; padding: 40px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 242, 255, 0.2); border-top: 4px solid var(--neon-purple); backdrop-filter: blur(10px); border-radius: 15px; }
+        h1 { font-family: 'Orbitron'; color: #fff; text-shadow: 0 0 10px var(--neon-purple); text-align: center; }
+        .input-group { margin: 20px 0; }
+        label { display: block; font-family: 'Orbitron'; font-size: 0.8rem; color: var(--neon-cyan); margin-bottom: 10px; }
+        input { width: 100%; padding: 15px; background: rgba(0,0,0,0.5); border: 1px solid var(--neon-cyan); color: #fff; font-family: 'Rajdhani'; font-size: 1.2rem; border-radius: 5px; }
+        .calc-btn { width: 100%; padding: 15px; background: transparent; border: 1px solid var(--neon-purple); color: #fff; font-family: 'Orbitron'; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        .calc-btn:hover { background: var(--neon-purple); box-shadow: 0 0 20px var(--neon-purple); }
+        .result-display { margin-top: 30px; text-align: center; padding: 20px; border: 1px dashed var(--neon-cyan); }
+        .big-text { font-family: 'Orbitron'; font-size: 3.5rem; color: #fff; display: block; }
+        .seo-box { margin-top: 50px; padding: 30px; border-top: 1px solid #333; color: #777; font-size: 0.9rem; line-height: 1.6; }
+        .back-link { color: var(--neon-cyan); text-decoration: none; font-family: 'Orbitron'; font-size: 0.7rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">< RETURN TO HUB</a>
+        <h1>BMI TRACKER</h1>
+        
+        <div class="input-group">
+            <label>WEIGHT (KG)</label>
+            <input type="number" id="weight" placeholder="e.g. 70">
+        </div>
+        <div class="input-group">
+            <label>HEIGHT (CM)</label>
+            <input type="number" id="height" placeholder="e.g. 175">
+        </div>
+
+        <button class="calc-btn" onclick="calcBMI()">OPTIMIZE STATS</button>
+
+        <div class="result-display" id="result-area" style="display:none;">
+            <label>YOUR BODY MASS INDEX:</label>
+            <span class="big-text" id="bmi-output">0.0</span>
+            <p id="bmi-status" style="color: var(--neon-cyan); letter-spacing: 4px; font-weight: bold;"></p>
+        </div>
+
+        <div class="seo-box">
+            <h2>Elite BMI Calculation for Students</h2>
+            <p>Maintain your <b>Physical Agility Stats</b> with the MathHub Pro BMI Tracker. Using the standard metric formula used by health professionals in India, our tool provides instant feedback on your health category. In the high-pressure environment of <b>JEE and NEET preparation</b>, keeping track of your health is as important as your mock test scores. MathHub Pro is committed to providing <b>free health calculators</b> for the modern Indian student.</p>
+        </div>
+    </div>
+
+    <script>
+        function calcBMI() {
+            const w = parseFloat(document.getElementById('weight').value);
+            const h = parseFloat(document.getElementById('height').value) / 100;
+            if(w > 0 && h > 0) {
+                const bmi = (w / (h * h)).toFixed(1);
+                document.getElementById('result-area').style.display = 'block';
+                document.getElementById('bmi-output').innerText = bmi;
+                let status = "";
+                if(bmi < 18.5) status = "UNDERWEIGHT | LOW XP";
+                else if(bmi < 25) status = "OPTIMAL | ELITE STATUS";
+                else status = "OVERWEIGHT | SYSTEM HEAVY";
+                document.getElementById('bmi-status').innerText = status;
+            }
+        }
+    </script>
+</body>
+</html>
