@@ -1,21 +1,3 @@
-# ==========================================
-# ROBOTS.txt for MATHHUB.PRO
-# Optimized for 2026 Search Algorithms
-# ==========================================
-
 User-agent: *
 Allow: /
-Allow: /index.html
-Allow: /gst.html
-Allow: /compound.html
-Allow: /cheat.html
-
-# Exclude potential sensitive or duplicate areas (if any)
-Disallow: /temp/
-Disallow: /private/
-
-# Sitemap Location (Critical for SEO)
-Sitemap: https://www.mathhub.pro/sitemap.xml
-
-# Friendly bot crawl speed
-Crawl-delay: 1
+Sitemap: https://mathhub.pro/sitemap.xml
