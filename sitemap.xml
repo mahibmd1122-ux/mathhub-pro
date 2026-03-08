@@ -1,57 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://mathhub.pro/index.html</loc>
-    <lastmod>2026-03-06</lastmod>
+    <loc>https://mathhub.pro/</loc>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <url>
-    <loc>https://mathhub.pro/about.html</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mathhub.pro/contact.html</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mathhub.pro/privacy.html</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mathhub.pro/terms.html</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://mathhub.pro/about.html</loc><priority>0.5</priority></url>
+  <url><loc>https://mathhub.pro/contact.html</loc><priority>0.5</priority></url>
+  <url><loc>https://mathhub.pro/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://mathhub.pro/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://mathhub.pro/game.html</loc><priority>0.9</priority></url>
 
-  <url><loc>https://mathhub.pro/gst-calculator.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/bmi-calculator.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/age-calculator.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/scientific-calculator.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/ncert-solutions.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/percentage-calculator.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/discount-calculator.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/simple-interest.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/compound-interest.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/unit-converter.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/binary-to-decimal.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/quadratic-solver.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/matrix-calculator.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/loan-emi-calculator.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/currency-converter.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/prime-checker.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/random-number-generator.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/statistics-calc.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/algebra-solver.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mathhub.pro/physics-formulas.html</loc><lastmod>2026-03-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-
+  <url><loc>https://mathhub.pro/age.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/bmi.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/percentage.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/discount.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/gst.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/unit-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/scientific.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/loan.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/gpa.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/date-calc.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/length.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/weight.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/temp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/currency.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/password.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/qr-code.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/binary.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/roman.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/area.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mathhub.pro/speed.html</loc><priority>0.8</priority></url>
 </urlset>
