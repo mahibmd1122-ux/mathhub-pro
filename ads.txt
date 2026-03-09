@@ -5,4 +5,4 @@ google.com, pub-8159480759292642, DIRECT, f08c47fec0942fa0
 alwingulla.com, 217532, DIRECT, f08c47fec0942fa0
 
 # Adsterra
-adsterra.com, 28878609, DIRECT, f08c47fec0942fa0
+adsterra.com, 28778110, DIRECT, f08c47fec0942fa0
