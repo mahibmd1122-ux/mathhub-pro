@@ -346,27 +346,43 @@
             <button class="share-btn" onclick="deployLink()">
                 <i>📡</i> DEPLOY_TO_WHATSAPP
             </button>
-            <a href="https://www.instagram.com/math_hub_pro?igsh=bGd1bndkNHpic25j" target="_blank" class="drawer-item instagram-btn">
-    <i class="fab fa-instagram"></i> Follow on Instagram
-</a>
+            <div class="drawer-socials" style="padding: 10px; margin-top: 15px; border-top: 1px solid #eee;">
+    <p style="font-size: 12px; color: #888; margin-left: 12px; margin-bottom: 8px;">FOLLOW US</p>
+    
+    <a href="https://www.instagram.com/study_hub_pro_?igsh=bGd1bndkNHpic25j" target="_blank" class="dr-item ig">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+    
+    <a href="https://www.facebook.com/share/1AeQ1d9xe5/" target="_blank" class="dr-item fb">
+        <i class="fab fa-facebook-f"></i> Facebook
+    </a>
+    
+    <a href="https://x.com/Math_Hub_Pro" target="_blank" class="dr-item x-com">
+        <i class="fab fa-x-twitter"></i> Twitter / X
+    </a>
+</div>
 
 <style>
-    .instagram-btn {
+    .dr-item {
         display: flex;
         align-items: center;
         padding: 12px;
-        color: #fff;
-        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        color: white !important;
         text-decoration: none;
         border-radius: 8px;
-        margin: 10px;
+        margin-bottom: 8px;
         font-weight: bold;
+        font-size: 14px;
+        transition: opacity 0.2s;
     }
-    .instagram-btn i {
-        margin-right: 10px;
-        font-size: 1.2rem;
-    }
+    .dr-item:hover { opacity: 0.9; }
+    .dr-item i { width: 20px; margin-right: 10px; text-align: center; }
+    
+    .ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .fb { background: #1877F2; }
+    .x-com { background: #000000; }
 </style>
+
             
         </div>
     </nav>
@@ -556,12 +572,53 @@ l.parentNode.insertBefore(s, l);
             <a href="guides.html">USER GUIDE</a>
             <div style="text-align: center; margin-top: 30px; padding-bottom: 20px;">
     <p style="color: #666;">Stay updated with Math Tricks:</p>
-    <a href="https://www.instagram.com/math_hub_pro?igsh=bGd1bndkNHpic25j" target="_blank" style="text-decoration: none;">
-        <div style="display: inline-block; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; padding: 10px 20px; border-radius: 50px; font-weight: bold; display: inline-flex; align-items: center;">
-            <i class="fab fa-instagram" style="font-size: 24px; margin-right: 10px;"></i>
-            Follow @MathHubPro
-        </div>
-    </a>
+    <div style="text-align: center; margin-top: 50px; padding: 30px 20px; border-top: 1px solid #e0e0e0; background-color: #f9f9f9;">
+    <p style="color: #555; font-weight: bold; margin-bottom: 20px;">Connect with StudyHub Pro</p>
+    
+    <div class="footer-social-row" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 25px;">
+        <a href="https://www.instagram.com/study_hub_pro_?igsh=bGd1bndkNHpic25j" target="_blank" class="foot-icon ig-bg">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.facebook.com/share/1AeQ1d9xe5/" target="_blank" class="foot-icon fb-bg">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://x.com/Math_Hub_Pro" target="_blank" class="foot-icon x-bg">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+    </div>
+
+    <div style="display: flex; justify-content: center; gap: 20px; font-size: 14px;">
+        <a href="about.html" style="color: #3b82f6; text-decoration: none; font-weight: bold;">About Us</a>
+        <span style="color: #ccc;">|</span>
+        <a href="contact.html" style="color: #3b82f6; text-decoration: none; font-weight: bold;">Contact</a>
+    </div>
+    
+    <p style="font-size: 12px; color: #999; margin-top: 20px;">© 2026 MathHub Pro - Built for Students</p>
+</div>
+
+<style>
+    .foot-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white !important;
+        font-size: 22px;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    .foot-icon:hover { transform: translateY(-5px); }
+    
+    .ig-bg { background: linear-gradient(45deg, #f09433, #bc1888); }
+    .fb-bg { background: #1877F2; }
+    .x-bg { background: #000000; }
+</style>
+
             </div>
             
         </div>
