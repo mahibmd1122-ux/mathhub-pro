@@ -720,29 +720,7 @@ l.parentNode.insertBefore(s, l);
         </script>
     </div>
     
-    <script src="https://js.puter.com/v2/"></script>
-    <script>
-    async function calculateAI() {
-        const query = document.getElementById('ai-query').value;
-        const output = document.getElementById('response-terminal');
-        
-        if (!query) return;
-        
-        output.innerHTML = `<span style="color: var(--neon-cyan)">> INITIATING_REASONING_ENGINE...</span>`;
-
-        try {
-            // Using GPT-5.4-mini for elite math accuracy in 2026
-            const response = await puter.ai.chat(query, { 
-                model: 'openai/gpt-5.4-mini',
-                system_prompt: "You are an elite NCERT math tutor. Provide step-by-step solutions for Indian students."
-            });
-            output.innerHTML = `<span style="color: var(--neon-purple)">> SOLUTION_FOUND:</span><br>${response}`;
-            output.scrollTop = output.scrollHeight; // Auto-scroll to bottom
-        } catch (err) {
-            output.innerHTML = `<span style="color: #ff4d4d">> ERROR: Connection interrupted.</span>`;
-        }
-    }
-    </script>
+    
 
 </body>
 </html>
