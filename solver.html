@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Solver Terminal | MathHub Pro</title>
     
+    <meta name="google-adsense-account" content="ca-pub-8159480759292642">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous" defer></script>
+
+    <title>AI Math Solver Terminal | MathHub Pro 2026</title>
+    <meta name="description" content="Use the MathHub Pro AI Solver for step-by-step NCERT solutions. Free, fast, and accurate.">
+    <link rel="canonical" href="https://mathhub.pro/solver.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML" defer></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C5KMGS6VML');
+    </script>
+
+    <link rel="icon" type="image/jpeg" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+    <link rel="apple-touch-icon" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" media="print" onload="this.media='all'">
@@ -42,10 +59,12 @@
             z-index: 1000;
         }
 
+        .ad-container { margin: 20px 0; width: 90%; max-width: 850px; text-align: center; }
+
         .terminal-container {
             width: 90%;
             max-width: 850px;
-            margin: 40px auto;
+            margin: 10px auto;
             padding: 30px;
             background: rgba(0,0,0,0.9);
             border: 1px solid var(--neon-purple);
@@ -53,12 +72,7 @@
             box-shadow: 0 0 40px rgba(0, 242, 255, 0.05);
         }
 
-        h2 { 
-            font-family: 'Orbitron'; 
-            color: var(--neon-cyan); 
-            margin: 0 0 20px 0; 
-            letter-spacing: 2px; 
-        }
+        h2 { font-family: 'Orbitron'; color: var(--neon-cyan); margin: 0 0 20px 0; letter-spacing: 2px; }
 
         #response-terminal {
             background: rgba(255,255,255,0.02);
@@ -72,10 +86,7 @@
             color: #ccc;
         }
 
-        .input-group { 
-            display: flex; 
-            gap: 10px; 
-        }
+        .input-group { display: flex; gap: 10px; }
 
         input {
             flex: 1;
@@ -100,9 +111,7 @@
             font-size: 1rem;
         }
 
-        .btn:hover { 
-            box-shadow: 0 0 15px var(--neon-cyan); 
-        }
+        .btn:hover { box-shadow: 0 0 15px var(--neon-cyan); }
     </style>
 </head>
 <body>
@@ -114,12 +123,22 @@
     </div>
 </nav>
 
+<div class="ad-container">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8159480759292642"
+         data-ad-slot="REPLACE_WITH_TOP_AD_SLOT_ID"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
 <div class="terminal-container">
     <h2>> AI_MATH_SOLVER_v5.4</h2>
     
     <div id="response-terminal">
         > SYSTEM_INITIALIZING...<br>
-        > Please wait while authentication protocols are verified.
+        > Verifying computational nodes.
     </div>
 
     <div id="auth-section" style="text-align: center; display: none;">
@@ -127,9 +146,19 @@
     </div>
 
     <div id="input-section" class="input-group" style="display: none;">
-        <input type="text" id="ai-query" placeholder="Enter mathematical query (e.g., 25 + 25)...">
+        <input type="text" id="ai-query" placeholder="Enter mathematical query...">
         <button class="btn" onclick="executeSolver()">SOLVE</button>
     </div>
+</div>
+
+<div class="ad-container">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8159480759292642"
+         data-ad-slot="REPLACE_WITH_BOTTOM_AD_SLOT_ID"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
 <script src="https://js.puter.com/v2/"></script>
@@ -139,88 +168,57 @@
     const inputSection = document.getElementById('input-section');
     const inputField = document.getElementById('ai-query');
 
-    // Keyboard support for mobile/iPad
-    inputField.addEventListener("keypress", (e) => { 
-        if (e.key === "Enter") executeSolver(); 
-    });
+    inputField.addEventListener("keypress", (e) => { if (e.key === "Enter") executeSolver(); });
 
-    // Automated System Check
     (async function initializeSystem() {
         try {
             const isSignedIn = await puter.auth.isSignedIn();
             if (isSignedIn) {
                 authSection.style.display = 'none';
                 inputSection.style.display = 'flex';
-                output.innerHTML = `> SESSION_ACTIVE.<br>> Authentication verified. Awaiting input...<br><a href="#" onclick="forceLogout()" style="color: #ff4d4d; font-size: 0.75rem; text-decoration: none; border: 1px solid #ff4d4d; padding: 2px 5px; margin-top: 10px; display: inline-block;">RESET CONNECTION</a>`;
+                output.innerHTML = `> SESSION_ACTIVE.<br>> Ready for mathematical deployment.`;
             } else {
                 authSection.style.display = 'block';
                 inputSection.style.display = 'none';
-                output.innerHTML = `> AUTHENTICATION_REQUIRED.<br>> Please authenticate to access the cloud infrastructure.`;
+                output.innerHTML = `> AUTHENTICATION_REQUIRED.<br>> Establish a secure cloud link to proceed.`;
             }
         } catch (error) {
-            output.innerHTML = `> ERROR: Connection to authentication server failed.`;
+            output.innerHTML = `> ERROR: Connection failed.`;
         }
     })();
 
     async function authenticateUser() {
         try {
-            output.innerHTML = `> Finalizing authentication...`;
+            output.innerHTML = `> Redirecting to secure portal...`;
             await puter.auth.signIn();
             window.location.reload(); 
         } catch (error) {
-            output.innerHTML = `> ERROR: Authentication protocol aborted.`;
+            output.innerHTML = `> ERROR: Protocol aborted.`;
         }
     }
 
-    async function forceLogout() {
-        output.innerHTML = `> Terminating session and clearing cache...`;
-        await puter.auth.signOut();
-        window.location.reload();
-    }
-
-        async function executeSolver() {
+    async function executeSolver() {
         const query = inputField.value.trim();
         if (!query) return;
 
-        output.innerHTML = `> Processing neural query: ${query}...`;
+        output.innerHTML = `> Analyzing: ${query}...`;
         inputField.value = "";
         
         try {
-            // Updated API request
-            const response = await puter.ai.chat(`Solve this math problem step-by-step for a student: ${query}`);
+            const systemInstructions = "You are a professional NCERT math expert. Analyze the physical constraints of the problem first. Provide step-by-step reasoning for: ";
+            const response = await puter.ai.chat(systemInstructions + query);
             
-            let answerText = "";
-
-            // PROFESSIONAL UNBOXING LOGIC:
-            // This checks every possible place the text could be hidden
-            if (typeof response === 'string') {
-                answerText = response;
-            } else if (response && typeof response === 'object') {
-                // Dig into the object to find the content string
-                const data = response.content || 
-                             (response.message && (response.message.content || response.message)) || 
-                             response.text;
-                
-                // If it's still an object, turn it into a string so it doesn't say [object Object]
-                answerText = (typeof data === 'string') ? data : JSON.stringify(data);
-            } else {
-                answerText = "System reached but no data was returned. Please retry.";
-            }
+            let answerText = typeof response === 'string' ? response : (response.message?.content || response.text || JSON.stringify(response));
             
-            // Final display formatting
-            const formattedResponse = answerText.replace(/\n/g, '<br>');
+            const formattedResponse = String(answerText).replace(/\n/g, '<br>');
             output.innerHTML = `<span style="color: var(--neon-purple)">> ANALYSIS_COMPLETE:</span><br><br>${formattedResponse}`;
             output.scrollTop = output.scrollHeight;
             
         } catch (error) {
-            console.error("Critical API Error:", error);
-            output.innerHTML = `<span style="color: #ff4d4d">> SYSTEM_ERROR: Connection to cloud intelligence failed.</span><br><br>
-            <button class="btn" style="padding: 10px; font-size: 0.8rem;" onclick="forceLogout()">RE-ESTABLISH PROTOCOL</button>`;
+            output.innerHTML = `<span style="color: #ff4d4d">> SYSTEM_ERROR: The cloud failed to respond.</span>`;
         }
     }
-
 </script>
-
 
 </body>
 </html>
