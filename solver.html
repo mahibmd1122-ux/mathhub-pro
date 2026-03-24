@@ -178,7 +178,7 @@
         window.location.reload();
     }
 
-    async function executeSolver() {
+        async function executeSolver() {
         const query = inputField.value.trim();
         if (!query) return;
 
@@ -186,30 +186,39 @@
         inputField.value = "";
         
         try {
-            // Updated API call for maximum stability
-            const response = await puter.ai.chat(`Solve this math problem clearly: ${query}`);
+            // Updated API request
+            const response = await puter.ai.chat(`Solve this math problem step-by-step for a student: ${query}`);
             
-            // TYPE-SAFE PROTECTION: Forces response to be a string
             let answerText = "";
+
+            // PROFESSIONAL UNBOXING LOGIC:
+            // This checks every possible place the text could be hidden
             if (typeof response === 'string') {
                 answerText = response;
             } else if (response && typeof response === 'object') {
-                answerText = response.message || response.text || JSON.stringify(response);
+                // Dig into the object to find the content string
+                const data = response.content || 
+                             (response.message && (response.message.content || response.message)) || 
+                             response.text;
+                
+                // If it's still an object, turn it into a string so it doesn't say [object Object]
+                answerText = (typeof data === 'string') ? data : JSON.stringify(data);
             } else {
-                answerText = "The system returned an empty response. Please try a different query.";
+                answerText = "System reached but no data was returned. Please retry.";
             }
             
-            // Professional Formatting
-            const formattedResponse = String(answerText).replace(/\n/g, '<br>');
+            // Final display formatting
+            const formattedResponse = answerText.replace(/\n/g, '<br>');
             output.innerHTML = `<span style="color: var(--neon-purple)">> ANALYSIS_COMPLETE:</span><br><br>${formattedResponse}`;
             output.scrollTop = output.scrollHeight;
             
         } catch (error) {
-            console.error("API Error:", error);
-            output.innerHTML = `<span style="color: #ff4d4d">> SYSTEM_ERROR: The cloud solver failed to respond.</span><br><br>
-            <button class="btn" style="padding: 10px; font-size: 0.8rem;" onclick="forceLogout()">RE-ESTABLISH CONNECTION</button>`;
+            console.error("Critical API Error:", error);
+            output.innerHTML = `<span style="color: #ff4d4d">> SYSTEM_ERROR: Connection to cloud intelligence failed.</span><br><br>
+            <button class="btn" style="padding: 10px; font-size: 0.8rem;" onclick="forceLogout()">RE-ESTABLISH PROTOCOL</button>`;
         }
     }
+
 </script>
 
 
