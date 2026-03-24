@@ -427,6 +427,22 @@
             <a href="age.html" class="tool-card"><img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?w=400" alt="Age Calculator" class="tool-img" loading="lazy" width="400" height="150"><div class="tool-body"><h3>Age Calculator</h3><p>Sync Lifespan Data</p></div></a>
             <a href="bmi.html" class="tool-card"><img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=400" alt="BMI Tracker" class="tool-img" loading="lazy" width="400" height="150"><div class="tool-body"><h3>BMI Tracker</h3><p>Agility Stats</p></div></a>
             <a href="gst.html" class="tool-card"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400" alt="GST Calculator" class="tool-img" loading="lazy" width="400" height="150"><div class="tool-body"><h3>GST Calculator</h3><p>Tax Protocols</p></div></a>
+<div class="tool-card" id="ai-solver-card" style="grid-column: span 1; display: flex; flex-direction: column;">
+    <div class="tool-body" style="flex: 1; display: flex; flex-direction: column; background: rgba(0,0,0,0.85);">
+        <h3 style="color: var(--neon-cyan); font-family: 'Orbitron'; margin-bottom: 10px;">> AI_MATH_SOLVER</h3>
+        
+        <div id="response-terminal" style="flex: 1; min-height: 80px; max-height: 150px; overflow-y: auto; color: #fff; font-size: 0.8rem; font-family: monospace; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 5px;">
+            // System Standby...
+        </div>
+
+        <input type="text" id="ai-query" placeholder="Ask a question..." 
+               style="width: 100%; background: rgba(0,242,255,0.05); color: #fff; border: 1px solid var(--neon-cyan); padding: 8px; font-family: 'Orbitron'; font-size: 0.75rem; margin-bottom: 10px; outline: none;">
+        
+        <button onclick="calculateAI()" style="width: 100%; background: var(--neon-cyan); color: #000; padding: 8px; border: none; cursor: pointer; font-family: 'Orbitron'; font-size: 0.8rem; font-weight: bold; transition: 0.3s;">
+            SOLVE_QUERY
+        </button>
+    </div>
+</div>
 
             <div class="terminal">
                 <h2>> DATA_INJECTION: NCERT PROTOCOLS</h2>
@@ -733,5 +749,31 @@ l.parentNode.insertBefore(s, l);
         })({})
         </script>
     </div>
+ <script src="https://js.puter.com/v2/"></script>
+
+<script>
+async function calculateAI() {
+    const query = document.getElementById('ai-query').value;
+    const output = document.getElementById('response-terminal');
+    
+    if (!query) return;
+    
+    output.innerHTML = `<span style="color: var(--neon-cyan)">> INITIATING_REASONING_ENGINE...</span>`;
+
+    try {
+        // Using GPT-5.4-mini for elite math accuracy in 2026
+        const response = await puter.ai.chat(query, { 
+            model: 'openai/gpt-5.4-mini',
+            system_prompt: "You are an elite NCERT math tutor. Provide step-by-step solutions for Indian students."
+        });
+        output.innerHTML = `<span style="color: var(--neon-purple)">> SOLUTION_FOUND:</span><br>${response}`;
+        output.scrollTop = output.scrollHeight; // Auto-scroll to bottom
+    } catch (err) {
+        output.innerHTML = `<span style="color: #ff4d4d">> ERROR: Connection interrupted.</span>`;
+    }
+}
+</script>
+
+
 </body>
 </html>
