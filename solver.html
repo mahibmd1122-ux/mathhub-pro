@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Solver Terminal | MathHub Pro</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap"></noscript>
+
+    <style>
+        :root {
+            --neon-cyan: #00f2ff;
+            --neon-purple: #bc13fe;
+            --dark-void: #020202;
+            --border: rgba(0, 242, 255, 0.15);
+        }
+
+        body {
+            background: var(--dark-void);
+            color: #e0e0e0;
+            font-family: 'Rajdhani', sans-serif;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(0,0,0,0.95);
+            border-bottom: 1px solid var(--neon-cyan);
+            padding: 15px 0;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .terminal-container {
+            width: 90%;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(0,0,0,0.9);
+            border: 1px solid var(--neon-purple);
+            border-left: 6px solid var(--neon-cyan);
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.05);
+        }
+
+        h2 { 
+            font-family: 'Orbitron'; 
+            color: var(--neon-cyan); 
+            margin: 0 0 20px 0; 
+            letter-spacing: 2px; 
+        }
+
+        #response-terminal {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            padding: 20px;
+            height: 400px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #ccc;
+        }
+
+        .input-group { 
+            display: flex; 
+            gap: 10px; 
+        }
+
+        input {
+            flex: 1;
+            padding: 15px;
+            background: rgba(0,242,255,0.03);
+            border: 1px solid var(--neon-cyan);
+            color: #fff;
+            font-family: 'Orbitron';
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background: var(--neon-cyan);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-family: 'Orbitron';
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn:hover { 
+            box-shadow: 0 0 15px var(--neon-cyan); 
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div style="width: 90%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-family: 'Orbitron'; color: var(--neon-cyan); font-size: 1.2rem;">MATHHUB_PRO // AI_SOLVER</div>
+        <a href="index.html" style="color: #fff; text-decoration: none; font-family: 'Orbitron'; font-size: 0.8rem; border: 1px solid #fff; padding: 5px 15px;">RETURN TO DASHBOARD</a>
+    </div>
+</nav>
+
+<div class="terminal-container">
+    <h2>> AI_MATH_SOLVER_v5.4</h2>
+    
+    <div id="response-terminal">
+        > SYSTEM_INITIALIZING...<br>
+        > Please wait while authentication protocols are verified.
+    </div>
+
+    <div id="auth-section" style="text-align: center; display: none;">
+        <button class="btn" onclick="authenticateUser()">AUTHENTICATE CONNECTION</button>
+    </div>
+
+    <div id="input-section" class="input-group" style="display: none;">
+        <input type="text" id="ai-query" placeholder="Enter mathematical query (e.g., 25 + 25)...">
+        <button class="btn" onclick="executeSolver()">SOLVE</button>
+    </div>
+</div>
+
+<script src="https://js.puter.com/v2/"></script>
+<script>
+    const output = document.getElementById('response-terminal');
+    const authSection = document.getElementById('auth-section');
+    const inputSection = document.getElementById('input-section');
+    const inputField = document.getElementById('ai-query');
+
+    // Execute solver on "Enter" key press
+    inputField.addEventListener("keypress", (e) => { 
+        if (e.key === "Enter") executeSolver(); 
+    });
+
+    // Verify system connection on load
+    (async function initializeSystem() {
+        try {
+            // Failsafe for iframe blocking (like OneCompiler)
+            if (window.self !== window.top) {
+                output.innerHTML = `> SECURITY_ALERT: Online editors block AI connections.<br>> Please host this file on your GitHub Pages to function properly.`;
+                return;
+            }
+
+            const isSignedIn = await puter.auth.isSignedIn();
+            if (isSignedIn) {
+                authSection.style.display = 'none';
+                inputSection.style.display = 'flex';
+                output.innerHTML = `> SYSTEM_READY.<br>> Authentication verified. Awaiting mathematical input...`;
+            } else {
+                authSection.style.display = 'block';
+                inputSection.style.display = 'none';
+                output.innerHTML = `> AUTHENTICATION_REQUIRED.<br>> Please authenticate to access the cloud solver.`;
+            }
+        } catch (error) {
+            output.innerHTML = `> ERROR: Unable to reach authentication server.`;
+        }
+    })();
+
+    // Handle Authentication
+    async function authenticateUser() {
+        try {
+            output.innerHTML = `> Processing authentication...`;
+            await puter.auth.signIn();
+            
+            authSection.style.display = 'none';
+            inputSection.style.display = 'flex';
+            output.innerHTML = `> CONNECTION_ESTABLISHED.<br>> Awaiting mathematical input...`;
+        } catch (error) {
+            output.innerHTML = `> ERROR: Authentication failed or was canceled. Please try again.`;
+        }
+    }
+
+    // Handle AI Execution
+    async function executeSolver() {
+        const query = inputField.value.trim();
+        if (!query) return;
+
+        output.innerHTML = `> Processing query: ${query}...`;
+        inputField.value = "";
+        
+        try {
+            const systemPrompt = "You are a professional NCERT math tutor. Provide a clear, step-by-step mathematical solution for the following problem: ";
+            const fullQuery = systemPrompt + query;
+            
+            const response = await puter.ai.chat(fullQuery);
+            
+            // Extract the string correctly regardless of API object format
+            let answerText = typeof response === 'string' ? response : (response.message || response.text || "No response generated.");
+            
+            const formattedResponse = answerText.replace(/\n/g, '<br>');
+            output.innerHTML = `<span style="color: var(--neon-purple)">> SOLUTION:</span><br><br>${formattedResponse}`;
+            
+            output.scrollTop = output.scrollHeight;
+            
+        } catch (error) {
+            console.error(error);
+            output.innerHTML = `<span style="color: #ff4d4d">> ERROR: Failed to generate response. Please verify connection and try again.</span>`;
+        }
+    }
+</script>
+
+</body>
+</html>
