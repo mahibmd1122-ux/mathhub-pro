@@ -90,22 +90,29 @@
             border: none; 
             border-radius: 0; 
             animation: slideInUp 0.4s ease-out; 
-        }
-        .viewer-header { 
-            width: 100%; 
-            background: rgba(0,0,0,0.95); 
-            border-bottom: 2px solid var(--neon-cyan); 
-            color: var(--neon-cyan); 
-            font-family: 'Orbitron'; 
-            padding: 15px 20px; 
-            font-weight: bold; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            gap: 10px; 
-            box-sizing: border-box; 
-        }
+                <div class="viewer-container" id="pdfViewerUI">
+            
+            <div class="viewer-header">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button onclick="closePDF()" class="btn-action" style="background: transparent; border: 1px solid var(--neon-cyan); color: var(--neon-cyan); padding: 6px 12px;">← BACK</button>
+                    <span id="pdfTitle" style="font-size: 0.9rem;">> FETCHING...</span>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="pdfShareBtn" class="btn-action btn-share" onclick="shareCurrentPDF()">SHARE</button>
+                    <a href="#" id="pdfDownloadLink" download class="btn-action">DOWNLOAD</a>
+                </div>
+            </div>
+            
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <iframe id="pdfFrame" src=""></iframe>
+            
+            <button onclick="closePDF()" style="width: 100%; padding: 15px; background: rgba(255, 77, 77, 0.1); border: none; border-top: 1px solid #ff4d4d; color: #ff4d4d; font-family: 'Orbitron'; font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.3s;">CLOSE_VIEWER</button>
+        </div>
+
                <div class="viewer-container" id="pdfViewerUI">
             <div class="viewer-header">
                 <span id="pdfTitle">> LOADING_DATASTREAM...</span>
@@ -275,20 +282,56 @@
         let currentPdfUrl = "";
         let currentPdfTitle = "";
 
-                function openPDF(pdfPath, title) {
+              let progressInterval;
+
+        function openPDF(pdfPath, title) {
             const viewer = document.getElementById('pdfViewerUI');
-            viewer.style.display = 'flex';
+            const iframe = document.getElementById('pdfFrame');
+            const progressContainer = document.getElementById('progress-container');
+            const progressBar = document.getElementById('progress-bar');
             
-            // LOCK THE BACKGROUND SCROLLING
+            // 1. Open Full Screen & Lock Background
+            viewer.style.display = 'flex';
             document.body.style.overflow = 'hidden'; 
             
+            // 2. Set Variables
             currentPdfTitle = title;
             currentPdfUrl = 'https://mathhub.pro/' + pdfPath;
-
-            document.getElementById('pdfTitle').innerText = '> VIEWING: ' + title;
+            document.getElementById('pdfTitle').innerText = '> FETCHING: ' + title;
             document.getElementById('pdfDownloadLink').href = pdfPath;
             
-            document.getElementById('pdfFrame').src = 'https://docs.google.com/gview?embedded=true&url=' + encodeURIComponent(currentPdfUrl);
+            // 3. Reset and Show Progress Bar
+            progressContainer.style.display = 'block';
+            progressBar.style.opacity = '1';
+            progressBar.style.width = '0%';
+            
+            let progress = 0;
+            clearInterval(progressInterval);
+            
+            // 4. Start Fake "Hacking" Load Sequence
+            progressInterval = setInterval(() => {
+                if (progress < 90) {
+                    progress += Math.random() * 15; // Jumps randomly like a real terminal download
+                    if(progress > 90) progress = 90;
+                    progressBar.style.width = progress + '%';
+                }
+            }, 300);
+
+            // 5. When the PDF actually finishes loading in the background
+            iframe.onload = function() {
+                clearInterval(progressInterval);
+                progressBar.style.width = '100%'; // Snap to finish
+                document.getElementById('pdfTitle').innerText = '> VIEWING: ' + title;
+                
+                // Fade out the bar smoothly after it hits 100%
+                setTimeout(() => {
+                    progressBar.style.opacity = '0';
+                    setTimeout(() => { progressContainer.style.display = 'none'; }, 300);
+                }, 500);
+            };
+
+            // 6. Trigger the actual download
+            iframe.src = 'https://docs.google.com/gview?embedded=true&url=' + encodeURIComponent(currentPdfUrl);
         }
 
         function closePDF() {
