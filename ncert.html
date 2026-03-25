@@ -31,37 +31,33 @@
             50% { box-shadow: 0 0 20px var(--neon-cyan); }
             100% { box-shadow: 0 0 5px var(--neon-cyan); }
         }
-                /* CYBERPUNK PROGRESS BAR */
-        #progress-container {
-            width: 100%;
-            height: 4px;
-            background: rgba(0, 242, 255, 0.1);
-            display: none; /* Hidden by default */
-        }
-        #progress-bar {
-            width: 0%;
-            height: 100%;
-            background: var(--neon-cyan);
-            box-shadow: 0 0 15px var(--neon-cyan);
-            transition: width 0.3s ease-out, opacity 0.3s ease;
-        }
 
-        body { margin: 0; background: var(--dark-core); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px); background-size: 50px 50px; animation: gridMove 4s linear infinite; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        /* CUSTOM NEON SCROLLBAR */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--dark-core); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--neon-cyan); }
+
+        body { margin: 0; background: var(--dark-core); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px); background-size: 50px 50px; animation: gridMove 4s linear infinite; display: flex; flex-direction: column; align-items: center; min-height: 100vh; overflow-x: hidden; }
         
-        .container { width: 95%; max-width: 900px; margin: 40px auto; padding: 30px; background: rgba(0,0,0,0.85); border: 1px solid var(--border); border-top: 4px solid var(--neon-cyan); border-radius: 10px; animation: slideInUp 0.6s ease-out; }
+        .container { width: 95%; max-width: 900px; margin: 40px auto; padding: 30px; background: rgba(0,0,0,0.85); border: 1px solid var(--border); border-top: 4px solid var(--neon-cyan); border-radius: 10px; animation: slideInUp 0.6s ease-out; box-sizing: border-box; }
         
         .header-section { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 20px; flex-wrap: wrap; gap: 15px; }
         .back-link { color: #fff; text-decoration: none; font-family: 'Orbitron'; font-size: 0.8rem; border: 1px solid #fff; padding: 5px 10px; transition: 0.3s; white-space: nowrap; }
         .back-link:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); }
         h1 { font-family: 'Orbitron'; color: #fff; text-shadow: 0 0 10px var(--neon-cyan); margin: 0; font-size: 1.8rem; text-transform: uppercase; }
 
+        /* SEARCH BAR STYLES */
+        #search-box {
+            width: 100%; padding: 15px; background: rgba(0, 242, 255, 0.03); border: 1px solid var(--neon-cyan); color: #fff; font-family: 'Orbitron'; font-size: 1rem; margin-bottom: 20px; box-sizing: border-box; outline: none; transition: 0.3s; border-radius: 4px;
+        }
+        #search-box:focus { box-shadow: 0 0 15px rgba(0, 242, 255, 0.3); background: rgba(0, 242, 255, 0.08); }
+        #search-box::placeholder { color: rgba(0, 242, 255, 0.5); }
+
         /* DYNAMIC DIRECTORY STYLES */
         .directory { display: flex; flex-direction: column; gap: 15px; }
 
         .folder { background: rgba(0, 242, 255, 0.03); border: 1px solid var(--border); padding: 15px; border-radius: 5px; transition: 0.3s; animation: slideInUp 0.5s ease-out backwards; }
-        /* Staggered animation delays handled in JS */
-        
-        .folder:hover { border-color: var(--neon-cyan); background: rgba(0, 242, 255, 0.08); }
+        .folder:hover { border-color: var(--neon-cyan); box-shadow: 0 0 10px rgba(0,242,255,0.1); }
         .folder summary { font-family: 'Orbitron'; color: var(--neon-cyan); font-size: 1.3rem; cursor: pointer; list-style: none; outline: none; letter-spacing: 1px; }
         .folder summary::-webkit-details-marker { display: none; }
         .folder summary::before { content: '[+] '; color: var(--neon-purple); }
@@ -70,32 +66,55 @@
 
         .subject-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 10px; }
 
-        .file-link { display: flex; align-items: center; background: rgba(0,0,0,0.6); color: #fff; text-decoration: none; padding: 12px 15px; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; border: 1px solid #333; border-left: 3px solid var(--neon-purple); border-radius: 4px; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; text-transform: uppercase; }
+        .file-link { display: flex; align-items: center; background: rgba(0,0,0,0.6); color: #fff; text-decoration: none; padding: 12px 15px; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; border: 1px solid #333; border-left: 3px solid var(--neon-purple); border-radius: 4px; transition: all 0.3s ease; cursor: pointer; text-transform: uppercase; }
         .file-link:hover { transform: translateX(5px); border-color: var(--neon-cyan); border-left-color: var(--neon-cyan); color: var(--neon-cyan); box-shadow: 0 4px 15px rgba(0, 242, 255, 0.2); }
         .file-link::before { content: '📄 '; margin-right: 8px; font-size: 1.1rem; filter: grayscale(100%); transition: 0.3s; }
         .file-link:hover::before { filter: grayscale(0%); text-shadow: 0 0 5px var(--neon-cyan); }
 
-        /* PDF VIEWER STYLES */
-             /* FULL-SCREEN PDF VIEWER STYLES */
+        /* FULL-SCREEN PDF VIEWER STYLES */
         .viewer-container { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100vw; 
-            height: 100vh; 
-            z-index: 9999; 
-            background: var(--dark-core); 
-            display: none; 
-            flex-direction: column; 
-            border: none; 
-            border-radius: 0; 
-            animation: slideInUp 0.4s ease-out; 
-                <div class="viewer-container" id="pdfViewerUI">
-            
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; 
+            background: rgba(0,0,0,0.98); display: none; flex-direction: column; 
+            animation: slideInUp 0.3s ease-out; 
+        }
+        
+        .viewer-header { 
+            width: 100%; background: #000; border-bottom: 1px solid var(--neon-cyan); 
+            padding: 15px; display: flex; justify-content: space-between; align-items: center; 
+            box-sizing: border-box; flex-wrap: wrap; gap: 10px;
+        }
+
+        /* CYBERPUNK PROGRESS BAR */
+        #progress-container { width: 100%; height: 3px; background: rgba(0, 242, 255, 0.1); display: none; }
+        #progress-bar { width: 0%; height: 100%; background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); transition: width 0.3s ease-out, opacity 0.3s ease; }
+
+        .action-buttons { display: flex; gap: 10px; }
+        .btn-action { background: var(--neon-cyan); color: #000; border: none; padding: 8px 15px; cursor: pointer; font-family: 'Orbitron'; text-decoration: none; font-size: 0.8rem; font-weight: bold; transition: 0.3s; border-radius: 3px; }
+        .btn-action:hover { box-shadow: 0 0 15px var(--neon-cyan); transform: scale(1.05); }
+        .btn-share { background: var(--neon-purple); color: #fff; }
+        .btn-share:hover { box-shadow: 0 0 15px var(--neon-purple); }
+        
+        iframe { flex-grow: 1; width: 100%; border: none; background: #fff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <h1>NCERT_DATABASE</h1>
+            <a href="index.html" class="back-link">[ RETURN TO HUB ]</a>
+        </div>
+        
+        <p id="typewriter-text" style="color:var(--neon-cyan); letter-spacing: 1px; font-family: monospace; font-size: 0.95rem; min-height: 20px;"></p>
+        
+        <input type="text" id="search-box" placeholder="> SEARCH DATABASE (e.g., 'Class 10 Science')..." onkeyup="filterDatabase()">
+
+        <div class="directory" id="directory-grid"></div>
+
+        <div class="viewer-container" id="pdfViewerUI">
             <div class="viewer-header">
                 <div style="display: flex; align-items: center; gap: 15px;">
                     <button onclick="closePDF()" class="btn-action" style="background: transparent; border: 1px solid var(--neon-cyan); color: var(--neon-cyan); padding: 6px 12px;">← BACK</button>
-                    <span id="pdfTitle" style="font-size: 0.9rem;">> FETCHING...</span>
+                    <span id="pdfTitle" style="font-family: 'Orbitron'; color: var(--neon-cyan); font-size: 0.9rem;">> FETCHING...</span>
                 </div>
                 
                 <div class="action-buttons">
@@ -109,70 +128,24 @@
             </div>
 
             <iframe id="pdfFrame" src=""></iframe>
-            
-            <button onclick="closePDF()" style="width: 100%; padding: 15px; background: rgba(255, 77, 77, 0.1); border: none; border-top: 1px solid #ff4d4d; color: #ff4d4d; font-family: 'Orbitron'; font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.3s;">CLOSE_VIEWER</button>
-        </div>
-
-               <div class="viewer-container" id="pdfViewerUI">
-            <div class="viewer-header">
-                <span id="pdfTitle">> LOADING_DATASTREAM...</span>
-                <div class="action-buttons">
-                    <button id="pdfShareBtn" class="btn-action btn-share" onclick="shareCurrentPDF()">SHARE_PDF</button>
-                    <a href="#" id="pdfDownloadLink" download class="btn-action">DOWNLOAD</a>
-                </div>
-            </div>
-            
-            <div id="progress-container">
-                <div id="progress-bar"></div>
-            </div>
-            <iframe id="pdfFrame" src=""></iframe>
-            <button onclick="closePDF()" style="width: 100%; padding: 15px; background: rgba(255, 77, 77, 0.1); border: none; border-top: 1px solid #ff4d4d; color: #ff4d4d; font-family: 'Orbitron'; font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.3s;">CLOSE_VIEWER</button>
-        </div>
-
-        .action-buttons { display: flex; gap: 10px; }
-        .btn-action { background: var(--neon-cyan); color: #000; border: none; padding: 8px 15px; cursor: pointer; font-family: 'Orbitron'; text-decoration: none; font-size: 0.8rem; font-weight: bold; transition: 0.3s; border-radius: 3px; }
-        .btn-action:hover { box-shadow: 0 0 15px var(--neon-cyan); transform: scale(1.05); }
-        .btn-share { background: var(--neon-purple); color: #fff; }
-        .btn-share:hover { box-shadow: 0 0 15px var(--neon-purple); }
-        
-         iframe { 
-            flex-grow: 1; /* Forces iframe to take all remaining vertical space */
-            width: 100%; 
-            border: none; 
-            background: #fff; 
-        }
-
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header-section">
-            <h1>NCERT_MASTER_DATABASE</h1>
-            <a href="index.html" class="back-link">RETURN TO DASHBOARD</a>
-        </div>
-        
-        <p style="color:var(--neon-cyan); letter-spacing: 1px; font-family: monospace; font-size: 0.95rem;">> SYSTEM_ONLINE: SELECT_FULL_TEXTBOOK_MODULE</p>
-        
-        <div class="directory" id="directory-grid">
-            </div>
-
-        <div class="viewer-container" id="pdfViewerUI">
-            <div class="viewer-header">
-                <span id="pdfTitle">> LOADING_DATASTREAM...</span>
-                <div class="action-buttons">
-                    <button id="pdfShareBtn" class="btn-action btn-share" onclick="shareCurrentPDF()">SHARE_PDF</button>
-                    <a href="#" id="pdfDownloadLink" download class="btn-action">DOWNLOAD</a>
-                </div>
-            </div>
-            <iframe id="pdfFrame" src=""></iframe>
-            <button onclick="closePDF()" style="width: 100%; padding: 15px; background: rgba(255, 77, 77, 0.1); border: none; border-top: 1px solid #ff4d4d; color: #ff4d4d; font-family: 'Orbitron'; font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.3s;">CLOSE_VIEWER</button>
         </div>
     </div>
 
     <script>
+        // TYPEWRITER EFFECT
+        const textToType = "> SYSTEM_ONLINE: SELECT_FULL_TEXTBOOK_MODULE";
+        let typeIndex = 0;
+        function typeWriter() {
+            if (typeIndex < textToType.length) {
+                document.getElementById("typewriter-text").innerHTML += textToType.charAt(typeIndex);
+                typeIndex++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        window.onload = typeWriter;
+
         // ==========================================
-        // OPTIMIZED FULL-BOOK DATABASE (Classes 1-12)
-        // Format: { "Class Name": [ { subject: "Subject", file: "filename.pdf" } ] }
+        // OPTIMIZED FULL-BOOK DATABASE
         // ==========================================
         const ncertDatabase = {
             "CLASS 12": [
@@ -257,13 +230,12 @@
         };
 
         // ==========================================
-        // SYSTEM GENERATOR WITH ANIMATION STAGGERING
+        // SYSTEM GENERATOR WITH ANIMATION
         // ==========================================
         const grid = document.getElementById('directory-grid');
         let delayCounter = 0;
         
         for (const [className, subjects] of Object.entries(ncertDatabase)) {
-            // Adds a slight delay to each folder so they animate in sequence (cool tech effect)
             const animDelay = (delayCounter * 0.05) + 's';
             let classFolder = `<details class="folder" style="animation-delay: ${animDelay};"><summary>${className}</summary><div class="subject-grid">`;
             
@@ -277,12 +249,42 @@
         }
 
         // ==========================================
-        // PDF VIEWER & SHARE LOGIC
+        // LIVE SEARCH FILTER
+        // ==========================================
+        function filterDatabase() {
+            let input = document.getElementById('search-box').value.toUpperCase();
+            let folders = document.getElementsByClassName('folder');
+            
+            for (let i = 0; i < folders.length; i++) {
+                let summary = folders[i].querySelector('summary').innerText.toUpperCase();
+                let links = folders[i].querySelectorAll('.file-link');
+                let folderMatch = summary.indexOf(input) > -1;
+                let linkMatch = false;
+                
+                links.forEach(link => {
+                    if (link.innerText.toUpperCase().indexOf(input) > -1) {
+                        link.style.display = "";
+                        linkMatch = true;
+                    } else {
+                        link.style.display = "none";
+                    }
+                });
+                
+                if (folderMatch || linkMatch) {
+                    folders[i].style.display = "";
+                    if (input.length > 0) folders[i].setAttribute("open", "true");
+                } else {
+                    folders[i].style.display = "none";
+                }
+            }
+        }
+
+        // ==========================================
+        // PDF VIEWER, PROGRESS BAR & SHARE LOGIC
         // ==========================================
         let currentPdfUrl = "";
         let currentPdfTitle = "";
-
-              let progressInterval;
+        let progressInterval;
 
         function openPDF(pdfPath, title) {
             const viewer = document.getElementById('pdfViewerUI');
@@ -311,60 +313,48 @@
             // 4. Start Fake "Hacking" Load Sequence
             progressInterval = setInterval(() => {
                 if (progress < 90) {
-                    progress += Math.random() * 15; // Jumps randomly like a real terminal download
+                    progress += Math.random() * 15; 
                     if(progress > 90) progress = 90;
                     progressBar.style.width = progress + '%';
                 }
             }, 300);
 
-            // 5. When the PDF actually finishes loading in the background
+            // 5. When PDF loads
             iframe.onload = function() {
                 clearInterval(progressInterval);
-                progressBar.style.width = '100%'; // Snap to finish
+                progressBar.style.width = '100%'; 
                 document.getElementById('pdfTitle').innerText = '> VIEWING: ' + title;
                 
-                // Fade out the bar smoothly after it hits 100%
                 setTimeout(() => {
                     progressBar.style.opacity = '0';
                     setTimeout(() => { progressContainer.style.display = 'none'; }, 300);
                 }, 500);
             };
 
-            // 6. Trigger the actual download
+            // 6. Trigger Download via Google Docs Viewer
             iframe.src = 'https://docs.google.com/gview?embedded=true&url=' + encodeURIComponent(currentPdfUrl);
         }
 
         function closePDF() {
             document.getElementById('pdfViewerUI').style.display = 'none';
             document.getElementById('pdfFrame').src = "";
-            
-            // UNLOCK THE BACKGROUND SCROLLING
-            document.body.style.overflow = 'auto'; 
+            document.body.style.overflow = 'auto'; // UNLOCK SCROLLING
         }
 
-
-        // NATIVE SHARE API (For WhatsApp, Instagram, etc.)
         async function shareCurrentPDF() {
             if (!currentPdfUrl) return;
-            
             const shareData = {
                 title: 'MathHub Pro - ' + currentPdfTitle,
-                text: 'Check out the full NCERT textbook/solutions for ' + currentPdfTitle + ' on MathHub Pro! 🚀',
+                text: 'Check out the full NCERT textbook for ' + currentPdfTitle + ' on MathHub Pro! 🚀',
                 url: currentPdfUrl
             };
-
             try {
-                // Tries to open the native share menu on Mobile/iPad
-                if (navigator.share) {
-                    await navigator.share(shareData);
-                } else {
-                    // Fallback for PC browsers
+                if (navigator.share) await navigator.share(shareData);
+                else {
                     await navigator.clipboard.writeText(currentPdfUrl);
                     alert("Link copied to clipboard! Share it with your friends.");
                 }
-            } catch (err) {
-                console.log("Share failed or was canceled:", err);
-            }
+            } catch (err) { console.log("Share canceled."); }
         }
     </script>
 </body>
