@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Solver Terminal | MathHub Pro</title>
-        <meta name="description" content="AI Math Solver by MathHub Pro. Get step-by-step NCERT solutions for Class 10, 12 and advanced calculus using our elite neural network.">
+    <meta name="description" content="AI Math Solver by MathHub Pro. Get step-by-step NCERT solutions for Class 10, 12 and advanced calculus using our elite neural network.">
     <meta name="keywords" content="AI math solver, NCERT solutions, step by step math, MathHub Pro, CBSE math solver">
     <link rel="canonical" href="https://mathhub.pro/solver.html">
 
@@ -89,6 +89,19 @@
             color: #ccc;
         }
 
+        /* CUSTOM NEON SCROLLBAR */
+        #response-terminal::-webkit-scrollbar {
+            width: 6px;
+        }
+        #response-terminal::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.3);
+        }
+        #response-terminal::-webkit-scrollbar-thumb {
+            background: var(--neon-cyan);
+            border-radius: 10px;
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+
         .input-group { 
             display: flex; 
             gap: 10px; 
@@ -120,6 +133,48 @@
         .btn:hover { 
             box-shadow: 0 0 15px var(--neon-cyan); 
         }
+
+        /* SEO HUB STYLES */
+        .seo-hub { width: 90%; max-width: 850px; margin: 50px auto; }
+        .seo-hub h3 { font-family: 'Orbitron'; color: var(--neon-cyan); margin-bottom: 20px; font-size: 1.5rem; text-shadow: 0 0 10px rgba(0, 242, 255, 0.3); }
+        
+        .sys-accordion {
+            background: rgba(0,0,0,0.6);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .sys-accordion:hover { border-color: var(--neon-purple); box-shadow: 0 0 15px rgba(188, 19, 254, 0.1); }
+        
+        .sys-accordion summary {
+            padding: 20px;
+            color: var(--neon-cyan);
+            font-family: 'Orbitron';
+            font-size: 1.1rem;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+        }
+        
+        .sys-accordion summary::-webkit-details-marker { display: none; }
+        .sys-accordion summary::after { content: '[ + ]'; position: absolute; right: 20px; color: var(--neon-purple); }
+        .sys-accordion[open] summary::after { content: '[ - ]'; }
+        
+        .sys-content {
+            padding: 0 20px 20px 20px;
+            color: #bbb;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            border-top: 1px solid var(--border);
+            margin-top: 10px;
+            padding-top: 20px;
+        }
+        
+        .sys-content strong { color: #fff; }
+        .sys-content h4 { color: var(--neon-purple); font-family: 'Orbitron'; margin-top: 25px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -148,124 +203,72 @@
         <button class="btn" onclick="executeSolver()">SOLVE</button>
     </div>
 </div>
-    <style>
-    .seo-hub { width: 90%; max-width: 850px; margin: 50px auto; }
-    .seo-hub h3 { font-family: 'Orbitron'; color: var(--neon-cyan); margin-bottom: 20px; font-size: 1.5rem; text-shadow: 0 0 10px rgba(0, 242, 255, 0.3); }
-    
-    .sys-accordion {
-        background: rgba(0,0,0,0.6);
-        border: 1px solid var(--border);
-        border-radius: 5px;
-        margin-bottom: 15px;
-        transition: all 0.3s ease;
-    }
-    
-    .sys-accordion:hover { border-color: var(--neon-purple); box-shadow: 0 0 15px rgba(188, 19, 254, 0.1); }
-    
-    .sys-accordion summary {
-        padding: 20px;
-        color: var(--neon-cyan);
-        font-family: 'Orbitron';
-        font-size: 1.1rem;
-        cursor: pointer;
-        list-style: none;
-        position: relative;
-    }
-    
-    .sys-accordion summary::-webkit-details-marker { display: none; }
-    .sys-accordion summary::after {
-        content: '[ + ]';
-        position: absolute;
-        right: 20px;
-        color: var(--neon-purple);
-    }
-    
-    .sys-accordion[open] summary::after { content: '[ - ]'; }
-    
-    .sys-content {
-        padding: 0 20px 20px 20px;
-        color: #bbb;
-        font-family: 'Rajdhani', sans-serif;
-        font-size: 1.05rem;
-        line-height: 1.8;
-        border-top: 1px solid var(--border);
-        margin-top: 10px;
-        padding-top: 20px;
-    }
-    
-    .sys-content strong { color: #fff; }
-    .sys-content h4 { color: var(--neon-purple); font-family: 'Orbitron'; margin-top: 25px; margin-bottom: 10px; }
-</style>
 
 <div class="seo-hub">
     <h3>> SYSTEM_ARCHIVE // USER_MANUAL</h3>
+
     <details class="sys-accordion" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-    <summary itemprop="name">01. How to Operate the AI Math Solver</summary>
-    <div class="sys-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-        <div itemprop="text">
-            [Your long 1,000+ word text goes here]
-        </div>
-    </div>
-</details>
-
-    <details class="sys-accordion">
-        <summary>01. How to Operate the AI Math Solver (Neural Link)</summary>
-        <div class="sys-content">
-            <p>The <strong>MathHub Pro AI Solver</strong> is a state-of-the-art computational engine designed to bridge the gap between complex mathematical theory and step-by-step practical application. Unlike standard calculators that output a single raw number, our Neural Link provides comprehensive, NCERT-compliant breakdowns of equations.</p>
-            
-            <h4>Operational Procedures:</h4>
-            <ul>
-                <li><strong>Authentication:</strong> Click "Authenticate Connection" to establish a secure, encrypted link with our cloud nodes. This prevents bot spam and reserves high-speed bandwidth for genuine students.</li>
-                <li><strong>Query Input:</strong> Enter your mathematical problem into the terminal. You can use standard notation (e.g., "Solve for x in 2x^2 + 4x - 6 = 0") or type out complex word problems directly from your CBSE or SSC textbooks.</li>
-                <li><strong>Execution:</strong> Press Enter or click "Solve". The engine will analyze the physical and logical constraints of your query, bypass common mathematical paradoxes, and output a line-by-line solution.</li>
-            </ul>
-            <p><em>Example:</em> If a student from Mancherial is preparing for their Class 10 board exams and struggles with Trigonometric identities, they can input the exact proof required. The AI will output the exact theorems used (like Pythagoras or Euler's formulas) to arrive at the solution.</p>
+        <summary itemprop="name">01. How to Operate the AI Math Solver (Neural Link)</summary>
+        <div class="sys-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+                <p>The <strong>MathHub Pro AI Solver</strong> is a state-of-the-art computational engine designed to bridge the gap between complex mathematical theory and step-by-step practical application. Unlike standard calculators that output a single raw number, our Neural Link provides comprehensive, NCERT-compliant breakdowns of equations.</p>
+                <h4>Operational Procedures:</h4>
+                <ul>
+                    <li><strong>Authentication:</strong> Click "Authenticate Connection" to establish a secure, encrypted link with our cloud nodes. This prevents bot spam and reserves high-speed bandwidth for genuine students.</li>
+                    <li><strong>Query Input:</strong> Enter your mathematical problem into the terminal. You can use standard notation (e.g., "Solve for x in 2x^2 + 4x - 6 = 0") or type out complex word problems directly from your CBSE or SSC textbooks.</li>
+                    <li><strong>Execution:</strong> Press Enter or click "Solve". The engine will analyze the physical and logical constraints of your query, bypass common mathematical paradoxes, and output a line-by-line solution.</li>
+                </ul>
+                <p><em>Example:</em> If a student from Mancherial is preparing for their Class 10 board exams and struggles with Trigonometric identities, they can input the exact proof required. The AI will output the exact theorems used (like Pythagoras or Euler's formulas) to arrive at the solution.</p>
+            </div>
         </div>
     </details>
 
-    <details class="sys-accordion">
-        <summary>02. NCERT & CBSE Curriculum Integration</summary>
-        <div class="sys-content">
-            <p>MathHub Pro is deeply calibrated for the Indian educational ecosystem, specifically targeting the <strong>Central Board of Secondary Education (CBSE)</strong> and state board guidelines. We recognize that international calculators often use formats that do not align with NCERT marking schemes.</p>
-            
-            <h4>Why NCERT Alignment Matters:</h4>
-            <p>Examiners look for specific step-by-step methodologies. Our platform ensures that whether you are using the Matrix Solver, the Calculus Hub, or the AI Engine, the logic mirrors the official NCERT textbooks for Classes 10 and 12. We provide direct links to the official NCERT textbook PDFs, alongside custom cheat sheets and Previous Year Question (PYQ) papers, transforming MathHub Pro from a simple calculator into a complete digital classroom.</p>
+    <details class="sys-accordion" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <summary itemprop="name">02. NCERT & CBSE Curriculum Integration</summary>
+        <div class="sys-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+                <p>MathHub Pro is deeply calibrated for the Indian educational ecosystem, specifically targeting the <strong>Central Board of Secondary Education (CBSE)</strong> and state board guidelines. We recognize that international calculators often use formats that do not align with NCERT marking schemes.</p>
+                <h4>Why NCERT Alignment Matters:</h4>
+                <p>Examiners look for specific step-by-step methodologies. Our platform ensures that whether you are using the Matrix Solver, the Calculus Hub, or the AI Engine, the logic mirrors the official NCERT textbooks for Classes 10 and 12. We provide direct links to the official NCERT textbook PDFs, alongside custom cheat sheets and Previous Year Question (PYQ) papers, transforming MathHub Pro from a simple calculator into a complete digital classroom.</p>
+            </div>
         </div>
     </details>
 
-    <details class="sys-accordion">
-        <summary>03. The Elite 20 Tool Grid: Detailed Breakdown (Part A)</summary>
-        <div class="sys-content">
-            <p>The core of MathHub Pro is our Elite 20 grid. These are hyper-optimized, client-side tools that perform complex calculations instantly without reloading the page.</p>
-            
-            <h4>The Financial Matrix (GST & Compound Interest)</h4>
-            <p>The <strong>Online GST Calculator India 2026</strong> is essential for commerce students and business professionals. It accurately separates CGST, SGST, and IGST based on current Indian tax brackets. You simply input the base amount and the tax slab (5%, 12%, 18%, or 28%), and it instantly outputs the net and gross prices. Paired with our <strong>Compound Interest Calculator</strong>, users can forecast long-term wealth growth, accounting for monthly, quarterly, or annual compounding frequencies.</p>
-
-            <h4>Biometric Data (Age & BMI Calculators)</h4>
-            <p>Our chronological <strong>Age Calculator</strong> goes beyond simple years; it calculates exact lifespans down to months, weeks, and days. The <strong>BMI Tracker (Body Mass Index)</strong> uses global health standards to instantly classify your physical metrics into Underweight, Normal, Overweight, or Obese categories based on height-to-weight ratios.</p>
+    <details class="sys-accordion" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <summary itemprop="name">03. The Elite 20 Tool Grid: Detailed Breakdown (Part A)</summary>
+        <div class="sys-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+                <p>The core of MathHub Pro is our Elite 20 grid. These are hyper-optimized, client-side tools that perform complex calculations instantly without reloading the page.</p>
+                <h4>The Financial Matrix (GST & Compound Interest)</h4>
+                <p>The <strong>Online GST Calculator India 2026</strong> is essential for commerce students and business professionals. It accurately separates CGST, SGST, and IGST based on current Indian tax brackets. You simply input the base amount and the tax slab (5%, 12%, 18%, or 28%), and it instantly outputs the net and gross prices. Paired with our <strong>Compound Interest Calculator</strong>, users can forecast long-term wealth growth, accounting for monthly, quarterly, or annual compounding frequencies.</p>
+                <h4>Biometric Data (Age & BMI Calculators)</h4>
+                <p>Our chronological <strong>Age Calculator</strong> goes beyond simple years; it calculates exact lifespans down to months, weeks, and days. The <strong>BMI Tracker (Body Mass Index)</strong> uses global health standards to instantly classify your physical metrics into Underweight, Normal, Overweight, or Obese categories based on height-to-weight ratios.</p>
+            </div>
         </div>
     </details>
 
-    <details class="sys-accordion">
-        <summary>04. The Elite 20 Tool Grid: Detailed Breakdown (Part B)</summary>
-        <div class="sys-content">
-            <h4>Scientific Computation (Calculus, Matrix, & Trigonometry)</h4>
-            <p>Engineered for JEE aspirants and university students. The <strong>Calculus Hub</strong> handles limits, derivatives, and definite/indefinite integrals. The <strong>Matrix Solver</strong> allows users to input grid data (2x2, 3x3) to find determinants, inverses, and eigenvalues. The <strong>Trigonometry Engine</strong> instantly resolves sine, cosine, and tangent ratios, mapping angles exactly as required by advanced geometry.</p>
-
-            <h4>Physics & Logic (Ohm's Law, Binary, Base Switcher)</h4>
-            <p>The <strong>Ohm's Law Calculator</strong> allows physics students to calculate Voltage (V), Current (I), and Resistance (R) by supplying any two known variables. For computer science students, the <strong>Binary Logic</strong> and <strong>Base Switcher</strong> tools instantly convert code between Decimal, Hexadecimal, Octal, and Binary formats, performing bitwise operations necessary for programming logic.</p>
+    <details class="sys-accordion" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <summary itemprop="name">04. The Elite 20 Tool Grid: Detailed Breakdown (Part B)</summary>
+        <div class="sys-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+                <h4>Scientific Computation (Calculus, Matrix, & Trigonometry)</h4>
+                <p>Engineered for JEE aspirants and university students. The <strong>Calculus Hub</strong> handles limits, derivatives, and definite/indefinite integrals. The <strong>Matrix Solver</strong> allows users to input grid data (2x2, 3x3) to find determinants, inverses, and eigenvalues. The <strong>Trigonometry Engine</strong> instantly resolves sine, cosine, and tangent ratios, mapping angles exactly as required by advanced geometry.</p>
+                <h4>Physics & Logic (Ohm's Law, Binary, Base Switcher)</h4>
+                <p>The <strong>Ohm's Law Calculator</strong> allows physics students to calculate Voltage (V), Current (I), and Resistance (R) by supplying any two known variables. For computer science students, the <strong>Binary Logic</strong> and <strong>Base Switcher</strong> tools instantly convert code between Decimal, Hexadecimal, Octal, and Binary formats, performing bitwise operations necessary for programming logic.</p>
+            </div>
         </div>
     </details>
 
-    <details class="sys-accordion">
-        <summary>05. System Performance & Security Architecture</summary>
-        <div class="sys-content">
-            <p>MathHub Pro is deployed using a cutting-edge serverless architecture. By utilizing <strong>Firebase Authentication</strong> and Cloudflare routing, we ensure 99.9% uptime. The entire site is built using asynchronous loading protocols, meaning CSS, JavaScript, and fonts (like our signature Orbitron and Rajdhani styles) load without blocking the main rendering thread.</p>
-            <p>User data privacy is strictly maintained. Calculation histories and AI query logs are processed securely, and users have the ability to terminate their active sessions at any time using the "Reset Connection" commands built directly into our terminals.</p>
+    <details class="sys-accordion" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <summary itemprop="name">05. System Performance & Security Architecture</summary>
+        <div class="sys-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+                <p>MathHub Pro is deployed using a cutting-edge serverless architecture. By utilizing <strong>Firebase Authentication</strong> and Cloudflare routing, we ensure 99.9% uptime. The entire site is built using asynchronous loading protocols, meaning CSS, JavaScript, and fonts (like our signature Orbitron and Rajdhani styles) load without blocking the main rendering thread.</p>
+                <p>User data privacy is strictly maintained. Calculation histories and AI query logs are processed securely, and users have the ability to terminate their active sessions at any time using the "Reset Connection" commands built directly into our terminals.</p>
+            </div>
         </div>
     </details>
 </div>
-
 
 <script src="https://js.puter.com/v2/"></script>
 <script>
@@ -313,7 +316,7 @@
         window.location.reload();
     }
 
-        async function executeSolver() {
+    async function executeSolver() {
         const query = inputField.value.trim();
         if (!query) return;
 
@@ -326,25 +329,30 @@
             
             let answerText = "";
 
-            // PROFESSIONAL UNBOXING LOGIC:
-            // This checks every possible place the text could be hidden
+            // PROFESSIONAL UNBOXING LOGIC
             if (typeof response === 'string') {
                 answerText = response;
             } else if (response && typeof response === 'object') {
-                // Dig into the object to find the content string
                 const data = response.content || 
                              (response.message && (response.message.content || response.message)) || 
                              response.text;
-                
-                // If it's still an object, turn it into a string so it doesn't say [object Object]
                 answerText = (typeof data === 'string') ? data : JSON.stringify(data);
             } else {
                 answerText = "System reached but no data was returned. Please retry.";
             }
             
-            // Final display formatting
+            // ==========================================
+            // FINAL DISPLAY FORMATTING (BRIGHT CYAN TEXT)
+            // ==========================================
             const formattedResponse = answerText.replace(/\n/g, '<br>');
-            output.innerHTML = `<span style="color: var(--neon-purple)">> ANALYSIS_COMPLETE:</span><br><br>${formattedResponse}`;
+            
+            output.innerHTML = `
+                <span style="color: var(--neon-purple); font-weight: bold; font-size: 1.1rem;">> ANALYSIS_COMPLETE:</span><br><br>
+                <div style="color: var(--neon-cyan); text-shadow: 0 0 5px rgba(0, 242, 255, 0.2); line-height: 1.8; font-size: 1.05rem;">
+                    ${formattedResponse}
+                </div>
+            `;
+            
             output.scrollTop = output.scrollHeight;
             
         } catch (error) {
@@ -353,9 +361,7 @@
             <button class="btn" style="padding: 10px; font-size: 0.8rem;" onclick="forceLogout()">RE-ESTABLISH PROTOCOL</button>`;
         }
     }
-
 </script>
-
 
 </body>
 </html>
