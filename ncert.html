@@ -31,7 +31,21 @@
             50% { box-shadow: 0 0 20px var(--neon-cyan); }
             100% { box-shadow: 0 0 5px var(--neon-cyan); }
         }
-        
+                /* CYBERPUNK PROGRESS BAR */
+        #progress-container {
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 242, 255, 0.1);
+            display: none; /* Hidden by default */
+        }
+        #progress-bar {
+            width: 0%;
+            height: 100%;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 15px var(--neon-cyan);
+            transition: width 0.3s ease-out, opacity 0.3s ease;
+        }
+
         body { margin: 0; background: var(--dark-core); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px); background-size: 50px 50px; animation: gridMove 4s linear infinite; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
         
         .container { width: 95%; max-width: 900px; margin: 40px auto; padding: 30px; background: rgba(0,0,0,0.85); border: 1px solid var(--border); border-top: 4px solid var(--neon-cyan); border-radius: 10px; animation: slideInUp 0.6s ease-out; }
@@ -92,7 +106,22 @@
             gap: 10px; 
             box-sizing: border-box; 
         }
-       
+               <div class="viewer-container" id="pdfViewerUI">
+            <div class="viewer-header">
+                <span id="pdfTitle">> LOADING_DATASTREAM...</span>
+                <div class="action-buttons">
+                    <button id="pdfShareBtn" class="btn-action btn-share" onclick="shareCurrentPDF()">SHARE_PDF</button>
+                    <a href="#" id="pdfDownloadLink" download class="btn-action">DOWNLOAD</a>
+                </div>
+            </div>
+            
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <iframe id="pdfFrame" src=""></iframe>
+            <button onclick="closePDF()" style="width: 100%; padding: 15px; background: rgba(255, 77, 77, 0.1); border: none; border-top: 1px solid #ff4d4d; color: #ff4d4d; font-family: 'Orbitron'; font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.3s;">CLOSE_VIEWER</button>
+        </div>
+
         .action-buttons { display: flex; gap: 10px; }
         .btn-action { background: var(--neon-cyan); color: #000; border: none; padding: 8px 15px; cursor: pointer; font-family: 'Orbitron'; text-decoration: none; font-size: 0.8rem; font-weight: bold; transition: 0.3s; border-radius: 3px; }
         .btn-action:hover { box-shadow: 0 0 15px var(--neon-cyan); transform: scale(1.05); }
