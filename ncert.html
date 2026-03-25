@@ -62,16 +62,50 @@
         .file-link:hover::before { filter: grayscale(0%); text-shadow: 0 0 5px var(--neon-cyan); }
 
         /* PDF VIEWER STYLES */
-        .viewer-container { margin-top: 40px; display: none; flex-direction: column; align-items: center; border: 1px solid var(--neon-cyan); border-radius: 5px; overflow: hidden; animation: slideInUp 0.5s ease-out, neonPulse 3s infinite; }
-        .viewer-header { width: 100%; background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--neon-cyan); color: var(--neon-cyan); font-family: 'Orbitron'; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-sizing: border-box; }
-        
+             /* FULL-SCREEN PDF VIEWER STYLES */
+        .viewer-container { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            z-index: 9999; 
+            background: var(--dark-core); 
+            display: none; 
+            flex-direction: column; 
+            border: none; 
+            border-radius: 0; 
+            animation: slideInUp 0.4s ease-out; 
+        }
+        .viewer-header { 
+            width: 100%; 
+            background: rgba(0,0,0,0.95); 
+            border-bottom: 2px solid var(--neon-cyan); 
+            color: var(--neon-cyan); 
+            font-family: 'Orbitron'; 
+            padding: 15px 20px; 
+            font-weight: bold; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+            box-sizing: border-box; 
+        }
+       
         .action-buttons { display: flex; gap: 10px; }
         .btn-action { background: var(--neon-cyan); color: #000; border: none; padding: 8px 15px; cursor: pointer; font-family: 'Orbitron'; text-decoration: none; font-size: 0.8rem; font-weight: bold; transition: 0.3s; border-radius: 3px; }
         .btn-action:hover { box-shadow: 0 0 15px var(--neon-cyan); transform: scale(1.05); }
         .btn-share { background: var(--neon-purple); color: #fff; }
         .btn-share:hover { box-shadow: 0 0 15px var(--neon-purple); }
         
-        iframe { width: 100%; height: 80vh; border: none; background: #fff; }
+         iframe { 
+            flex-grow: 1; /* Forces iframe to take all remaining vertical space */
+            width: 100%; 
+            border: none; 
+            background: #fff; 
+        }
+
     </style>
 </head>
 <body>
@@ -212,28 +246,30 @@
         let currentPdfUrl = "";
         let currentPdfTitle = "";
 
-        function openPDF(pdfPath, title) {
+                function openPDF(pdfPath, title) {
             const viewer = document.getElementById('pdfViewerUI');
             viewer.style.display = 'flex';
             
-            // Set global variables for the Share function
+            // LOCK THE BACKGROUND SCROLLING
+            document.body.style.overflow = 'hidden'; 
+            
             currentPdfTitle = title;
             currentPdfUrl = 'https://mathhub.pro/' + pdfPath;
 
             document.getElementById('pdfTitle').innerText = '> VIEWING: ' + title;
             document.getElementById('pdfDownloadLink').href = pdfPath;
             
-            // Display the PDF using Google Docs Viewer for mobile compatibility
             document.getElementById('pdfFrame').src = 'https://docs.google.com/gview?embedded=true&url=' + encodeURIComponent(currentPdfUrl);
-
-            viewer.scrollIntoView({ behavior: 'smooth' });
         }
 
         function closePDF() {
             document.getElementById('pdfViewerUI').style.display = 'none';
             document.getElementById('pdfFrame').src = "";
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // UNLOCK THE BACKGROUND SCROLLING
+            document.body.style.overflow = 'auto'; 
         }
+
 
         // NATIVE SHARE API (For WhatsApp, Instagram, etc.)
         async function shareCurrentPDF() {
