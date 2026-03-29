@@ -3,39 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCERT Database Direct Hub | MathHub Pro Elite</title>
     
-    <title>NCERT Solutions Database | MathHub Pro Elite</title>
-    <meta name="description" content="Access official full-book NCERT PDF solutions for CBSE Classes 1-12 directly on MathHub Pro.">
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-C5KMGS6VML');
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
-
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root { --neon-cyan: #00f2ff; --neon-purple: #bc13fe; --dark-core: #050505; --border: rgba(0, 242, 255, 0.2); }
         
         @keyframes gridMove { from { background-position: 0 0; } to { background-position: 50px 50px; } }
-        @keyframes slideInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes neonPulse {
-            0% { box-shadow: 0 0 5px var(--neon-cyan); }
-            50% { box-shadow: 0 0 20px var(--neon-cyan); }
-            100% { box-shadow: 0 0 5px var(--neon-cyan); }
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes glitch { 
+            0% { text-shadow: 2px 0 red, -2px 0 blue; }
+            50% { text-shadow: -2px 0 red, 2px 0 blue; }
+            100% { text-shadow: 2px 0 red, -2px 0 blue; }
         }
 
-        /* CUSTOM NEON SCROLLBAR */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--dark-core); }
-        ::-webkit-scrollbar-thumb { background: var(--neon-cyan); border-radius: 10px; box-shadow: 0 0 10px var(--neon-cyan); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-cyan); border-radius: 10px; }
 
         body { margin: 0; background: var(--dark-core); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px); background-size: 50px 50px; animation: gridMove 4s linear infinite; display: flex; flex-direction: column; align-items: center; min-height: 100vh; overflow-x: hidden; }
         
@@ -47,15 +33,11 @@
         h1 { font-family: 'Orbitron'; color: #fff; text-shadow: 0 0 10px var(--neon-cyan); margin: 0; font-size: 1.8rem; text-transform: uppercase; }
 
         /* SEARCH BAR STYLES */
-        #search-box {
-            width: 100%; padding: 15px; background: rgba(0, 242, 255, 0.03); border: 1px solid var(--neon-cyan); color: #fff; font-family: 'Orbitron'; font-size: 1rem; margin-bottom: 20px; box-sizing: border-box; outline: none; transition: 0.3s; border-radius: 4px;
-        }
+        #search-box { width: 100%; padding: 15px; background: rgba(0, 242, 255, 0.03); border: 1px solid var(--neon-cyan); color: #fff; font-family: 'Orbitron'; font-size: 1rem; margin-bottom: 20px; box-sizing: border-box; outline: none; transition: 0.3s; border-radius: 4px; }
         #search-box:focus { box-shadow: 0 0 15px rgba(0, 242, 255, 0.3); background: rgba(0, 242, 255, 0.08); }
-        #search-box::placeholder { color: rgba(0, 242, 255, 0.5); }
 
-        /* DYNAMIC DIRECTORY STYLES */
+        /* DIRECTORY STYLES */
         .directory { display: flex; flex-direction: column; gap: 15px; }
-
         .folder { background: rgba(0, 242, 255, 0.03); border: 1px solid var(--border); padding: 15px; border-radius: 5px; transition: 0.3s; animation: slideInUp 0.5s ease-out backwards; }
         .folder:hover { border-color: var(--neon-cyan); box-shadow: 0 0 10px rgba(0,242,255,0.1); }
         .folder summary { font-family: 'Orbitron'; color: var(--neon-cyan); font-size: 1.3rem; cursor: pointer; list-style: none; outline: none; letter-spacing: 1px; }
@@ -66,35 +48,19 @@
 
         .subject-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 10px; }
 
-        .file-link { display: flex; align-items: center; background: rgba(0,0,0,0.6); color: #fff; text-decoration: none; padding: 12px 15px; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; border: 1px solid #333; border-left: 3px solid var(--neon-purple); border-radius: 4px; transition: all 0.3s ease; cursor: pointer; text-transform: uppercase; }
+        .file-link { display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.6); color: #fff; text-decoration: none; padding: 12px 15px; font-family: 'Orbitron', sans-serif; font-size: 0.85rem; border: 1px solid #333; border-left: 3px solid var(--neon-purple); border-radius: 4px; transition: all 0.3s ease; cursor: pointer; text-transform: uppercase; }
         .file-link:hover { transform: translateX(5px); border-color: var(--neon-cyan); border-left-color: var(--neon-cyan); color: var(--neon-cyan); box-shadow: 0 4px 15px rgba(0, 242, 255, 0.2); }
-        .file-link::before { content: '📄 '; margin-right: 8px; font-size: 1.1rem; filter: grayscale(100%); transition: 0.3s; }
-        .file-link:hover::before { filter: grayscale(0%); text-shadow: 0 0 5px var(--neon-cyan); }
+        .file-link i { color: var(--neon-cyan); opacity: 0.5; transition: 0.3s; }
+        .file-link:hover i { opacity: 1; text-shadow: 0 0 5px var(--neon-cyan); }
 
-        /* FULL-SCREEN PDF VIEWER STYLES */
-        .viewer-container { 
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; 
-            background: rgba(0,0,0,0.98); display: none; flex-direction: column; 
-            animation: slideInUp 0.3s ease-out; 
+        /* REROUTE OVERLAY UI */
+        #reroute-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.98); 
+            z-index: 99999; display: none; flex-direction: column; justify-content: center; align-items: center;
+            font-family: 'Orbitron'; color: var(--neon-cyan); text-align: center;
         }
-        
-        .viewer-header { 
-            width: 100%; background: #000; border-bottom: 1px solid var(--neon-cyan); 
-            padding: 15px; display: flex; justify-content: space-between; align-items: center; 
-            box-sizing: border-box; flex-wrap: wrap; gap: 10px;
-        }
-
-        /* CYBERPUNK PROGRESS BAR */
-        #progress-container { width: 100%; height: 3px; background: rgba(0, 242, 255, 0.1); display: none; }
-        #progress-bar { width: 0%; height: 100%; background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); transition: width 0.3s ease-out, opacity 0.3s ease; }
-
-        .action-buttons { display: flex; gap: 10px; }
-        .btn-action { background: var(--neon-cyan); color: #000; border: none; padding: 8px 15px; cursor: pointer; font-family: 'Orbitron'; text-decoration: none; font-size: 0.8rem; font-weight: bold; transition: 0.3s; border-radius: 3px; }
-        .btn-action:hover { box-shadow: 0 0 15px var(--neon-cyan); transform: scale(1.05); }
-        .btn-share { background: var(--neon-purple); color: #fff; }
-        .btn-share:hover { box-shadow: 0 0 15px var(--neon-purple); }
-        
-        iframe { flex-grow: 1; width: 100%; border: none; background: #fff; }
+        .spinner { border: 4px solid rgba(0, 242, 255, 0.1); border-top: 4px solid var(--neon-purple); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin-bottom: 20px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
@@ -106,131 +72,126 @@
         
         <p id="typewriter-text" style="color:var(--neon-cyan); letter-spacing: 1px; font-family: monospace; font-size: 0.95rem; min-height: 20px;"></p>
         
-        <input type="text" id="search-box" placeholder="> SEARCH DATABASE (e.g., 'Class 10 Science')..." onkeyup="filterDatabase()">
+        <input type="text" id="search-box" placeholder="> SEARCH DATABASE (e.g., 'Class 10 History')..." onkeyup="filterDatabase()">
 
         <div class="directory" id="directory-grid"></div>
+    </div>
 
-        <div class="viewer-container" id="pdfViewerUI">
-            <div class="viewer-header">
-                <div style="display: flex; align-items: center; gap: 15px;">
-                    <button onclick="closePDF()" class="btn-action" style="background: transparent; border: 1px solid var(--neon-cyan); color: var(--neon-cyan); padding: 6px 12px;">← BACK</button>
-                    <span id="pdfTitle" style="font-family: 'Orbitron'; color: var(--neon-cyan); font-size: 0.9rem;">> FETCHING...</span>
-                </div>
-                
-                <div class="action-buttons">
-                    <button id="pdfShareBtn" class="btn-action btn-share" onclick="shareCurrentPDF()">SHARE</button>
-                    <a href="#" id="pdfDownloadLink" download class="btn-action">DOWNLOAD</a>
-                </div>
-            </div>
-            
-            <div id="progress-container">
-                <div id="progress-bar"></div>
-            </div>
-
-            <iframe id="pdfFrame" src=""></iframe>
-        </div>
+    <div id="reroute-overlay">
+        <div class="spinner"></div>
+        <h2 style="margin: 0; font-size: 1.5rem; text-shadow: 0 0 10px var(--neon-cyan);">> SECURE_CONNECTION_INITIATED</h2>
+        <p id="reroute-text" style="color: var(--neon-purple); font-size: 1rem; margin-top: 10px; animation: glitch 0.5s infinite;">REROUTING TO NCERT MAINFRAME...</p>
     </div>
 
     <script>
         // TYPEWRITER EFFECT
-        const textToType = "> SYSTEM_ONLINE: SELECT_FULL_TEXTBOOK_MODULE";
+        const textToType = "> SYSTEM_ONLINE: DIRECT_NCERT_SERVER_LINKING_ENABLED";
         let typeIndex = 0;
         function typeWriter() {
             if (typeIndex < textToType.length) {
                 document.getElementById("typewriter-text").innerHTML += textToType.charAt(typeIndex);
                 typeIndex++;
-                setTimeout(typeWriter, 50);
+                setTimeout(typeWriter, 40);
             }
         }
         window.onload = typeWriter;
 
         // ==========================================
-        // OPTIMIZED FULL-BOOK DATABASE
+        // OFFICIAL NCERT DIRECTORY DATABASE (Classes 1-12)
+        // Uses deep query parameters to land exactly on the book.
         // ==========================================
         const ncertDatabase = {
             "CLASS 12": [
-                { subject: "Mathematics", file: "c12-math.pdf" },
-                { subject: "Physics", file: "c12-phy.pdf" },
-                { subject: "Chemistry", file: "c12-chem.pdf" },
-                { subject: "Biology", file: "c12-bio.pdf" },
-                { subject: "English", file: "c12-eng.pdf" },
-                { subject: "Hindi", file: "c12-hin.pdf" }
+                { subject: "Mathematics Part I", url: "https://ncert.nic.in/textbook.php?lemh1=0-6" },
+                { subject: "Mathematics Part II", url: "https://ncert.nic.in/textbook.php?lemh2=0-7" },
+                { subject: "Physics Part I", url: "https://ncert.nic.in/textbook.php?leph1=0-8" },
+                { subject: "Physics Part II", url: "https://ncert.nic.in/textbook.php?leph2=0-6" },
+                { subject: "Chemistry Part I", url: "https://ncert.nic.in/textbook.php?lech1=0-5" },
+                { subject: "Chemistry Part II", url: "https://ncert.nic.in/textbook.php?lech2=0-5" },
+                { subject: "Biology", url: "https://ncert.nic.in/textbook.php?lebo1=0-13" },
+                { subject: "English (Flamingo)", url: "https://ncert.nic.in/textbook.php?lefl1=0-14" },
+                { subject: "English (Vistas)", url: "https://ncert.nic.in/textbook.php?levt1=0-6" }
             ],
             "CLASS 11": [
-                { subject: "Mathematics", file: "c11-math.pdf" },
-                { subject: "Physics", file: "c11-phy.pdf" },
-                { subject: "Chemistry", file: "c11-chem.pdf" },
-                { subject: "Biology", file: "c11-bio.pdf" },
-                { subject: "English", file: "c11-eng.pdf" },
-                { subject: "Hindi", file: "c11-hin.pdf" }
+                { subject: "Mathematics", url: "https://ncert.nic.in/textbook.php?kemh1=0-14" },
+                { subject: "Physics Part I", url: "https://ncert.nic.in/textbook.php?keph1=0-8" },
+                { subject: "Physics Part II", url: "https://ncert.nic.in/textbook.php?keph2=0-6" },
+                { subject: "Chemistry Part I", url: "https://ncert.nic.in/textbook.php?kech1=0-7" },
+                { subject: "Chemistry Part II", url: "https://ncert.nic.in/textbook.php?kech2=0-7" },
+                { subject: "Biology", url: "https://ncert.nic.in/textbook.php?kebo1=0-22" },
+                { subject: "English (Hornbill)", url: "https://ncert.nic.in/textbook.php?kehb1=0-8" }
             ],
             "CLASS 10": [
-                { subject: "Mathematics", file: "c10-math.pdf" },
-                { subject: "Science", file: "c10-sci.pdf" },
-                { subject: "Social Science", file: "c10-sst.pdf" },
-                { subject: "English", file: "c10-eng.pdf" },
-                { subject: "Hindi", file: "c10-hin.pdf" }
+                { subject: "Mathematics", url: "https://ncert.nic.in/textbook.php?jemh1=0-15" },
+                { subject: "Science", url: "https://ncert.nic.in/textbook.php?jesc1=0-16" },
+                { subject: "History (Contemp. World II)", url: "https://ncert.nic.in/textbook.php?jess3=0-5" },
+                { subject: "Geography (Contemp. India)", url: "https://ncert.nic.in/textbook.php?jess1=0-7" },
+                { subject: "Civics (Democratic Politics II)", url: "https://ncert.nic.in/textbook.php?jess4=0-8" },
+                { subject: "Economics", url: "https://ncert.nic.in/textbook.php?jess2=0-5" },
+                { subject: "English (First Flight)", url: "https://ncert.nic.in/textbook.php?jeff1=0-11" }
             ],
             "CLASS 9": [
-                { subject: "Mathematics", file: "c9-math.pdf" },
-                { subject: "Science", file: "c9-sci.pdf" },
-                { subject: "Social Science", file: "c9-sst.pdf" },
-                { subject: "English", file: "c9-eng.pdf" },
-                { subject: "Hindi", file: "c9-hin.pdf" }
+                { subject: "Mathematics", url: "https://ncert.nic.in/textbook.php?iemh1=0-15" },
+                { subject: "Science", url: "https://ncert.nic.in/textbook.php?iesc1=0-15" },
+                { subject: "History (Contemp. World I)", url: "https://ncert.nic.in/textbook.php?iess3=0-5" },
+                { subject: "Geography (Contemp. India I)", url: "https://ncert.nic.in/textbook.php?iess1=0-6" },
+                { subject: "Civics (Democratic Politics I)", url: "https://ncert.nic.in/textbook.php?iess4=0-5" },
+                { subject: "Economics", url: "https://ncert.nic.in/textbook.php?iess2=0-4" },
+                { subject: "English (Beehive)", url: "https://ncert.nic.in/textbook.php?iebe1=0-11" }
             ],
             "CLASS 8": [
-                { subject: "Mathematics", file: "c8-math.pdf" },
-                { subject: "Science", file: "c8-sci.pdf" },
-                { subject: "Social Science", file: "c8-sst.pdf" },
-                { subject: "English", file: "c8-eng.pdf" },
-                { subject: "Hindi", file: "c8-hin.pdf" }
+                { subject: "Mathematics", url: "https://ncert.nic.in/textbook.php?hemh1=0-16" },
+                { subject: "Science", url: "https://ncert.nic.in/textbook.php?hesc1=0-18" },
+                { subject: "History (Our Pasts III)", url: "https://ncert.nic.in/textbook.php?hess2=0-10" },
+                { subject: "Geography (Resources & Dev)", url: "https://ncert.nic.in/textbook.php?hess3=0-6" },
+                { subject: "Civics (Social & Pol Life III)", url: "https://ncert.nic.in/textbook.php?hess4=0-10" },
+                { subject: "English (Honeydew)", url: "https://ncert.nic.in/textbook.php?hehd1=0-10" }
             ],
             "CLASS 7": [
-                { subject: "Mathematics", file: "c7-math.pdf" },
-                { subject: "Science", file: "c7-sci.pdf" },
-                { subject: "Social Science", file: "c7-sst.pdf" },
-                { subject: "English", file: "c7-eng.pdf" },
-                { subject: "Hindi", file: "c7-hin.pdf" }
+                { subject: "Mathematics", url: "https://ncert.nic.in/textbook.php?gemh1=0-15" },
+                { subject: "Science", url: "https://ncert.nic.in/textbook.php?gesc1=0-18" },
+                { subject: "History (Our Pasts II)", url: "https://ncert.nic.in/textbook.php?gess1=0-10" },
+                { subject: "Geography (Our Environment)", url: "https://ncert.nic.in/textbook.php?gess2=0-9" },
+                { subject: "Civics (Social & Pol Life II)", url: "https://ncert.nic.in/textbook.php?gess3=0-9" },
+                { subject: "English (Honeycomb)", url: "https://ncert.nic.in/textbook.php?gehc1=0-10" }
             ],
             "CLASS 6": [
-                { subject: "Mathematics", file: "c6-math.pdf" },
-                { subject: "Science", file: "c6-sci.pdf" },
-                { subject: "Social Science", file: "c6-sst.pdf" },
-                { subject: "English", file: "c6-eng.pdf" },
-                { subject: "Hindi", file: "c6-hin.pdf" }
+                { subject: "Mathematics", url: "https://ncert.nic.in/textbook.php?femh1=0-14" },
+                { subject: "Science", url: "https://ncert.nic.in/textbook.php?fesc1=0-16" },
+                { subject: "History (Our Pasts I)", url: "https://ncert.nic.in/textbook.php?fess1=0-11" },
+                { subject: "Geography (The Earth)", url: "https://ncert.nic.in/textbook.php?fess2=0-8" },
+                { subject: "Civics (Social & Pol Life I)", url: "https://ncert.nic.in/textbook.php?fess3=0-9" },
+                { subject: "English (Honeysuckle)", url: "https://ncert.nic.in/textbook.php?fehs1=0-10" }
             ],
             "CLASS 5": [
-                { subject: "Mathematics", file: "c5-math.pdf" },
-                { subject: "EVS", file: "c5-evs.pdf" },
-                { subject: "English", file: "c5-eng.pdf" },
-                { subject: "Hindi", file: "c5-hin.pdf" }
+                { subject: "Mathematics (Math Magic)", url: "https://ncert.nic.in/textbook.php?eemh1=0-14" },
+                { subject: "EVS (Looking Around)", url: "https://ncert.nic.in/textbook.php?eevs1=0-22" },
+                { subject: "English (Marigold)", url: "https://ncert.nic.in/textbook.php?eema1=0-10" }
             ],
             "CLASS 4": [
-                { subject: "Mathematics", file: "c4-math.pdf" },
-                { subject: "EVS", file: "c4-evs.pdf" },
-                { subject: "English", file: "c4-eng.pdf" },
-                { subject: "Hindi", file: "c4-hin.pdf" }
+                { subject: "Mathematics (Math Magic)", url: "https://ncert.nic.in/textbook.php?demh1=0-14" },
+                { subject: "EVS (Looking Around)", url: "https://ncert.nic.in/textbook.php?devs1=0-27" },
+                { subject: "English (Marigold)", url: "https://ncert.nic.in/textbook.php?dema1=0-9" }
             ],
             "CLASS 3": [
-                { subject: "Mathematics", file: "c3-math.pdf" },
-                { subject: "EVS", file: "c3-evs.pdf" },
-                { subject: "English", file: "c3-eng.pdf" },
-                { subject: "Hindi", file: "c3-hin.pdf" }
+                { subject: "Mathematics (Math Magic)", url: "https://ncert.nic.in/textbook.php?cemh1=0-14" },
+                { subject: "EVS (Looking Around)", url: "https://ncert.nic.in/textbook.php?cevs1=0-24" },
+                { subject: "English (Marigold)", url: "https://ncert.nic.in/textbook.php?cema1=0-10" }
             ],
             "CLASS 2": [
-                { subject: "Mathematics", file: "c2-math.pdf" },
-                { subject: "English", file: "c2-eng.pdf" },
-                { subject: "Hindi", file: "c2-hin.pdf" }
+                { subject: "Mathematics (Joyful Math)", url: "https://ncert.nic.in/textbook.php?bemh1=0-11" },
+                { subject: "English (Mridang)", url: "https://ncert.nic.in/textbook.php?been1=0-9" },
+                { subject: "Hindi (Sarangi)", url: "https://ncert.nic.in/textbook.php?behn1=0-15" }
             ],
             "CLASS 1": [
-                { subject: "Mathematics", file: "c1-math.pdf" },
-                { subject: "English", file: "c1-eng.pdf" },
-                { subject: "Hindi", file: "c1-hin.pdf" }
+                { subject: "Mathematics (Joyful Math)", url: "https://ncert.nic.in/textbook.php?aemh1=0-13" },
+                { subject: "English (Mridang)", url: "https://ncert.nic.in/textbook.php?aeen1=0-9" },
+                { subject: "Hindi (Sarangi)", url: "https://ncert.nic.in/textbook.php?aehn1=0-19" }
             ]
         };
 
         // ==========================================
-        // SYSTEM GENERATOR WITH ANIMATION
+        // SYSTEM GENERATOR (Staggered Animations)
         // ==========================================
         const grid = document.getElementById('directory-grid');
         let delayCounter = 0;
@@ -240,7 +201,11 @@
             let classFolder = `<details class="folder" style="animation-delay: ${animDelay};"><summary>${className}</summary><div class="subject-grid">`;
             
             subjects.forEach(item => {
-                classFolder += `<a class="file-link" onclick="openPDF('pdfs/${item.file}', '${className} - ${item.subject}')">${item.subject}</a>`;
+                // Clicking triggering the cyber animation before opening the link
+                classFolder += `<a class="file-link" onclick="triggerReroute('${item.url}', '${className} - ${item.subject}')">
+                                    <span>📄 ${item.subject}</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>`;
             });
             
             classFolder += `</div></details>`; 
@@ -249,7 +214,7 @@
         }
 
         // ==========================================
-        // LIVE SEARCH FILTER
+        // LIVE SEARCH FILTER & AUTO-OPEN
         // ==========================================
         function filterDatabase() {
             let input = document.getElementById('search-box').value.toUpperCase();
@@ -263,7 +228,7 @@
                 
                 links.forEach(link => {
                     if (link.innerText.toUpperCase().indexOf(input) > -1) {
-                        link.style.display = "";
+                        link.style.display = "flex";
                         linkMatch = true;
                     } else {
                         link.style.display = "none";
@@ -280,81 +245,21 @@
         }
 
         // ==========================================
-        // PDF VIEWER, PROGRESS BAR & SHARE LOGIC
+        // CYBERPUNK REROUTE ANIMATION LOGIC
         // ==========================================
-        let currentPdfUrl = "";
-        let currentPdfTitle = "";
-        let progressInterval;
-
-        function openPDF(pdfPath, title) {
-            const viewer = document.getElementById('pdfViewerUI');
-            const iframe = document.getElementById('pdfFrame');
-            const progressContainer = document.getElementById('progress-container');
-            const progressBar = document.getElementById('progress-bar');
+        function triggerReroute(url, bookTitle) {
+            const overlay = document.getElementById('reroute-overlay');
+            const text = document.getElementById('reroute-text');
             
-            // 1. Open Full Screen & Lock Background
-            viewer.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; 
-            
-            // 2. Set Variables
-            currentPdfTitle = title;
-            currentPdfUrl = 'https://mathhub.pro/' + pdfPath;
-            document.getElementById('pdfTitle').innerText = '> FETCHING: ' + title;
-            document.getElementById('pdfDownloadLink').href = pdfPath;
-            
-            // 3. Reset and Show Progress Bar
-            progressContainer.style.display = 'block';
-            progressBar.style.opacity = '1';
-            progressBar.style.width = '0%';
-            
-            let progress = 0;
-            clearInterval(progressInterval);
-            
-            // 4. Start Fake "Hacking" Load Sequence
-            progressInterval = setInterval(() => {
-                if (progress < 90) {
-                    progress += Math.random() * 15; 
-                    if(progress > 90) progress = 90;
-                    progressBar.style.width = progress + '%';
-                }
-            }, 300);
+            // Show overlay
+            overlay.style.display = 'flex';
+            text.innerText = `BYPASSING FIREWALL... ESTABLISHING LINK TO [ ${bookTitle} ]`;
 
-            // 5. When PDF loads
-            iframe.onload = function() {
-                clearInterval(progressInterval);
-                progressBar.style.width = '100%'; 
-                document.getElementById('pdfTitle').innerText = '> VIEWING: ' + title;
-                
-                setTimeout(() => {
-                    progressBar.style.opacity = '0';
-                    setTimeout(() => { progressContainer.style.display = 'none'; }, 300);
-                }, 500);
-            };
-
-            // 6. Trigger Download via Google Docs Viewer
-            iframe.src = 'https://docs.google.com/gview?embedded=true&url=' + encodeURIComponent(currentPdfUrl);
-        }
-
-        function closePDF() {
-            document.getElementById('pdfViewerUI').style.display = 'none';
-            document.getElementById('pdfFrame').src = "";
-            document.body.style.overflow = 'auto'; // UNLOCK SCROLLING
-        }
-
-        async function shareCurrentPDF() {
-            if (!currentPdfUrl) return;
-            const shareData = {
-                title: 'MathHub Pro - ' + currentPdfTitle,
-                text: 'Check out the full NCERT textbook for ' + currentPdfTitle + ' on MathHub Pro! 🚀',
-                url: currentPdfUrl
-            };
-            try {
-                if (navigator.share) await navigator.share(shareData);
-                else {
-                    await navigator.clipboard.writeText(currentPdfUrl);
-                    alert("Link copied to clipboard! Share it with your friends.");
-                }
-            } catch (err) { console.log("Share canceled."); }
+            // Wait 1.5 seconds for dramatic "hacker" effect, then open new tab
+            setTimeout(() => {
+                window.open(url, '_blank'); // Opens NCERT in a new tab securely
+                overlay.style.display = 'none'; // Hide overlay when they return
+            }, 1500);
         }
     </script>
 </body>
