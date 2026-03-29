@@ -247,20 +247,28 @@
         // ==========================================
         // CYBERPUNK REROUTE ANIMATION LOGIC
         // ==========================================
+                // ==========================================
+        // CYBERPUNK REROUTE ANIMATION LOGIC (POPUP-BLOCKER BYPASS)
+        // ==========================================
         function triggerReroute(url, bookTitle) {
             const overlay = document.getElementById('reroute-overlay');
             const text = document.getElementById('reroute-text');
             
-            // Show overlay
+            // 1. Open the tab IMMEDIATELY on click to bypass the iPad blocker
+            // It will open a blank tab in the background.
+            let newTab = window.open('about:blank', '_blank');
+            
+            // 2. Show the hacker animation on your main screen
             overlay.style.display = 'flex';
             text.innerText = `BYPASSING FIREWALL... ESTABLISHING LINK TO [ ${bookTitle} ]`;
 
-            // Wait 1.5 seconds for dramatic "hacker" effect, then open new tab
+            // 3. Wait 1.5 seconds, then inject the NCERT URL into that blank tab
             setTimeout(() => {
-                window.open(url, '_blank'); // Opens NCERT in a new tab securely
-                overlay.style.display = 'none'; // Hide overlay when they return
+                newTab.location.href = url; 
+                overlay.style.display = 'none'; // Hide overlay so they can click again later
             }, 1500);
         }
+
     </script>
 </body>
 </html>
