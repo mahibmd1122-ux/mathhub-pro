@@ -281,5 +281,26 @@
         }
 
     </script>
+    <script>
+document.addEventListener('click', function(event) {
+    // Check if the user clicked a "file-link" button
+    const link = event.target.closest('.file-link');
+    
+    if (link) {
+        // Get the name of the book from the button text
+        const bookName = link.innerText.trim();
+        
+        // Send the data to Google Analytics
+        gtag('event', 'ncert_book_click', {
+            'event_category': 'Engagement',
+            'event_label': bookName,
+            'method': 'Directory Click'
+        });
+        
+        console.log("Tracking Sent: " + bookName);
+    }
+});
+</script>
+
 </body>
 </html>
