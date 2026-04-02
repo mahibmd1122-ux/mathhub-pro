@@ -3,114 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | MathHub Pro - The Future of Computational Education</title>
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+    <title>About MathHub Pro | The Ultimate Educational & Computational Node</title>
+    <meta name="description" content="Learn about MathHub Pro. Deployed from Mancherial, India, we are a high-speed, ad-free educational terminal providing AI math solving, NCERT solutions, and elite calculators.">
+    <meta name="keywords" content="About MathHub Pro, education platform India, Mancherial startup, free NCERT solutions, AI math solver history, math hub mission, educational tech 2026">
+    <meta name="author" content="MathHub Pro Systems">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.mathhub.pro/about.html">
+
+    <link rel="icon" type="image/jpeg" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+    <link rel="apple-touch-icon" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML" defer></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-C5KMGS6VML');
     </script>
-    
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About MathHub Pro",
+      "url": "https://www.mathhub.pro/about.html",
+      "description": "The history, mission, and architecture behind the MathHub Pro educational terminal."
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* BASE CSS (Matching Index) */
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020202; }
+        ::-webkit-scrollbar-thumb { background: #00f2ff; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #bc13fe; }
+
+        html, body { width: 100%; overflow-x: hidden; margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
             --neon-cyan: #00f2ff;
             --neon-purple: #bc13fe;
             --dark-void: #020202;
-            --border: rgba(0, 242, 255, 0.2);
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(0, 242, 255, 0.15);
         }
 
         body {
-            margin: 0; padding: 60px 20px; background: var(--dark-void); color: #ccc;
-            font-family: 'Rajdhani', sans-serif; line-height: 1.8;
-            background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background: var(--dark-void); color: #e0e0e0; font-family: 'Rajdhani', sans-serif;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
-        .about-container {
-            max-width: 1100px; margin: 0 auto; background: rgba(0,0,0,0.9);
-            border: 1px solid var(--border); padding: 60px; border-radius: 20px;
-            box-shadow: 0 0 60px rgba(0, 242, 255, 0.1);
-            position: relative; overflow: hidden;
+        /* NAVIGATION & SIDEBAR */
+        .top-nav { background: rgba(0,0,0,0.95); border-bottom: 1px solid var(--neon-cyan); padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); backdrop-filter: blur(10px); }
+        .nav-container { width: 95%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Orbitron'; color: var(--neon-cyan); font-weight: bold; font-size: 1.2rem; letter-spacing: 2px; text-shadow: 0 0 10px var(--neon-cyan); }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 15px; font-family: 'Rajdhani'; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--neon-purple); text-shadow: 0 0 10px var(--neon-purple); }
+
+        .sidebar { width: 70px; height: 100vh; background: rgba(0, 0, 0, 0.95); border-right: 1px solid var(--neon-cyan); position: fixed; top: 0; left: 0; z-index: 1000; display: flex; flex-direction: column; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; backdrop-filter: blur(20px); }
+        .sidebar:hover { width: 280px; box-shadow: 10px 0 40px rgba(0, 242, 255, 0.1); }
+        .side-logo { padding: 25px 15px; border-bottom: 1px solid var(--border); text-align: center; }
+        .side-logo img { width: 40px; border-radius: 8px; filter: drop-shadow(0 0 10px var(--neon-cyan)); }
+        .sidebar-scroll-area { flex: 1; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; }
+        .sidebar-scroll-area::-webkit-scrollbar { display: none; }
+        .nav-item { display: flex; align-items: center; padding: 20px 25px; text-decoration: none; color: #888; transition: 0.3s; white-space: nowrap; }
+        .nav-item:hover { color: var(--neon-cyan); background: rgba(0, 242, 255, 0.08); }
+        .nav-label { margin-left: 25px; font-family: 'Orbitron'; font-size: 0.75rem; letter-spacing: 1px; opacity: 0; }
+        .sidebar:hover .nav-label { opacity: 1; }
+
+        /* HERO SECTION */
+        .hero {
+            margin-left: 70px; height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center; border-bottom: 2px solid var(--neon-purple); position: relative;
         }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background: linear-gradient(transparent, var(--dark-void)); }
+        .hero h1 { font-family: 'Orbitron'; font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 10px; color: #fff; text-shadow: 0 0 25px var(--neon-cyan); margin: 0; text-align: center; animation: glowPulse 2s infinite alternate;}
+        .hero p { color: var(--neon-cyan); font-family: 'Orbitron'; font-size: 1rem; letter-spacing: 5px; margin-top: 15px; text-align: center; text-transform: uppercase; }
 
-        .about-container::before {
-            content: "INTEL_REPORT"; position: absolute; top: 10px; right: 20px;
-            font-family: 'Orbitron'; color: var(--neon-purple); font-size: 0.7rem; opacity: 0.5;
+        @keyframes glowPulse { from { text-shadow: 0 0 10px var(--neon-cyan); } to { text-shadow: 0 0 30px var(--neon-cyan), 0 0 50px #fff; } }
+
+        /* ABOUT CONTENT ARCHITECTURE */
+        .about-wrapper { margin-left: 70px; padding: 60px 40px; max-width: 1200px; margin-right: auto; }
+        
+        .manifesto-block { background: rgba(188, 19, 254, 0.05); border-left: 4px solid var(--neon-purple); padding: 30px; margin-bottom: 50px; border-radius: 0 10px 10px 0; }
+        .manifesto-block h2 { font-family: 'Orbitron'; color: var(--neon-purple); font-size: 1.8rem; margin-top: 0; }
+        .manifesto-block p { font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 0; }
+
+        /* PILLARS GRID */
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .pillar-card { background: var(--glass); border: 1px solid var(--border); padding: 30px; border-radius: 12px; transition: 0.4s; position: relative; overflow: hidden; }
+        .pillar-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--neon-cyan); transition: 0.4s; }
+        .pillar-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 242, 255, 0.15); border-color: var(--neon-cyan); }
+        .pillar-card:hover::before { width: 100%; opacity: 0.05; }
+        .pillar-icon { font-size: 2.5rem; color: var(--neon-cyan); margin-bottom: 20px; text-shadow: 0 0 15px var(--neon-cyan); }
+        .pillar-card h3 { font-family: 'Orbitron'; font-size: 1.4rem; color: #fff; margin-bottom: 15px; }
+        .pillar-card p { font-size: 1rem; color: #aaa; line-height: 1.7; }
+
+        /* ORIGIN TERMINAL */
+        .origin-terminal { background: rgba(0,0,0,0.8); border: 1px solid #333; padding: 40px; border-radius: 10px; font-family: 'Courier New', monospace; box-shadow: inset 0 0 30px rgba(0,0,0,1); margin-bottom: 50px; }
+        .origin-terminal .cmd { color: var(--neon-cyan); font-weight: bold; margin-bottom: 20px; display: block; font-size: 1.2rem; }
+        .origin-terminal p { color: #00ff00; line-height: 1.8; font-size: 1.05rem; text-shadow: 0 0 5px rgba(0,255,0,0.3); }
+        .node-tag { display: inline-block; background: var(--neon-purple); color: #fff; padding: 5px 10px; border-radius: 4px; font-family: 'Orbitron'; font-size: 0.8rem; margin-top: 15px; letter-spacing: 1px; }
+
+        /* DIRECTIVES SECTION */
+        .directives-title { font-family: 'Orbitron'; color: #fff; text-align: center; font-size: 2rem; margin-bottom: 40px; text-shadow: 0 0 15px rgba(255,255,255,0.3); }
+        .directive-row { display: flex; align-items: center; margin-bottom: 40px; gap: 40px; }
+        .directive-row:nth-child(even) { flex-direction: row-reverse; }
+        .directive-num { font-family: 'Orbitron'; font-size: 4rem; color: transparent; -webkit-text-stroke: 2px var(--neon-purple); opacity: 0.5; font-weight: bold; width: 100px; text-align: center; }
+        .directive-text { flex: 1; }
+        .directive-text h4 { font-family: 'Orbitron'; font-size: 1.5rem; color: var(--neon-cyan); margin-bottom: 10px; }
+        .directive-text p { font-size: 1.1rem; color: #bbb; line-height: 1.7; }
+
+        /* SCROLL REVEAL ANIMATIONS */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1.2); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* FOOTER */
+        footer { margin-left: 70px; padding: 50px; text-align: center; background: #000; border-top: 1px solid #222; }
+        .footer-links a { color: #666; text-decoration: none; margin: 0 15px; font-family: 'Orbitron'; font-size: 0.75rem; transition: 0.3s; }
+        .footer-links a:hover { color: var(--neon-cyan); }
+        .foot-icon { width: 45px; height: 45px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white !important; font-size: 20px; text-decoration: none; transition: transform 0.3s ease; margin: 0 10px; }
+        .foot-icon:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .ig-bg { background: linear-gradient(45deg, #f09433, #bc1888); }
+        .fb-bg { background: #1877F2; }
+        .x-bg { background: #111; border: 1px solid #333; }
+
+        /* MOBILE FIXES */
+        .mobile-toggle { display: none; position: fixed; top: 12px; right: 15px; z-index: 2000; background: transparent; color: var(--neon-cyan); border: 1px solid var(--neon-cyan); padding: 8px 15px; border-radius: 5px; font-family: 'Orbitron'; font-weight: bold; cursor: pointer; backdrop-filter: blur(5px); }
+        @media (max-width: 992px) { 
+            .directive-row { flex-direction: column !important; text-align: center; gap: 10px; } 
+            .directive-num { width: 100%; font-size: 3rem; }
         }
-
-        h1 { font-family: 'Orbitron'; color: var(--neon-cyan); font-size: 3rem; text-align: left; margin-bottom: 20px; text-shadow: 0 0 15px var(--neon-cyan); }
-        .subtitle { font-family: 'Orbitron'; color: var(--neon-purple); font-size: 1rem; margin-bottom: 40px; letter-spacing: 5px; border-left: 4px solid var(--neon-purple); padding-left: 15px; }
-        
-        h2 { font-family: 'Orbitron'; color: var(--neon-cyan); margin-top: 50px; font-size: 1.5rem; letter-spacing: 2px; }
-        p { font-size: 1.1rem; color: #bbb; margin-bottom: 25px; text-align: justify; }
-        
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 40px 0; }
-        .stat-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 20px; border-radius: 10px; text-align: center; }
-        .stat-card h4 { font-family: 'Orbitron'; color: var(--neon-purple); margin: 0; font-size: 1.5rem; }
-        .stat-card span { font-size: 0.8rem; color: #777; text-transform: uppercase; letter-spacing: 1px; }
-
-        .location-tag { display: inline-block; background: var(--neon-purple); color: #fff; padding: 5px 15px; font-family: 'Orbitron'; font-size: 0.8rem; border-radius: 5px; margin-bottom: 20px; }
-        
-        .seo-keyword-block { margin-top: 60px; padding: 30px; background: rgba(0,0,0,0.5); border-top: 1px solid #333; font-size: 0.85rem; color: #444; }
-        .back-btn { display: inline-block; margin-top: 40px; color: #000; background: var(--neon-cyan); text-decoration: none; font-family: 'Orbitron'; padding: 15px 35px; font-weight: bold; border-radius: 5px; transition: 0.3s; }
-        .back-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--neon-cyan); }
-
-        @media (max-width: 768px) { .about-container { padding: 30px; } h1 { font-size: 2rem; } }
+        @media (max-width: 768px) {
+            .mobile-toggle { display: block; }
+            .sidebar { width: 280px; left: -280px; transition: 0.4s ease; }
+            .sidebar.active { left: 0; box-shadow: 5px 0 30px rgba(0, 242, 255, 0.3); }
+            .sidebar.active .nav-label { opacity: 1; }
+            .hero, .about-wrapper, footer { margin-left: 0 !important; width: 100% !important; padding-left: 20px !important; padding-right: 20px !important; box-sizing: border-box; }
+            .hero { padding-top: 60px; height: 40vh; }
+            .nav-links { display: none; } 
+        }
     </style>
 </head>
 <body>
 
-<div class="about-container">
-    <div class="location-tag">NODE: MANCHERIAL_TELANGANA_INDIA</div>
-    <h1>ABOUT MATHHUB PRO</h1>
-    <div class="subtitle">DECODING THE FUTURE OF MATHEMATICS</div>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-logo">MATHHUB_PRO</div>
+            <div class="nav-links">
+                <a href="index.html" style="color: var(--neon-cyan);">Terminal</a>
+                <a href="solver.html">AI_Solver</a>
+                <a href="ncert.html">NCERT_Hub</a>
+                <a href="game.html" style="color: var(--neon-purple);">Matrix_Game</a>
+            </div>
+        </div>
+    </nav>
 
-    <section>
-        <h2>> THE ARCHITECTURE</h2>
-        <p>Founded in 2026, <strong>MathHub Pro</strong> emerged as a response to the growing need for high-speed, accurate, and accessible computational tools for the modern academic landscape. Our platform is not just a collection of calculators; it is a full-scale <strong>Educational Operating System</strong> designed to serve the 20 million+ students navigating the NCERT and CBSE curriculums globally.</p>
+    <button class="mobile-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+
+    <nav class="sidebar" id="mainSidebar">
+        <div class="side-logo">
+            <img src="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg" alt="Logo">
+        </div>
         
-        <p>From our primary development node in <strong>Mancherial</strong>, we have engineered a suite of tools that bridge the gap between complex theoretical mathematics and practical, real-world application. Whether you are a student solving 10th Class SSC quadratic equations or a business professional auditing GST records, MathHub Pro provides the precision required for elite-level performance.</p>
-    </section>
+        <div id="auth-links" style="padding: 10px 0; border-bottom: 1px solid var(--border);">
+            <a href="auth.html" class="nav-item"><i>🔑</i><span class="nav-label" style="color: var(--neon-cyan);">SIGN IN / UP</span></a>
+        </div>
+        <div id="user-links" style="display:none; padding: 10px 0; border-bottom: 1px solid var(--border);">
+            <span class="nav-item" style="padding-bottom: 5px;"><i style="color:var(--neon-purple);">ID</i><span id="user-display" class="nav-label" style="color: var(--neon-purple);"></span></span>
+            <a href="#" onclick="logout()" class="nav-item"><i>🛑</i><span class="nav-label" style="color: #ff4d4d;">LOG OUT</span></a>
+        </div>
 
-    <div class="stats-grid">
-        <div class="stat-card"><h4>20+</h4><span>Active Protocols</span></div>
-        <div class="stat-card"><h4>99.9%</h4><span>Calculation Precision</span></div>
-        <div class="stat-card"><h4>2.0.26</h4><span>Build Version</span></div>
-        <div class="stat-card"><h4>NCERT</h4><span>Aligned Content</span></div>
+        <div class="sidebar-scroll-area">
+            <a href="solver.html" class="nav-item" style="border-bottom: 1px solid var(--border);">
+                <i>🤖</i><span class="nav-label" style="color: var(--neon-cyan); font-weight: bold;">AI SOLVER</span>
+            </a>
+            <script>
+                for(let i=1; i<=12; i++) {
+                    document.write(`<a href="ncert.html" class="nav-item"><i>${i.toString().padStart(2, '0')}</i><span class="nav-label">CLASS ${i} NCERT</span></a>`);
+                }
+            </script>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>THE ORIGIN</h1>
+        <p>REDEFINING COMPUTATION SINCE DEPLOYMENT</p>
     </div>
 
-    <section>
-        <h2>> OUR CORE SPECIALIZATIONS</h2>
-        <p>MathHub Pro focuses on three primary pillars of digital utility:</p>
-        <ul>
-            <li><strong>The NCERT Ecosystem:</strong> We provide centralized access to Class 1-12 textbooks, solutions, and cheat sheets, optimized for the 2026 board exam season. This includes specialized support for Telangana SSC and Intermediate students.</li>
-            <li><strong>Financial Intelligence:</strong> Our <strong>GST Matrix</strong> is calibrated to the latest Indian taxation laws, providing instant breakdowns of CGST, SGST, and IGST for businesses and freelancers.</li>
-            <li><strong>Advanced Scientific Computation:</strong> We offer complex solvers for Calculus, Trigonometry, Matrix Decryption, and Physics (Ohm’s Law), allowing for rapid prototyping of scientific data.</li>
-        </ul>
-    </section>
+    <div class="about-wrapper">
+        
+        <section class="manifesto-block reveal">
+            <h2>> WE ARE AN ECOSYSTEM, NOT JUST A CALCULATOR</h2>
+            <p>Education technology is currently plagued by slow servers, intrusive pop-up ads, and heavy paywalls that lock students out of learning. <strong>MathHub Pro</strong> was built to destroy that standard. We are an elite, centralized digital terminal designed for high-speed, hyper-accurate mathematical computation. From Indian board exam preparation to complex engineering logic, our platform delivers instant, verifiable data without the clutter.</p>
+        </section>
 
-    <section>
-        <h2>> TECHNOLOGICAL INTEGRITY</h2>
-        <p>Our infrastructure is built on a "Glass-UI" framework, prioritizing speed and user experience. By utilizing <strong>Firebase Cloud Security</strong>, we ensure that every user who signs into the MathHub Pro terminal has their data protected by industrial-grade encryption. Our integration with <strong>Google Analytics</strong> allows us to constantly refine our algorithms based on the most utilized protocols in the Mancherial tech corridor and beyond.</p>
-    </section>
+        <h2 style="font-family: 'Orbitron'; color: #fff; text-align: center; margin-bottom: 40px; font-size: 2rem; text-shadow: 0 0 10px var(--neon-cyan);" class="reveal">SYSTEM PILLARS</h2>
+        
+        <section class="pillars-grid">
+            <div class="pillar-card reveal">
+                <i class="fas fa-microchip pillar-icon"></i>
+                <h3>The Elite 20 Tools</h3>
+                <p>We engineered 20+ specialized calculators utilizing 2026 floating-point arithmetic standards. Whether you need exact GST tax breakdowns for an Indian enterprise, calculus derivative integration, or biometric BMI tracking, our tools execute instantly with absolute precision.</p>
+            </div>
+            
+            <div class="pillar-card reveal" style="border-color: rgba(188, 19, 254, 0.3);">
+                <i class="fas fa-brain pillar-icon" style="color: var(--neon-purple); text-shadow: 0 0 15px var(--neon-purple);"></i>
+                <h3>The AI Neural Solver</h3>
+                <p>A calculator gives you an answer; a tutor gives you the method. Our integrated AI Math Solver utilizes advanced Natural Language Processing to break down algebraic equations, word problems, and matrices step-by-step, acting as a 24/7 personal tutor.</p>
+            </div>
 
-    <section>
-        <h2>> OUR VISION FOR 2026 AND BEYOND</h2>
-        <p>As we move further into the digital age, MathHub Pro aims to become the definitive "Home Node" for math students worldwide. We believe that high-quality educational tools should be free, fast, and futuristic. We are committed to maintaining an ad-supported environment through <strong>Google AdSense</strong> to ensure our elite tools remain accessible to every student, regardless of their location.</p>
-    </section>
+            <div class="pillar-card reveal">
+                <i class="fas fa-book-open pillar-icon"></i>
+                <h3>The 2026 NCERT Hub</h3>
+                <p>We bypassed the notoriously slow government servers to create our own high-speed directory. We provide direct, immediate PDF downloads for the complete, rationalised 2026 CBSE curriculum (Class 1 to 12), backed by elite Cheat Sheets and Previous Year Question (PYQ) archives.</p>
+            </div>
+        </section>
 
-    <a href="index.html" class="back-btn">> SYSTEM_REENTRY</a>
+        <section class="origin-terminal reveal">
+            <span class="cmd">admin@mathhub:~$ cat origin_story.txt</span>
+            <p>
+                >> INITIATING SYSTEM LOG...<br>
+                >> DEPLOYMENT NODE: Mancherial, Telangana, India.<br>
+                >> STATUS: Fully Operational.<br><br>
+                MathHub Pro was conceived with a singular vision: to create the fastest, cleanest, and most powerful mathematical toolkit available on the web. Recognizing the struggles of Indian students facing rigorous CBSE and state board examinations, the platform was coded from the ground up to eliminate latency.<br><br>
+                We stripped away heavy frameworks and bloated code. We refused to implement user-hostile popunder ads. What remains is pure, uninterrupted logic.
+            </p>
+            <span class="node-tag">NODE: INDIA</span>
+        </section>
 
-    <div class="seo-keyword-block">
-        <strong>SEARCH_INDEX_META_DATA:</strong> About MathHub Pro, Online Math Hub Mancherial, NCERT Solutions 2026, Best GST Calculator India, CBSE 10th Class Math Tools, Advanced Scientific Calculator online, Educational Software Telangana, Firebase Secure Math App, Calculus Solver 2026, BMI and Age Protocols.
+        <h2 class="directives-title reveal">CORE DIRECTIVES</h2>
+        
+        <div class="directive-row reveal">
+            <div class="directive-num">01</div>
+            <div class="directive-text">
+                <h4>Zero Latency Execution</h4>
+                <p>Time is the most valuable asset for a student or professional. Our architecture is serverless and lightweight, meaning our tools load almost instantaneously, even on unstable mobile networks. No spinning wheels, no waiting.</p>
+            </div>
+        </div>
+
+        <div class="directive-row reveal">
+            <div class="directive-num" style="-webkit-text-stroke: 2px var(--neon-cyan);">02</div>
+            <div class="directive-text">
+                <h4 style="color: var(--neon-purple);">Absolute Academic Integrity</h4>
+                <p>Every formula, from basic trigonometry to our complex Ohm's Law physics engine, is cross-verified against official NCERT guidelines and global engineering norms. When MathHub Pro generates an output, you can trust it on your exam paper or your tax audit.</p>
+            </div>
+        </div>
+
+        <div class="directive-row reveal">
+            <div class="directive-num">03</div>
+            <div class="directive-text">
+                <h4>Universal Free Access</h4>
+                <p>Premium tools should not be hidden behind premium paywalls. The AI Solver, the Calculus Hub, the Matrix Decrypter, and the entire NCERT textbook database remain 100% free for all verified users.</p>
+            </div>
+        </div>
+
     </div>
-</div>
 
+    <footer>
+        <div class="footer-links">
+            <a href="about.html" style="color: var(--neon-cyan);">ABOUT US</a>
+            <a href="privacy.html">PRIVACY POLICY</a>
+            <a href="terms.html">TERMS & CONDITIONS</a>
+            <a href="contact.html">CONTACT SUPPORT</a>
+        </div>
+        
+        <div style="margin: 30px 0;">
+            <a href="https://www.instagram.com/study_hub_pro_?igsh=bGd1bndkNHpic25j" target="_blank" class="foot-icon ig-bg"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1AeQ1d9xe5/" target="_blank" class="foot-icon fb-bg"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/Math_Hub_Pro" target="_blank" class="foot-icon x-bg"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        
+        <p style="color:#555; font-size:0.75rem; font-family: 'Orbitron'; letter-spacing: 2px;">© 2026 MATHHUB PRO | DEPLOYED FROM MANCHERIAL NODE</p>
+    </footer>
+
+    <script>
+        // MOBILE MENU TOGGLE
+        function toggleMenu() {
+            const sidebar = document.getElementById('mainSidebar');
+            const icon = document.querySelector('.mobile-toggle i');
+            sidebar.classList.toggle('active');
+            
+            if(sidebar.classList.contains('active')) {
+                icon.className = 'fas fa-times';
+            } else {
+                icon.className = 'fas fa-bars';
+            }
+        }
+
+        // SCROLL REVEAL ANIMATION (INTERSECTION OBSERVER)
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); 
+            });
+        }, revealOptions);
+        reveals.forEach(reveal => { revealOnScroll.observe(reveal); });
+
+        // CLOSE SIDEBAR ON OUTSIDE CLICK (MOBILE)
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('mainSidebar');
+            const btn = document.querySelector('.mobile-toggle');
+            if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !btn.contains(event.target)) {
+                sidebar.classList.remove('active');
+                document.querySelector('.mobile-toggle i').className = 'fas fa-bars';
+            }
+        });
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCyeLN2tzrst4KTPA6vbLArf6AVgb1PxDo",
+            authDomain: "math-hub-123.firebaseapp.com",
+            projectId: "math-hub-123",
+            storageBucket: "math-hub-123.firebasestorage.app",
+            messagingSenderId: "649705586460",
+            appId: "1:649705586460:web:ce86e65db4bd6b275404d9"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                document.getElementById('auth-links').style.display = 'none';
+                document.getElementById('user-links').style.display = 'block';
+                document.getElementById('user-display').innerText = user.email.split('@')[0].toUpperCase();
+            } else {
+                document.getElementById('auth-links').style.display = 'block';
+                document.getElementById('user-links').style.display = 'none';
+            }
+        });
+
+        window.logout = () => {
+            signOut(auth).then(() => { window.location.reload(); });
+        };
+    </script>
 </body>
 </html>
