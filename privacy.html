@@ -3,125 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | MathHub Pro Data Protection Suite</title>
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+    <title>Privacy Policy | MathHub Pro Data Security Protocols</title>
+    <meta name="description" content="MathHub Pro Privacy Policy. Read our data security protocols, cookie usage, GDPR/CCPA compliance, and how we protect your information on our educational terminal.">
+    <meta name="keywords" content="MathHub Pro privacy policy, data security, GDPR compliance, CCPA, Google AdSense cookies, educational privacy, Mancherial startup">
+    <meta name="author" content="MathHub Pro Systems">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.mathhub.pro/privacy.html">
+
+    <link rel="icon" type="image/jpeg" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+    <link rel="apple-touch-icon" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML" defer></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-C5KMGS6VML');
     </script>
-    
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Privacy Policy - MathHub Pro",
+      "url": "https://www.mathhub.pro/privacy.html",
+      "description": "The Privacy Policy and Data Security Protocols for MathHub Pro."
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* BASE CSS (Matching Index & About) */
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020202; }
+        ::-webkit-scrollbar-thumb { background: #00f2ff; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #bc13fe; }
+
+        html, body { width: 100%; overflow-x: hidden; margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
             --neon-cyan: #00f2ff;
             --neon-purple: #bc13fe;
             --dark-void: #020202;
-            --border: rgba(0, 242, 255, 0.2);
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(0, 242, 255, 0.15);
         }
 
         body {
-            margin: 0; padding: 60px 20px; background: var(--dark-void); color: #ccc;
-            font-family: 'Rajdhani', sans-serif; line-height: 1.8;
-            background-image: radial-gradient(circle at bottom right, #111 0%, #000 100%);
+            background: var(--dark-void); color: #e0e0e0; font-family: 'Rajdhani', sans-serif;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
-        .privacy-container {
-            max-width: 1100px; margin: 0 auto; background: rgba(0,0,0,0.95);
-            border: 1px solid var(--border); padding: 60px; border-radius: 20px;
-            box-shadow: 0 0 60px rgba(188, 19, 254, 0.1);
-        }
+        /* NAVIGATION & SIDEBAR */
+        .top-nav { background: rgba(0,0,0,0.95); border-bottom: 1px solid var(--neon-cyan); padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); backdrop-filter: blur(10px); }
+        .nav-container { width: 95%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Orbitron'; color: var(--neon-cyan); font-weight: bold; font-size: 1.2rem; letter-spacing: 2px; text-shadow: 0 0 10px var(--neon-cyan); }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 15px; font-family: 'Rajdhani'; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--neon-purple); text-shadow: 0 0 10px var(--neon-purple); }
 
-        h1 { font-family: 'Orbitron'; color: var(--neon-cyan); font-size: 2.8rem; margin-bottom: 10px; text-shadow: 0 0 15px var(--neon-cyan); }
-        .last-updated { font-family: 'Orbitron'; color: var(--neon-purple); font-size: 0.8rem; margin-bottom: 50px; opacity: 0.8; }
+        .sidebar { width: 70px; height: 100vh; background: rgba(0, 0, 0, 0.95); border-right: 1px solid var(--neon-cyan); position: fixed; top: 0; left: 0; z-index: 1000; display: flex; flex-direction: column; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; backdrop-filter: blur(20px); }
+        .sidebar:hover { width: 280px; box-shadow: 10px 0 40px rgba(0, 242, 255, 0.1); }
+        .side-logo { padding: 25px 15px; border-bottom: 1px solid var(--border); text-align: center; }
+        .side-logo img { width: 40px; border-radius: 8px; filter: drop-shadow(0 0 10px var(--neon-cyan)); }
+        .sidebar-scroll-area { flex: 1; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; }
+        .sidebar-scroll-area::-webkit-scrollbar { display: none; }
+        .nav-item { display: flex; align-items: center; padding: 20px 25px; text-decoration: none; color: #888; transition: 0.3s; white-space: nowrap; }
+        .nav-item:hover { color: var(--neon-cyan); background: rgba(0, 242, 255, 0.08); }
+        .nav-label { margin-left: 25px; font-family: 'Orbitron'; font-size: 0.75rem; letter-spacing: 1px; opacity: 0; }
+        .sidebar:hover .nav-label { opacity: 1; }
+
+        /* HERO SECTION */
+        .hero {
+            margin-left: 70px; height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center; border-bottom: 2px solid var(--neon-purple); position: relative;
+        }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background: linear-gradient(transparent, var(--dark-void)); }
+        .hero h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 6vw, 4rem); letter-spacing: 10px; color: #fff; text-shadow: 0 0 25px var(--neon-cyan); margin: 0; text-align: center; animation: glowPulse 2s infinite alternate;}
+        .hero p { color: var(--neon-cyan); font-family: 'Orbitron'; font-size: 1rem; letter-spacing: 5px; margin-top: 15px; text-align: center; text-transform: uppercase; }
+
+        @keyframes glowPulse { from { text-shadow: 0 0 10px var(--neon-cyan); } to { text-shadow: 0 0 30px var(--neon-cyan), 0 0 50px #fff; } }
+
+        /* PRIVACY CONTENT ARCHITECTURE */
+        .privacy-wrapper { margin-left: 70px; padding: 60px 40px; max-width: 1000px; margin-right: auto; }
         
-        h2 { font-family: 'Orbitron'; color: var(--neon-cyan); margin-top: 45px; font-size: 1.4rem; border-left: 3px solid var(--neon-purple); padding-left: 15px; }
-        h3 { color: #fff; font-size: 1.1rem; margin-top: 25px; }
+        .legal-intro { background: rgba(188, 19, 254, 0.05); border-left: 4px solid var(--neon-purple); padding: 30px; margin-bottom: 40px; border-radius: 0 10px 10px 0; }
+        .legal-intro p { font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 0; }
+        .legal-intro strong { color: var(--neon-cyan); }
+
+        .privacy-section { background: var(--glass); border: 1px solid var(--border); border-radius: 10px; padding: 35px; margin-bottom: 30px; transition: 0.3s; position: relative; overflow: hidden; }
+        .privacy-section:hover { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 242, 255, 0.1); }
+        .privacy-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--neon-purple), transparent); }
         
-        p, li { font-size: 1rem; color: #aaa; margin-bottom: 20px; text-align: justify; }
-        ul { padding-left: 20px; }
-        strong { color: var(--neon-cyan); }
+        .privacy-section h2 { font-family: 'Orbitron'; color: var(--neon-cyan); font-size: 1.5rem; margin-top: 0; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
+        .privacy-section h2 i { color: var(--neon-purple); font-size: 1.2rem; }
+        .privacy-section p { font-size: 1.05rem; line-height: 1.8; color: #bbb; margin-bottom: 15px; }
+        .privacy-section ul { padding-left: 20px; margin-bottom: 15px; }
+        .privacy-section li { font-size: 1.05rem; line-height: 1.8; color: #bbb; margin-bottom: 10px; list-style-type: square; }
+        .privacy-section li::marker { color: var(--neon-cyan); }
+        .privacy-section h3 { font-family: 'Orbitron'; color: #fff; font-size: 1.2rem; margin-top: 25px; margin-bottom: 10px; }
 
-        .highlight-box {
-            background: rgba(188, 19, 254, 0.05);
-            border: 1px dashed var(--neon-purple);
-            padding: 25px;
-            margin: 30px 0;
-            border-radius: 10px;
+        /* WARNING TERMINAL */
+        .warning-terminal { background: rgba(0,0,0,0.8); border: 1px solid #ff4d4d; padding: 25px; border-radius: 8px; font-family: 'Courier New', monospace; margin: 30px 0; border-left: 4px solid #ff4d4d; }
+        .warning-terminal p { color: #ff4d4d; margin: 0; font-size: 0.95rem; }
+
+        /* SCROLL REVEAL ANIMATIONS */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1.2); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* FOOTER */
+        footer { margin-left: 70px; padding: 50px; text-align: center; background: #000; border-top: 1px solid #222; }
+        .footer-links a { color: #666; text-decoration: none; margin: 0 15px; font-family: 'Orbitron'; font-size: 0.75rem; transition: 0.3s; }
+        .footer-links a:hover { color: var(--neon-cyan); }
+        .foot-icon { width: 45px; height: 45px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white !important; font-size: 20px; text-decoration: none; transition: transform 0.3s ease; margin: 0 10px; }
+        .foot-icon:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .ig-bg { background: linear-gradient(45deg, #f09433, #bc1888); }
+        .fb-bg { background: #1877F2; }
+        .x-bg { background: #111; border: 1px solid #333; }
+
+        /* MOBILE FIXES */
+        .mobile-toggle { display: none; position: fixed; top: 12px; right: 15px; z-index: 2000; background: transparent; color: var(--neon-cyan); border: 1px solid var(--neon-cyan); padding: 8px 15px; border-radius: 5px; font-family: 'Orbitron'; font-weight: bold; cursor: pointer; backdrop-filter: blur(5px); }
+        @media (max-width: 768px) {
+            .mobile-toggle { display: block; }
+            .sidebar { width: 280px; left: -280px; transition: 0.4s ease; }
+            .sidebar.active { left: 0; box-shadow: 5px 0 30px rgba(0, 242, 255, 0.3); }
+            .sidebar.active .nav-label { opacity: 1; }
+            .hero, .privacy-wrapper, footer { margin-left: 0 !important; width: 100% !important; padding-left: 20px !important; padding-right: 20px !important; box-sizing: border-box; }
+            .hero { padding-top: 60px; height: 35vh; }
+            .nav-links { display: none; } 
         }
-
-        .back-link { display: inline-block; margin-top: 40px; color: var(--neon-cyan); text-decoration: none; font-family: 'Orbitron'; border: 1px solid var(--neon-cyan); padding: 12px 25px; transition: 0.3s; }
-        .back-link:hover { background: var(--neon-cyan); color: #000; box-shadow: 0 0 20px var(--neon-cyan); }
-
-        @media (max-width: 768px) { .privacy-container { padding: 30px; } h1 { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
 
-<div class="privacy-container">
-    <h1>PRIVACY POLICY PROTOCOL</h1>
-    <p class="last-updated">LAST_MODIFIED: MARCH_06_2026 // NODE: MANCHERIAL</p>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-logo">MATHHUB_PRO</div>
+            <div class="nav-links">
+                <a href="index.html">Terminal</a>
+                <a href="solver.html">AI_Solver</a>
+                <a href="ncert.html">NCERT_Hub</a>
+                <a href="game.html">Matrix_Game</a>
+            </div>
+        </div>
+    </nav>
 
-    <section>
-        <p>At <strong>MathHub Pro</strong>, accessible from <strong>https://mathhub.pro</strong>, the privacy of our global users is our highest priority. This Privacy Policy document outlines the types of information collected and recorded by our system and how we utilize it to improve your computational experience.</p>
-        <p>If you have additional questions or require more information about our Data Protocols, do not hesitate to contact us through our dedicated contact terminal.</p>
-    </section>
+    <button class="mobile-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
 
-    <section>
-        <h2>1. LOG FILES & SYSTEM ANALYTICS</h2>
-        <p>MathHub Pro follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this as part of hosting services' analytics. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
-        <p>These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information to optimize our <strong>NCERT Solutions</strong> and <strong>GST Calculator</strong> performance for users in Mancherial and worldwide.</p>
-    </section>
+    <nav class="sidebar" id="mainSidebar">
+        <div class="side-logo">
+            <img src="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg" alt="Logo">
+        </div>
+        
+        <div id="auth-links" style="padding: 10px 0; border-bottom: 1px solid var(--border);">
+            <a href="auth.html" class="nav-item"><i>🔑</i><span class="nav-label" style="color: var(--neon-cyan);">SIGN IN / UP</span></a>
+        </div>
+        <div id="user-links" style="display:none; padding: 10px 0; border-bottom: 1px solid var(--border);">
+            <span class="nav-item" style="padding-bottom: 5px;"><i style="color:var(--neon-purple);">ID</i><span id="user-display" class="nav-label" style="color: var(--neon-purple);"></span></span>
+            <a href="#" onclick="logout()" class="nav-item"><i>🛑</i><span class="nav-label" style="color: #ff4d4d;">LOG OUT</span></a>
+        </div>
 
-    <div class="highlight-box">
-        <h2>2. GOOGLE DOUBLECLICK DART COOKIE</h2>
-        <p>Google is one of the third-party vendors on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to <strong>www.mathhub.pro</strong> and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL: <a href="https://policies.google.com/technologies/ads" style="color:var(--neon-purple);">https://policies.google.com/technologies/ads</a></p>
+        <div class="sidebar-scroll-area">
+            <a href="solver.html" class="nav-item" style="border-bottom: 1px solid var(--border);">
+                <i>🤖</i><span class="nav-label" style="color: var(--neon-cyan); font-weight: bold;">AI SOLVER</span>
+            </a>
+            <script>
+                for(let i=1; i<=12; i++) {
+                    document.write(`<a href="ncert.html" class="nav-item"><i>${i.toString().padStart(2, '0')}</i><span class="nav-label">CLASS ${i} NCERT</span></a>`);
+                }
+            </script>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>PRIVACY PROTOCOL</h1>
+        <p>DATA ENCRYPTION & COMPLIANCE LOG</p>
     </div>
 
-    <section>
-        <h2>3. ADVERTISING PARTNERS PRIVACY POLICIES</h2>
-        <p>Our primary advertising partner is <strong>Google AdSense</strong>. Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on MathHub Pro, which are sent directly to users' browsers. They automatically receive your IP address when this occurs.</p>
-        <p>These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit. Note that MathHub Pro has no access to or control over these cookies that are used by third-party advertisers.</p>
-    </section>
+    <div class="privacy-wrapper">
+        
+        <section class="legal-intro reveal">
+            <p>At <strong>MathHub Pro</strong>, accessible from <strong>https://www.mathhub.pro/</strong>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by MathHub Pro and how we utilize it within our digital ecosystem.</p>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #888;">If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at our deployment node in Mancherial, Telangana, India.</p>
+        </section>
 
-    <section>
-        <h2>4. FIREBASE DATA & USER ACCOUNTS</h2>
-        <p>For users who register an account via our <strong>Firebase Authentication</strong> system, we collect your email address to provide a personalized dashboard. We utilize industrial-grade encryption to protect this data. We do not sell, trade, or rent user identity information to third parties. Your calculation history (such as BMI records or saved Age data) is stored securely within the Google Firebase ecosystem.</p>
-    </section>
+        <div class="privacy-section reveal">
+            <h2><i class="fas fa-fingerprint"></i> 01. Consent & Telemetry Data</h2>
+            <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms. MathHub Pro operates on a principle of data minimization.</p>
+            <h3>Information we collect</h3>
+            <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.</p>
+            <p>If you register for an account to use the AI Math Solver, we utilize Firebase Authentication. We collect your Email Address and a secure Auth Token to maintain your login state. We do <strong>not</strong> have access to your passwords; they are encrypted directly by Google Firebase.</p>
+            <h3>Log Files</h3>
+            <p>MathHub Pro follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this as a part of hosting services' analytics. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
+        </div>
 
-    <section>
-        <h2>5. CCPA & GDPR PRIVACY RIGHTS</h2>
-        <p>We want to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
-        <ul>
-            <li><strong>The right to access:</strong> You have the right to request copies of your personal data.</li>
-            <li><strong>The right to rectification:</strong> You have the right to request that we correct any information you believe is inaccurate.</li>
-            <li><strong>The right to erasure:</strong> You have the right to request that we erase your personal data, under certain conditions.</li>
-            <li><strong>The right to data portability:</strong> You have the right to request that we transfer the data that we have collected to another organization.</li>
-        </ul>
-    </section>
+        <div class="privacy-section reveal">
+            <h2><i class="fas fa-cookie-bite"></i> 02. Cookies & Web Beacons</h2>
+            <p>Like any other website, MathHub Pro uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+            
+            <h3>Google DoubleClick DART Cookie</h3>
+            <p>Google is one of the third-party vendors on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL: <a href="https://policies.google.com/technologies/ads" target="_blank" style="color: var(--neon-cyan);">https://policies.google.com/technologies/ads</a></p>
 
-    <section>
-        <h2>6. CHILDREN'S INFORMATION PROTECTION</h2>
-        <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
-        <p>MathHub Pro does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
-    </section>
+            <div class="warning-terminal">
+                <p>> SYSTEM_NOTICE FOR ADSENSE COMPLIANCE: Third party vendors, including Google, use cookies to serve ads based on a user's prior visits to MathHub Pro or other websites. Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our sites and/or other sites on the Internet.</p>
+            </div>
+            
+            <h3>Our Advertising Partners</h3>
+            <p>Some of advertisers on our site may use cookies and web beacons. Our advertising partners include <strong>Google AdSense</strong>. Each of our advertising partners has their own Privacy Policy for their policies on user data.</p>
+        </div>
 
-    <section>
-        <h2>7. CONSENT</h2>
-        <p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions. This policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in MathHub Pro.</p>
-    </section>
+        <div class="privacy-section reveal">
+            <h2><i class="fas fa-shield-alt"></i> 03. Third-Party Privacy Policies</h2>
+            <p>MathHub Pro's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. </p>
+            <p>You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
+        </div>
 
-    <a href="index.html" class="back-link">> RETURN_TO_SYSTEM</a>
+        <div class="privacy-section reveal">
+            <h2><i class="fas fa-balance-scale"></i> 04. CCPA Privacy Rights (Do Not Sell My Info)</h2>
+            <p>Under the CCPA, among other rights, California consumers have the right to:</p>
+            <ul>
+                <li>Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.</li>
+                <li>Request that a business delete any personal data about the consumer that a business has collected.</li>
+                <li>Request that a business that sells a consumer's personal data, not sell the consumer's personal data.</li>
+            </ul>
+            <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</p>
+        </div>
 
-    <div style="margin-top: 50px; font-size: 0.8rem; color: #444; border-top: 1px solid #222; padding-top: 20px;">
-        KEYWORDS: MathHub Pro Privacy Policy, Data Protection Mancherial, Google AdSense Compliance 2026, GDPR Math Tools, CCPA Online Calculator, Firebase Security Protocol, NCERT Solutions Data Safety.
+        <div class="privacy-section reveal">
+            <h2><i class="fas fa-passport"></i> 05. GDPR Data Protection Rights</h2>
+            <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
+            <ul>
+                <li><strong>The right to access:</strong> You have the right to request copies of your personal data.</li>
+                <li><strong>The right to rectification:</strong> You have the right to request that we correct any information you believe is inaccurate.</li>
+                <li><strong>The right to erasure:</strong> You have the right to request that we erase your personal data, under certain conditions.</li>
+                <li><strong>The right to restrict processing:</strong> You have the right to request that we restrict the processing of your personal data, under certain conditions.</li>
+                <li><strong>The right to object to processing:</strong> You have the right to object to our processing of your personal data, under certain conditions.</li>
+                <li><strong>The right to data portability:</strong> You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section reveal">
+            <h2><i class="fas fa-child"></i> 06. COPPA & Children's Information</h2>
+            <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+            <p>MathHub Pro does not knowingly collect any Personal Identifiable Information from children under the age of 13. As an educational utility serving NCERT resources, we expect users interacting with Firebase authentication systems to be doing so under academic supervision. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+        </div>
+
     </div>
-</div>
 
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">ABOUT US</a>
+            <a href="privacy.html" style="color: var(--neon-cyan);">PRIVACY POLICY</a>
+            <a href="terms.html">TERMS & CONDITIONS</a>
+            <a href="contact.html">CONTACT SUPPORT</a>
+        </div>
+        
+        <div style="margin: 30px 0;">
+            <a href="https://www.instagram.com/study_hub_pro_?igsh=bGd1bndkNHpic25j" target="_blank" class="foot-icon ig-bg"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1AeQ1d9xe5/" target="_blank" class="foot-icon fb-bg"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/Math_Hub_Pro" target="_blank" class="foot-icon x-bg"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        
+        <p style="color:#555; font-size:0.75rem; font-family: 'Orbitron'; letter-spacing: 2px;">© 2026 MATHHUB PRO | DEPLOYED FROM MANCHERIAL NODE</p>
+    </footer>
+
+    <script>
+        // MOBILE MENU TOGGLE
+        function toggleMenu() {
+            const sidebar = document.getElementById('mainSidebar');
+            const icon = document.querySelector('.mobile-toggle i');
+            sidebar.classList.toggle('active');
+            
+            if(sidebar.classList.contains('active')) {
+                icon.className = 'fas fa-times';
+            } else {
+                icon.className = 'fas fa-bars';
+            }
+        }
+
+        // SCROLL REVEAL ANIMATION (INTERSECTION OBSERVER)
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); 
+            });
+        }, revealOptions);
+        reveals.forEach(reveal => { revealOnScroll.observe(reveal); });
+
+        // CLOSE SIDEBAR ON OUTSIDE CLICK (MOBILE)
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('mainSidebar');
+            const btn = document.querySelector('.mobile-toggle');
+            if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !btn.contains(event.target)) {
+                sidebar.classList.remove('active');
+                document.querySelector('.mobile-toggle i').className = 'fas fa-bars';
+            }
+        });
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCyeLN2tzrst4KTPA6vbLArf6AVgb1PxDo",
+            authDomain: "math-hub-123.firebaseapp.com",
+            projectId: "math-hub-123",
+            storageBucket: "math-hub-123.firebasestorage.app",
+            messagingSenderId: "649705586460",
+            appId: "1:649705586460:web:ce86e65db4bd6b275404d9"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                document.getElementById('auth-links').style.display = 'none';
+                document.getElementById('user-links').style.display = 'block';
+                document.getElementById('user-display').innerText = user.email.split('@')[0].toUpperCase();
+            } else {
+                document.getElementById('auth-links').style.display = 'block';
+                document.getElementById('user-links').style.display = 'none';
+            }
+        });
+
+        window.logout = () => {
+            signOut(auth).then(() => { window.location.reload(); });
+        };
+    </script>
 </body>
 </html>
