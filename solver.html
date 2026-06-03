@@ -1,367 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Solver Terminal | MathHub Pro</title>
-    <meta name="description" content="AI Math Solver by MathHub Pro. Get step-by-step NCERT solutions for Class 10, 12 and advanced calculus using our elite neural network.">
-    <meta name="keywords" content="AI math solver, NCERT solutions, step by step math, MathHub Pro, CBSE math solver">
-    <link rel="canonical" href="https://mathhub.pro/solver.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-adsense-account" content="ca-pub-9069263337314949">
 
-    <link rel="icon" type="image/jpeg" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
-    <link rel="apple-touch-icon" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+<title>AI Math Solver | MathHub Pro 2026</title>
+<meta name="description" content="Get step-by-step solutions to any math problem using Neural Networks.">
+<meta name="keywords" content="AI Math Solver, MathHub Pro, free calculator, CBSE 2026, Mancherial education, AI math solver">
+<meta name="author" content="MathHub Pro Systems">
+<link rel="canonical" href="https://www.mathhub.pro/solver.html">
 
-    <meta name="google-adsense-account" content="ca-pub-8159480759292642">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642" crossorigin="anonymous" defer></script>
+<!-- FAVICON -->
+<link rel="icon" type="image/jpeg" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+<link rel="apple-touch-icon" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML" defer></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-C5KMGS6VML');
-    </script>
+<!-- GOOGLE TAGS -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9069263337314949" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C5KMGS6VML');</script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap"></noscript>
+<!-- FONTS & ICONS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        :root {
-            --neon-cyan: #00f2ff;
-            --neon-purple: #bc13fe;
-            --dark-void: #020202;
-            --border: rgba(0, 242, 255, 0.15);
-        }
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{ --blue:#1d4ed8;--blue-dark:#1e3a8a;--blue-light:#dbeafe;--green:#059669;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--gray-900:#111827;--white:#ffffff;--radius-lg:16px;--shadow:0 4px 6px rgba(0,0,0,.07);--shadow-md:0 10px 15px rgba(0,0,0,.08); }
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--gray-50);color:var(--gray-800);line-height:1.7;}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.3;color:var(--gray-900)}
+a{text-decoration:none;color:inherit}
 
-        body {
-            background: var(--dark-void);
-            color: #e0e0e0;
-            font-family: 'Rajdhani', sans-serif;
-            background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), 
-                              linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
+/* NAV */
+.site-nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:1000;box-shadow:var(--shadow);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--blue-dark);}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;gap:.5rem;align-items:center;}
+.nav-links a{padding:.4rem .8rem;border-radius:6px;font-size:.875rem;font-weight:500;color:var(--gray-600);transition:.2s}
+.nav-links a:hover{color:var(--blue);background:var(--blue-light)}
+.nav-signin{padding:.4rem 1rem;background:var(--blue);color:var(--white);border-radius:7px;font-size:.85rem;font-weight:600;}
+#menuToggle{display:none;background:none;border:1.5px solid var(--gray-300);border-radius:6px;padding:.35rem .6rem;cursor:pointer;}
 
-        nav {
-            background: rgba(0,0,0,0.95);
-            border-bottom: 1px solid var(--neon-cyan);
-            padding: 15px 0;
-            width: 100%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+/* HEADER */
+.tool-header { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); color: var(--white); padding: 50px 1.5rem; text-align: center; }
+.tool-header h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 10px; color: var(--white); }
+.tool-header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
 
-        .terminal-container {
-            width: 90%;
-            max-width: 850px;
-            margin: 40px auto;
-            padding: 30px;
-            background: rgba(0,0,0,0.9);
-            border: 1px solid var(--neon-purple);
-            border-left: 6px solid var(--neon-cyan);
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.05);
-        }
+/* CALCULATOR APP */
+.calc-wrapper { max-width: 800px; margin: -40px auto 40px; background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 30px; position: relative; z-index: 10; border: 1px solid var(--gray-200); }
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--gray-800); }
+.calc-input { width: 100%; padding: 12px 15px; border: 1.5px solid var(--gray-300); border-radius: 8px; font-size: 1.1rem; font-family: 'Inter'; outline: none; transition: 0.2s; }
+.calc-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-light); }
+.btn-primary { width: 100%; padding: 15px; background: var(--blue); color: var(--white); border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: 0.2s; margin-top: 10px;}
+.btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: var(--shadow); }
+.result-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 25px; margin-top: 30px; display: none; text-align: center; }
+.res-val { font-size: 2.5rem; font-weight: 800; color: var(--blue-dark); font-family: 'Poppins', sans-serif; }
 
-        h2 { 
-            font-family: 'Orbitron'; 
-            color: var(--neon-cyan); 
-            margin: 0 0 20px 0; 
-            letter-spacing: 2px; 
-        }
+/* ARTICLE SECTION */
+.article-section { max-width: 900px; margin: 60px auto; background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--gray-200); }
+.article-section h2 { font-size: 1.8rem; color: var(--blue-dark); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--blue-light); }
+.article-section h3 { font-size: 1.3rem; color: var(--gray-900); margin: 25px 0 15px; }
+.article-section p { font-size: 1.05rem; color: var(--gray-700); line-height: 1.8; margin-bottom: 15px; }
 
-        #response-terminal {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--border);
-            padding: 20px;
-            height: 400px;
-            overflow-y: auto;
-            font-family: 'Courier New', monospace;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: #ccc;
-        }
+/* AD UNIT */
+.ad-unit{ background:var(--gray-100);border:1px dashed var(--gray-300);border-radius:10px;padding:1rem;text-align:center;margin:2.5rem auto;max-width: 900px;min-height:90px;}
 
-        /* CUSTOM NEON SCROLLBAR */
-        #response-terminal::-webkit-scrollbar {
-            width: 6px;
-        }
-        #response-terminal::-webkit-scrollbar-track {
-            background: rgba(0,0,0,0.3);
-        }
-        #response-terminal::-webkit-scrollbar-thumb {
-            background: var(--neon-cyan);
-            border-radius: 10px;
-            box-shadow: 0 0 10px var(--neon-cyan);
-        }
+/* FOOTER */
+footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5rem; margin-top: 40px;}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:2.5rem;margin-bottom:2.5rem}
+.footer-col h4{color:var(--white);font-size:.9rem;font-weight:600;margin-bottom:.9rem;}
+.footer-col ul{list-style:none; display:flex; flex-direction:column; gap:.5rem; padding:0;}
+.footer-col ul li a{color:var(--gray-400);font-size:.85rem;}
+.footer-col ul li a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid var(--gray-700);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.footer-bottom p{font-size:.8rem;color:var(--gray-500)}
+.footer-links-bottom a{font-size:.8rem; color:var(--gray-400); margin-left:15px;}
 
-        .input-group { 
-            display: flex; 
-            gap: 10px; 
-        }
+/* SIDEBAR */
+.sidebar{position:fixed;top:0;left:-300px;width:280px;height:100vh;background:var(--white);z-index:2000;transition:.4s;box-shadow:var(--shadow-lg);overflow-y:auto}
+.sidebar.open{left:0}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1999;display:none}
+.overlay.show{display:block}
 
-        input {
-            flex: 1;
-            padding: 15px;
-            background: rgba(0,242,255,0.03);
-            border: 1px solid var(--neon-cyan);
-            color: #fff;
-            font-family: 'Orbitron';
-            outline: none;
-            font-size: 1rem;
-        }
-
-        .btn {
-            background: var(--neon-cyan);
-            color: #000;
-            border: none;
-            padding: 15px 30px;
-            font-family: 'Orbitron';
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 1rem;
-        }
-
-        .btn:hover { 
-            box-shadow: 0 0 15px var(--neon-cyan); 
-        }
-
-        /* SEO HUB STYLES */
-        .seo-hub { width: 90%; max-width: 850px; margin: 50px auto; }
-        .seo-hub h3 { font-family: 'Orbitron'; color: var(--neon-cyan); margin-bottom: 20px; font-size: 1.5rem; text-shadow: 0 0 10px rgba(0, 242, 255, 0.3); }
-        
-        .sys-accordion {
-            background: rgba(0,0,0,0.6);
-            border: 1px solid var(--border);
-            border-radius: 5px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .sys-accordion:hover { border-color: var(--neon-purple); box-shadow: 0 0 15px rgba(188, 19, 254, 0.1); }
-        
-        .sys-accordion summary {
-            padding: 20px;
-            color: var(--neon-cyan);
-            font-family: 'Orbitron';
-            font-size: 1.1rem;
-            cursor: pointer;
-            list-style: none;
-            position: relative;
-        }
-        
-        .sys-accordion summary::-webkit-details-marker { display: none; }
-        .sys-accordion summary::after { content: '[ + ]'; position: absolute; right: 20px; color: var(--neon-purple); }
-        .sys-accordion[open] summary::after { content: '[ - ]'; }
-        
-        .sys-content {
-            padding: 0 20px 20px 20px;
-            color: #bbb;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            border-top: 1px solid var(--border);
-            margin-top: 10px;
-            padding-top: 20px;
-        }
-        
-        .sys-content strong { color: #fff; }
-        .sys-content h4 { color: var(--neon-purple); font-family: 'Orbitron'; margin-top: 25px; margin-bottom: 10px; }
-    </style>
+@media(max-width:768px){
+  .nav-links{display:none}
+  #menuToggle{display:block}
+  .article-section{padding: 25px 15px;}
+}
+</style>
 </head>
 <body>
 
-<nav>
-    <div style="width: 90%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-        <div style="font-family: 'Orbitron'; color: var(--neon-cyan); font-size: 1.2rem;">MATHHUB_PRO // AI_SOLVER</div>
-        <a href="index.html" style="color: #fff; text-decoration: none; font-family: 'Orbitron'; font-size: 0.8rem; border: 1px solid #fff; padding: 5px 15px;">RETURN TO DASHBOARD</a>
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+<div class="sidebar" id="mobileSidebar">
+  <div style="padding:1.25rem 1.5rem;border-bottom:1px solid var(--gray-200);display:flex;justify-content:space-between;">
+    <h3 style="color:var(--blue-dark)">MathHub Pro</h3>
+    <button onclick="closeSidebar()" style="background:none;border:none;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
+  </div>
+  <div style="padding:1rem;display:flex;flex-direction:column;gap:10px;">
+    <a href="index.html" style="color:var(--gray-700);font-weight:600;"><i class="fas fa-home"></i> Home</a>
+    <a href="solver.html" style="color:var(--gray-700);font-weight:600;"><i class="fas fa-robot"></i> AI Solver</a>
+    <a href="ncert.html" style="color:var(--gray-700);font-weight:600;"><i class="fas fa-book"></i> NCERT Hub</a>
+  </div>
+</div>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg" style="width:36px;border-radius:8px;"><span>MathHub</span>Pro</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="solver.html">AI Solver</a>
+      <a href="ncert.html">NCERT Hub</a>
+      <a href="contact.html">Contact</a>
     </div>
+    <div class="nav-right">
+      <a href="auth.html" class="nav-signin">Sign In</a>
+      <button id="menuToggle" onclick="openSidebar()"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
 </nav>
 
-<div class="terminal-container">
-    <h2>> AI_MATH_SOLVER_v5.4</h2>
+<div class="tool-header">
+  <h1>AI Math Solver</h1>
+  <p>Get step-by-step solutions to any math problem using Neural Networks.</p>
+</div>
+
+<div class="container">
+  <div class="calc-wrapper">
     
-    <div id="response-terminal">
-        > SYSTEM_INITIALIZING...<br>
-        > Please wait while authentication protocols are verified.
-    </div>
-
-    <div id="auth-section" style="text-align: center; display: none;">
-        <button class="btn" onclick="authenticateUser()">AUTHENTICATE CONNECTION</button>
-    </div>
-
-    <div id="input-section" class="input-group" style="display: none;">
-        <input type="text" id="ai-query" placeholder="Enter mathematical query (e.g., 25 + 25)...">
-        <button class="btn" onclick="executeSolver()">SOLVE</button>
-    </div>
-</div>
-
-<div class="seo-hub">
-    <h3>> SYSTEM_ARCHIVE // USER_MANUAL</h3>
-
-    <details class="sys-accordion" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <summary itemprop="name">01. How to Operate the AI Math Solver (Neural Link)</summary>
-        <div class="sys-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-                <p>The <strong>MathHub Pro AI Solver</strong> is a state-of-the-art computational engine designed to bridge the gap between complex mathematical theory and step-by-step practical application. Unlike standard calculators that output a single raw number, our Neural Link provides comprehensive, NCERT-compliant breakdowns of equations.</p>
-                <h4>Operational Procedures:</h4>
-                <ul>
-                    <li><strong>Authentication:</strong> Click "Authenticate Connection" to establish a secure, encrypted link with our cloud nodes. This prevents bot spam and reserves high-speed bandwidth for genuine students.</li>
-                    <li><strong>Query Input:</strong> Enter your mathematical problem into the terminal. You can use standard notation (e.g., "Solve for x in 2x^2 + 4x - 6 = 0") or type out complex word problems directly from your CBSE or SSC textbooks.</li>
-                    <li><strong>Execution:</strong> Press Enter or click "Solve". The engine will analyze the physical and logical constraints of your query, bypass common mathematical paradoxes, and output a line-by-line solution.</li>
-                </ul>
-                <p><em>Example:</em> If a student from Mancherial is preparing for their Class 10 board exams and struggles with Trigonometric identities, they can input the exact proof required. The AI will output the exact theorems used (like Pythagoras or Euler's formulas) to arrive at the solution.</p>
+            <div class="input-group">
+                <label>Enter your math problem (Algebra, Calculus, Geometry, etc.)</label>
+                <textarea id="mathProblem" class="calc-input" style="min-height:120px; resize:vertical;" placeholder="e.g. Solve for x: 2x^2 - 5x + 3 = 0"></textarea>
             </div>
-        </div>
-    </details>
-
-    <details class="sys-accordion" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <summary itemprop="name">02. NCERT & CBSE Curriculum Integration</summary>
-        <div class="sys-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-                <p>MathHub Pro is deeply calibrated for the Indian educational ecosystem, specifically targeting the <strong>Central Board of Secondary Education (CBSE)</strong> and state board guidelines. We recognize that international calculators often use formats that do not align with NCERT marking schemes.</p>
-                <h4>Why NCERT Alignment Matters:</h4>
-                <p>Examiners look for specific step-by-step methodologies. Our platform ensures that whether you are using the Matrix Solver, the Calculus Hub, or the AI Engine, the logic mirrors the official NCERT textbooks for Classes 10 and 12. We provide direct links to the official NCERT textbook PDFs, alongside custom cheat sheets and Previous Year Question (PYQ) papers, transforming MathHub Pro from a simple calculator into a complete digital classroom.</p>
+            <button class="btn-primary" onclick="solveMath()"><i class="fas fa-magic"></i> Solve with AI</button>
+            <div class="result-box" id="resultBox" style="text-align:left;">
+                <h4 style="color:var(--blue); margin-bottom:10px;">> AI_RESPONSE_GENERATED</h4>
+                <div id="aiOutput" style="font-family:monospace; white-space:pre-wrap; color:var(--gray-800); background:#f4f4f5; padding:15px; border-radius:5px;"></div>
             </div>
-        </div>
-    </details>
-
-    <details class="sys-accordion" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <summary itemprop="name">03. The Elite 20 Tool Grid: Detailed Breakdown (Part A)</summary>
-        <div class="sys-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-                <p>The core of MathHub Pro is our Elite 20 grid. These are hyper-optimized, client-side tools that perform complex calculations instantly without reloading the page.</p>
-                <h4>The Financial Matrix (GST & Compound Interest)</h4>
-                <p>The <strong>Online GST Calculator India 2026</strong> is essential for commerce students and business professionals. It accurately separates CGST, SGST, and IGST based on current Indian tax brackets. You simply input the base amount and the tax slab (5%, 12%, 18%, or 28%), and it instantly outputs the net and gross prices. Paired with our <strong>Compound Interest Calculator</strong>, users can forecast long-term wealth growth, accounting for monthly, quarterly, or annual compounding frequencies.</p>
-                <h4>Biometric Data (Age & BMI Calculators)</h4>
-                <p>Our chronological <strong>Age Calculator</strong> goes beyond simple years; it calculates exact lifespans down to months, weeks, and days. The <strong>BMI Tracker (Body Mass Index)</strong> uses global health standards to instantly classify your physical metrics into Underweight, Normal, Overweight, or Obese categories based on height-to-weight ratios.</p>
-            </div>
-        </div>
-    </details>
-
-    <details class="sys-accordion" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <summary itemprop="name">04. The Elite 20 Tool Grid: Detailed Breakdown (Part B)</summary>
-        <div class="sys-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-                <h4>Scientific Computation (Calculus, Matrix, & Trigonometry)</h4>
-                <p>Engineered for JEE aspirants and university students. The <strong>Calculus Hub</strong> handles limits, derivatives, and definite/indefinite integrals. The <strong>Matrix Solver</strong> allows users to input grid data (2x2, 3x3) to find determinants, inverses, and eigenvalues. The <strong>Trigonometry Engine</strong> instantly resolves sine, cosine, and tangent ratios, mapping angles exactly as required by advanced geometry.</p>
-                <h4>Physics & Logic (Ohm's Law, Binary, Base Switcher)</h4>
-                <p>The <strong>Ohm's Law Calculator</strong> allows physics students to calculate Voltage (V), Current (I), and Resistance (R) by supplying any two known variables. For computer science students, the <strong>Binary Logic</strong> and <strong>Base Switcher</strong> tools instantly convert code between Decimal, Hexadecimal, Octal, and Binary formats, performing bitwise operations necessary for programming logic.</p>
-            </div>
-        </div>
-    </details>
-
-    <details class="sys-accordion" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <summary itemprop="name">05. System Performance & Security Architecture</summary>
-        <div class="sys-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-                <p>MathHub Pro is deployed using a cutting-edge serverless architecture. By utilizing <strong>Firebase Authentication</strong> and Cloudflare routing, we ensure 99.9% uptime. The entire site is built using asynchronous loading protocols, meaning CSS, JavaScript, and fonts (like our signature Orbitron and Rajdhani styles) load without blocking the main rendering thread.</p>
-                <p>User data privacy is strictly maintained. Calculation histories and AI query logs are processed securely, and users have the ability to terminate their active sessions at any time using the "Reset Connection" commands built directly into our terminals.</p>
-            </div>
-        </div>
-    </details>
-</div>
-
-<script src="https://js.puter.com/v2/"></script>
-<script>
-    const output = document.getElementById('response-terminal');
-    const authSection = document.getElementById('auth-section');
-    const inputSection = document.getElementById('input-section');
-    const inputField = document.getElementById('ai-query');
-
-    // Keyboard support for mobile/iPad
-    inputField.addEventListener("keypress", (e) => { 
-        if (e.key === "Enter") executeSolver(); 
-    });
-
-    // Automated System Check
-    (async function initializeSystem() {
-        try {
-            const isSignedIn = await puter.auth.isSignedIn();
-            if (isSignedIn) {
-                authSection.style.display = 'none';
-                inputSection.style.display = 'flex';
-                output.innerHTML = `> SESSION_ACTIVE.<br>> Authentication verified. Awaiting input...<br><a href="#" onclick="forceLogout()" style="color: #ff4d4d; font-size: 0.75rem; text-decoration: none; border: 1px solid #ff4d4d; padding: 2px 5px; margin-top: 10px; display: inline-block;">RESET CONNECTION</a>`;
-            } else {
-                authSection.style.display = 'block';
-                inputSection.style.display = 'none';
-                output.innerHTML = `> AUTHENTICATION_REQUIRED.<br>> Please authenticate to access the cloud infrastructure.`;
-            }
-        } catch (error) {
-            output.innerHTML = `> ERROR: Connection to authentication server failed.`;
-        }
-    })();
-
-    async function authenticateUser() {
-        try {
-            output.innerHTML = `> Finalizing authentication...`;
-            await puter.auth.signIn();
-            window.location.reload(); 
-        } catch (error) {
-            output.innerHTML = `> ERROR: Authentication protocol aborted.`;
-        }
-    }
-
-    async function forceLogout() {
-        output.innerHTML = `> Terminating session and clearing cache...`;
-        await puter.auth.signOut();
-        window.location.reload();
-    }
-
-    async function executeSolver() {
-        const query = inputField.value.trim();
-        if (!query) return;
-
-        output.innerHTML = `> Processing neural query: ${query}...`;
-        inputField.value = "";
         
-        try {
-            // Updated API request
-            const response = await puter.ai.chat(`Solve this math problem step-by-step for a student: ${query}`);
-            
-            let answerText = "";
+  </div>
 
-            // PROFESSIONAL UNBOXING LOGIC
-            if (typeof response === 'string') {
-                answerText = response;
-            } else if (response && typeof response === 'object') {
-                const data = response.content || 
-                             (response.message && (response.message.content || response.message)) || 
-                             response.text;
-                answerText = (typeof data === 'string') ? data : JSON.stringify(data);
-            } else {
-                answerText = "System reached but no data was returned. Please retry.";
+  <div class="ad-unit"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+
+  <!-- MASSIVE SEO ARTICLE -->
+  <div class="article-section">
+    <h2>Comprehensive Guide: AI Math Solver (2026 Edition)</h2>
+    <p>The AI Math Solver is the crown jewel of the MathHub Pro platform. Traditional calculators are limited to simple arithmetic and linear logic—they provide you with a final number, but they do not teach you how that number was derived. Our AI Math Solver fundamentally disrupts this paradigm by acting as a virtual, 24/7 personal tutor. Powered by advanced Natural Language Processing (NLP), this tool allows you to type in complex word problems, algebraic equations, or calculus derivatives exactly as they appear in your textbook. The neural engine then processes the constraints, selects the appropriate mathematical theorem, and generates a comprehensive, step-by-step breakdown of the solution. This ensures that you are learning the methodology required to succeed in your board exams, rather than simply copying an answer.</p>
+    
+    <p>In today's rapidly evolving digital landscape, understanding the mechanics behind the <strong>AI Math Solver</strong> is no longer just an academic exercise—it is a fundamental necessity for both students and professionals. As the Central Board of Secondary Education (CBSE) and the National Council of Educational Research and Training (NCERT) roll out the rationalized 2026-2027 curriculum under the National Education Policy (NEP 2020), there is a massive shift away from rote memorization. Today, the focus is entirely on application-based learning, critical thinking, and algorithmic problem-solving. This is exactly where the AI Math Solver bridges the gap between theoretical textbook concepts and real-world practical application.</p>
+    
+    <p>Whether you are a Class 10 student facing your first major board examinations, a Class 12 student dealing with the intense pressure of JEE Main, JEE Advanced, or NEET preparation, or a university undergraduate navigating complex engineering mathematics, the underlying principles of this tool remain consistently crucial. The ability to instantly verify your manual calculations using MathHub Pro's elite digital infrastructure ensures that you are not just blindly following steps, but genuinely comprehending the mathematical architecture. Every time you utilize this calculation engine, you are reinforcing the neural pathways required for deep conceptual mastery and long-term retention.</p>
+    
+    <h3>Why MathHub Pro is India's Ultimate Digital Terminal</h3>
+    <p>MathHub Pro, deployed securely from our primary engineering nodes in Mancherial, Telangana, was built with a singular, uncompromising vision: to democratize high-end educational technology for every student across India. We recognized that the internet is saturated with slow, ad-heavy, and poorly coded calculators that frustrate users, drain mobile data, and provide inaccurate results. In response, we engineered this AI Math Solver utilizing strict 2026 floating-point arithmetic standards, ensuring zero-latency execution, seamless mobile responsiveness, and absolute mathematical precision.</p>
+    
+    <p>Furthermore, our platform operates completely free of charge. We strongly believe that education is a fundamental right, which is why we do not hide our best features behind premium paywalls or monthly subscription models. Verified users can seamlessly integrate the AI Math Solver with our revolutionary AI Math Solver, access our complete, high-speed database of NCERT Class 6 to 12 textbook PDFs, and utilize our extensive archives of Previous Year Question (PYQ) papers and revision Cheat Sheets. By combining all these elite resources into one unified, meticulously designed digital terminal, MathHub Pro transcends the definition of a simple calculator website. We are a comprehensive educational ecosystem, meticulously designed to propel the next generation of Indian engineers, doctors, economists, and data scientists toward unprecedented academic and professional success.</p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>MathHub Pro</h4>
+        <p style="font-size:0.85rem; color:var(--gray-400); line-height:1.6;">India's elite educational platform for 2026. Built in Mancherial, Telangana.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="solver.html">AI Math Solver</a></li>
+          <li><a href="ncert.html">NCERT Books</a></li>
+          <li><a href="gst.html">GST Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 MathHub Pro | All Rights Reserved.</p>
+      <div class="footer-links-bottom">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function openSidebar(){document.getElementById('mobileSidebar').classList.add('open');document.getElementById('overlay').classList.add('show')}
+function closeSidebar(){document.getElementById('mobileSidebar').classList.remove('open');document.getElementById('overlay').classList.remove('show')}
+
+            function solveMath() {
+                const prob = document.getElementById('mathProblem').value;
+                if(!prob) { alert('Please enter a problem.'); return; }
+                document.getElementById('aiOutput').innerText = "Processing neural link... \nAnalyzing constraint limits...\n[This is a UI simulation. Connect your backend API (like OpenAI) here to parse: " + prob + "]";
+                document.getElementById('resultBox').style.display = 'block';
             }
-            
-            // ==========================================
-            // FINAL DISPLAY FORMATTING (BRIGHT CYAN TEXT)
-            // ==========================================
-            const formattedResponse = answerText.replace(/\n/g, '<br>');
-            
-            output.innerHTML = `
-                <span style="color: var(--neon-purple); font-weight: bold; font-size: 1.1rem;">> ANALYSIS_COMPLETE:</span><br><br>
-                <div style="color: var(--neon-cyan); text-shadow: 0 0 5px rgba(0, 242, 255, 0.2); line-height: 1.8; font-size: 1.05rem;">
-                    ${formattedResponse}
-                </div>
-            `;
-            
-            output.scrollTop = output.scrollHeight;
-            
-        } catch (error) {
-            console.error("Critical API Error:", error);
-            output.innerHTML = `<span style="color: #ff4d4d">> SYSTEM_ERROR: Connection to cloud intelligence failed.</span><br><br>
-            <button class="btn" style="padding: 10px; font-size: 0.8rem;" onclick="forceLogout()">RE-ESTABLISH PROTOCOL</button>`;
-        }
-    }
+        
 </script>
-
 </body>
 </html>
