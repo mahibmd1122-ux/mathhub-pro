@@ -12,32 +12,10 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.mathhub.pro/auth.html">
 
-<meta property="og:title" content="Sign In or Create an Account | MathHub Pro">
-<meta property="og:description" content="Join India's fastest-growing free educational platform. Track your progress, save formulas, and master your mathematics syllabus.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.mathhub.pro/auth.html">
-
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C5KMGS6VML');</script>
 
-<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9069263337314949" crossorigin="anonymous"></script>
-
-<!-- Schema Markup -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "MathHub Pro Authentication",
-  "url": "https://www.mathhub.pro/auth.html",
-  "description": "User login and registration portal for MathHub Pro educational services.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "MathHub Pro"
-  }
-}
-</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,12 +60,15 @@ a{text-decoration:none;color:inherit}
 .form-group input{width:100%;padding:1rem;border:1.5px solid var(--gray-300);border-radius:8px;font-size:1rem;font-family:'Inter',sans-serif;transition:.2s;}
 .form-group input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-light);}
 
-.btn-submit{background:var(--blue);color:var(--white);border:none;padding:1.2rem;border-radius:8px;font-size:1.1rem;font-weight:700;cursor:pointer;width:100%;transition:.2s;margin-top:0.5rem;}
+/* REAL-TIME APP MONITOR FEEDBACK */
+.monitor-msg { margin: 1rem 0; font-size: 0.95rem; font-weight: 700; text-align: center; min-height: 24px; }
+
+.btn-submit{background:var(--blue);color:var(--white);border:none;padding:1.2rem;border-radius:8px;font-size:1.1rem;font-weight:700;cursor:pointer;width:100%;transition:.2s;}
 .btn-submit:hover{background:var(--blue-dark);}
 
 .auth-footer{text-align:center;margin-top:1.5rem;font-size:0.9rem;color:var(--gray-600);}
 .auth-footer a{color:var(--blue);font-weight:600;}
-.auth-footer a:hover{text-decoration:underline;}
+.auth-footer a:hover { text-underline-position: under; text-decoration: underline;}
 
 .social-login{margin-top:2rem;text-align:center;}
 .social-login p{font-size:0.9rem;color:var(--gray-500);margin-bottom:1rem;position:relative;}
@@ -98,11 +79,6 @@ a{text-decoration:none;color:inherit}
 .btn-google:hover{background:var(--gray-50);border-color:var(--gray-400);}
 .btn-google img{width:20px;height:20px;}
 
-/* SEO & ADS */
-.seo-content{max-width:900px;margin:0 auto 4rem;background:var(--white);padding:3rem;border-radius:var(--radius-lg);box-shadow:var(--shadow);}
-.seo-content h2, .seo-content h3{color:var(--blue-dark);margin:1.5rem 0 1rem; line-height:1.4;}
-.seo-content p, .seo-content ul{color:var(--gray-600);line-height:1.9;margin-bottom:1.25rem; font-size:1.05rem;}
-.seo-content ul{padding-left:1.5rem;}
 .ad-unit{background:var(--gray-50);border:1px dashed var(--gray-300);border-radius:8px;padding:1rem;text-align:center;margin:2rem auto;max-width:900px;}
 
 /* FOOTER */
@@ -141,43 +117,36 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       <button class="toggle-btn" onclick="switchTab('register')" id="tabRegister">Create Account</button>
     </div>
 
-    <!-- LOGIN FORM -->
-    <form id="formLogin" class="auth-form active" onsubmit="event.preventDefault(); alert('Login functionality will be connected to your backend.');">
+    <div id="authStatusMsg" class="monitor-msg"></div>
+
+    <form id="formLogin" class="auth-form active">
       <div class="form-group">
         <label for="loginEmail">Email Address</label>
         <input type="email" id="loginEmail" placeholder="student@example.com" required>
       </div>
       <div class="form-group">
-        <label for="loginPass" style="display:flex; justify-content:space-between;">
-          Password
-          <a href="#" style="font-size:0.85rem; color:var(--blue); font-weight:500;">Forgot Password?</a>
-        </label>
+        <label for="loginPass">Password</label>
         <input type="password" id="loginPass" placeholder="••••••••" required>
       </div>
       <button type="submit" class="btn-submit">Sign In to Dashboard</button>
       
       <div class="social-login">
         <p>Or continue with</p>
-        <button type="button" class="btn-google" onclick="alert('Google Auth Integration goes here.')">
+        <button type="button" id="googleAuthBtn" class="btn-google">
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo">
           Sign in with Google
         </button>
       </div>
     </form>
 
-    <!-- REGISTER FORM -->
-    <form id="formRegister" class="auth-form" onsubmit="event.preventDefault(); alert('Registration functionality will be connected to your backend.');">
-      <div class="form-group">
-        <label for="regName">Full Name</label>
-        <input type="text" id="regName" placeholder="e.g., Mahib" required>
-      </div>
+    <form id="formRegister" class="auth-form">
       <div class="form-group">
         <label for="regEmail">Email Address</label>
         <input type="email" id="regEmail" placeholder="student@example.com" required>
       </div>
       <div class="form-group">
         <label for="regPass">Create Password</label>
-        <input type="password" id="regPass" placeholder="Minimum 8 characters" required minlength="8">
+        <input type="password" id="regPass" placeholder="Minimum 6 characters" required minlength="6">
       </div>
       <button type="submit" class="btn-submit">Create Free Account</button>
       
@@ -185,33 +154,13 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
         By creating an account, you agree to our <br> <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.
       </div>
     </form>
-
   </div>
 
-  <script>
-    function switchTab(tab) {
-      document.getElementById('tabLogin').classList.remove('active');
-      document.getElementById('tabRegister').classList.remove('active');
-      document.getElementById('formLogin').classList.remove('active');
-      document.getElementById('formRegister').classList.remove('active');
-
-      if (tab === 'login') {
-        document.getElementById('tabLogin').classList.add('active');
-        document.getElementById('formLogin').classList.add('active');
-      } else {
-        document.getElementById('tabRegister').classList.add('active');
-        document.getElementById('formRegister').classList.add('active');
-      }
-    }
-  </script>
-
-  <!-- TOP AD UNIT -->
   <div class="ad-unit">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
 
-  <!-- SEO CONTENT (>500 WORDS) -->
   <article class="seo-content">
     <h2>Unlock Your Academic Potential: Why You Should Create a MathHub Pro Account</h2>
     <p>Mathematics is not a subject that you can master through passive reading. It demands rigorous practice, meticulous tracking of errors, and consistent, daily revision. While the MathHub Pro platform offers free, frictionless access to over 20 advanced calculators and educational tools for guest users, registering for a free personal account unlocks an entirely new layer of tailored, data-driven academic assistance. By creating an account, you transition from simply "using a calculator" to stepping into a comprehensive, personalized digital classroom designed specifically to accelerate your learning curve and boost your board exam scores.</p>
@@ -219,7 +168,6 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
     <h3>Save Your AI Math Solver History and Step-by-Step Solutions</h3>
     <p>Have you ever spent thirty minutes struggling with a complex integration problem, finally achieved the breakthrough using our AI Math Solver, only to forget the exact sequence of steps three days later during your revision session? One of the most powerful features of a registered MathHub Pro account is the ability to securely log and save your computational history. Every equation you process through our AI tutor, every complex matrix you calculate, and every quadratic root you determine can be saved directly to your personal dashboard. When it comes time to prepare for your CBSE Class 10 or Class 12 board examinations, you will have a customized digital notebook containing the exact problems you personally found challenging, complete with their step-by-step breakdowns, instantly available for review.</p>
 
-    <!-- MIDDLE AD UNIT -->
     <div class="ad-unit" style="margin: 2rem 0; padding:0; background:transparent; border:none;">
       <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
       <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
@@ -234,32 +182,25 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
     <h3>100% Free, Secure, and Privacy-Focused</h3>
     <p>We are deeply committed to making elite educational tools accessible to every student in India. Creating an account on MathHub Pro is, and always will be, 100% free. There are no hidden subscription tiers or premium paywalls limiting your access to knowledge. Furthermore, we prioritize your digital security. Our authentication system utilizes industry-standard encryption protocols to ensure that your email, password, and educational data remain strictly private and secure. Whether you choose to sign up manually or utilize our seamless Google Single Sign-On (SSO) integration, you can trust that your academic journey is safe with us. Join the thousands of Indian students who have already optimized their study routines—register your free MathHub Pro account today.</p>
   </article>
-
-  <!-- BOTTOM AD UNIT -->
-  <div class="ad-unit">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-  </div>
-
 </div>
 
 <footer>
   <div class="footer-grid">
     <div>
-      <h3 style="color:#fff;font-size:1.2rem;margin-bottom:1rem;font-family:'Poppins'">MathHub Pro</h3>
-      <p style="font-size:0.85rem;line-height:1.6;">India's most comprehensive free mathematics platform. Built with love in Mancherial, Telangana.</p>
+      <h3>MathHub Pro</h3>
+      <p>India's most comprehensive free mathematics platform. Built with love in Mancherial, Telangana.</p>
     </div>
     <div>
-      <h4 style="color:#fff;margin-bottom:1rem;">Tools</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
+      <h4>Tools</h4>
+      <ul>
         <li><a href="solver.html">AI Math Solver</a></li>
         <li><a href="calculus.html">Calculus Engine</a></li>
         <li><a href="timetable.html">Study Timer</a></li>
       </ul>
     </div>
     <div>
-      <h4 style="color:#fff;margin-bottom:1rem;">Resources</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
+      <h4>Resources</h4>
+      <ul>
         <li><a href="ncert.html">NCERT Hub</a></li>
         <li><a href="pyq.html">PYQ Papers</a></li>
       </ul>
@@ -276,5 +217,108 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
     </div>
   </div>
 </footer>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { 
+    getAuth, 
+    createUserWithEmailAndPassword, 
+    signInWithEmailAndPassword, 
+    signInWithPopup, 
+    GoogleAuthProvider 
+  } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+  // Deployed with your exact credentials parameters
+  const firebaseConfig = {
+    apiKey: "AIzaSyCPm8-ZNZQcMTAql6m8VVlB3WHgdHzdGv8",
+    authDomain: "mathhub-pro.firebaseapp.com",
+    projectId: "mathhub-pro",
+    storageBucket: "mathhub-pro.firebasestorage.app",
+    messagingSenderId: "861286840133",
+    appId: "1:861286840133:web:06d346ca175827b6c9302c",
+    measurementId: "G-375HJSRW1F"
+  };
+
+  // Initialize App Modules
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
+
+  const statusMsg = document.getElementById('authStatusMsg');
+
+  function showStatus(text, isError = false) {
+    statusMsg.innerText = text;
+    statusMsg.style.color = isError ? "var(--red)" : "var(--green)";
+  }
+
+  // Handle Account Registrations
+  document.getElementById('formRegister').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('regEmail').value;
+    const pass = document.getElementById('regPass').value;
+    showStatus("Deploying encryption credentials...", false);
+
+    createUserWithEmailAndPassword(auth, email, pass)
+      .then((userCredential) => {
+        showStatus(">> ACCOUNT_DEPLOYED. Redirecting...", false);
+        setTimeout(() => window.location.href = "index.html", 1200);
+      })
+      .catch((error) => {
+        const cleanErr = error.code.replace('auth/', '').replace(/-/g, '_').toUpperCase();
+        showStatus("!! ERROR: " + cleanErr, true);
+      });
+  });
+
+  // Handle Standard Dashboard Log-ins
+  document.getElementById('formLogin').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const pass = document.getElementById('loginPass').value;
+    showStatus("Verifying access token pipeline...", false);
+
+    signInWithEmailAndPassword(auth, email, pass)
+      .then((userCredential) => {
+        showStatus(">> ACCESS_GRANTED. Redirecting...", false);
+        setTimeout(() => window.location.href = "index.html", 1200);
+      })
+      .catch((error) => {
+        const cleanErr = error.code.replace('auth/', '').replace(/-/g, '_').toUpperCase();
+        showStatus("!! ACCESS_DENIED: " + cleanErr, true);
+      });
+  });
+
+  // Handle Google Popup Authentication
+  document.getElementById('googleAuthBtn').addEventListener('click', () => {
+    showStatus("Opening secure Google gateway...", false);
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        showStatus(">> GOOGLE_AUTH_SUCCESS. Welcome!", false);
+        setTimeout(() => window.location.href = "index.html", 1200);
+      })
+      .catch((error) => {
+        showStatus("!! OAUTH_CANCELLED: " + error.message.substring(0, 30) + "...", true);
+      });
+  });
+</script>
+
+<script>
+  // UI Tab Shifting System
+  function switchTab(tab) {
+    document.getElementById('authStatusMsg').innerText = ''; // Clear logs
+    document.getElementById('tabLogin').classList.remove('active');
+    document.getElementById('tabRegister').classList.remove('active');
+    document.getElementById('formLogin').classList.remove('active');
+    document.getElementById('formRegister').classList.remove('active');
+
+    if (tab === 'login') {
+      document.getElementById('tabLogin').classList.add('active');
+      document.getElementById('formLogin').classList.add('active');
+    } else {
+      document.getElementById('tabRegister').classList.add('active');
+      document.getElementById('formRegister').classList.add('active');
+    }
+  }
+</script>
+
 </body>
 </html>
