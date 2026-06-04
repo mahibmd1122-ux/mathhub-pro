@@ -1,206 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathHub Pro | Secure Access</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8159480759292642"
-     crossorigin="anonymous"></script>
-    <style>
-        :root {
-            --neon-cyan: #00f2ff;
-            --neon-purple: #bc13fe;
-            --dark-void: #020202;
-            --border: rgba(0, 242, 255, 0.2);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-adsense-account" content="ca-pub-9069263337314949">
 
-        body {
-            margin: 0;
-            background: var(--dark-void);
-            color: #e0e0e0;
-            font-family: 'Rajdhani', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), 
-                              linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
+<title>Sign In & Register | MathHub Pro Account</title>
+<meta name="description" content="Create your free MathHub Pro account. Save your AI Math Solver history, track your Pomodoro study sessions, and bookmark CBSE NCERT PDFs instantly.">
+<meta name="keywords" content="MathHub Pro login, sign up MathHub Pro, create math account, free educational account, save CBSE math history, student portal, personalized learning">
+<meta name="author" content="MathHub Pro Systems">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.mathhub.pro/auth.html">
 
-        .auth-card {
-            width: 90%;
-            max-width: 400px;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.9);
-            border: 1px solid var(--border);
-            border-top: 4px solid var(--neon-cyan);
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.1);
-            text-align: center;
-        }
+<meta property="og:title" content="Sign In or Create an Account | MathHub Pro">
+<meta property="og:description" content="Join India's fastest-growing free educational platform. Track your progress, save formulas, and master your mathematics syllabus.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mathhub.pro/auth.html">
 
-        h2 {
-            font-family: 'Orbitron';
-            color: var(--neon-cyan);
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px var(--neon-cyan);
-        }
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C5KMGS6VML');</script>
 
-        .input-group { 
-            margin-bottom: 20px; 
-            text-align: left;
-        }
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9069263337314949" crossorigin="anonymous"></script>
 
-        label {
-            display: block;
-            font-family: 'Orbitron';
-            font-size: 0.65rem;
-            margin-bottom: 8px;
-            color: var(--neon-purple);
-            letter-spacing: 1px;
-        }
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "MathHub Pro Authentication",
+  "url": "https://www.mathhub.pro/auth.html",
+  "description": "User login and registration portal for MathHub Pro educational services.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MathHub Pro"
+  }
+}
+</script>
 
-        input {
-            width: 100%;
-            padding: 14px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            color: #fff;
-            font-family: 'Rajdhani';
-            font-size: 1rem;
-            outline: none;
-            box-sizing: border-box;
-            transition: 0.3s;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        input:focus {
-            border-color: var(--neon-cyan);
-            background: rgba(0, 242, 255, 0.05);
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
-        }
+<style>
+/* GLOBAL STYLES */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#1d4ed8;--blue-dark:#1e3a8a;--blue-light:#dbeafe;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--gray-900:#111827;--white:#ffffff;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow:0 4px 6px rgba(0,0,0,.07);--shadow-md:0 10px 15px rgba(0,0,0,.08);--radius-lg:16px;}
+body{font-family:'Inter',sans-serif;background:var(--gray-50);color:var(--gray-800);line-height:1.7;}
+h1,h2,h3{font-family:'Poppins',sans-serif;color:var(--gray-900)}
+a{text-decoration:none;color:inherit}
 
-        .btn-container {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
+/* NAVIGATION */
+.site-nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:1000;box-shadow:var(--shadow-sm);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem;color:var(--blue-dark);display:flex;align-items:center;gap:0.5rem;}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;gap:.25rem}
+.nav-links a{padding:.4rem .8rem;border-radius:6px;font-size:.875rem;font-weight:500;color:var(--gray-600);transition:.2s}
+.nav-links a:hover{color:var(--blue);background:var(--blue-light)}
 
-        button {
-            flex: 1;
-            padding: 12px;
-            font-family: 'Orbitron';
-            font-size: 0.75rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.4s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+/* PAGE SPECIFIC */
+.inner-hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);color:var(--white);padding:40px 1.5rem 80px;text-align:center;}
+.inner-hero h1{font-size:2.2rem;margin-bottom:0.5rem;color:var(--white);}
+.container{max-width:1280px;margin:0 auto;padding:0 1.5rem;}
 
-        .primary-btn {
-            background: var(--neon-cyan);
-            border: none;
-            color: #000;
-        }
+/* AUTH UI */
+.auth-container{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:3rem;margin:-40px auto 3rem;max-width:550px;position:relative;z-index:10;}
+.auth-toggle{display:flex;border-bottom:2px solid var(--gray-200);margin-bottom:2rem;}
+.toggle-btn{flex:1;background:none;border:none;padding:1rem;font-size:1.1rem;font-weight:700;color:var(--gray-500);cursor:pointer;transition:.2s;position:relative;}
+.toggle-btn.active{color:var(--blue);}
+.toggle-btn.active::after{content:'';position:absolute;bottom:-2px;left:0;width:100%;height:3px;background:var(--blue);border-radius:3px 3px 0 0;}
 
-        .secondary-btn {
-            background: transparent;
-            border: 1px solid var(--neon-purple);
-            color: var(--neon-purple);
-        }
+.auth-form{display:none; animation:fadeIn 0.3s ease;}
+.auth-form.active{display:block;}
+@keyframes fadeIn { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
 
-        button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 20px currentColor;
-        }
+.form-group{margin-bottom:1.5rem;}
+.form-group label{display:block;font-weight:600;margin-bottom:0.5rem;color:var(--gray-700);font-size:0.95rem;}
+.form-group input{width:100%;padding:1rem;border:1.5px solid var(--gray-300);border-radius:8px;font-size:1rem;font-family:'Inter',sans-serif;transition:.2s;}
+.form-group input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-light);}
 
-        #status-msg {
-            margin-top: 25px;
-            font-size: 0.85rem;
-            font-family: 'Orbitron';
-            min-height: 1.5rem;
-            letter-spacing: 1px;
-        }
-    </style>
+.btn-submit{background:var(--blue);color:var(--white);border:none;padding:1.2rem;border-radius:8px;font-size:1.1rem;font-weight:700;cursor:pointer;width:100%;transition:.2s;margin-top:0.5rem;}
+.btn-submit:hover{background:var(--blue-dark);}
+
+.auth-footer{text-align:center;margin-top:1.5rem;font-size:0.9rem;color:var(--gray-600);}
+.auth-footer a{color:var(--blue);font-weight:600;}
+.auth-footer a:hover{text-decoration:underline;}
+
+.social-login{margin-top:2rem;text-align:center;}
+.social-login p{font-size:0.9rem;color:var(--gray-500);margin-bottom:1rem;position:relative;}
+.social-login p::before, .social-login p::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:var(--gray-200);}
+.social-login p::before{left:0;}
+.social-login p::after{right:0;}
+.btn-google{display:flex;align-items:center;justify-content:center;gap:0.75rem;width:100%;padding:1rem;background:var(--white);border:1.5px solid var(--gray-300);border-radius:8px;font-size:1rem;font-weight:600;color:var(--gray-700);cursor:pointer;transition:.2s;}
+.btn-google:hover{background:var(--gray-50);border-color:var(--gray-400);}
+.btn-google img{width:20px;height:20px;}
+
+/* SEO & ADS */
+.seo-content{max-width:900px;margin:0 auto 4rem;background:var(--white);padding:3rem;border-radius:var(--radius-lg);box-shadow:var(--shadow);}
+.seo-content h2, .seo-content h3{color:var(--blue-dark);margin:1.5rem 0 1rem; line-height:1.4;}
+.seo-content p, .seo-content ul{color:var(--gray-600);line-height:1.9;margin-bottom:1.25rem; font-size:1.05rem;}
+.seo-content ul{padding-left:1.5rem;}
+.ad-unit{background:var(--gray-50);border:1px dashed var(--gray-300);border-radius:8px;padding:1rem;text-align:center;margin:2rem auto;max-width:900px;}
+
+/* FOOTER */
+footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5rem}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;max-width:1280px;margin:0 auto 2.5rem;}
+.footer-bottom{border-top:1px solid var(--gray-700);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;max-width:1280px;margin:0 auto;}
+.footer-bottom a{font-size:0.8rem;margin-left:1rem;color:var(--gray-400);}
+
+@media(max-width:768px){.nav-links{display:none;} .auth-container{padding:2rem;}}
+</style>
 </head>
 <body>
 
-    <div class="auth-card">
-        <h2 id="title">> ACCESS_TERMINAL</h2>
-        
-        <div class="input-group">
-            <label>USER_ID (EMAIL)</label>
-            <input type="email" id="email" placeholder="ENTER EMAIL" required>
-        </div>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span>MathHub</span>Pro</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="solver.html">AI Solver</a>
+      <a href="ncert.html">NCERT Hub</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</nav>
 
-        <div class="input-group">
-            <label>SECURITY_KEY (PASSWORD)</label>
-            <input type="password" id="password" placeholder="ENTER PASSWORD" required>
-        </div>
+<section class="inner-hero">
+  <h1>Welcome to MathHub Pro</h1>
+  <p>Your personalized digital mathematics companion.</p>
+</section>
 
-        <div class="btn-container">
-            <button class="primary-btn" onclick="processAuth('login')">Sign In</button>
-            <button class="secondary-btn" onclick="processAuth('signup')">Sign Up</button>
-        </div>
-
-        <p id="status-msg"></p>
+<div class="container">
+  
+  <div class="auth-container">
+    <div class="auth-toggle">
+      <button class="toggle-btn active" onclick="switchTab('login')" id="tabLogin">Sign In</button>
+      <button class="toggle-btn" onclick="switchTab('register')" id="tabRegister">Create Account</button>
     </div>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+    <!-- LOGIN FORM -->
+    <form id="formLogin" class="auth-form active" onsubmit="event.preventDefault(); alert('Login functionality will be connected to your backend.');">
+      <div class="form-group">
+        <label for="loginEmail">Email Address</label>
+        <input type="email" id="loginEmail" placeholder="student@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="loginPass" style="display:flex; justify-content:space-between;">
+          Password
+          <a href="#" style="font-size:0.85rem; color:var(--blue); font-weight:500;">Forgot Password?</a>
+        </label>
+        <input type="password" id="loginPass" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn-submit">Sign In to Dashboard</button>
+      
+      <div class="social-login">
+        <p>Or continue with</p>
+        <button type="button" class="btn-google" onclick="alert('Google Auth Integration goes here.')">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo">
+          Sign in with Google
+        </button>
+      </div>
+    </form>
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyCyeLN2tzrst4KTPA6vbLArf6AVgb1PxDo",
-            authDomain: "math-hub-123.firebaseapp.com",
-            projectId: "math-hub-123",
-            storageBucket: "math-hub-123.firebasestorage.app",
-            messagingSenderId: "649705586460",
-            appId: "1:649705586460:web:ce86e65db4bd6b275404d9",
-            measurementId: "G-FJVBJ9VN0Y"
-        };
+    <!-- REGISTER FORM -->
+    <form id="formRegister" class="auth-form" onsubmit="event.preventDefault(); alert('Registration functionality will be connected to your backend.');">
+      <div class="form-group">
+        <label for="regName">Full Name</label>
+        <input type="text" id="regName" placeholder="e.g., Mahib" required>
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email Address</label>
+        <input type="email" id="regEmail" placeholder="student@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="regPass">Create Password</label>
+        <input type="password" id="regPass" placeholder="Minimum 8 characters" required minlength="8">
+      </div>
+      <button type="submit" class="btn-submit">Create Free Account</button>
+      
+      <div class="auth-footer">
+        By creating an account, you agree to our <br> <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.
+      </div>
+    </form>
 
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+  </div>
 
-        // Global function for the buttons
-        window.processAuth = async (actionType) => {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const status = document.getElementById('status-msg');
+  <script>
+    function switchTab(tab) {
+      document.getElementById('tabLogin').classList.remove('active');
+      document.getElementById('tabRegister').classList.remove('active');
+      document.getElementById('formLogin').classList.remove('active');
+      document.getElementById('formRegister').classList.remove('active');
 
-            if(!email || !password) {
-                status.innerText = "!! DATA_MISSING";
-                status.style.color = "#bc13fe"; 
-                return;
-            }
+      if (tab === 'login') {
+        document.getElementById('tabLogin').classList.add('active');
+        document.getElementById('formLogin').classList.add('active');
+      } else {
+        document.getElementById('tabRegister').classList.add('active');
+        document.getElementById('formRegister').classList.add('active');
+      }
+    }
+  </script>
 
-            status.innerText = "... PROCESSING ...";
-            status.style.color = "#888";
+  <!-- TOP AD UNIT -->
+  <div class="ad-unit">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
 
-            try {
-                if (actionType === 'signup') {
-                    await createUserWithEmailAndPassword(auth, email, password);
-                    status.innerText = ">> ACCOUNT_DEPLOYED";
-                    status.style.color = "#00f2ff"; 
-                    setTimeout(() => window.location.href = "index.html", 1500);
-                } else {
-                    await signInWithEmailAndPassword(auth, email, password);
-                    status.innerText = ">> ACCESS_GRANTED";
-                    status.style.color = "#00f2ff"; 
-                    setTimeout(() => window.location.href = "index.html", 1500);
-                }
-            } catch (error) {
-                console.error("Auth Error:", error.code);
-                // Convert errors like 'auth/email-already-in-use' to 'EMAIL_ALREADY_IN_USE'
-                const errorCode = error.code.replace('auth/', '').replace(/-/g, '_').toUpperCase();
-                status.innerText = "!! ERROR: " + errorCode;
-                status.style.color = "#bc13fe";
-            }
-        };
-    </script>
+  <!-- SEO CONTENT (>500 WORDS) -->
+  <article class="seo-content">
+    <h2>Unlock Your Academic Potential: Why You Should Create a MathHub Pro Account</h2>
+    <p>Mathematics is not a subject that you can master through passive reading. It demands rigorous practice, meticulous tracking of errors, and consistent, daily revision. While the MathHub Pro platform offers free, frictionless access to over 20 advanced calculators and educational tools for guest users, registering for a free personal account unlocks an entirely new layer of tailored, data-driven academic assistance. By creating an account, you transition from simply "using a calculator" to stepping into a comprehensive, personalized digital classroom designed specifically to accelerate your learning curve and boost your board exam scores.</p>
+    
+    <h3>Save Your AI Math Solver History and Step-by-Step Solutions</h3>
+    <p>Have you ever spent thirty minutes struggling with a complex integration problem, finally achieved the breakthrough using our AI Math Solver, only to forget the exact sequence of steps three days later during your revision session? One of the most powerful features of a registered MathHub Pro account is the ability to securely log and save your computational history. Every equation you process through our AI tutor, every complex matrix you calculate, and every quadratic root you determine can be saved directly to your personal dashboard. When it comes time to prepare for your CBSE Class 10 or Class 12 board examinations, you will have a customized digital notebook containing the exact problems you personally found challenging, complete with their step-by-step breakdowns, instantly available for review.</p>
+
+    <!-- MIDDLE AD UNIT -->
+    <div class="ad-unit" style="margin: 2rem 0; padding:0; background:transparent; border:none;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+
+    <h3>Track Your Productivity with the Pomodoro Study Timer</h3>
+    <p>Academic burnout and procrastination are the greatest enemies of a high-achieving student. To combat this, we integrated a sophisticated Pomodoro Study Timer directly into our platform. However, without an account, your study sessions are transient. When you sign in, MathHub Pro begins meticulously tracking your focused study blocks. Your dashboard will generate insightful analytics regarding your study habits—showing you exactly how many hours you devoted to deep, uninterrupted work this week versus last week. This empirical data allows you to hold yourself accountable, visualize your work ethic, and adjust your preparation strategy long before you sit for the JEE Main or state-level entrance exams.</p>
+
+    <h3>Bookmark Essential NCERT PDFs and PYQ Papers</h3>
+    <p>The MathHub Pro NCERT Hub and Previous Year Question (PYQ) Archives contain hundreds of documents spanning from Class 6 all the way through Class 12. As a guest user, navigating to the specific science chapter or mathematics board paper you need takes a few clicks. As a registered user, you can permanently bookmark the precise textbooks, formula cheat sheets, and archival papers relevant to your current grade level. This organizational tool guarantees that the exact resources you need to complete tonight’s homework are always just one click away on your personalized dashboard.</p>
+
+    <h3>100% Free, Secure, and Privacy-Focused</h3>
+    <p>We are deeply committed to making elite educational tools accessible to every student in India. Creating an account on MathHub Pro is, and always will be, 100% free. There are no hidden subscription tiers or premium paywalls limiting your access to knowledge. Furthermore, we prioritize your digital security. Our authentication system utilizes industry-standard encryption protocols to ensure that your email, password, and educational data remain strictly private and secure. Whether you choose to sign up manually or utilize our seamless Google Single Sign-On (SSO) integration, you can trust that your academic journey is safe with us. Join the thousands of Indian students who have already optimized their study routines—register your free MathHub Pro account today.</p>
+  </article>
+
+  <!-- BOTTOM AD UNIT -->
+  <div class="ad-unit">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3 style="color:#fff;font-size:1.2rem;margin-bottom:1rem;font-family:'Poppins'">MathHub Pro</h3>
+      <p style="font-size:0.85rem;line-height:1.6;">India's most comprehensive free mathematics platform. Built with love in Mancherial, Telangana.</p>
+    </div>
+    <div>
+      <h4 style="color:#fff;margin-bottom:1rem;">Tools</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
+        <li><a href="solver.html">AI Math Solver</a></li>
+        <li><a href="calculus.html">Calculus Engine</a></li>
+        <li><a href="timetable.html">Study Timer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color:#fff;margin-bottom:1rem;">Resources</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
+        <li><a href="ncert.html">NCERT Hub</a></li>
+        <li><a href="pyq.html">PYQ Papers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 MathHub Pro | All Rights Reserved.</p>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="dmca.html">DMCA Policy</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
