@@ -374,10 +374,17 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       <a href="cheat.html">Cheat Sheets</a>
       <a href="game.html">Games</a>
     </div>
-    <div class="nav-right">
+        <div class="nav-right">
+      <div id="user-profile" style="display: none; align-items: center; gap: 10px;">
+        <span id="user-name" style="font-weight: 600; font-size: 0.85rem; color: #1e3a8a;"></span>
+        <img id="user-logo" src="" alt="Profile" style="width: 34px; height: 34px; border-radius: 50%; border: 2px solid #1d4ed8; object-fit: cover; cursor: pointer;" onclick="logout()" title="Click to Sign Out">
+      </div>
+      
       <a href="auth.html" class="nav-signin" id="nav-auth-link">Sign In</a>
+      
       <button id="menuToggle" onclick="openSidebar()" aria-label="Open menu"><i class="fas fa-bars"></i></button>
     </div>
+
   </div>
 </nav>
 
@@ -1227,25 +1234,61 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
 
 <script type="module">
-import{initializeApp}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import{getAuth,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-const firebaseConfig={apiKey:"AIzaSyCyeLN2tzrst4KTPA6vbLArf6AVgb1PxDo",authDomain:"math-hub-123.firebaseapp.com",projectId:"math-hub-123",storageBucket:"math-hub-123.firebasestorage.app",messagingSenderId:"649705586460",appId:"1:649705586460:web:ce86e65db4bd6b275404d9"};
-const app=initializeApp(firebaseConfig);
-const auth=getAuth(app);
-onAuthStateChanged(auth,(user)=>{
-  if(user){
-    document.getElementById('auth-links').style.display='none';
-    document.getElementById('user-links').style.display='block';
-    document.getElementById('user-display').innerText=user.email.split('@')[0].toUpperCase();
-    document.getElementById('nav-auth-link').innerText='Dashboard';
-    document.getElementById('nav-auth-link').href='#';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
+
+// Your active, correct Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCPm8-ZNZQcMTAql6m8VVlB3WHgdHzdGv8",
+  authDomain: "mathhub-pro.firebaseapp.com",
+  projectId: "mathhub-pro",
+  storageBucket: "mathhub-pro.firebasestorage.app",
+  messagingSenderId: "861286840133",
+  appId: "1:861286840133:web:06d346ca175827b6c9302c",
+  measurementId: "G-375HJSRW1F"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+  const navAuthLink = document.getElementById('nav-auth-link');
+  const userProfileArea = document.getElementById('user-profile');
+  const userNameSpan = document.getElementById('user-name');
+  const userLogoImg = document.getElementById('user-logo');
+
+  if (user) {
+    // 1. Update Mobile Sidebar
+    document.getElementById('auth-links').style.display = 'none';
+    document.getElementById('user-links').style.display = 'block';
+    document.getElementById('user-display').innerText = user.displayName || user.email.split('@')[0].toUpperCase();
+    
+    // 2. Update Desktop Navbar with Google Profile Pic and Name
+    if (navAuthLink) navAuthLink.style.display = 'none'; // Hide "Sign In" button
+    if (userProfileArea) userProfileArea.style.display = 'flex'; // Show Logo and Name
+    
+    // Set Google Profile Details
+    if (userNameSpan) userNameSpan.innerText = user.displayName || "User";
+    if (userLogoImg) userLogoImg.src = user.photoURL || "https://www.w3schools.com/howto/img_avatar.png";
+    
   } else {
-    document.getElementById('auth-links').style.display='block';
-    document.getElementById('user-links').style.display='none';
+    // User is signed out
+    document.getElementById('auth-links').style.display = 'block';
+    document.getElementById('user-links').style.display = 'none';
+    
+    if (navAuthLink) navAuthLink.style.display = 'inline-block';
+    if (userProfileArea) userProfileArea.style.display = 'none';
   }
 });
-window.logout=()=>{signOut(auth).then(()=>{window.location.reload()}).catch(e=>console.error(e))};
+
+// Logout function for clicking either the desktop image or mobile sidebar link
+window.logout = () => {
+  signOut(auth).then(() => {
+    window.location.reload();
+  }).catch(e => console.error("Logout Error:", e));
+};
 </script>
+
 
 </body>
 </html>
