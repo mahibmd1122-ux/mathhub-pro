@@ -5,220 +5,263 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-adsense-account" content="ca-pub-9069263337314949">
 
-<title>BMI Calculator | MathHub Pro 2026</title>
-<meta name="description" content="Track your Body Mass Index against WHO and Indian medical standards.">
-<meta name="keywords" content="BMI Monitor, MathHub Pro, free calculator, CBSE 2026, Mancherial education, AI math solver">
+<title>Free BMI Calculator | Check Your Body Mass Index | MathHub Pro</title>
+<meta name="description" content="Calculate your Body Mass Index (BMI) instantly. Find out your healthy weight range according to Indian health standards with our free online BMI calculator.">
+<meta name="keywords" content="BMI calculator, body mass index, check BMI online, BMI calculator India, healthy weight calculator, MathHub Pro BMI, calculate BMI kg cm">
 <meta name="author" content="MathHub Pro Systems">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.mathhub.pro/bmi.html">
 
-<!-- FAVICON -->
-<link rel="icon" type="image/jpeg" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
-<link rel="apple-touch-icon" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+<meta property="og:title" content="Free BMI Calculator | MathHub Pro">
+<meta property="og:description" content="Check your Body Mass Index (BMI) instantly and discover your ideal weight range for a healthier lifestyle.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mathhub.pro/bmi.html">
 
-<!-- GOOGLE TAGS -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9069263337314949" crossorigin="anonymous"></script>
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C5KMGS6VML');</script>
 
-<!-- FONTS & ICONS -->
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9069263337314949" crossorigin="anonymous"></script>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "MathHub Pro BMI Calculator",
+  "url": "https://www.mathhub.pro/bmi.html",
+  "description": "Calculate your Body Mass Index (BMI) to check your health and ideal weight.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+/* GLOBAL STYLES */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{ --blue:#1d4ed8;--blue-dark:#1e3a8a;--blue-light:#dbeafe;--green:#059669;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--gray-900:#111827;--white:#ffffff;--radius-lg:16px;--shadow:0 4px 6px rgba(0,0,0,.07);--shadow-md:0 10px 15px rgba(0,0,0,.08); }
-html{scroll-behavior:smooth}
+:root{--blue:#1d4ed8;--blue-dark:#1e3a8a;--blue-light:#dbeafe;--green:#059669;--orange:#d97706;--red:#dc2626;--gray-50:#f9fafb;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--gray-900:#111827;--white:#ffffff;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow:0 4px 6px rgba(0,0,0,.07);--shadow-md:0 10px 15px rgba(0,0,0,.08);--radius-lg:16px;}
 body{font-family:'Inter',sans-serif;background:var(--gray-50);color:var(--gray-800);line-height:1.7;}
-h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.3;color:var(--gray-900)}
+h1,h2,h3{font-family:'Poppins',sans-serif;color:var(--gray-900)}
 a{text-decoration:none;color:inherit}
 
-/* NAV */
-.site-nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:1000;box-shadow:var(--shadow);}
+/* NAVIGATION */
+.site-nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:1000;box-shadow:var(--shadow-sm);}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
-.nav-logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--blue-dark);}
+.nav-logo{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem;color:var(--blue-dark);display:flex;align-items:center;gap:0.5rem;}
 .nav-logo span{color:var(--blue)}
-.nav-links{display:flex;gap:.5rem;align-items:center;}
+.nav-links{display:flex;gap:.25rem}
 .nav-links a{padding:.4rem .8rem;border-radius:6px;font-size:.875rem;font-weight:500;color:var(--gray-600);transition:.2s}
 .nav-links a:hover{color:var(--blue);background:var(--blue-light)}
-.nav-signin{padding:.4rem 1rem;background:var(--blue);color:var(--white);border-radius:7px;font-size:.85rem;font-weight:600;}
-#menuToggle{display:none;background:none;border:1.5px solid var(--gray-300);border-radius:6px;padding:.35rem .6rem;cursor:pointer;}
 
-/* HEADER */
-.tool-header { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); color: var(--white); padding: 50px 1.5rem; text-align: center; }
-.tool-header h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 10px; color: var(--white); }
-.tool-header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+/* PAGE SPECIFIC */
+.inner-hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);color:var(--white);padding:40px 1.5rem 80px;text-align:center;}
+.inner-hero h1{font-size:2.2rem;margin-bottom:0.5rem;color:var(--white);}
+.container{max-width:1280px;margin:0 auto;padding:0 1.5rem;}
+.tool-container{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:2.5rem;margin:-40px auto 3rem;max-width:700px;position:relative;z-index:10;}
 
-/* CALCULATOR APP */
-.calc-wrapper { max-width: 600px; margin: -40px auto 40px; background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 30px; position: relative; z-index: 10; border: 1px solid var(--gray-200); }
-.input-group { margin-bottom: 20px; }
-.input-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--gray-800); }
-.calc-input { width: 100%; padding: 12px 15px; border: 1.5px solid var(--gray-300); border-radius: 8px; font-size: 1.1rem; font-family: 'Inter'; outline: none; transition: 0.2s; }
-.calc-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-light); }
-.btn-primary { width: 100%; padding: 15px; background: var(--blue); color: var(--white); border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: 0.2s; margin-top: 10px;}
-.btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: var(--shadow); }
-.result-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 25px; margin-top: 30px; display: none; text-align: center; }
-.res-val { font-size: 2.5rem; font-weight: 800; color: var(--blue-dark); font-family: 'Poppins', sans-serif; }
+/* TOOL UI */
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;}
+.input-group label{display:block;font-weight:600;margin-bottom:0.5rem;color:var(--gray-700);}
+.input-group input{width:100%;padding:0.8rem 1rem;border:1.5px solid var(--gray-300);border-radius:8px;font-size:1.1rem;font-family:'Inter',sans-serif;}
+.input-group input:focus{outline:none;border-color:var(--blue);}
+.btn-calc{background:var(--blue);color:var(--white);border:none;padding:1rem;width:100%;border-radius:8px;font-size:1.1rem;font-weight:700;cursor:pointer;transition:.2s;}
+.btn-calc:hover{background:var(--blue-dark);}
 
-/* ARTICLE SECTION */
-.article-section { max-width: 900px; margin: 60px auto; background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--gray-200); }
-.article-section h2 { font-size: 1.8rem; color: var(--blue-dark); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--blue-light); }
-.article-section h3 { font-size: 1.3rem; color: var(--gray-900); margin: 25px 0 15px; }
-.article-section p { font-size: 1.05rem; color: var(--gray-700); line-height: 1.8; margin-bottom: 15px; }
+/* RESULT UI */
+.result-box{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:12px;padding:2rem;margin-top:2rem;display:none;text-align:center;}
+.result-box.active{display:block;}
+.bmi-score{font-size:3rem;font-weight:800;color:var(--gray-900);line-height:1;margin-bottom:0.5rem;}
+.bmi-status{font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem;}
+.bmi-range{font-size:0.9rem;color:var(--gray-600);}
 
-/* AD UNIT */
-.ad-unit{ background:var(--gray-100);border:1px dashed var(--gray-300);border-radius:10px;padding:1rem;text-align:center;margin:2.5rem auto;max-width: 900px;min-height:90px;}
+/* SEO & ADS */
+.seo-content{max-width:900px;margin:0 auto 4rem;background:var(--white);padding:2.5rem;border-radius:var(--radius-lg);box-shadow:var(--shadow);}
+.seo-content h2, .seo-content h3{color:var(--blue-dark);margin:1.5rem 0 1rem;}
+.seo-content p, .seo-content ul{color:var(--gray-600);line-height:1.8;margin-bottom:1rem;}
+.seo-content ul{padding-left:1.5rem;}
+.ad-unit{background:var(--gray-50);border:1px dashed var(--gray-300);border-radius:8px;padding:1rem;text-align:center;margin:2rem auto;max-width:900px;}
 
 /* FOOTER */
-footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5rem; margin-top: 40px;}
-.footer-inner{max-width:1280px;margin:0 auto}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:2.5rem;margin-bottom:2.5rem}
-.footer-col h4{color:var(--white);font-size:.9rem;font-weight:600;margin-bottom:.9rem;}
-.footer-col ul{list-style:none; display:flex; flex-direction:column; gap:.5rem; padding:0;}
-.footer-col ul li a{color:var(--gray-400);font-size:.85rem;}
-.footer-col ul li a:hover{color:var(--white)}
-.footer-bottom{border-top:1px solid var(--gray-700);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
-.footer-bottom p{font-size:.8rem;color:var(--gray-500)}
-.footer-links-bottom a{font-size:.8rem; color:var(--gray-400); margin-left:15px;}
+footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5rem}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;max-width:1280px;margin:0 auto 2.5rem;}
+.footer-bottom{border-top:1px solid var(--gray-700);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;max-width:1280px;margin:0 auto;}
+.footer-bottom a{font-size:0.8rem;margin-left:1rem;color:var(--gray-400);}
 
-/* SIDEBAR */
-.sidebar{position:fixed;top:0;left:-300px;width:280px;height:100vh;background:var(--white);z-index:2000;transition:.4s;box-shadow:var(--shadow-lg);overflow-y:auto}
-.sidebar.open{left:0}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1999;display:none}
-.overlay.show{display:block}
-
-@media(max-width:768px){
-  .nav-links{display:none}
-  #menuToggle{display:block}
-  .article-section{padding: 25px 15px;}
-}
+@media(max-width:768px){.nav-links{display:none;} .calc-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
-<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
-<div class="sidebar" id="mobileSidebar">
-  <div style="padding:1.25rem 1.5rem;border-bottom:1px solid var(--gray-200);display:flex;justify-content:space-between;">
-    <h3 style="color:var(--blue-dark)">MathHub Pro</h3>
-    <button onclick="closeSidebar()" style="background:none;border:none;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
-  </div>
-  <div style="padding:1rem;display:flex;flex-direction:column;gap:10px;">
-    <a href="index.html" style="color:var(--gray-700);font-weight:600;"><i class="fas fa-home"></i> Home</a>
-    <a href="solver.html" style="color:var(--gray-700);font-weight:600;"><i class="fas fa-robot"></i> AI Solver</a>
-    <a href="ncert.html" style="color:var(--gray-700);font-weight:600;"><i class="fas fa-book"></i> NCERT Hub</a>
-  </div>
-</div>
-
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg" style="width:36px;border-radius:8px;"><span>MathHub</span>Pro</a>
+    <a href="index.html" class="nav-logo"><span>MathHub</span>Pro</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="solver.html">AI Solver</a>
-      <a href="ncert.html">NCERT Hub</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="nav-right">
-      <a href="auth.html" class="nav-signin">Sign In</a>
-      <button id="menuToggle" onclick="openSidebar()"><i class="fas fa-bars"></i></button>
+      <a href="gst.html">GST Calculator</a>
+      <a href="bmi.html">BMI Calculator</a>
     </div>
   </div>
 </nav>
 
-<div class="tool-header">
-  <h1>BMI Monitor</h1>
-  <p>Track your Body Mass Index against WHO and Indian medical standards.</p>
-</div>
+<section class="inner-hero">
+  <h1>Body Mass Index Calculator</h1>
+  <p>Check your BMI instantly to understand your health profile.</p>
+</section>
 
 <div class="container">
-  <div class="calc-wrapper">
-    
-            <div class="input-group">
-                <label>Height (cm)</label>
-                <input type="number" id="bmiH" class="calc-input" placeholder="175">
-            </div>
-            <div class="input-group">
-                <label>Weight (kg)</label>
-                <input type="number" id="bmiW" class="calc-input" placeholder="70">
-            </div>
-            <button class="btn-primary" onclick="calcBMI()">Check BMI</button>
-            <div class="result-box" id="bmiResBox">
-                <div class="res-val" id="bmiRes">0.0</div>
-                <p id="bmiStat" style="font-weight:bold; font-size:1.2rem;"></p>
-            </div>
-        
+  
+  <div class="tool-container">
+    <div class="calc-grid">
+      <div class="input-group">
+        <label for="height">Height (in cm)</label>
+        <input type="number" id="height" placeholder="e.g., 170" min="50" max="300">
+      </div>
+      <div class="input-group">
+        <label for="weight">Weight (in kg)</label>
+        <input type="number" id="weight" placeholder="e.g., 65" min="10" max="400">
+      </div>
+    </div>
+
+    <button class="btn-calc" onclick="calculateBMI()">Calculate BMI</button>
+
+    <div class="result-box" id="resultBox">
+      <div class="bmi-score" id="bmiScore">0.0</div>
+      <div class="bmi-status" id="bmiStatus">Status</div>
+      <div class="bmi-range" id="bmiText">Enter your details to see your healthy weight range.</div>
+    </div>
   </div>
 
-  <div class="ad-unit"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+  <script>
+    function calculateBMI() {
+      const heightCm = parseFloat(document.getElementById('height').value);
+      const weightKg = parseFloat(document.getElementById('weight').value);
 
-  <!-- MASSIVE SEO ARTICLE -->
-  <div class="article-section">
-    <h2>Comprehensive Guide: BMI Monitor (2026 Edition)</h2>
-    <p>The Body Mass Index (BMI) is a globally recognized frontline screening tool for assessing weight-related health risks. By analyzing the ratio between your height and weight, the BMI Monitor provides an instant classification into Underweight, Healthy, Overweight, or Obese categories. What makes our tool distinct is that it also takes into account regional genetic factors. Medical research has proven that South Asian populations have a higher risk of metabolic disorders at lower BMI thresholds compared to Western populations. By using this tool, individuals can maintain awareness of their physical agility stats and make informed decisions about nutrition and fitness.</p>
-    
-    <p>In today's rapidly evolving digital landscape, understanding the mechanics behind the <strong>BMI Monitor</strong> is no longer just an academic exercise—it is a fundamental necessity for both students and professionals. As the Central Board of Secondary Education (CBSE) and the National Council of Educational Research and Training (NCERT) roll out the rationalized 2026-2027 curriculum under the National Education Policy (NEP 2020), there is a massive shift away from rote memorization. Today, the focus is entirely on application-based learning, critical thinking, and algorithmic problem-solving. This is exactly where the BMI Monitor bridges the gap between theoretical textbook concepts and real-world practical application.</p>
-    
-    <p>Whether you are a Class 10 student facing your first major board examinations, a Class 12 student dealing with the intense pressure of JEE Main, JEE Advanced, or NEET preparation, or a university undergraduate navigating complex engineering mathematics, the underlying principles of this tool remain consistently crucial. The ability to instantly verify your manual calculations using MathHub Pro's elite digital infrastructure ensures that you are not just blindly following steps, but genuinely comprehending the mathematical architecture. Every time you utilize this calculation engine, you are reinforcing the neural pathways required for deep conceptual mastery and long-term retention.</p>
-    
-    <h3>Why MathHub Pro is India's Ultimate Digital Terminal</h3>
-    <p>MathHub Pro, deployed securely from our primary engineering nodes in Mancherial, Telangana, was built with a singular, uncompromising vision: to democratize high-end educational technology for every student across India. We recognized that the internet is saturated with slow, ad-heavy, and poorly coded calculators that frustrate users, drain mobile data, and provide inaccurate results. In response, we engineered this BMI Monitor utilizing strict 2026 floating-point arithmetic standards, ensuring zero-latency execution, seamless mobile responsiveness, and absolute mathematical precision.</p>
-    
-    <p>Furthermore, our platform operates completely free of charge. We strongly believe that education is a fundamental right, which is why we do not hide our best features behind premium paywalls or monthly subscription models. Verified users can seamlessly integrate the BMI Monitor with our revolutionary AI Math Solver, access our complete, high-speed database of NCERT Class 6 to 12 textbook PDFs, and utilize our extensive archives of Previous Year Question (PYQ) papers and revision Cheat Sheets. By combining all these elite resources into one unified, meticulously designed digital terminal, MathHub Pro transcends the definition of a simple calculator website. We are a comprehensive educational ecosystem, meticulously designed to propel the next generation of Indian engineers, doctors, economists, and data scientists toward unprecedented academic and professional success.</p>
+      if(isNaN(heightCm) || isNaN(weightKg) || heightCm <= 0 || weightKg <= 0) {
+        alert("Please enter valid height and weight values.");
+        return;
+      }
 
+      const heightM = heightCm / 100;
+      const bmi = weightKg / (heightM * heightM);
+      const formattedBmi = bmi.toFixed(1);
+
+      let status = "";
+      let color = "";
+      let message = "";
+
+      // Standard WHO BMI Categories
+      if(bmi < 18.5) {
+        status = "Underweight";
+        color = "var(--blue)";
+        message = "You are currently underweight. Consider a nutrient-rich diet to reach a healthy range.";
+      } else if(bmi >= 18.5 && bmi < 24.9) {
+        status = "Normal Weight";
+        color = "var(--green)";
+        message = "Great job! You are in the healthy weight range for your height.";
+      } else if(bmi >= 25 && bmi < 29.9) {
+        status = "Overweight";
+        color = "var(--orange)";
+        message = "You are classified as overweight. Regular exercise and a balanced diet can help.";
+      } else {
+        status = "Obese";
+        color = "var(--red)";
+        message = "Your BMI falls in the obese category. It is highly recommended to consult a healthcare provider.";
+      }
+
+      document.getElementById('bmiScore').innerText = formattedBmi;
+      document.getElementById('bmiScore').style.color = color;
+      
+      document.getElementById('bmiStatus').innerText = status;
+      document.getElementById('bmiStatus').style.color = color;
+      
+      // Calculate ideal weight range
+      const minWeight = (18.5 * (heightM * heightM)).toFixed(1);
+      const maxWeight = (24.9 * (heightM * heightM)).toFixed(1);
+      
+      document.getElementById('bmiText').innerHTML = `${message}<br><br><strong>Your ideal healthy weight range is between ${minWeight} kg and ${maxWeight} kg.</strong>`;
+
+      document.getElementById('resultBox').classList.add('active');
+    }
+  </script>
+
+  <div class="ad-unit">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
+
+  <article class="seo-content">
+    <h2>Understanding Body Mass Index (BMI): A Complete Guide to Your Health</h2>
+    <p>Maintaining a healthy weight is one of the most vital components of overall well-being, yet knowing what constitutes a "healthy weight" can be incredibly confusing. The MathHub Pro BMI Calculator is designed to provide you with an instant, medically recognized benchmark of your body composition. By simply inputting your height in centimeters and your weight in kilograms, our tool instantly calculates your Body Mass Index (BMI), a globally utilized standard for identifying potential health risks.</p>
+    
+    <h3>What is BMI and How is it Calculated?</h3>
+    <p>The Body Mass Index is a mathematical formula that estimates total body fat based on an individual's weight in relation to their height. The calculation is straightforward: your weight in kilograms divided by the square of your height in meters. While BMI does not measure body fat directly, research consistently shows that BMI correlates strongly with direct measures of body fat. It serves as an inexpensive and easy-to-perform method of screening for weight categories that may lead to severe health problems.</p>
+
+    <div class="ad-unit" style="margin: 2rem 0; padding:0; background:transparent; border:none;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+
+    <h3>Standard WHO Categories vs. Indian Medical Guidelines</h3>
+    <p>Our calculator utilizes the standard World Health Organization (WHO) BMI classifications:</p>
+    <ul>
+      <li><strong>Underweight:</strong> Below 18.5</li>
+      <li><strong>Normal Weight:</strong> 18.5 to 24.9</li>
+      <li><strong>Overweight:</strong> 25.0 to 29.9</li>
+      <li><strong>Obese:</strong> 30.0 and above</li>
+    </ul>
+    <p>However, it is crucial to note that for individuals of Indian and broader Asian descent, health risks can increase at lower BMI thresholds. The Indian Health Ministry and leading diabetologists frequently recommend aiming for a BMI lower than 23 to be considered in the optimal "normal" range, as South Asians are genetically predisposed to accumulating visceral fat and developing Type 2 diabetes at lower body weights than Western populations.</p>
+
+    <h3>The Limitations of BMI</h3>
+    <p>While the MathHub Pro BMI Calculator is an excellent starting point for assessing your general health, it is important to recognize its limitations. Because the formula relies strictly on height and weight, it cannot distinguish between fat mass and muscle mass. Therefore, athletes or individuals with high muscle density may be classified as "overweight" or "obese" despite having very low body fat percentages. Similarly, older adults who have lost muscle mass may fall into the "normal" range while still carrying unhealthy levels of body fat. For a comprehensive health assessment, BMI should always be used in conjunction with other measurements, such as waist circumference and blood tests, under the guidance of a qualified healthcare professional.</p>
+  </article>
+
+  <div class="ad-unit">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
 </div>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>MathHub Pro</h4>
-        <p style="font-size:0.85rem; color:var(--gray-400); line-height:1.6;">India's elite educational platform for 2026. Built in Mancherial, Telangana.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Links</h4>
-        <ul>
-          <li><a href="solver.html">AI Math Solver</a></li>
-          <li><a href="ncert.html">NCERT Books</a></li>
-          <li><a href="gst.html">GST Calculator</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
+  <div class="footer-grid">
+    <div>
+      <h3 style="color:#fff;font-size:1.2rem;margin-bottom:1rem;font-family:'Poppins'">MathHub Pro</h3>
+      <p style="font-size:0.85rem;line-height:1.6;">India's most comprehensive free mathematics platform. Built with love in Mancherial, Telangana.</p>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 MathHub Pro | All Rights Reserved.</p>
-      <div class="footer-links-bottom">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="contact.html">Contact</a>
-      </div>
+    <div>
+      <h4 style="color:#fff;margin-bottom:1rem;">Tools</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
+        <li><a href="solver.html">AI Math Solver</a></li>
+        <li><a href="gst.html">GST Calculator</a></li>
+        <li><a href="bmi.html">BMI Calculator</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color:#fff;margin-bottom:1rem;">Resources</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
+        <li><a href="ncert.html">NCERT Hub</a></li>
+        <li><a href="pyq.html">PYQ Papers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 MathHub Pro | All Rights Reserved.</p>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="dmca.html">DMCA Policy</a>
+      <a href="contact.html">Contact Us</a>
     </div>
   </div>
 </footer>
-
-<script>
-function openSidebar(){document.getElementById('mobileSidebar').classList.add('open');document.getElementById('overlay').classList.add('show')}
-function closeSidebar(){document.getElementById('mobileSidebar').classList.remove('open');document.getElementById('overlay').classList.remove('show')}
-
-            function calcBMI() {
-                const h = parseFloat(document.getElementById('bmiH').value)/100;
-                const w = parseFloat(document.getElementById('bmiW').value);
-                if(!h || !w) return;
-                const bmi = w/(h*h);
-                document.getElementById('bmiRes').innerText = bmi.toFixed(1);
-                let stat = "";
-                if(bmi<18.5) stat="Underweight"; else if(bmi<25) stat="Healthy"; else if(bmi<30) stat="Overweight"; else stat="Obese";
-                document.getElementById('bmiStat').innerText = stat;
-                document.getElementById('bmiResBox').style.display = 'block';
-            }
-        
-</script>
 </body>
 </html>
