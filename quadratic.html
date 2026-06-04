@@ -5,194 +5,295 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-adsense-account" content="ca-pub-9069263337314949">
 
-<title>Quadratic Engine | MathHub Pro 2026</title>
-<meta name="description" content="Find the roots of any parabolic equation.">
-<meta name="keywords" content="Quadratic Solver, MathHub Pro, free calculator, CBSE 2026, Mancherial education, AI math solver">
+<title>Quadratic Equation Solver | Find Roots & Discriminant | MathHub Pro</title>
+<meta name="description" content="Solve quadratic equations instantly. Find real and complex roots, calculate the discriminant, and get precise step-by-step math answers for your CBSE algebra.">
+<meta name="keywords" content="quadratic equation solver, find roots of quadratic equation, discriminant calculator, solve parabola online, algebra calculator, CBSE class 10 math, MathHub Pro">
 <meta name="author" content="MathHub Pro Systems">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.mathhub.pro/quadratic.html">
 
-<!-- FAVICON -->
-<link rel="icon" type="image/jpeg" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
-<link rel="apple-touch-icon" href="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg">
+<meta property="og:title" content="Quadratic Equation Solver | MathHub Pro">
+<meta property="og:description" content="Instantly solve quadratic formulas. Determine the nature of roots and calculate the exact discriminant for any parabolic equation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mathhub.pro/quadratic.html">
 
-<!-- GOOGLE TAGS -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9069263337314949" crossorigin="anonymous"></script>
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C5KMGS6VML');</script>
 
-<!-- FONTS & ICONS -->
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9069263337314949" crossorigin="anonymous"></script>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "MathHub Pro Quadratic Solver",
+  "url": "https://www.mathhub.pro/quadratic.html",
+  "description": "Calculate the roots and discriminant of quadratic equations using standard polynomial inputs.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+/* GLOBAL STYLES */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{ --blue:#1d4ed8;--blue-dark:#1e3a8a;--blue-light:#dbeafe;--green:#059669;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--gray-900:#111827;--white:#ffffff;--radius-lg:16px;--shadow:0 4px 6px rgba(0,0,0,.07);--shadow-md:0 10px 15px rgba(0,0,0,.08); }
-html{scroll-behavior:smooth}
+:root{--blue:#1d4ed8;--blue-dark:#1e3a8a;--blue-light:#dbeafe;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--gray-900:#111827;--white:#ffffff;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow:0 4px 6px rgba(0,0,0,.07);--shadow-md:0 10px 15px rgba(0,0,0,.08);--radius-lg:16px;}
 body{font-family:'Inter',sans-serif;background:var(--gray-50);color:var(--gray-800);line-height:1.7;}
-h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.3;color:var(--gray-900)}
+h1,h2,h3{font-family:'Poppins',sans-serif;color:var(--gray-900)}
 a{text-decoration:none;color:inherit}
 
-/* NAV */
-.site-nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:1000;box-shadow:var(--shadow);}
+/* NAVIGATION */
+.site-nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:1000;box-shadow:var(--shadow-sm);}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
-.nav-logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--blue-dark);}
+.nav-logo{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem;color:var(--blue-dark);display:flex;align-items:center;gap:0.5rem;}
 .nav-logo span{color:var(--blue)}
-.nav-links{display:flex;gap:.5rem;align-items:center;}
+.nav-links{display:flex;gap:.25rem}
 .nav-links a{padding:.4rem .8rem;border-radius:6px;font-size:.875rem;font-weight:500;color:var(--gray-600);transition:.2s}
 .nav-links a:hover{color:var(--blue);background:var(--blue-light)}
-.nav-signin{padding:.4rem 1rem;background:var(--blue);color:var(--white);border-radius:7px;font-size:.85rem;font-weight:600;}
-#menuToggle{display:none;background:none;border:1.5px solid var(--gray-300);border-radius:6px;padding:.35rem .6rem;cursor:pointer;}
 
-/* HEADER */
-.tool-header { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); color: var(--white); padding: 50px 1.5rem; text-align: center; }
-.tool-header h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 10px; color: var(--white); }
-.tool-header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+/* PAGE SPECIFIC */
+.inner-hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);color:var(--white);padding:40px 1.5rem 80px;text-align:center;}
+.inner-hero h1{font-size:2.2rem;margin-bottom:0.5rem;color:var(--white);}
+.container{max-width:1280px;margin:0 auto;padding:0 1.5rem;}
 
-/* CALCULATOR APP */
-.calc-wrapper { max-width: 600px; margin: -40px auto 40px; background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 30px; position: relative; z-index: 10; border: 1px solid var(--gray-200); }
-.input-group { margin-bottom: 20px; }
-.input-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--gray-800); }
-.calc-input { width: 100%; padding: 12px 15px; border: 1.5px solid var(--gray-300); border-radius: 8px; font-size: 1.1rem; font-family: 'Inter'; outline: none; transition: 0.2s; }
-.calc-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-light); }
-.btn-primary { width: 100%; padding: 15px; background: var(--blue); color: var(--white); border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: 0.2s; margin-top: 10px;}
-.btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: var(--shadow); }
-.result-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 25px; margin-top: 30px; display: none; text-align: center; }
-.res-val { font-size: 2.5rem; font-weight: 800; color: var(--blue-dark); font-family: 'Poppins', sans-serif; }
+/* TOOL UI */
+.tool-container{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:2.5rem;margin:-40px auto 3rem;max-width:800px;position:relative;z-index:10;}
+.equation-display{font-size:1.8rem;font-weight:700;color:var(--gray-900);text-align:center;margin-bottom:2rem;font-family:'Poppins',sans-serif;}
+.equation-display span{color:var(--blue);}
 
-/* ARTICLE SECTION */
-.article-section { max-width: 900px; margin: 60px auto; background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--gray-200); }
-.article-section h2 { font-size: 1.8rem; color: var(--blue-dark); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--blue-light); }
-.article-section h3 { font-size: 1.3rem; color: var(--gray-900); margin: 25px 0 15px; }
-.article-section p { font-size: 1.05rem; color: var(--gray-700); line-height: 1.8; margin-bottom: 15px; }
+.input-flex{display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.input-wrap{display:flex;align-items:center;gap:0.5rem;}
+.input-wrap input{width:80px;padding:0.8rem;border:2px solid var(--gray-300);border-radius:8px;font-size:1.2rem;text-align:center;font-family:'Inter',sans-serif;font-weight:600;}
+.input-wrap input:focus{outline:none;border-color:var(--blue);}
+.input-wrap span{font-size:1.2rem;font-weight:600;color:var(--gray-700);}
 
-/* AD UNIT */
-.ad-unit{ background:var(--gray-100);border:1px dashed var(--gray-300);border-radius:10px;padding:1rem;text-align:center;margin:2.5rem auto;max-width: 900px;min-height:90px;}
+.btn-calc{background:var(--blue);color:var(--white);border:none;padding:1.2rem;border-radius:12px;font-size:1.1rem;font-weight:700;cursor:pointer;margin-top:1rem;width:100%;transition:.2s;}
+.btn-calc:hover{background:var(--blue-dark);}
+
+/* RESULT UI */
+.result-box{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:12px;padding:2rem;margin-top:2rem;display:none;}
+.result-box.active{display:block;}
+.res-line{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--gray-200);}
+.res-line:last-child{border-bottom:none;}
+.res-lbl{font-weight:600;color:var(--gray-600);font-size:0.95rem;text-transform:uppercase;letter-spacing:1px;}
+.res-val{font-size:1.4rem;font-weight:800;color:var(--blue-dark);font-family:'Poppins',sans-serif;}
+.res-nature{display:inline-block;padding:0.3rem 0.8rem;background:var(--blue-light);color:var(--blue-dark);border-radius:50px;font-size:0.85rem;font-weight:700;margin-top:0.5rem;}
+
+/* SEO & ADS */
+.seo-content{max-width:900px;margin:0 auto 4rem;background:var(--white);padding:3rem;border-radius:var(--radius-lg);box-shadow:var(--shadow);}
+.seo-content h2, .seo-content h3{color:var(--blue-dark);margin:1.5rem 0 1rem; line-height:1.4;}
+.seo-content p, .seo-content ul{color:var(--gray-600);line-height:1.9;margin-bottom:1.25rem; font-size:1.05rem;}
+.seo-content ul{padding-left:1.5rem;}
+.ad-unit{background:var(--gray-50);border:1px dashed var(--gray-300);border-radius:8px;padding:1rem;text-align:center;margin:2rem auto;max-width:900px;}
 
 /* FOOTER */
-footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5rem; margin-top: 40px;}
-.footer-inner{max-width:1280px;margin:0 auto}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:2.5rem;margin-bottom:2.5rem}
-.footer-col h4{color:var(--white);font-size:.9rem;font-weight:600;margin-bottom:.9rem;}
-.footer-col ul{list-style:none; display:flex; flex-direction:column; gap:.5rem; padding:0;}
-.footer-col ul li a{color:var(--gray-400);font-size:.85rem;}
-.footer-col ul li a:hover{color:var(--white)}
-.footer-bottom{border-top:1px solid var(--gray-700);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
-.footer-bottom p{font-size:.8rem;color:var(--gray-500)}
-.footer-links-bottom a{font-size:.8rem; color:var(--gray-400); margin-left:15px;}
+footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5rem}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;max-width:1280px;margin:0 auto 2.5rem;}
+.footer-bottom{border-top:1px solid var(--gray-700);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;max-width:1280px;margin:0 auto;}
+.footer-bottom a{font-size:0.8rem;margin-left:1rem;color:var(--gray-400);}
 
-/* SIDEBAR */
-.sidebar{position:fixed;top:0;left:-300px;width:280px;height:100vh;background:var(--white);z-index:2000;transition:.4s;box-shadow:var(--shadow-lg);overflow-y:auto}
-.sidebar.open{left:0}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1999;display:none}
-.overlay.show{display:block}
-
-@media(max-width:768px){
-  .nav-links{display:none}
-  #menuToggle{display:block}
-  .article-section{padding: 25px 15px;}
-}
+@media(max-width:768px){.nav-links{display:none;} .res-line{flex-direction:column; align-items:flex-start; gap:0.5rem;}}
 </style>
 </head>
 <body>
 
-<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
-<div class="sidebar" id="mobileSidebar">
-  <div style="padding:1.25rem 1.5rem;border-bottom:1px solid var(--gray-200);display:flex;justify-content:space-between;">
-    <h3 style="color:var(--blue-dark)">MathHub Pro</h3>
-    <button onclick="closeSidebar()" style="background:none;border:none;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
-  </div>
-  <div style="padding:1rem;display:flex;flex-direction:column;gap:10px;">
-    <a href="index.html" style="color:var(--gray-700);font-weight:600;"><i class="fas fa-home"></i> Home</a>
-    <a href="solver.html" style="color:var(--gray-700);font-weight:600;"><i class="fas fa-robot"></i> AI Solver</a>
-    <a href="ncert.html" style="color:var(--gray-700);font-weight:600;"><i class="fas fa-book"></i> NCERT Hub</a>
-  </div>
-</div>
-
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="https://img.freepik.com/premium-vector/calculator-neon-icon-vector-illustration-design-website-advertising-promotion-banner-school-concept_98480-1915.jpg" style="width:36px;border-radius:8px;"><span>MathHub</span>Pro</a>
+    <a href="index.html" class="nav-logo"><span>MathHub</span>Pro</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="solver.html">AI Solver</a>
+      <a href="quadratic.html">Quadratic Solver</a>
       <a href="ncert.html">NCERT Hub</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="nav-right">
-      <a href="auth.html" class="nav-signin">Sign In</a>
-      <button id="menuToggle" onclick="openSidebar()"><i class="fas fa-bars"></i></button>
     </div>
   </div>
 </nav>
 
-<div class="tool-header">
-  <h1>Quadratic Solver</h1>
-  <p>Find the roots of any parabolic equation.</p>
-</div>
+<section class="inner-hero">
+  <h1>Quadratic Equation Solver</h1>
+  <p>Find exact roots, discriminants, and the nature of parabolic equations instantly.</p>
+</section>
 
 <div class="container">
-  <div class="calc-wrapper">
-    <p style="text-align:center; color:var(--gray-600);">[ax^2 + bx + c = 0]</p>
+  
+  <div class="tool-container">
+    <div class="equation-display">
+      <span>a</span>x² + <span>b</span>x + <span>c</span> = 0
+    </div>
+
+    <div class="input-flex">
+      <div class="input-wrap">
+        <input type="number" id="valA" placeholder="a">
+        <span>x² + </span>
+      </div>
+      <div class="input-wrap">
+        <input type="number" id="valB" placeholder="b">
+        <span>x + </span>
+      </div>
+      <div class="input-wrap">
+        <input type="number" id="valC" placeholder="c">
+        <span> = 0</span>
+      </div>
+    </div>
+
+    <button class="btn-calc" onclick="solveQuadratic()">Solve Equation</button>
+
+    <div class="result-box" id="resultBox">
+      <div class="res-line">
+        <div class="res-lbl">Discriminant (Δ)</div>
+        <div class="res-val" id="resDelta">0</div>
+      </div>
+      <div class="res-line">
+        <div class="res-lbl">Nature of Roots</div>
+        <div class="res-nature" id="resNature">Real and Distinct</div>
+      </div>
+      <div class="res-line">
+        <div class="res-lbl">Root 1 (x₁)</div>
+        <div class="res-val" id="resRoot1">0</div>
+      </div>
+      <div class="res-line">
+        <div class="res-lbl">Root 2 (x₂)</div>
+        <div class="res-val" id="resRoot2">0</div>
+      </div>
+    </div>
   </div>
 
-  <div class="ad-unit"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+  <script>
+    function solveQuadratic() {
+      const a = parseFloat(document.getElementById('valA').value);
+      const b = parseFloat(document.getElementById('valB').value);
+      const c = parseFloat(document.getElementById('valC').value);
 
-  <!-- MASSIVE SEO ARTICLE -->
-  <div class="article-section">
-    <h2>Comprehensive Guide: Quadratic Solver (2026 Edition)</h2>
-    <p>The quadratic equation (ax² + bx + c = 0) describes parabolic trajectories—from a thrown basketball in physics to profit maximization in economics. The Quadratic Engine instantly calculates the discriminant (b² - 4ac) to determine the nature of the roots (real or complex) and executes the quadratic formula to find the exact values of Variable X. This is a foundational tool for Class 10 students, completely eliminating the algebraic friction associated with completing the square or factorizing difficult middle terms.</p>
-    
-    <p>In today's rapidly evolving digital landscape, understanding the mechanics behind the <strong>Quadratic Solver</strong> is no longer just an academic exercise—it is a fundamental necessity for both students and professionals. As the Central Board of Secondary Education (CBSE) and the National Council of Educational Research and Training (NCERT) roll out the rationalized 2026-2027 curriculum under the National Education Policy (NEP 2020), there is a massive shift away from rote memorization. Today, the focus is entirely on application-based learning, critical thinking, and algorithmic problem-solving. This is exactly where the Quadratic Solver bridges the gap between theoretical textbook concepts and real-world practical application.</p>
-    
-    <p>Whether you are a Class 10 student facing your first major board examinations, a Class 12 student dealing with the intense pressure of JEE Main, JEE Advanced, or NEET preparation, or a university undergraduate navigating complex engineering mathematics, the underlying principles of this tool remain consistently crucial. The ability to instantly verify your manual calculations using MathHub Pro's elite digital infrastructure ensures that you are not just blindly following steps, but genuinely comprehending the mathematical architecture. Every time you utilize this calculation engine, you are reinforcing the neural pathways required for deep conceptual mastery and long-term retention.</p>
-    
-    <h3>Why MathHub Pro is India's Ultimate Digital Terminal</h3>
-    <p>MathHub Pro, deployed securely from our primary engineering nodes in Mancherial, Telangana, was built with a singular, uncompromising vision: to democratize high-end educational technology for every student across India. We recognized that the internet is saturated with slow, ad-heavy, and poorly coded calculators that frustrate users, drain mobile data, and provide inaccurate results. In response, we engineered this Quadratic Solver utilizing strict 2026 floating-point arithmetic standards, ensuring zero-latency execution, seamless mobile responsiveness, and absolute mathematical precision.</p>
-    
-    <p>Furthermore, our platform operates completely free of charge. We strongly believe that education is a fundamental right, which is why we do not hide our best features behind premium paywalls or monthly subscription models. Verified users can seamlessly integrate the Quadratic Solver with our revolutionary AI Math Solver, access our complete, high-speed database of NCERT Class 6 to 12 textbook PDFs, and utilize our extensive archives of Previous Year Question (PYQ) papers and revision Cheat Sheets. By combining all these elite resources into one unified, meticulously designed digital terminal, MathHub Pro transcends the definition of a simple calculator website. We are a comprehensive educational ecosystem, meticulously designed to propel the next generation of Indian engineers, doctors, economists, and data scientists toward unprecedented academic and professional success.</p>
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Please enter values for coefficients a, b, and c.");
+        return;
+      }
 
+      if (a === 0) {
+        alert("Coefficient 'a' cannot be zero in a quadratic equation (it would be a linear equation).");
+        return;
+      }
+
+      // Calculate Discriminant: b^2 - 4ac
+      const discriminant = (b * b) - (4 * a * c);
+      document.getElementById('resDelta').innerText = discriminant.toFixed(4).replace(/\.0000$/, '');
+
+      let r1, r2, nature;
+
+      if (discriminant > 0) {
+        nature = "Real & Distinct";
+        r1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        r2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        document.getElementById('resRoot1').innerText = r1.toFixed(4).replace(/\.0000$/, '');
+        document.getElementById('resRoot2').innerText = r2.toFixed(4).replace(/\.0000$/, '');
+      } else if (discriminant === 0) {
+        nature = "Real & Equal (Repeated)";
+        r1 = -b / (2 * a);
+        document.getElementById('resRoot1').innerText = r1.toFixed(4).replace(/\.0000$/, '');
+        document.getElementById('resRoot2').innerText = r1.toFixed(4).replace(/\.0000$/, '');
+      } else {
+        nature = "Complex / Imaginary";
+        const realPart = (-b / (2 * a)).toFixed(4).replace(/\.0000$/, '');
+        const imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(4).replace(/\.0000$/, '');
+        document.getElementById('resRoot1').innerText = `${realPart} + ${imagPart}i`;
+        document.getElementById('resRoot2').innerText = `${realPart} - ${imagPart}i`;
+      }
+
+      document.getElementById('resNature').innerText = nature;
+      
+      // Determine color of nature badge
+      const natEl = document.getElementById('resNature');
+      if(discriminant > 0) { natEl.style.background = 'var(--green-light)'; natEl.style.color = 'var(--green)'; }
+      else if(discriminant === 0) { natEl.style.background = 'var(--blue-light)'; natEl.style.color = 'var(--blue-dark)'; }
+      else { natEl.style.background = 'var(--red-light)'; natEl.style.color = 'var(--red)'; }
+
+      document.getElementById('resultBox').classList.add('active');
+    }
+  </script>
+
+  <!-- TOP AD UNIT -->
+  <div class="ad-unit">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
+
+  <!-- SEO CONTENT (>500 WORDS) -->
+  <article class="seo-content">
+    <h2>The Complete Guide to Solving Quadratic Equations</h2>
+    <p>In algebra, a quadratic equation is any polynomial equation of the second degree. This means that the highest exponent of the variable (usually x) is a square (x²). Visually, when plotted on a graph, a quadratic equation forms a sweeping U-shaped curve known as a parabola. This mathematical shape governs a massive amount of physical science, from calculating the trajectory of a thrown cricket ball to designing satellite dishes. The MathHub Pro Quadratic Equation Solver allows you to bypass the tedious manual arithmetic, instantly providing you with the exact roots, the discriminant, and the fundamental nature of the parabola you are analyzing.</p>
+    
+    <h3>Understanding the Standard Form and The Discriminant</h3>
+    <p>The standard algebraic form of a quadratic equation is <strong>ax² + bx + c = 0</strong>, where 'x' represents the unknown variable, and 'a', 'b', and 'c' represent known numeric coefficients. Crucially, the coefficient 'a' can never equal zero, otherwise, the equation would devolve into a simple straight-line linear equation.</p>
+    <p>Before solving for x, mathematicians calculate a special value called the <strong>Discriminant (Δ)</strong>. The discriminant is calculated using the formula <em>b² - 4ac</em>. This single scalar number is incredibly important because it immediately reveals the "nature of the roots" without having to finish the entire equation. Our calculator computes this discriminant instantly in the background, ensuring you understand exactly what kind of numbers you will be working with before moving forward.</p>
+
+    <!-- MIDDLE AD UNIT -->
+    <div class="ad-unit" style="margin: 2rem 0; padding:0; background:transparent; border:none;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+
+    <h3>The Nature of Roots Explained</h3>
+    <p>When solving a quadratic equation, the "roots" are simply the values of x that make the equation equal to zero. Graphically, these are the exact points where the parabola crosses the horizontal x-axis. Depending on the value of the discriminant calculated above, a quadratic equation will fall into one of three distinct categories:</p>
+    <ul>
+      <li><strong>Real and Distinct Roots (Δ > 0):</strong> If the discriminant is a positive number, the parabola crosses the x-axis at two separate, distinct points. The equation has two unique real-number solutions.</li>
+      <li><strong>Real and Equal Roots (Δ = 0):</strong> If the discriminant is exactly zero, the apex (vertex) of the parabola merely touches the x-axis at a single point without crossing it. The equation has one repeated real-number solution.</li>
+      <li><strong>Complex / Imaginary Roots (Δ < 0):</strong> If the discriminant is negative, the entire parabola floats above or below the x-axis, never intersecting it. In real numbers, there is no solution, but in advanced mathematics, this yields two complex numbers involving the imaginary unit <em>i</em>.</li>
+    </ul>
+
+    <h3>Why Quadratic Equations Matter in CBSE and JEE</h3>
+    <p>For students in the Indian education system, particularly those studying the CBSE curriculum, Quadratic Equations form a massive, dedicated chapter in Class 10 mathematics. Mastery of the quadratic formula—<em>x = (-b ± √(b² - 4ac)) / 2a</em>—is an absolute requirement for passing the board exams. As students move into Class 11, the introduction of negative discriminants serves as the primary gateway into the study of Complex Numbers.</p>
+    <p>Furthermore, solving quadratic expressions quickly and accurately is a non-negotiable skill for engineering entrance exams like the JEE Main. In physics, the kinematic equations governing projectile motion are inherently quadratic. A student who cannot confidently find the roots of a polynomial will struggle deeply in both mechanics and advanced algebra. The MathHub Pro Quadratic Solver is designed to be the perfect companion tool, helping students verify their manual factorization and formulaic calculations instantly, ensuring absolute accuracy and confidence in their mathematical studies.</p>
+  </article>
+
+  <!-- BOTTOM AD UNIT -->
+  <div class="ad-unit">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
 </div>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>MathHub Pro</h4>
-        <p style="font-size:0.85rem; color:var(--gray-400); line-height:1.6;">India's elite educational platform for 2026. Built in Mancherial, Telangana.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Links</h4>
-        <ul>
-          <li><a href="solver.html">AI Math Solver</a></li>
-          <li><a href="ncert.html">NCERT Books</a></li>
-          <li><a href="gst.html">GST Calculator</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
+  <div class="footer-grid">
+    <div>
+      <h3 style="color:#fff;font-size:1.2rem;margin-bottom:1rem;font-family:'Poppins'">MathHub Pro</h3>
+      <p style="font-size:0.85rem;line-height:1.6;">India's most comprehensive free mathematics platform. Built with love in Mancherial, Telangana.</p>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 MathHub Pro | All Rights Reserved.</p>
-      <div class="footer-links-bottom">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="contact.html">Contact</a>
-      </div>
+    <div>
+      <h4 style="color:#fff;margin-bottom:1rem;">Tools</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
+        <li><a href="quadratic.html">Quadratic Solver</a></li>
+        <li><a href="solver.html">AI Math Solver</a></li>
+        <li><a href="matrix.html">Matrix Engine</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color:#fff;margin-bottom:1rem;">Resources</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
+        <li><a href="ncert.html">NCERT Hub</a></li>
+        <li><a href="pyq.html">PYQ Papers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 MathHub Pro | All Rights Reserved.</p>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="dmca.html">DMCA Policy</a>
+      <a href="contact.html">Contact Us</a>
     </div>
   </div>
 </footer>
-
-<script>
-function openSidebar(){document.getElementById('mobileSidebar').classList.add('open');document.getElementById('overlay').classList.add('show')}
-function closeSidebar(){document.getElementById('mobileSidebar').classList.remove('open');document.getElementById('overlay').classList.remove('show')}
-
-</script>
 </body>
 </html>
