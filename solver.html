@@ -239,54 +239,31 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       finalBox.style.display = 'none';
 
       try {
-        const apiKey = "AIzaSyARABF7ZbcklHu4bWwcVfUHfqIv4mhXkE8"; 
-        
-        // Updated to the latest stable model
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`;
+        // Secure call to your Cloudflare Backend
+        const backendUrl = "/api/solve"; 
 
         if (currentImageBase64) {
-            loadingText.innerText = "Scanning image with MathHub Pro AI...";
+            loadingText.innerText = "Scanning image securely...";
         } else {
-            loadingText.innerText = "MathHub Pro AI is computing steps...";
+            loadingText.innerText = "MathHub Pro AI is computing steps securely...";
         }
 
-        let partsArray = [];
-
-        if (currentImageBase64) {
-            const base64String = currentImageBase64.split(',')[1];
-            const mimeType = currentImageBase64.split(';')[0].split(':')[1];
-
-            partsArray.push({
-                inlineData: { data: base64String, mimeType: mimeType }
-            });
-            partsArray.push({
-                text: rawInput ? `Problem: ${rawInput}` : "Solve all math problems in this image briefly and concisely. Do not explain your thought process."
-            });
-        } else {
-            partsArray.push({ text: `Problem: ${rawInput}` });
-        }
-
-        // Removed the deprecated temperature parameters per the documentation
-        const requestBody = {
-            contents: [{ parts: partsArray }],
-            systemInstruction: {
-                parts: [{ text: "You are a direct, professional math solver. Output ONLY the mathematical solution. Be extremely concise. Keep steps short. DO NOT output conversational filler or your internal thought process. Use standard Markdown. If there are multiple problems, solve ALL of them briefly. Structure each problem as:\n### Given\n### Steps\n### Answer" }]
-            }
-        };
-
-        const response = await fetch(apiUrl, {
+        const response = await fetch(backendUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(requestBody)
+          body: JSON.stringify({ 
+              rawInput: rawInput, 
+              currentImageBase64: currentImageBase64 
+          })
         });
 
         const data = await response.json();
         
-        if (!response.ok) {
-           throw new Error(data.error?.message || `HTTP Error ${response.status}: API connection failed.`);
+        if (!response.ok || !data.success) {
+           throw new Error(data.error || "Failed to connect to the MathHub backend server.");
         }
 
-        const fullAiOutput = data.candidates[0].content.parts[0].text;
+        const fullAiOutput = data.result;
         
         stepsContainer.innerHTML = `
           <div class="step-card">
@@ -300,10 +277,10 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
         }
 
       } catch (error) {
-        console.error("AI Core Failure:", error);
+        console.error("Server Failure:", error);
         stepsContainer.innerHTML = `
           <div class="step-card" style="border-left-color: #ef4444;">
-            <span class="step-number" style="color: #ef4444;">API Connection Error</span>
+            <span class="step-number" style="color: #ef4444;">Server Connection Error</span>
             <p style="color: #ef4444; font-weight: bold;">${error.message}</p>
           </div>
         `;
