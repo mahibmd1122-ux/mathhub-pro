@@ -72,20 +72,12 @@ a{text-decoration:none;color:inherit}
 .stats-bar { display:flex; justify-content:space-between; align-items:center; background:var(--gray-100); padding:1rem 1.5rem; border-radius:12px; margin-bottom: 2rem; font-family:'JetBrains Mono', monospace; font-size:1.2rem; font-weight:700; color:var(--gray-800); border: 2px solid var(--gray-200);}
 .time-left { color: var(--orange); }
 .score-box { color: var(--blue); }
-.question-display { font-size: 3.5rem; font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--gray-900); margin: 1.5rem 0; letter-spacing: 2px;}
+.question-display { font-size: 3.5rem; font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--gray-900); margin: 2rem 0; letter-spacing: 2px;}
 
-/* TYPING ANSWER SECTION */
-.answer-section { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-.answer-input { background: var(--gray-50); border: 3px solid var(--gray-300); padding: 1rem; font-size: 2.5rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; border-radius: 16px; width: 100%; max-width: 250px; text-align: center; outline: none; transition: 0.2s; color: var(--blue-dark); box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
-.answer-input:focus { border-color: var(--blue); background: var(--white); box-shadow: 0 0 0 4px var(--blue-light); }
-.answer-input.wrong { border-color: var(--red); background: var(--red-light); color: var(--red); }
-.answer-input.correct { border-color: var(--green); background: var(--green-light); color: var(--green); }
-
-.controls-row { display: flex; gap: 1rem; justify-content: center; width: 100%; max-width: 400px; margin: 0 auto;}
-.submit-btn { background: var(--green); color: var(--white); border: none; padding: 1rem 2rem; border-radius: 12px; font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: 0.2s; flex-grow: 2;}
-.submit-btn:hover { background: var(--green-dark); transform: translateY(-2px); }
-.skip-btn { background: var(--gray-200); color: var(--gray-700); border: none; padding: 1rem 1.5rem; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: 0.2s; flex-grow: 1;}
-.skip-btn:hover { background: var(--gray-300); color: var(--red); }
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.option-btn { background: var(--white); border: 3px solid var(--gray-200); padding: 1.5rem; font-size: 1.8rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; border-radius: 16px; cursor: pointer; transition: 0.15s; color: var(--gray-800); }
+.option-btn:hover { border-color: var(--blue); background: var(--blue-light); color: var(--blue-dark); transform: scale(1.02); }
+.option-btn:active { transform: scale(0.95); }
 
 /* GAME OVER SCREEN */
 #end-screen { display: none; }
@@ -97,7 +89,7 @@ a{text-decoration:none;color:inherit}
 .leaderboard-list { list-style: none; padding: 0; margin: 0; }
 .leaderboard-item { display: flex; justify-content: space-between; padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200); font-weight: 600; align-items: center; }
 .leaderboard-item:last-child { border-bottom: none; }
-.leaderboard-rank { color: var(--gray-500); width: 35px; font-size: 0.95rem; font-weight: 800;}
+.leaderboard-rank { color: var(--gray-500); width: 30px; font-size: 0.9rem; }
 .leaderboard-name { color: var(--gray-800); flex-grow: 1; text-transform: capitalize; }
 .leaderboard-score { color: var(--blue); font-family: 'JetBrains Mono', monospace; font-weight: 700; background: var(--blue-light); padding: 0.2rem 0.6rem; border-radius: 6px; }
 
@@ -130,7 +122,7 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
 .footer-bottom-links a:hover{color:var(--white)}
 
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
-@media(max-width:768px){.nav-links{display:none;} .seo-content{padding:1.5rem;} .footer-grid{grid-template-columns:1fr} .footer-bottom{flex-direction:column;align-items:flex-start} .question-display{font-size: 2.8rem;} .answer-input{padding: 0.8rem; font-size: 2rem;} }
+@media(max-width:768px){.nav-links{display:none;} .seo-content{padding:1.5rem;} .footer-grid{grid-template-columns:1fr} .footer-bottom{flex-direction:column;align-items:flex-start} .question-display{font-size: 2.8rem;} .option-btn{padding: 1rem; font-size: 1.4rem;} }
 </style>
 </head>
 <body>
@@ -168,15 +160,15 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
     <div id="start-screen">
       <div style="font-size: 4rem; margin-bottom: 1rem;">🧠⚡</div>
       <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Speed Math Challenge</h3>
-      <p style="color: var(--gray-500); margin-bottom: 1.5rem;">You have 60 seconds. Type the answer and hit Submit. +10 points for correct answers, -5 points for mistakes or skips. Are you ready?</p>
+      <p style="color: var(--gray-500); margin-bottom: 1.5rem;">You have exactly 60 seconds to answer as many questions as possible. Your score will automatically save when time is up!</p>
       
       <!-- Player Name Input (Required before playing) -->
-      <input type="text" id="playerNameInput" class="name-input" placeholder="Enter your player username..." maxlength="15" autocomplete="off" />
+      <input type="text" id="playerNameInput" class="name-input" placeholder="Enter your player name..." maxlength="15" autocomplete="off" />
       <br>
       <button class="game-btn" onclick="startGame()"><i class="fas fa-play"></i> Start Challenge</button>
       
       <div class="leaderboard-container">
-        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Global Top 10</div>
+        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Global Top 5</div>
         <ul class="leaderboard-list" id="startLeaderboardList">
           <div class="ai-spinner"></div>
         </ul>
@@ -192,14 +184,11 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       
       <div class="question-display" id="questionDisplay">3 + 5</div>
       
-      <div class="answer-section">
-        <!-- Using type="number" brings up the numeric keypad on iPad/Mobile -->
-        <input type="number" id="answerInput" class="answer-input" placeholder="?" autocomplete="off" pattern="\d*" />
-        
-        <div class="controls-row">
-          <button class="skip-btn" onclick="skipQuestion()">Skip (-5)</button>
-          <button class="submit-btn" onclick="checkAnswer()">Submit <i class="fas fa-check"></i></button>
-        </div>
+      <div class="options-grid" id="optionsGrid">
+        <button class="option-btn" onclick="checkAnswer(this)">8</button>
+        <button class="option-btn" onclick="checkAnswer(this)">12</button>
+        <button class="option-btn" onclick="checkAnswer(this)">6</button>
+        <button class="option-btn" onclick="checkAnswer(this)">15</button>
       </div>
     </div>
 
@@ -216,7 +205,7 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       <button class="game-btn" onclick="resetToStart()" style="margin-bottom: 2rem; background: var(--gray-800);"><i class="fas fa-redo"></i> Play Again</button>
 
       <div class="leaderboard-container">
-        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Live Leaderboard (Top 10)</div>
+        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Live Leaderboard</div>
         <ul class="leaderboard-list" id="endLeaderboardList">
           <div class="ai-spinner"></div>
         </ul>
@@ -257,19 +246,11 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
     const timeDisplay = document.getElementById('timeDisplay');
     const scoreDisplay = document.getElementById('scoreDisplay');
     const questionDisplay = document.getElementById('questionDisplay');
-    const answerInput = document.getElementById('answerInput');
     const finalScoreDisplay = document.getElementById('finalScoreDisplay');
     const performanceMessage = document.getElementById('performanceMessage');
     const saveStatus = document.getElementById('saveStatus');
+    const optionsButtons = document.querySelectorAll('.option-btn');
     const nameInput = document.getElementById('playerNameInput');
-
-    // Submit answer when user presses "Enter" on keyboard
-    answerInput.addEventListener("keypress", function(event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        checkAnswer();
-      }
-    });
 
     // AUTHENTICATION CHECK
     auth.onAuthStateChanged(user => {
@@ -278,7 +259,10 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
         loginWarning.style.display = 'none';
         startScreen.style.display = 'block';
         
-        if(user.displayName) nameInput.value = user.displayName;
+        // Auto-fill name if they have one from Google login
+        if(user.displayName) {
+          nameInput.value = user.displayName;
+        }
         fetchLeaderboard();
       } else {
         loginWarning.style.display = 'block';
@@ -287,8 +271,9 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
     });
 
     function startGame() {
+      // REQUIRE NAME BEFORE PLAYING
       if(nameInput.value.trim() === '') {
-        alert("Please enter a username before starting the challenge!");
+        alert("Please enter a player name before starting the challenge!");
         nameInput.focus();
         return;
       }
@@ -308,100 +293,79 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       timerInterval = setInterval(() => {
         timeLeft--;
         timeDisplay.innerText = timeLeft;
-        if(timeLeft <= 0) endGame();
+        if(timeLeft <= 0) {
+          endGame();
+        }
       }, 1000);
     }
 
-    // PROGRESSIVE DIFFICULTY GENERATOR
     function generateQuestion() {
-      answerInput.value = '';
-      answerInput.classList.remove('wrong', 'correct');
-      answerInput.focus();
+      let maxNum = score > 100 ? 50 : 20; 
+      let num1 = Math.floor(Math.random() * maxNum) + 1;
+      let num2 = Math.floor(Math.random() * maxNum) + 1;
+      const operators = ['+', '-', '*'];
+      
+      let opIndex = Math.floor(Math.random() * (score > 50 ? 3 : 2)); 
+      let op = operators[opIndex];
 
-      let opIndex, num1, num2;
-      const operators = ['+', '-', '×', '÷', '√'];
-      let op;
-
-      // LEVEL 1: Easy Mode (0 to 40 Points)
-      if (score < 50) {
-        opIndex = Math.floor(Math.random() * 2); // Only + and -
-        op = operators[opIndex];
-        num1 = Math.floor(Math.random() * 20) + 1;
-        num2 = Math.floor(Math.random() * 20) + 1;
-      } 
-      // LEVEL 2: Medium Mode (50 to 120 Points)
-      else if (score < 120) {
-        opIndex = Math.floor(Math.random() * 5); // All operations
-        op = operators[opIndex];
-        num1 = Math.floor(Math.random() * 50) + 10;
-        num2 = Math.floor(Math.random() * 30) + 1;
-      } 
-      // LEVEL 3: Hard Mode (120+ Points)
-      else {
-        opIndex = Math.floor(Math.random() * 5); // All operations, harder numbers
-        op = operators[opIndex];
-        num1 = Math.floor(Math.random() * 100) + 20;
-        num2 = Math.floor(Math.random() * 50) + 10;
+      if (op === '-' && num1 < num2) {
+        let temp = num1; num1 = num2; num2 = temp;
       }
 
-      // FORMAT AND CALCULATE BASED ON OPERATION
-      if (op === '+') {
-        correctAnswer = num1 + num2;
-        questionDisplay.innerText = `${num1} + ${num2}`;
-      } 
-      else if (op === '-') {
-        if (num1 < num2) [num1, num2] = [num2, num1]; // Swap to prevent negative answers
-        correctAnswer = num1 - num2;
-        questionDisplay.innerText = `${num1} - ${num2}`;
-      } 
-      else if (op === '×') {
-        let m1 = score < 120 ? Math.floor(Math.random() * 10) + 2 : Math.floor(Math.random() * 15) + 5;
-        let m2 = score < 120 ? Math.floor(Math.random() * 10) + 2 : Math.floor(Math.random() * 12) + 2;
-        correctAnswer = m1 * m2;
-        questionDisplay.innerText = `${m1} × ${m2}`;
-      } 
-      else if (op === '÷') {
-        // Ensure perfect division
-        let divisor = score < 120 ? Math.floor(Math.random() * 10) + 2 : Math.floor(Math.random() * 15) + 2;
-        let quotient = score < 120 ? Math.floor(Math.random() * 12) + 2 : Math.floor(Math.random() * 20) + 2;
-        let dividend = divisor * quotient;
-        correctAnswer = quotient;
-        questionDisplay.innerText = `${dividend} ÷ ${divisor}`;
-      } 
-      else if (op === '√') {
-        // Ensure perfect squares
-        let root = score < 120 ? Math.floor(Math.random() * 12) + 2 : Math.floor(Math.random() * 20) + 2;
-        let square = root * root;
-        correctAnswer = root;
-        questionDisplay.innerText = `√${square}`;
-      }
+      let displayOp = op === '*' ? '×' : op;
+      questionDisplay.innerText = `${num1} ${displayOp} ${num2}`;
+
+      if (op === '+') correctAnswer = num1 + num2;
+      if (op === '-') correctAnswer = num1 - num2;
+      if (op === '*') correctAnswer = num1 * num2;
+
+      generateOptions(correctAnswer);
     }
 
-    function checkAnswer() {
-      let userInput = answerInput.value.trim();
-      if(userInput === "") return; // Do nothing if empty
+    function generateOptions(correct) {
+      let options = [correct];
+      while(options.length < 4) {
+        let offset = Math.floor(Math.random() * 15) - 7;
+        if(offset === 0) offset = 2; 
+        let fakeAnswer = correct + offset;
+        if(fakeAnswer >= 0 && !options.includes(fakeAnswer)) {
+          options.push(fakeAnswer);
+        }
+      }
 
-      if (parseInt(userInput) === correctAnswer) {
+      options.sort(() => Math.random() - 0.5);
+
+      optionsButtons.forEach((btn, index) => {
+        btn.innerText = options[index];
+        btn.style.backgroundColor = "var(--white)";
+        btn.style.color = "var(--gray-800)";
+        btn.style.borderColor = "var(--gray-200)";
+      });
+    }
+
+    function checkAnswer(btnElement) {
+      let selectedAnswer = parseInt(btnElement.innerText);
+      
+      if (selectedAnswer === correctAnswer) {
         score += 10;
-        scoreDisplay.innerText = score;
-        answerInput.classList.add('correct');
-        setTimeout(() => { if(timeLeft > 0) generateQuestion(); }, 250);
+        btnElement.style.backgroundColor = "var(--green-light)";
+        btnElement.style.borderColor = "var(--green)";
+        btnElement.style.color = "var(--green)";
       } else {
         score -= 5;
-        scoreDisplay.innerText = score;
-        answerInput.classList.add('wrong');
-        setTimeout(() => { 
-          answerInput.classList.remove('wrong'); 
-          answerInput.value = '';
-          answerInput.focus();
-        }, 400); // Clears it out so they can try again
+        btnElement.style.backgroundColor = "var(--red-light)";
+        btnElement.style.borderColor = "var(--red)";
+        btnElement.style.color = "var(--red)";
+        
+        optionsButtons.forEach(btn => {
+          if(parseInt(btn.innerText) === correctAnswer) {
+            btn.style.borderColor = "var(--green)";
+          }
+        });
       }
-    }
-
-    function skipQuestion() {
-      score -= 5;
+      
       scoreDisplay.innerText = score;
-      generateQuestion();
+      setTimeout(() => { if(timeLeft > 0) generateQuestion(); }, 300);
     }
 
     function endGame() {
@@ -453,13 +417,11 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       startScreen.style.display = 'block';
     }
 
-    // FETCH TOP 10
     function fetchLeaderboard() {
       const startList = document.getElementById('startLeaderboardList');
       const endList = document.getElementById('endLeaderboardList');
       
-      // Limit changed to 10 for Top 10 Leaderboard
-      db.collection("leaderboard").orderBy("score", "desc").limit(10).get().then((querySnapshot) => {
+      db.collection("leaderboard").orderBy("score", "desc").limit(5).get().then((querySnapshot) => {
         let htmlContent = '';
         let rank = 1;
         
