@@ -1,335 +1,277 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-adsense-account" content="ca-pub-9069263337314949">
-
 <title>Math Sprint Game | Train Your Mental Math | MathHub Pro</title>
 <meta name="description" content="Test your mental math speed with the MathHub Pro Sprint Game. Improve your calculation speed for competitive exams like JEE and Olympiads in just 60 seconds.">
 <meta name="keywords" content="math game, mental math quiz, math sprint, improve calculation speed, competitive exam math prep, math timer quiz, MathHub Pro game">
 <meta name="author" content="MathHub Pro Systems">
-<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.mathhub.pro/game.html">
-
-<meta property="og:title" content="Math Sprint Game | MathHub Pro">
-<meta property="og:description" content="Can you beat the clock? Train your brain with our fast-paced, 60-second mental math challenge.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.mathhub.pro/game.html">
-
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5KMGS6VML"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C5KMGS6VML');</script>
-
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9069263337314949" crossorigin="anonymous"></script>
-
-<!-- Schema Markup -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "MathHub Pro Sprint Game",
-  "url": "https://www.mathhub.pro/game.html",
-  "description": "An interactive, timed mental math quiz to help students improve calculation speed.",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "All",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
-}
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <style>
-/* GLOBAL STYLES */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--blue:#1d4ed8;--blue-dark:#1e3a8a;--blue-light:#dbeafe;--green:#059669;--red:#dc2626;--yellow:#fbbf24;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--gray-900:#111827;--white:#ffffff;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow:0 4px 6px rgba(0,0,0,.07);--shadow-md:0 10px 15px rgba(0,0,0,.08);--radius-lg:16px;}
+:root{--blue:#1d4ed8;--blue-dark:#1e3a8a;--blue-light:#dbeafe;--green:#059669;--red:#dc2626;--yellow:#fbbf24;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--gray-900:#111827;--white:#ffffff;--shadow-md:0 10px 15px rgba(0,0,0,.08);--radius-lg:16px;}
 body{font-family:'Inter',sans-serif;background:var(--gray-50);color:var(--gray-800);line-height:1.7;}
-h1,h2,h3{font-family:'Poppins',sans-serif;color:var(--gray-900)}
-a{text-decoration:none;color:inherit}
-
-/* NAVIGATION */
-.site-nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:1000;box-shadow:var(--shadow-sm);}
+h1,h2,h3{font-family:'Poppins',sans-serif;color:var(--gray-900)}a{text-decoration:none;color:inherit}
+.site-nav{background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:1000;}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
-.nav-logo{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem;color:var(--blue-dark);display:flex;align-items:center;gap:0.5rem;}
-.nav-logo span{color:var(--blue)}
-.nav-links{display:flex;gap:.25rem}
+.nav-logo{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem;color:var(--blue-dark);display:flex;gap:0.5rem;}
+.nav-logo span{color:var(--blue)}.nav-links{display:flex;gap:.25rem}
 .nav-links a{padding:.4rem .8rem;border-radius:6px;font-size:.875rem;font-weight:500;color:var(--gray-600);transition:.2s}
 .nav-links a:hover{color:var(--blue);background:var(--blue-light)}
-
-/* PAGE SPECIFIC */
 .inner-hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);color:var(--white);padding:40px 1.5rem 80px;text-align:center;}
 .inner-hero h1{font-size:2.2rem;margin-bottom:0.5rem;color:var(--white);}
 .container{max-width:1280px;margin:0 auto;padding:0 1.5rem;}
-
-/* GAME UI */
 .tool-container{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:3rem 2.5rem;margin:-40px auto 3rem;max-width:650px;position:relative;z-index:10;text-align:center;}
-
 .game-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--gray-200);}
 .stat-box{background:var(--gray-100);padding:0.5rem 1.2rem;border-radius:8px;font-weight:700;font-size:1.1rem;color:var(--gray-700);display:flex;align-items:center;gap:0.5rem;}
-.stat-box i{color:var(--blue);}
-.stat-box.time-box i{color:var(--red);}
-
-.game-area{display:none;}
-.game-area.active{display:block; animation:fadeIn 0.3s ease;}
+.stat-box i{color:var(--blue);}.stat-box.time-box i{color:var(--red);}
+.game-area, .auth-screen, .name-screen, .start-screen, .end-screen{display:none;}
+.active{display:block; animation:fadeIn 0.3s ease;}
 @keyframes fadeIn { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
-
 .question-display{font-size:3.5rem;font-weight:800;color:var(--blue-dark);font-family:'JetBrains Mono',monospace;margin-bottom:2rem;user-select:none;}
-
 .input-area{display:flex;justify-content:center;gap:1rem;}
 .answer-input{width:150px;padding:1rem;border:3px solid var(--gray-300);border-radius:12px;font-size:1.5rem;font-weight:700;text-align:center;font-family:'JetBrains Mono',monospace;transition:0.2s;}
 .answer-input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-light);}
 .answer-input.error{border-color:var(--red);animation:shake 0.3s;}
-@keyframes shake{0%{transform:translateX(0);}25%{transform:translateX(-5px);}50%{transform:translateX(5px);}75%{transform:translateX(-5px);}100%{transform:translateX(0);}}
-
+@keyframes shake{0%,100%{transform:translateX(0);}25%,75%{transform:translateX(-5px);}50%{transform:translateX(5px);}}
 .btn-submit{background:var(--blue);color:var(--white);border:none;padding:0 2rem;border-radius:12px;font-size:1.2rem;font-weight:700;cursor:pointer;transition:.2s;}
-.btn-submit:hover{background:var(--blue-dark);}
-
-.start-screen{padding:2rem 0;}
 .btn-start{background:var(--green);color:var(--white);border:none;padding:1.2rem 3rem;border-radius:50px;font-size:1.3rem;font-weight:800;cursor:pointer;transition:.2s;box-shadow:0 6px 0 #047857;}
 .btn-start:active{transform:translateY(6px);box-shadow:none;}
-
-.end-screen{display:none;padding:2rem 0;}
-.end-screen.active{display:block;}
 .final-score{font-size:4rem;font-weight:800;color:var(--blue);margin-bottom:0.5rem;line-height:1;}
-.final-msg{font-size:1.2rem;color:var(--gray-600);margin-bottom:2rem;font-weight:600;}
-
-/* SEO & ADS */
-.seo-content{max-width:900px;margin:0 auto 4rem;background:var(--white);padding:3rem;border-radius:var(--radius-lg);box-shadow:var(--shadow);}
-.seo-content h2, .seo-content h3{color:var(--blue-dark);margin:1.5rem 0 1rem; line-height:1.4;}
-.seo-content p, .seo-content ul{color:var(--gray-600);line-height:1.9;margin-bottom:1.25rem; font-size:1.05rem;}
-.seo-content ul{padding-left:1.5rem;}
+.leaderboard{margin-top:2.5rem;text-align:left;background:var(--gray-50);padding:1.5rem;border-radius:12px;border:1px solid var(--gray-200);}
+.leaderboard table{width:100%;border-collapse:collapse;margin-top:1rem;}
+.leaderboard th,.leaderboard td{padding:0.75rem;border-bottom:1px solid var(--gray-200);}
+.leaderboard th{color:var(--gray-500);font-size:0.85rem;text-transform:uppercase;}
+.leaderboard tr:nth-child(1) td{color:var(--yellow);font-weight:800;font-size:1.1rem;}
+.leaderboard tr:nth-child(2) td{color:var(--gray-500);font-weight:700;}
+.leaderboard tr:nth-child(3) td{color:#b45309;font-weight:700;}
+.user-profile{display:flex;align-items:center;gap:1rem;font-weight:600;font-size:0.9rem;}
+.btn-logout{background:transparent;border:1px solid var(--gray-300);padding:0.4rem 0.8rem;border-radius:6px;cursor:pointer;font-size:0.8rem;}
+.btn-google{background:#fff;color:#333;border:1px solid #ddd;padding:1rem 2rem;border-radius:50px;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:10px;margin:0 auto;box-shadow:0 2px 4px rgba(0,0,0,.1);}
+.seo-content{max-width:900px;margin:0 auto 4rem;background:var(--white);padding:3rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);}
 .ad-unit{background:var(--gray-50);border:1px dashed var(--gray-300);border-radius:8px;padding:1rem;text-align:center;margin:2rem auto;max-width:900px;}
-
-/* FOOTER */
 footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5rem}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;max-width:1280px;margin:0 auto 2.5rem;}
-.footer-bottom{border-top:1px solid var(--gray-700);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;max-width:1280px;margin:0 auto;}
-.footer-bottom a{font-size:0.8rem;margin-left:1rem;color:var(--gray-400);}
-
 @media(max-width:768px){.nav-links{display:none;} .question-display{font-size:2.5rem;}}
 </style>
 </head>
 <body>
-
-<nav class="site-nav">
+    <nav class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><span>MathHub</span>Pro</a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="solver.html">AI Solver</a>
-      <a href="game.html">Math Sprint</a>
-      <a href="timetable.html">Study Timer</a>
+      <a href="index.html">Home</a><a href="solver.html">AI Solver</a><a href="game.html">Math Sprint</a><a href="timetable.html">Study Timer</a>
     </div>
   </div>
 </nav>
 
 <section class="inner-hero">
-  <h1>Math Sprint Game</h1>
-  <p>60 seconds. How many equations can you solve?</p>
+  <h1>Math Sprint Game</h1><p>60 seconds. Squares, Roots, and Arithmetic. Build your JEE speed!</p>
 </section>
 
 <div class="container">
-  
   <div class="tool-container">
     
-    <div class="game-header">
-      <div class="stat-box"><i class="fas fa-star"></i> Score: <span id="scoreDisplay">0</span></div>
-      <div class="stat-box time-box"><i class="fas fa-clock"></i> Time: <span id="timeDisplay">60</span>s</div>
+    <div class="game-header" id="gameHeader" style="display:none;">
+      <div class="user-profile" id="userProfileDisplay">👤 Guest <button class="btn-logout" id="logoutBtn">Logout</button></div>
+      <div style="display:flex;gap:1rem;">
+        <div class="stat-box"><i class="fas fa-star"></i> <span id="scoreDisplay">0</span></div>
+        <div class="stat-box time-box"><i class="fas fa-clock"></i> <span id="timeDisplay">60</span>s</div>
+      </div>
     </div>
 
-    <!-- START SCREEN -->
-    <div class="start-screen active" id="startScreen">
-      <h2 style="margin-bottom:1rem; color:var(--gray-800);">Ready to test your reflexes?</h2>
-      <p style="color:var(--gray-500); margin-bottom:2.5rem;">Solve as many basic arithmetic problems (+, -, *, /) as you can before the 60-second timer runs out. Press Enter to submit your answers quickly!</p>
-      <button class="btn-start" onclick="startGame()">Start Sprint</button>
+    <!-- 1. AUTH SCREEN -->
+    <div class="auth-screen active" id="authScreen">
+      <h2><i class="fas fa-lock" style="color:var(--blue)"></i> Sign In to Play</h2>
+      <p style="color:var(--gray-500); margin-bottom:2rem;">Your score will be saved to the MathHub Pro Global Leaderboard.</p>
+      <button class="btn-google" id="loginBtn"><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width="20"> Sign in with Google</button>
     </div>
 
-    <!-- PLAY AREA -->
+    <!-- 2. CHOOSE NAME SCREEN -->
+    <div class="name-screen" id="nameScreen">
+      <h2>Choose Your Gamer Tag</h2>
+      <p style="color:var(--gray-500); margin-bottom:1.5rem;">This name will appear on the global leaderboard.</p>
+      <div class="input-area" style="flex-direction:column; align-items:center;">
+        <input type="text" id="nameInput" class="answer-input" style="width:250px; font-size:1.2rem; font-family:'Inter';" placeholder="e.g. MathNinja99" maxlength="15">
+        <button class="btn-submit" id="saveNameBtn" style="padding:1rem 2rem;">Save Name & Play</button>
+      </div>
+    </div>
+
+    <!-- 3. START SCREEN -->
+    <div class="start-screen" id="startScreen">
+      <h2 style="color:var(--gray-800);">Ready, <span id="welcomeName" style="color:var(--blue);">Player</span>?</h2>
+      <p style="color:var(--gray-500); margin-bottom:2rem;">Solve basic arithmetic, squares (x²), and square roots (√) before 60 seconds runs out. Press Enter to submit!</p>
+      <button class="btn-start" id="startBtn">Start Sprint</button>
+      <p style="margin-top:1rem; font-weight:700; color:var(--green);" id="highScoreText"></p>
+    </div>
+
+    <!-- 4. PLAY AREA -->
     <div class="game-area" id="gameArea">
       <div class="question-display" id="questionDisplay">5 + 7 = ?</div>
       <div class="input-area">
         <input type="number" id="answerInput" class="answer-input" autocomplete="off" placeholder="?">
-        <button class="btn-submit" onclick="checkAnswer()">Submit</button>
+        <button class="btn-submit" id="submitAnswerBtn">Submit</button>
       </div>
     </div>
 
-    <!-- END SCREEN -->
+    <!-- 5. END SCREEN -->
     <div class="end-screen" id="endScreen">
       <div class="final-score" id="finalScoreDisplay">0</div>
       <div class="final-msg" id="finalMessage">Questions Answered Correctly!</div>
-      <button class="btn-start" style="background:var(--blue); box-shadow:0 6px 0 var(--blue-dark);" onclick="startGame()">Play Again</button>
+      <p id="newHighScoreAlert" style="color:var(--green); font-weight:700; margin-bottom:1rem; display:none;">🎉 NEW PERSONAL BEST! 🎉</p>
+      <button class="btn-start" style="background:var(--blue); box-shadow:0 6px 0 var(--blue-dark);" id="playAgainBtn">Play Again</button>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div class="leaderboard" id="leaderboardSection" style="display:none;">
+      <h3>🏆 Global Top 10 Sprints</h3>
+      <table class="leaderboard-table">
+        <thead><tr><th>Rank</th><th>Player</th><th>Score</th></tr></thead>
+        <tbody id="leaderboardBody"><tr><td colspan="3" style="text-align:center;">Loading...</td></tr></tbody>
+      </table>
     </div>
 
   </div>
-
-  <script>
-    let score = 0;
-    let timeLeft = 60;
-    let timerInterval = null;
-    let currentAnswer = 0;
-
-    // Listen for Enter key
-    document.getElementById('answerInput').addEventListener('keypress', function (e) {
-      if (e.key === 'Enter') {
-        checkAnswer();
-      }
-    });
-
-    function startGame() {
-      score = 0;
-      timeLeft = 60;
-      document.getElementById('scoreDisplay').innerText = score;
-      document.getElementById('timeDisplay').innerText = timeLeft;
-      
-      document.getElementById('startScreen').classList.remove('active');
-      document.getElementById('endScreen').classList.remove('active');
-      document.getElementById('gameArea').classList.add('active');
-      
-      generateQuestion();
-      document.getElementById('answerInput').focus();
-
-      timerInterval = setInterval(() => {
-        timeLeft--;
-        document.getElementById('timeDisplay').innerText = timeLeft;
-        if(timeLeft <= 0) {
-          endGame();
-        }
-      }, 1000);
-    }
-
-    function generateQuestion() {
-      const ops = ['+', '-', '*'];
-      const op = ops[Math.floor(Math.random() * ops.length)];
-      let num1, num2;
-
-      if(op === '+') {
-        num1 = Math.floor(Math.random() * 50) + 1;
-        num2 = Math.floor(Math.random() * 50) + 1;
-        currentAnswer = num1 + num2;
-      } else if (op === '-') {
-        num1 = Math.floor(Math.random() * 50) + 20;
-        num2 = Math.floor(Math.random() * num1); // ensure positive answer
-        currentAnswer = num1 - num2;
-      } else if (op === '*') {
-        num1 = Math.floor(Math.random() * 12) + 2;
-        num2 = Math.floor(Math.random() * 12) + 2;
-        currentAnswer = num1 * num2;
-      }
-
-      document.getElementById('questionDisplay').innerText = `${num1} ${op} ${num2} = ?`;
-      document.getElementById('answerInput').value = '';
-    }
-
-    function checkAnswer() {
-      const input = document.getElementById('answerInput');
-      const val = parseInt(input.value);
-
-      if (isNaN(val)) return;
-
-      if (val === currentAnswer) {
-        score++;
-        document.getElementById('scoreDisplay').innerText = score;
-        input.classList.remove('error');
-        generateQuestion();
-      } else {
-        input.classList.remove('error');
-        void input.offsetWidth; // trigger reflow to restart animation
-        input.classList.add('error');
-        input.value = '';
-      }
-      input.focus();
-    }
-
-    function endGame() {
-      clearInterval(timerInterval);
-      document.getElementById('gameArea').classList.remove('active');
-      
-      document.getElementById('finalScoreDisplay').innerText = score;
-      
-      let msg = "Questions Answered Correctly!";
-      if (score > 30) msg = "Incredible! You're a human calculator! 🚀";
-      else if (score > 15) msg = "Great job! Your mental math is solid! ⭐";
-      else msg = "Good effort! Keep practicing to get faster. 🧠";
-      
-      document.getElementById('finalMessage').innerText = msg;
-      document.getElementById('endScreen').classList.add('active');
-    }
-  </script>
-
-  <!-- TOP AD UNIT -->
-  <div class="ad-unit">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-  </div>
-
-  <!-- SEO CONTENT (>500 WORDS) -->
+  <div class="ad-unit"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
   <article class="seo-content">
-    <h2>Gamifying Mathematics: Why Mental Math Speed is Your Secret Weapon</h2>
-    <p>Mathematics is often perceived by students as a slow, deliberate, and sometimes tedious process of writing out long equations on paper. While deep, methodological problem-solving is crucial for understanding advanced concepts like calculus and trigonometry, the foundation of all mathematics is basic arithmetic. The speed at which you can add, subtract, and multiply numbers in your head acts as the processing speed (or CPU) of your mathematical brain. The MathHub Pro Sprint Game is designed specifically to train this exact cognitive muscle, transforming mental math practice from a boring chore into an adrenaline-pumping, 60-second challenge.</p>
-    
-    <h3>The Importance of Calculation Speed in Competitive Exams</h3>
-    <p>In the Indian education ecosystem, examinations are essentially races against the clock. Whether you are sitting for your CBSE Class 10 Board Exams, the highly competitive Joint Entrance Examination (JEE), or national level Math Olympiads, time management is the single biggest deciding factor between an average score and an elite rank. An exam like the JEE Main contains complex physics and chemistry numericals that require extensive calculation. If a student has to stop and manually calculate "12 × 8" or "74 - 29" on the rough sheet, they are bleeding precious seconds.</p>
-    <p>By repeatedly playing the MathHub Pro Sprint Game, students can internalize these basic arithmetic operations. When you force your brain to recall an answer within a single second under the pressure of a ticking timer, you are building robust neural pathways. Eventually, these calculations bypass conscious thought and become automatic reflexes. A student who has mastered their basic mental math can shave off up to 15-20 minutes of sheer calculation time across a standard three-hour examination—time that can be reallocated to solving the most difficult, high-value questions on the paper.</p>
-
-    <!-- MIDDLE AD UNIT -->
-    <div class="ad-unit" style="margin: 2rem 0; padding:0; background:transparent; border:none;">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-    </div>
-
-    <h3>Overcoming "Math Anxiety" Through Play</h3>
-    <p>A significant percentage of students suffer from "math anxiety"—a genuine psychological block that causes panic when presented with numbers. This anxiety is usually rooted in the fear of making a mistake in a high-pressure academic environment. Gamification is one of the most effective psychological tools to combat this fear. By framing mathematical problems as a game, the stakes are instantly lowered. In the MathHub Pro Sprint Game, getting a question wrong does not result in a bad grade or a teacher's reprimand; it simply turns the input box red and encourages you to try again instantly.</p>
-    <p>This positive feedback loop encourages students to embrace mistakes as part of the rapid learning process. The dopamine hit that occurs when the score counter ticks upward provides instant gratification, encouraging students to play "just one more round" to beat their high score. This incidental learning is incredibly powerful.</p>
-
-    <h3>How the Game Engine Works</h3>
-    <p>The MathHub Pro Sprint Game is powered by a lightweight JavaScript engine that algorithmically generates unique questions every single time you play, ensuring that no two rounds are ever exactly the same. The engine intelligently scales the difficulty; for instance, subtraction problems are programmed to never result in negative numbers, and multiplication problems are locked within the 12x12 times tables to keep the game fast and fluid. To maximize your score, we highly recommend keeping your hands on your keyboard—read the screen, type your answer, and smash the 'Enter' key to submit it instantly. Start your 60-second sprint today and see if you have what it takes to break the 30-point barrier!</p>
+    <h2>Gamifying Mathematics: Why Mental Math Speed is Your Secret Weapon</h2><p>Mathematics is often perceived by students as a slow, deliberate, and sometimes tedious process of writing out long equations on paper. While deep, methodological problem-solving is crucial for understanding advanced concepts like calculus and trigonometry, the foundation of all mathematics is basic arithmetic. The speed at which you can add, subtract, multiply, and calculate squares and square roots in your head acts as the processing speed (or CPU) of your mathematical brain. The MathHub Pro Sprint Game is designed specifically to train this exact cognitive muscle, transforming mental math practice from a boring chore into an adrenaline-pumping, 60-second challenge with a real-time global leaderboard.</p>
+    <h3>The Importance of Calculation Speed in Competitive Exams</h3><p>In the Indian education ecosystem, examinations are essentially races against the clock. Whether you are sitting for your CBSE Class 10 Board Exams, the highly competitive Joint Entrance Examination (JEE), or national level Math Olympiads, time management is the single biggest deciding factor between an average score and an elite rank. An exam like the JEE Main contains complex physics and chemistry numericals that require extensive calculation. If a student has to stop and manually calculate "12 × 8", "16²", or "√225" on the rough sheet, they are bleeding precious seconds.</p><p>By repeatedly playing the MathHub Pro Sprint Game, students can internalize these basic arithmetic operations and perfect squares up to 20. When you force your brain to recall an answer within a single second under the pressure of a ticking timer, you are building robust neural pathways. Eventually, these calculations bypass conscious thought and become automatic reflexes. A student who has mastered their basic mental math can shave off up to 15-20 minutes of sheer calculation time across a standard three-hour examination—time that can be reallocated to solving the most difficult, high-value questions on the paper.</p>
+    <h3>Overcoming "Math Anxiety" Through Play and Competition</h3><p>A significant percentage of students suffer from "math anxiety"—a genuine psychological block that causes panic when presented with numbers. This anxiety is usually rooted in the fear of making a mistake in a high-pressure academic environment. Gamification is one of the most effective psychological tools to combat this fear. By framing mathematical problems as a game and letting users create custom gamer tags, the stakes are instantly lowered. In the MathHub Pro Sprint Game, getting a question wrong does not result in a bad grade or a teacher's reprimand; it simply turns the input box red and encourages you to try again instantly.</p>
   </article>
-
-  <!-- BOTTOM AD UNIT -->
-  <div class="ad-unit">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9069263337314949" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-  </div>
-
 </div>
 
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3 style="color:#fff;font-size:1.2rem;margin-bottom:1rem;font-family:'Poppins'">MathHub Pro</h3>
-      <p style="font-size:0.85rem;line-height:1.6;">India's most comprehensive free mathematics platform. Built with love in Mancherial, Telangana.</p>
-    </div>
-    <div>
-      <h4 style="color:#fff;margin-bottom:1rem;">Tools</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
-        <li><a href="game.html">Math Sprint Game</a></li>
-        <li><a href="solver.html">AI Math Solver</a></li>
-        <li><a href="timetable.html">Study Timer</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 style="color:#fff;margin-bottom:1rem;">Resources</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
-        <li><a href="ncert.html">NCERT Hub</a></li>
-        <li><a href="pyq.html">PYQ Papers</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 MathHub Pro | All Rights Reserved.</p>
-    <div>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms & Conditions</a>
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="dmca.html">DMCA Policy</a>
-      <a href="contact.html">Contact Us</a>
-    </div>
-  </div>
-</footer>
+<!-- ⚠️ FIREBASE & GAME LOGIC INTEGRATION ⚠️ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+  import { getFirestore, doc, getDoc, setDoc, updateDoc, collection, query, orderBy, limit, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+  // ⚠️ PASTE YOUR EXACT FIREBASE CONFIG OBJECT HERE ⚠️
+  const firebaseConfig = {
+    apiKey: "AIzaSyCPm8-ZNZQcMTAql6m8VVlB3WHgdHzdGv8",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const provider = new GoogleAuthProvider();
+
+  let currentUser = null; let userDisplayName = ""; let userHighScore = 0;
+  let score = 0; let timeLeft = 60; let timerInterval = null; let currentAnswer = 0;
+
+  const screens = ['authScreen', 'nameScreen', 'startScreen', 'gameArea', 'endScreen'];
+  function showScreen(id) { screens.forEach(s => document.getElementById(s).classList.remove('active')); document.getElementById(id).classList.add('active'); }
+
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      currentUser = user;
+      document.getElementById('gameHeader').style.display = 'flex';
+      document.getElementById('leaderboardSection').style.display = 'block';
+      const docSnap = await getDoc(doc(db, "leaderboard", user.uid));
+      if (docSnap.exists()) {
+        userDisplayName = docSnap.data().displayName; userHighScore = docSnap.data().highScore || 0;
+        document.getElementById('userProfileDisplay').innerHTML = `👤 ${userDisplayName} <button class="btn-logout" id="logoutBtn">Logout</button>`;
+        document.getElementById('logoutBtn').onclick = () => signOut(auth);
+        document.getElementById('welcomeName').innerText = userDisplayName;
+        document.getElementById('highScoreText').innerText = `Your High Score: ${userHighScore}`;
+        showScreen('startScreen');
+      } else { showScreen('nameScreen'); }
+    } else {
+      currentUser = null; document.getElementById('gameHeader').style.display = 'none'; showScreen('authScreen');
+    }
+    loadLeaderboard();
+  });
+
+  document.getElementById('loginBtn').onclick = () => signInWithPopup(auth, provider);
+  
+  document.getElementById('saveNameBtn').onclick = async () => {
+    const name = document.getElementById('nameInput').value.trim();
+    if (!name) return alert("Please enter a name!");
+    await setDoc(doc(db, "leaderboard", currentUser.uid), { displayName: name, highScore: 0, uid: currentUser.uid });
+    userDisplayName = name; userHighScore = 0;
+    document.getElementById('userProfileDisplay').innerHTML = `👤 ${userDisplayName} <button class="btn-logout" id="logoutBtn">Logout</button>`;
+    document.getElementById('logoutBtn').onclick = () => signOut(auth);
+    document.getElementById('welcomeName').innerText = userDisplayName;
+    showScreen('startScreen');
+  };
+
+  async function loadLeaderboard() {
+    const q = query(collection(db, "leaderboard"), orderBy("highScore", "desc"), limit(10));
+    const querySnapshot = await getDocs(q);
+    let html = ''; let rank = 1;
+    querySnapshot.forEach((doc) => {
+      let icon = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `#${rank}`;
+      html += `<tr><td>${icon}</td><td><strong>${doc.data().displayName}</strong></td><td>${doc.data().highScore}</td></tr>`;
+      rank++;
+    });
+    document.getElementById('leaderboardBody').innerHTML = html || '<tr><td colspan="3">No scores yet!</td></tr>';
+  }
+
+  // --- GAME LOGIC (WITH SQUARES & ROOTS) ---
+  document.getElementById('startBtn').onclick = startGame;
+  document.getElementById('playAgainBtn').onclick = startGame;
+  document.getElementById('submitAnswerBtn').onclick = checkAnswer;
+  document.getElementById('answerInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') checkAnswer(); });
+
+  function startGame() {
+    score = 0; timeLeft = 60;
+    document.getElementById('scoreDisplay').innerText = score; document.getElementById('timeDisplay').innerText = timeLeft;
+    document.getElementById('newHighScoreAlert').style.display = 'none';
+    showScreen('gameArea'); generateQuestion(); document.getElementById('answerInput').focus();
+    timerInterval = setInterval(() => { timeLeft--; document.getElementById('timeDisplay').innerText = timeLeft; if (timeLeft <= 0) endGame(); }, 1000);
+  }
+
+  function generateQuestion() {
+    const ops = ['+', '-', '*', '/', 'sq', 'sqrt'];
+    const op = ops[Math.floor(Math.random() * ops.length)];
+    let n1, n2, display;
+    if (op === '+') { n1 = Math.floor(Math.random()*50)+1; n2 = Math.floor(Math.random()*50)+1; currentAnswer = n1+n2; display = `${n1} + ${n2} = ?`; }
+    else if (op === '-') { n1 = Math.floor(Math.random()*50)+20; n2 = Math.floor(Math.random()*n1); currentAnswer = n1-n2; display = `${n1} - ${n2} = ?`; }
+    else if (op === '*') { n1 = Math.floor(Math.random()*12)+2; n2 = Math.floor(Math.random()*12)+2; currentAnswer = n1*n2; display = `${n1} × ${n2} = ?`; }
+    else if (op === '/') { n2 = Math.floor(Math.random()*11)+2; currentAnswer = Math.floor(Math.random()*11)+2; n1 = n2*currentAnswer; display = `${n1} ÷ ${n2} = ?`; }
+    else if (op === 'sq') { n1 = Math.floor(Math.random()*20)+1; currentAnswer = n1*n1; display = `${n1}² = ?`; }
+    else if (op === 'sqrt') { currentAnswer = Math.floor(Math.random()*20)+1; n1 = currentAnswer*currentAnswer; display = `√${n1} = ?`; }
+    
+    document.getElementById('questionDisplay').innerText = display;
+    document.getElementById('answerInput').value = '';
+  }
+
+  function checkAnswer() {
+    const input = document.getElementById('answerInput'); const val = parseInt(input.value);
+    if (isNaN(val)) return;
+    if (val === currentAnswer) { score++; document.getElementById('scoreDisplay').innerText = score; input.classList.remove('error'); generateQuestion(); } 
+    else { input.classList.remove('error'); void input.offsetWidth; input.classList.add('error'); input.value = ''; }
+    input.focus();
+  }
+
+  async function endGame() {
+    clearInterval(timerInterval);
+    document.getElementById('finalScoreDisplay').innerText = score;
+    let msg = score > 30 ? "Incredible! You're a human calculator! 🚀" : score > 15 ? "Great job! Solid mental math! ⭐" : "Keep practicing to get faster. 🧠";
+    document.getElementById('finalMessage').innerText = msg;
+    
+    if (score > userHighScore) {
+      userHighScore = score;
+      document.getElementById('newHighScoreAlert').style.display = 'block';
+      document.getElementById('highScoreText').innerText = `Your High Score: ${userHighScore}`;
+      await updateDoc(doc(db, "leaderboard", currentUser.uid), { highScore: score });
+      loadLeaderboard();
+    }
+    showScreen('endScreen');
+  }
+</script>
 </body>
 </html>
+
