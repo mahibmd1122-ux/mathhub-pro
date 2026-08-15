@@ -56,32 +56,39 @@ a{text-decoration:none;color:inherit}
 
 .game-btn { background:var(--blue); color:var(--white); border:none; padding:1rem 2rem; border-radius:12px; font-size:1.1rem; font-weight:700; cursor:pointer; transition:0.2s; display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; width:100%; max-width: 300px;}
 .game-btn:hover { background:var(--blue-dark); transform:translateY(-2px); box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3); }
-.game-btn:disabled { background: var(--gray-400); cursor: not-allowed; transform: none; box-shadow: none; }
 
-/* SCREENS */
-#login-warning, #username-screen, #start-screen, #game-screen, #end-screen { display: none; }
-
-#login-warning { padding: 2rem; }
+/* AUTH WARNING SCREEN */
+#login-warning { display: block; padding: 2rem; }
 #login-warning h2 { color: var(--red); margin-bottom: 1rem; }
 #login-warning p { color: var(--gray-600); margin-bottom: 2rem; }
 
-/* USERNAME SCREEN */
-.name-input { padding: 1rem; border: 2px solid var(--gray-300); border-radius: 12px; font-size: 1.1rem; font-family: 'Inter', sans-serif; width: 100%; max-width: 300px; outline: none; transition: 0.2s; margin-bottom: 0.5rem; text-align: center; font-weight: 600;}
+/* START SCREEN */
+#start-screen { display: none; }
+.name-input { padding: 1rem; border: 2px solid var(--gray-300); border-radius: 12px; font-size: 1.1rem; font-family: 'Inter', sans-serif; width: 100%; max-width: 300px; outline: none; transition: 0.2s; margin-bottom: 1.5rem; text-align: center; font-weight: 600;}
 .name-input:focus { border-color: var(--blue); box-shadow: 0 0 0 4px var(--blue-light); }
-.error-text { color: var(--red); font-size: 0.9rem; margin-bottom: 1.5rem; display: block; font-weight: 500; }
 
 /* GAME PLAY SCREEN */
+#game-screen { display: none; }
 .stats-bar { display:flex; justify-content:space-between; align-items:center; background:var(--gray-100); padding:1rem 1.5rem; border-radius:12px; margin-bottom: 2rem; font-family:'JetBrains Mono', monospace; font-size:1.2rem; font-weight:700; color:var(--gray-800); border: 2px solid var(--gray-200);}
 .time-left { color: var(--orange); }
 .score-box { color: var(--blue); }
-.question-display { font-size: 3.5rem; font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--gray-900); margin: 2rem 0; letter-spacing: 2px;}
+.question-display { font-size: 3.5rem; font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--gray-900); margin: 1.5rem 0; letter-spacing: 2px;}
 
-.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-.option-btn { background: var(--white); border: 3px solid var(--gray-200); padding: 1.5rem; font-size: 1.8rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; border-radius: 16px; cursor: pointer; transition: 0.15s; color: var(--gray-800); }
-.option-btn:hover { border-color: var(--blue); background: var(--blue-light); color: var(--blue-dark); transform: scale(1.02); }
-.option-btn:active { transform: scale(0.95); }
+/* TYPING ANSWER SECTION */
+.answer-section { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.answer-input { background: var(--gray-50); border: 3px solid var(--gray-300); padding: 1rem; font-size: 2.5rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; border-radius: 16px; width: 100%; max-width: 250px; text-align: center; outline: none; transition: 0.2s; color: var(--blue-dark); box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
+.answer-input:focus { border-color: var(--blue); background: var(--white); box-shadow: 0 0 0 4px var(--blue-light); }
+.answer-input.wrong { border-color: var(--red); background: var(--red-light); color: var(--red); }
+.answer-input.correct { border-color: var(--green); background: var(--green-light); color: var(--green); }
+
+.controls-row { display: flex; gap: 1rem; justify-content: center; width: 100%; max-width: 400px; margin: 0 auto;}
+.submit-btn { background: var(--green); color: var(--white); border: none; padding: 1rem 2rem; border-radius: 12px; font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: 0.2s; flex-grow: 2;}
+.submit-btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+.skip-btn { background: var(--gray-200); color: var(--gray-700); border: none; padding: 1rem 1.5rem; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: 0.2s; flex-grow: 1;}
+.skip-btn:hover { background: var(--gray-300); color: var(--red); }
 
 /* GAME OVER SCREEN */
+#end-screen { display: none; }
 .final-score-circle { width: 150px; height: 150px; border-radius: 50%; background: var(--blue-light); border: 5px solid var(--blue); display: flex; align-items: center; justify-content: center; font-size: 3rem; font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--blue-dark); margin: 0 auto 1.5rem; }
 
 /* LEADERBOARD UI */
@@ -90,8 +97,8 @@ a{text-decoration:none;color:inherit}
 .leaderboard-list { list-style: none; padding: 0; margin: 0; }
 .leaderboard-item { display: flex; justify-content: space-between; padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200); font-weight: 600; align-items: center; }
 .leaderboard-item:last-child { border-bottom: none; }
-.leaderboard-rank { color: var(--gray-500); width: 30px; font-size: 0.9rem; }
-.leaderboard-name { color: var(--gray-800); flex-grow: 1; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; }
+.leaderboard-rank { color: var(--gray-500); width: 30px; font-size: 0.9rem; font-weight: 800;}
+.leaderboard-name { color: var(--gray-800); flex-grow: 1; text-transform: capitalize; }
 .leaderboard-score { color: var(--blue); font-family: 'JetBrains Mono', monospace; font-weight: 700; background: var(--blue-light); padding: 0.2rem 0.6rem; border-radius: 6px; }
 
 .ai-spinner { width: 30px; height: 30px; border: 3px solid var(--gray-200); border-top: 3px solid var(--blue); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto; }
@@ -123,7 +130,7 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
 .footer-bottom-links a:hover{color:var(--white)}
 
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
-@media(max-width:768px){.nav-links{display:none;} .seo-content{padding:1.5rem;} .footer-grid{grid-template-columns:1fr} .footer-bottom{flex-direction:column;align-items:flex-start} .question-display{font-size: 2.8rem;} .option-btn{padding: 1rem; font-size: 1.4rem;} }
+@media(max-width:768px){.nav-links{display:none;} .seo-content{padding:1.5rem;} .footer-grid{grid-template-columns:1fr} .footer-bottom{flex-direction:column;align-items:flex-start} .question-display{font-size: 2.8rem;} .answer-input{padding: 0.8rem; font-size: 2rem;} }
 </style>
 </head>
 <body>
@@ -157,28 +164,19 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       <a href="auth.html" class="game-btn"><i class="fas fa-sign-in-alt"></i> Go to Sign In Page</a>
     </div>
 
-    <!-- NEW USER REGISTRATION SCREEN (Unique Username) -->
-    <div id="username-screen">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">@</div>
-      <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Claim Your Username</h3>
-      <p style="color: var(--gray-500); margin-bottom: 1.5rem;">Pick a unique username. This is how you will appear on the global leaderboard. Letters, numbers, hyphens (-), and underscores (_) only.</p>
-      
-      <input type="text" id="newUsername" class="name-input" placeholder="e.g. math_wizard-99" maxlength="15" autocomplete="off" />
-      <span id="usernameError" class="error-text"></span>
-      <br>
-      <button id="registerBtn" class="game-btn" onclick="registerUsername()"><i class="fas fa-check"></i> Claim Username</button>
-    </div>
-
     <!-- START SCREEN -->
     <div id="start-screen">
       <div style="font-size: 4rem; margin-bottom: 1rem;">🧠⚡</div>
-      <h3 id="welcomeMessage" style="font-size: 1.6rem; margin-bottom: 0.5rem; color: var(--blue-dark);">Welcome Back!</h3>
-      <p style="color: var(--gray-500); margin-bottom: 1.5rem;">You have exactly 60 seconds to answer as many questions as possible. Your score will automatically update your personal High Score!</p>
+      <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Speed Math Challenge</h3>
+      <p style="color: var(--gray-500); margin-bottom: 1.5rem;">You have 60 seconds. Type the answer and hit Submit. +10 points for correct answers, -5 points for mistakes or skips. Are you ready?</p>
       
+      <!-- Player Name Input (Required before playing) -->
+      <input type="text" id="playerNameInput" class="name-input" placeholder="Enter your player name..." maxlength="15" autocomplete="off" />
+      <br>
       <button class="game-btn" onclick="startGame()"><i class="fas fa-play"></i> Start Challenge</button>
       
       <div class="leaderboard-container">
-        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Global Top 5</div>
+        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Global Top 10</div>
         <ul class="leaderboard-list" id="startLeaderboardList">
           <div class="ai-spinner"></div>
         </ul>
@@ -194,11 +192,14 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       
       <div class="question-display" id="questionDisplay">3 + 5</div>
       
-      <div class="options-grid" id="optionsGrid">
-        <button class="option-btn" onclick="checkAnswer(this)">8</button>
-        <button class="option-btn" onclick="checkAnswer(this)">12</button>
-        <button class="option-btn" onclick="checkAnswer(this)">6</button>
-        <button class="option-btn" onclick="checkAnswer(this)">15</button>
+      <div class="answer-section">
+        <!-- Using type="number" brings up the numeric keypad on iPad/Mobile -->
+        <input type="number" id="answerInput" class="answer-input" placeholder="?" autocomplete="off" pattern="\d*" />
+        
+        <div class="controls-row">
+          <button class="skip-btn" onclick="skipQuestion()">Skip (-5)</button>
+          <button class="submit-btn" onclick="checkAnswer()">Submit <i class="fas fa-check"></i></button>
+        </div>
       </div>
     </div>
 
@@ -210,12 +211,12 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       <div class="final-score-circle" id="finalScoreDisplay">0</div>
       
       <h4 id="performanceMessage" style="margin-bottom: 0.5rem; color: var(--orange);">Great effort!</h4>
-      <p id="saveStatus" style="color: var(--gray-500); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 600;">Processing score...</p>
+      <p id="saveStatus" style="color: var(--gray-500); font-size: 0.9rem; margin-bottom: 2rem;">Saving score...</p>
       
       <button class="game-btn" onclick="resetToStart()" style="margin-bottom: 2rem; background: var(--gray-800);"><i class="fas fa-redo"></i> Play Again</button>
 
       <div class="leaderboard-container">
-        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Live Leaderboard</div>
+        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Live Leaderboard (Top 10)</div>
         <ul class="leaderboard-list" id="endLeaderboardList">
           <div class="ai-spinner"></div>
         </ul>
@@ -246,285 +247,244 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
     let timeLeft = 60;
     let timerInterval;
     let correctAnswer = 0;
-    
-    // USER VARIABLES
     let currentUser = null;
-    let activePlayerName = "";
-    let userHighScore = 0;
+    let activePlayerName = "Anonymous";
 
-    const ui = {
-      loginWarning: document.getElementById('login-warning'),
-      usernameScreen: document.getElementById('username-screen'),
-      startScreen: document.getElementById('start-screen'),
-      gameScreen: document.getElementById('game-screen'),
-      endScreen: document.getElementById('end-screen'),
-      timeDisplay: document.getElementById('timeDisplay'),
-      scoreDisplay: document.getElementById('scoreDisplay'),
-      questionDisplay: document.getElementById('questionDisplay'),
-      finalScoreDisplay: document.getElementById('finalScoreDisplay'),
-      performanceMessage: document.getElementById('performanceMessage'),
-      saveStatus: document.getElementById('saveStatus'),
-      optionsButtons: document.querySelectorAll('.option-btn')
-    };
+    const loginWarning = document.getElementById('login-warning');
+    const startScreen = document.getElementById('start-screen');
+    const gameScreen = document.getElementById('game-screen');
+    const endScreen = document.getElementById('end-screen');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const questionDisplay = document.getElementById('questionDisplay');
+    const answerInput = document.getElementById('answerInput');
+    const finalScoreDisplay = document.getElementById('finalScoreDisplay');
+    const performanceMessage = document.getElementById('performanceMessage');
+    const saveStatus = document.getElementById('saveStatus');
+    const nameInput = document.getElementById('playerNameInput');
 
-    // AUTHENTICATION STATE OBSERVER
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        currentUser = user;
-        ui.loginWarning.style.display = 'none';
-        checkUserExists(); // Check if they already have a username
-      } else {
-        ui.loginWarning.style.display = 'block';
-        ui.startScreen.style.display = 'none';
-        ui.usernameScreen.style.display = 'none';
+    // Submit answer when user presses "Enter" on keyboard
+    answerInput.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        checkAnswer();
       }
     });
 
-    // 1. CHECK IF NEW USER
-    function checkUserExists() {
-      db.collection('users').doc(currentUser.uid).get().then(doc => {
-        if (doc.exists) {
-          // Returning User
-          activePlayerName = doc.data().username;
-          userHighScore = doc.data().highScore || 0;
-          showStartScreen();
-        } else {
-          // Brand New User
-          ui.usernameScreen.style.display = 'block';
-        }
-      }).catch(error => {
-        console.error("Error fetching user data:", error);
-      });
-    }
+    // AUTHENTICATION CHECK
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        currentUser = user;
+        loginWarning.style.display = 'none';
+        startScreen.style.display = 'block';
+        
+        if(user.displayName) nameInput.value = user.displayName;
+        fetchLeaderboard();
+      } else {
+        loginWarning.style.display = 'block';
+        startScreen.style.display = 'none';
+      }
+    });
 
-    // 2. REGISTER UNIQUE USERNAME
-    async function registerUsername() {
-      const input = document.getElementById('newUsername').value.trim();
-      const errorMsg = document.getElementById('usernameError');
-      const btn = document.getElementById('registerBtn');
-      
-      // Validation: 3-15 chars, alphanumeric, hyphens, underscores
-      const regex = /^[a-zA-Z0-9_-]{3,15}$/;
-      if (!regex.test(input)) {
-        errorMsg.innerText = "Must be 3-15 characters. Letters, numbers, '-', and '_' only.";
+    function startGame() {
+      if(nameInput.value.trim() === '') {
+        alert("Please enter a player name before starting the challenge!");
+        nameInput.focus();
         return;
       }
+      activePlayerName = nameInput.value.trim();
 
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Checking...';
-
-      try {
-        // Check if username is already taken (case-insensitive check)
-        const snapshot = await db.collection('users').where('username_lower', '==', input.toLowerCase()).get();
-        
-        if (!snapshot.empty) {
-          errorMsg.innerText = "This username is already taken. Try another!";
-          btn.disabled = false;
-          btn.innerHTML = '<i class="fas fa-check"></i> Claim Username';
-          return;
-        }
-
-        // Username is available! Save to their unique document.
-        await db.collection('users').doc(currentUser.uid).set({
-          username: input,
-          username_lower: input.toLowerCase(),
-          highScore: 0, // Default starting score
-          createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        });
-
-        // Set local variables and move to start screen
-        activePlayerName = input;
-        userHighScore = 0;
-        ui.usernameScreen.style.display = 'none';
-        showStartScreen();
-
-      } catch (error) {
-        errorMsg.innerText = "Error connecting to database. Try again.";
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-check"></i> Claim Username';
-      }
-    }
-
-    function showStartScreen() {
-      document.getElementById('welcomeMessage').innerText = `Welcome, @${activePlayerName}!`;
-      ui.startScreen.style.display = 'block';
-      fetchLeaderboard();
-    }
-
-    // --- CORE GAMEPLAY LOGIC ---
-    function startGame() {
       score = 0;
       timeLeft = 60;
-      ui.scoreDisplay.innerText = score;
-      ui.timeDisplay.innerText = timeLeft;
+      scoreDisplay.innerText = score;
+      timeDisplay.innerText = timeLeft;
       
-      ui.startScreen.style.display = 'none';
-      ui.endScreen.style.display = 'none';
-      ui.gameScreen.style.display = 'block';
+      startScreen.style.display = 'none';
+      endScreen.style.display = 'none';
+      gameScreen.style.display = 'block';
 
       generateQuestion();
       
       timerInterval = setInterval(() => {
         timeLeft--;
-        ui.timeDisplay.innerText = timeLeft;
+        timeDisplay.innerText = timeLeft;
         if(timeLeft <= 0) endGame();
       }, 1000);
     }
 
+    // PROGRESSIVE DIFFICULTY GENERATOR
     function generateQuestion() {
-      let maxNum = score > 100 ? 50 : 20; 
-      let num1 = Math.floor(Math.random() * maxNum) + 1;
-      let num2 = Math.floor(Math.random() * maxNum) + 1;
-      const operators = ['+', '-', '*'];
-      
-      let opIndex = Math.floor(Math.random() * (score > 50 ? 3 : 2)); 
-      let op = operators[opIndex];
+      answerInput.value = '';
+      answerInput.classList.remove('wrong', 'correct');
+      answerInput.focus();
 
-      if (op === '-' && num1 < num2) {
-        let temp = num1; num1 = num2; num2 = temp;
+      let opIndex, num1, num2;
+      const operators = ['+', '-', '×', '÷', '√'];
+      let op;
+
+      // LEVEL 1: Easy Mode (0 to 40 Points)
+      if (score < 50) {
+        opIndex = Math.floor(Math.random() * 2); // Only + and -
+        op = operators[opIndex];
+        num1 = Math.floor(Math.random() * 20) + 1;
+        num2 = Math.floor(Math.random() * 20) + 1;
+      } 
+      // LEVEL 2: Medium Mode (50 to 120 Points)
+      else if (score < 120) {
+        opIndex = Math.floor(Math.random() * 5); // All operations
+        op = operators[opIndex];
+        num1 = Math.floor(Math.random() * 50) + 10;
+        num2 = Math.floor(Math.random() * 30) + 1;
+      } 
+      // LEVEL 3: Hard Mode (120+ Points)
+      else {
+        opIndex = Math.floor(Math.random() * 5); // All operations, harder numbers
+        op = operators[opIndex];
+        num1 = Math.floor(Math.random() * 100) + 20;
+        num2 = Math.floor(Math.random() * 50) + 10;
       }
 
-      let displayOp = op === '*' ? '×' : op;
-      ui.questionDisplay.innerText = `${num1} ${displayOp} ${num2}`;
-
-      if (op === '+') correctAnswer = num1 + num2;
-      if (op === '-') correctAnswer = num1 - num2;
-      if (op === '*') correctAnswer = num1 * num2;
-
-      generateOptions(correctAnswer);
-    }
-
-    function generateOptions(correct) {
-      let options = [correct];
-      while(options.length < 4) {
-        let offset = Math.floor(Math.random() * 15) - 7;
-        if(offset === 0) offset = 2; 
-        let fakeAnswer = correct + offset;
-        if(fakeAnswer >= 0 && !options.includes(fakeAnswer)) {
-          options.push(fakeAnswer);
-        }
+      // FORMAT AND CALCULATE BASED ON OPERATION
+      if (op === '+') {
+        correctAnswer = num1 + num2;
+        questionDisplay.innerText = `${num1} + ${num2}`;
+      } 
+      else if (op === '-') {
+        if (num1 < num2) [num1, num2] = [num2, num1]; // Swap to prevent negative answers
+        correctAnswer = num1 - num2;
+        questionDisplay.innerText = `${num1} - ${num2}`;
+      } 
+      else if (op === '×') {
+        let m1 = score < 120 ? Math.floor(Math.random() * 10) + 2 : Math.floor(Math.random() * 15) + 5;
+        let m2 = score < 120 ? Math.floor(Math.random() * 10) + 2 : Math.floor(Math.random() * 12) + 2;
+        correctAnswer = m1 * m2;
+        questionDisplay.innerText = `${m1} × ${m2}`;
+      } 
+      else if (op === '÷') {
+        // Ensure perfect division
+        let divisor = score < 120 ? Math.floor(Math.random() * 10) + 2 : Math.floor(Math.random() * 15) + 2;
+        let quotient = score < 120 ? Math.floor(Math.random() * 12) + 2 : Math.floor(Math.random() * 20) + 2;
+        let dividend = divisor * quotient;
+        correctAnswer = quotient;
+        questionDisplay.innerText = `${dividend} ÷ ${divisor}`;
+      } 
+      else if (op === '√') {
+        // Ensure perfect squares
+        let root = score < 120 ? Math.floor(Math.random() * 12) + 2 : Math.floor(Math.random() * 20) + 2;
+        let square = root * root;
+        correctAnswer = root;
+        questionDisplay.innerText = `√${square}`;
       }
-
-      options.sort(() => Math.random() - 0.5);
-
-      ui.optionsButtons.forEach((btn, index) => {
-        btn.innerText = options[index];
-        btn.style.backgroundColor = "var(--white)";
-        btn.style.color = "var(--gray-800)";
-        btn.style.borderColor = "var(--gray-200)";
-      });
     }
 
-    function checkAnswer(btnElement) {
-      let selectedAnswer = parseInt(btnElement.innerText);
-      
-      if (selectedAnswer === correctAnswer) {
+    function checkAnswer() {
+      let userInput = answerInput.value.trim();
+      if(userInput === "") return; // Do nothing if empty
+
+      if (parseInt(userInput) === correctAnswer) {
         score += 10;
-        btnElement.style.backgroundColor = "var(--green-light)";
-        btnElement.style.borderColor = "var(--green)";
-        btnElement.style.color = "var(--green)";
+        scoreDisplay.innerText = score;
+        answerInput.classList.add('correct');
+        setTimeout(() => { if(timeLeft > 0) generateQuestion(); }, 250);
       } else {
         score -= 5;
-        btnElement.style.backgroundColor = "var(--red-light)";
-        btnElement.style.borderColor = "var(--red)";
-        btnElement.style.color = "var(--red)";
-        
-        ui.optionsButtons.forEach(btn => {
-          if(parseInt(btn.innerText) === correctAnswer) {
-            btn.style.borderColor = "var(--green)";
-          }
-        });
+        scoreDisplay.innerText = score;
+        answerInput.classList.add('wrong');
+        setTimeout(() => { 
+          answerInput.classList.remove('wrong'); 
+          answerInput.value = '';
+          answerInput.focus();
+        }, 400); // Clears it out so they can try again
       }
-      
-      ui.scoreDisplay.innerText = score;
-      setTimeout(() => { if(timeLeft > 0) generateQuestion(); }, 300);
+    }
+
+    function skipQuestion() {
+      score -= 5;
+      scoreDisplay.innerText = score;
+      generateQuestion();
     }
 
     function endGame() {
       clearInterval(timerInterval);
-      ui.gameScreen.style.display = 'none';
-      ui.endScreen.style.display = 'block';
-      ui.finalScoreDisplay.innerText = score;
+      gameScreen.style.display = 'none';
+      endScreen.style.display = 'block';
+      finalScoreDisplay.innerText = score;
 
       if(score <= 0) {
-        ui.performanceMessage.innerText = "Keep practicing!";
-        ui.performanceMessage.style.color = "var(--gray-600)";
-        ui.saveStatus.innerHTML = `Your High Score is: <strong>${userHighScore}</strong>`;
-        fetchLeaderboard();
+        performanceMessage.innerText = "Keep practicing!";
+        performanceMessage.style.color = "var(--gray-600)";
+        saveStatus.innerText = "Score too low to save.";
+      } else if (score < 100) {
+        performanceMessage.innerText = "Good effort!";
+        performanceMessage.style.color = "var(--blue)";
+        autoSaveScore();
       } else {
-        processHighScore();
+        performanceMessage.innerText = "Math Genius! 🏆";
+        performanceMessage.style.color = "var(--green)";
+        autoSaveScore();
       }
+      
+      fetchLeaderboard();
     }
 
-    // 3. HIGH SCORE LOGIC
-    function processHighScore() {
-      ui.saveStatus.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Checking High Score...';
-      ui.saveStatus.style.color = "var(--gray-500)";
+    // AUTOMATIC FIREBASE SAVE
+    function autoSaveScore() {
+      saveStatus.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving to Leaderboard...';
+      saveStatus.style.color = "var(--gray-500)";
       
-      const userRef = db.collection("users").doc(currentUser.uid);
-
-      if (score > userHighScore) {
-        // NEW HIGH SCORE ACHIEVED! Update their specific document.
-        userRef.update({
-          highScore: score,
-          lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
-        }).then(() => {
-          userHighScore = score; // Update local variable
-          ui.performanceMessage.innerText = "New Personal Best! 🎉";
-          ui.performanceMessage.style.color = "var(--green)";
-          ui.saveStatus.innerHTML = '<i class="fas fa-arrow-up"></i> Leaderboard Updated!';
-          ui.saveStatus.style.color = "var(--blue)";
-          fetchLeaderboard();
-        }).catch(error => {
-          console.error("Error updating score:", error);
-          ui.saveStatus.innerHTML = "Database Error.";
-        });
-      } else {
-        // DID NOT BEAT HIGH SCORE
-        ui.performanceMessage.innerText = "Great effort!";
-        ui.performanceMessage.style.color = "var(--orange)";
-        ui.saveStatus.innerHTML = `Score saved locally. Your High Score remains <strong>${userHighScore}</strong>.`;
-        ui.saveStatus.style.color = "var(--gray-600)";
+      db.collection("leaderboard").add({
+        uid: currentUser.uid,
+        name: activePlayerName,
+        score: score,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      }).then(() => {
+        saveStatus.innerHTML = '<i class="fas fa-check-circle"></i> Score Saved Successfully!';
+        saveStatus.style.color = "var(--green)";
         fetchLeaderboard();
-      }
+      }).catch((error) => {
+        console.error("Error saving score: ", error);
+        saveStatus.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Database Error. Did you enable Firestore in Firebase?';
+        saveStatus.style.color = "var(--red)";
+      });
     }
 
     function resetToStart() {
-      ui.endScreen.style.display = 'none';
-      ui.startScreen.style.display = 'block';
+      endScreen.style.display = 'none';
+      startScreen.style.display = 'block';
     }
 
-    // 4. FETCH LEADERBOARD (Pulls unique users sorted by High Score)
+    // FETCH TOP 10
     function fetchLeaderboard() {
       const startList = document.getElementById('startLeaderboardList');
       const endList = document.getElementById('endLeaderboardList');
       
-      db.collection("users").orderBy("highScore", "desc").limit(5).get().then((querySnapshot) => {
+      db.collection("leaderboard").orderBy("score", "desc").limit(10).get().then((querySnapshot) => {
         let htmlContent = '';
         let rank = 1;
         
         querySnapshot.forEach((doc) => {
           const data = doc.data();
-          if (data.highScore > 0) { // Don't show 0 scores
-            let medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `#${rank}`;
-            
-            htmlContent += `
-              <li class="leaderboard-item">
-                <span class="leaderboard-rank">${medal}</span>
-                <span class="leaderboard-name">@${data.username}</span>
-                <span class="leaderboard-score">${data.highScore}</span>
-              </li>
-            `;
-            rank++;
-          }
+          let medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `#${rank}`;
+          
+          htmlContent += `
+            <li class="leaderboard-item">
+              <span class="leaderboard-rank">${medal}</span>
+              <span class="leaderboard-name">${data.name}</span>
+              <span class="leaderboard-score">${data.score}</span>
+            </li>
+          `;
+          rank++;
         });
         
-        if(htmlContent === '') htmlContent = '<li style="text-align:center; color:var(--gray-500); padding:1rem;">No high scores yet. Play to claim #1!</li>';
+        if(htmlContent === '') htmlContent = '<li style="text-align:center; color:var(--gray-500); padding:1rem;">No scores yet. Be the first to play!</li>';
         
         startList.innerHTML = htmlContent;
         if(endList) endList.innerHTML = htmlContent;
       }).catch((error) => {
-        console.error("Error getting leaderboard:", error);
+        console.error("Error getting leaderboard: ", error);
+        let errorMsg = '<li style="text-align:center; color:var(--red); padding:1rem; font-size:0.9rem;">Unable to load leaderboard. Please Create Firestore Database in Firebase Console.</li>';
+        startList.innerHTML = errorMsg;
+        if(endList) endList.innerHTML = errorMsg;
       });
     }
   </script>
