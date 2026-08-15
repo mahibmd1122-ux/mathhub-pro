@@ -97,7 +97,7 @@ a{text-decoration:none;color:inherit}
 .leaderboard-list { list-style: none; padding: 0; margin: 0; }
 .leaderboard-item { display: flex; justify-content: space-between; padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200); font-weight: 600; align-items: center; }
 .leaderboard-item:last-child { border-bottom: none; }
-.leaderboard-rank { color: var(--gray-500); width: 30px; font-size: 0.9rem; font-weight: 800;}
+.leaderboard-rank { color: var(--gray-500); width: 35px; font-size: 0.95rem; font-weight: 800;}
 .leaderboard-name { color: var(--gray-800); flex-grow: 1; text-transform: capitalize; }
 .leaderboard-score { color: var(--blue); font-family: 'JetBrains Mono', monospace; font-weight: 700; background: var(--blue-light); padding: 0.2rem 0.6rem; border-radius: 6px; }
 
@@ -171,7 +171,7 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       <p style="color: var(--gray-500); margin-bottom: 1.5rem;">You have 60 seconds. Type the answer and hit Submit. +10 points for correct answers, -5 points for mistakes or skips. Are you ready?</p>
       
       <!-- Player Name Input (Required before playing) -->
-      <input type="text" id="playerNameInput" class="name-input" placeholder="Enter your player name..." maxlength="15" autocomplete="off" />
+      <input type="text" id="playerNameInput" class="name-input" placeholder="Enter your player username..." maxlength="15" autocomplete="off" />
       <br>
       <button class="game-btn" onclick="startGame()"><i class="fas fa-play"></i> Start Challenge</button>
       
@@ -288,7 +288,7 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
 
     function startGame() {
       if(nameInput.value.trim() === '') {
-        alert("Please enter a player name before starting the challenge!");
+        alert("Please enter a username before starting the challenge!");
         nameInput.focus();
         return;
       }
@@ -458,6 +458,7 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       const startList = document.getElementById('startLeaderboardList');
       const endList = document.getElementById('endLeaderboardList');
       
+      // Limit changed to 10 for Top 10 Leaderboard
       db.collection("leaderboard").orderBy("score", "desc").limit(10).get().then((querySnapshot) => {
         let htmlContent = '';
         let rank = 1;
