@@ -76,10 +76,18 @@ a{text-decoration:none;color:inherit}
 .score-box { color: var(--blue); }
 .question-display { font-size: 3.5rem; font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--gray-900); margin: 2rem 0; letter-spacing: 2px;}
 
-.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-.option-btn { background: var(--white); border: 3px solid var(--gray-200); padding: 1.5rem; font-size: 1.8rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; border-radius: 16px; cursor: pointer; transition: 0.15s; color: var(--gray-800); }
-.option-btn:hover { border-color: var(--blue); background: var(--blue-light); color: var(--blue-dark); transform: scale(1.02); }
-.option-btn:active { transform: scale(0.95); }
+/* TYPING ANSWER SECTION */
+.answer-section { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.answer-input { background: var(--gray-50); border: 3px solid var(--gray-300); padding: 1rem; font-size: 2.5rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; border-radius: 16px; width: 100%; max-width: 250px; text-align: center; outline: none; transition: 0.2s; color: var(--blue-dark); box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
+.answer-input:focus { border-color: var(--blue); background: var(--white); box-shadow: 0 0 0 4px var(--blue-light); }
+.answer-input.wrong { border-color: var(--red); background: var(--red-light); color: var(--red); }
+.answer-input.correct { border-color: var(--green); background: var(--green-light); color: var(--green); }
+
+.controls-row { display: flex; gap: 1rem; justify-content: center; width: 100%; max-width: 400px; margin: 0 auto;}
+.submit-btn { background: var(--green); color: var(--white); border: none; padding: 1rem 2rem; border-radius: 12px; font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: 0.2s; flex-grow: 2;}
+.submit-btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+.skip-btn { background: var(--gray-200); color: var(--gray-700); border: none; padding: 1rem 1.5rem; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: 0.2s; flex-grow: 1;}
+.skip-btn:hover { background: var(--gray-300); color: var(--red); }
 
 /* GAME OVER SCREEN */
 .final-score-circle { width: 150px; height: 150px; border-radius: 50%; background: var(--blue-light); border: 5px solid var(--blue); display: flex; align-items: center; justify-content: center; font-size: 3rem; font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--blue-dark); margin: 0 auto 1.5rem; }
@@ -123,7 +131,7 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
 .footer-bottom-links a:hover{color:var(--white)}
 
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
-@media(max-width:768px){.nav-links{display:none;} .seo-content{padding:1.5rem;} .footer-grid{grid-template-columns:1fr} .footer-bottom{flex-direction:column;align-items:flex-start} .question-display{font-size: 2.8rem;} .option-btn{padding: 1rem; font-size: 1.4rem;} }
+@media(max-width:768px){.nav-links{display:none;} .seo-content{padding:1.5rem;} .footer-grid{grid-template-columns:1fr} .footer-bottom{flex-direction:column;align-items:flex-start} .question-display{font-size: 2.8rem;} .answer-input{padding: 0.8rem; font-size: 2rem;} }
 </style>
 </head>
 <body>
@@ -178,7 +186,8 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       <button class="game-btn" onclick="startGame()"><i class="fas fa-play"></i> Start Challenge</button>
       
       <div class="leaderboard-container">
-        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Global Top 5</div>
+        <!-- Changed to Top 10 -->
+        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Global Top 10</div>
         <ul class="leaderboard-list" id="startLeaderboardList">
           <div class="ai-spinner"></div>
         </ul>
@@ -194,11 +203,14 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       
       <div class="question-display" id="questionDisplay">3 + 5</div>
       
-      <div class="options-grid" id="optionsGrid">
-        <button class="option-btn" onclick="checkAnswer(this)">8</button>
-        <button class="option-btn" onclick="checkAnswer(this)">12</button>
-        <button class="option-btn" onclick="checkAnswer(this)">6</button>
-        <button class="option-btn" onclick="checkAnswer(this)">15</button>
+      <!-- CHANGED: Now using typing input instead of MCQ options -->
+      <div class="answer-section">
+        <input type="number" id="answerInput" class="answer-input" placeholder="?" autocomplete="off" pattern="\d*" />
+        
+        <div class="controls-row">
+          <button class="skip-btn" onclick="skipQuestion()">Skip (-5)</button>
+          <button class="submit-btn" onclick="checkAnswer()">Submit <i class="fas fa-check"></i></button>
+        </div>
       </div>
     </div>
 
@@ -215,7 +227,8 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       <button class="game-btn" onclick="resetToStart()" style="margin-bottom: 2rem; background: var(--gray-800);"><i class="fas fa-redo"></i> Play Again</button>
 
       <div class="leaderboard-container">
-        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Live Leaderboard</div>
+        <!-- Changed to Top 10 -->
+        <div class="leaderboard-title"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Live Leaderboard (Top 10)</div>
         <ul class="leaderboard-list" id="endLeaderboardList">
           <div class="ai-spinner"></div>
         </ul>
@@ -226,7 +239,6 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
 
   <!-- FIREBASE & GAME LOGIC -->
   <script>
-    // ✅ FIREBASE CREDENTIALS
     const firebaseConfig = {
       apiKey: "AIzaSyCPm8-ZNZQcMTAql6m8VVlB3WHgdHzdGv8",
       authDomain: "mathhub-pro.firebaseapp.com",
@@ -261,18 +273,26 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       timeDisplay: document.getElementById('timeDisplay'),
       scoreDisplay: document.getElementById('scoreDisplay'),
       questionDisplay: document.getElementById('questionDisplay'),
+      answerInput: document.getElementById('answerInput'),
       finalScoreDisplay: document.getElementById('finalScoreDisplay'),
       performanceMessage: document.getElementById('performanceMessage'),
-      saveStatus: document.getElementById('saveStatus'),
-      optionsButtons: document.querySelectorAll('.option-btn')
+      saveStatus: document.getElementById('saveStatus')
     };
+
+    // Submit answer when user presses "Enter" on keyboard
+    ui.answerInput.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        checkAnswer();
+      }
+    });
 
     // AUTHENTICATION STATE OBSERVER
     auth.onAuthStateChanged(user => {
       if (user) {
         currentUser = user;
         ui.loginWarning.style.display = 'none';
-        checkUserExists(); // Check if they already have a username
+        checkUserExists();
       } else {
         ui.loginWarning.style.display = 'block';
         ui.startScreen.style.display = 'none';
@@ -280,30 +300,23 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       }
     });
 
-    // 1. CHECK IF NEW USER
     function checkUserExists() {
       db.collection('users').doc(currentUser.uid).get().then(doc => {
         if (doc.exists) {
-          // Returning User
           activePlayerName = doc.data().username;
           userHighScore = doc.data().highScore || 0;
           showStartScreen();
         } else {
-          // Brand New User
           ui.usernameScreen.style.display = 'block';
         }
-      }).catch(error => {
-        console.error("Error fetching user data:", error);
-      });
+      }).catch(error => console.error("Error fetching user data:", error));
     }
 
-    // 2. REGISTER UNIQUE USERNAME
     async function registerUsername() {
       const input = document.getElementById('newUsername').value.trim();
       const errorMsg = document.getElementById('usernameError');
       const btn = document.getElementById('registerBtn');
       
-      // Validation: 3-15 chars, alphanumeric, hyphens, underscores
       const regex = /^[a-zA-Z0-9_-]{3,15}$/;
       if (!regex.test(input)) {
         errorMsg.innerText = "Must be 3-15 characters. Letters, numbers, '-', and '_' only.";
@@ -314,9 +327,7 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Checking...';
 
       try {
-        // Check if username is already taken (case-insensitive check)
         const snapshot = await db.collection('users').where('username_lower', '==', input.toLowerCase()).get();
-        
         if (!snapshot.empty) {
           errorMsg.innerText = "This username is already taken. Try another!";
           btn.disabled = false;
@@ -324,15 +335,13 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
           return;
         }
 
-        // Username is available! Save to their unique document.
         await db.collection('users').doc(currentUser.uid).set({
           username: input,
           username_lower: input.toLowerCase(),
-          highScore: 0, // Default starting score
+          highScore: 0,
           createdAt: firebase.firestore.FieldValue.serverTimestamp()
         });
 
-        // Set local variables and move to start screen
         activePlayerName = input;
         userHighScore = 0;
         ui.usernameScreen.style.display = 'none';
@@ -371,73 +380,94 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       }, 1000);
     }
 
+    // PROGRESSIVE DIFFICULTY LOGIC (Addition, Subtraction, Multiplication, Division, Square Root)
     function generateQuestion() {
-      let maxNum = score > 100 ? 50 : 20; 
-      let num1 = Math.floor(Math.random() * maxNum) + 1;
-      let num2 = Math.floor(Math.random() * maxNum) + 1;
-      const operators = ['+', '-', '*'];
-      
-      let opIndex = Math.floor(Math.random() * (score > 50 ? 3 : 2)); 
-      let op = operators[opIndex];
+      ui.answerInput.value = '';
+      ui.answerInput.classList.remove('wrong', 'correct');
+      ui.answerInput.focus();
 
-      if (op === '-' && num1 < num2) {
-        let temp = num1; num1 = num2; num2 = temp;
+      let opIndex, num1, num2;
+      const operators = ['+', '-', '×', '÷', '√'];
+      let op;
+
+      // LEVEL 1: Easy Mode (0 to 40 Points)
+      if (score < 50) {
+        opIndex = Math.floor(Math.random() * 2); // Only + and -
+        op = operators[opIndex];
+        num1 = Math.floor(Math.random() * 20) + 1;
+        num2 = Math.floor(Math.random() * 20) + 1;
+      } 
+      // LEVEL 2: Medium Mode (50 to 120 Points)
+      else if (score < 120) {
+        opIndex = Math.floor(Math.random() * 5); // All operations
+        op = operators[opIndex];
+        num1 = Math.floor(Math.random() * 50) + 10;
+        num2 = Math.floor(Math.random() * 30) + 1;
+      } 
+      // LEVEL 3: Hard Mode (120+ Points)
+      else {
+        opIndex = Math.floor(Math.random() * 5); // All operations, harder numbers
+        op = operators[opIndex];
+        num1 = Math.floor(Math.random() * 100) + 20;
+        num2 = Math.floor(Math.random() * 50) + 10;
       }
 
-      let displayOp = op === '*' ? '×' : op;
-      ui.questionDisplay.innerText = `${num1} ${displayOp} ${num2}`;
-
-      if (op === '+') correctAnswer = num1 + num2;
-      if (op === '-') correctAnswer = num1 - num2;
-      if (op === '*') correctAnswer = num1 * num2;
-
-      generateOptions(correctAnswer);
-    }
-
-    function generateOptions(correct) {
-      let options = [correct];
-      while(options.length < 4) {
-        let offset = Math.floor(Math.random() * 15) - 7;
-        if(offset === 0) offset = 2; 
-        let fakeAnswer = correct + offset;
-        if(fakeAnswer >= 0 && !options.includes(fakeAnswer)) {
-          options.push(fakeAnswer);
-        }
+      // FORMAT AND CALCULATE
+      if (op === '+') {
+        correctAnswer = num1 + num2;
+        ui.questionDisplay.innerText = `${num1} + ${num2}`;
+      } 
+      else if (op === '-') {
+        if (num1 < num2) [num1, num2] = [num2, num1]; // Prevent negative answers
+        correctAnswer = num1 - num2;
+        ui.questionDisplay.innerText = `${num1} - ${num2}`;
+      } 
+      else if (op === '×') {
+        let m1 = score < 120 ? Math.floor(Math.random() * 10) + 2 : Math.floor(Math.random() * 15) + 5;
+        let m2 = score < 120 ? Math.floor(Math.random() * 10) + 2 : Math.floor(Math.random() * 12) + 2;
+        correctAnswer = m1 * m2;
+        ui.questionDisplay.innerText = `${m1} × ${m2}`;
+      } 
+      else if (op === '÷') {
+        let divisor = score < 120 ? Math.floor(Math.random() * 10) + 2 : Math.floor(Math.random() * 15) + 2;
+        let quotient = score < 120 ? Math.floor(Math.random() * 12) + 2 : Math.floor(Math.random() * 20) + 2;
+        let dividend = divisor * quotient;
+        correctAnswer = quotient;
+        ui.questionDisplay.innerText = `${dividend} ÷ ${divisor}`;
+      } 
+      else if (op === '√') {
+        let root = score < 120 ? Math.floor(Math.random() * 12) + 2 : Math.floor(Math.random() * 20) + 2;
+        let square = root * root;
+        correctAnswer = root;
+        ui.questionDisplay.innerText = `√${square}`;
       }
-
-      options.sort(() => Math.random() - 0.5);
-
-      ui.optionsButtons.forEach((btn, index) => {
-        btn.innerText = options[index];
-        btn.style.backgroundColor = "var(--white)";
-        btn.style.color = "var(--gray-800)";
-        btn.style.borderColor = "var(--gray-200)";
-      });
     }
 
-    function checkAnswer(btnElement) {
-      let selectedAnswer = parseInt(btnElement.innerText);
-      
-      if (selectedAnswer === correctAnswer) {
+    function checkAnswer() {
+      let userInput = ui.answerInput.value.trim();
+      if(userInput === "") return;
+
+      if (parseInt(userInput) === correctAnswer) {
         score += 10;
-        btnElement.style.backgroundColor = "var(--green-light)";
-        btnElement.style.borderColor = "var(--green)";
-        btnElement.style.color = "var(--green)";
+        ui.scoreDisplay.innerText = score;
+        ui.answerInput.classList.add('correct');
+        setTimeout(() => { if(timeLeft > 0) generateQuestion(); }, 250);
       } else {
         score -= 5;
-        btnElement.style.backgroundColor = "var(--red-light)";
-        btnElement.style.borderColor = "var(--red)";
-        btnElement.style.color = "var(--red)";
-        
-        ui.optionsButtons.forEach(btn => {
-          if(parseInt(btn.innerText) === correctAnswer) {
-            btn.style.borderColor = "var(--green)";
-          }
-        });
+        ui.scoreDisplay.innerText = score;
+        ui.answerInput.classList.add('wrong');
+        setTimeout(() => { 
+          ui.answerInput.classList.remove('wrong'); 
+          ui.answerInput.value = '';
+          ui.answerInput.focus();
+        }, 400);
       }
-      
+    }
+
+    function skipQuestion() {
+      score -= 5;
       ui.scoreDisplay.innerText = score;
-      setTimeout(() => { if(timeLeft > 0) generateQuestion(); }, 300);
+      generateQuestion();
     }
 
     function endGame() {
@@ -456,7 +486,6 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       }
     }
 
-    // 3. HIGH SCORE LOGIC
     function processHighScore() {
       ui.saveStatus.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Checking High Score...';
       ui.saveStatus.style.color = "var(--gray-500)";
@@ -464,12 +493,11 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       const userRef = db.collection("users").doc(currentUser.uid);
 
       if (score > userHighScore) {
-        // NEW HIGH SCORE ACHIEVED! Update their specific document.
         userRef.update({
           highScore: score,
           lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
         }).then(() => {
-          userHighScore = score; // Update local variable
+          userHighScore = score;
           ui.performanceMessage.innerText = "New Personal Best! 🎉";
           ui.performanceMessage.style.color = "var(--green)";
           ui.saveStatus.innerHTML = '<i class="fas fa-arrow-up"></i> Leaderboard Updated!';
@@ -480,7 +508,6 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
           ui.saveStatus.innerHTML = "Database Error.";
         });
       } else {
-        // DID NOT BEAT HIGH SCORE
         ui.performanceMessage.innerText = "Great effort!";
         ui.performanceMessage.style.color = "var(--orange)";
         ui.saveStatus.innerHTML = `Score saved locally. Your High Score remains <strong>${userHighScore}</strong>.`;
@@ -494,18 +521,18 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
       ui.startScreen.style.display = 'block';
     }
 
-    // 4. FETCH LEADERBOARD (Pulls unique users sorted by High Score)
     function fetchLeaderboard() {
       const startList = document.getElementById('startLeaderboardList');
       const endList = document.getElementById('endLeaderboardList');
       
-      db.collection("users").orderBy("highScore", "desc").limit(5).get().then((querySnapshot) => {
+      // CHANGED: Limits to top 10 players
+      db.collection("users").orderBy("highScore", "desc").limit(10).get().then((querySnapshot) => {
         let htmlContent = '';
         let rank = 1;
         
         querySnapshot.forEach((doc) => {
           const data = doc.data();
-          if (data.highScore > 0) { // Don't show 0 scores
+          if (data.highScore > 0) {
             let medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `#${rank}`;
             
             htmlContent += `
@@ -540,12 +567,12 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
     <h2>Brain Training: The Cognitive Power of Speed Math Games</h2>
     <p>Welcome to the MathHub Pro Brain Training Hub. In today's fast-paced digital world, cognitive endurance, memory retention, and rapid problem-solving are more critical than ever. While physical exercise is widely understood to be essential for maintaining cardiovascular and muscular health, mental exercise—often referred to as "brain training"—is equally vital for maintaining neuroplasticity. Mathematics, particularly mental arithmetic executed under time constraints, is one of the most effective, scientifically backed methods for achieving peak cognitive performance.</p>
 
-    <p>The MathHub Pro Speed Math Challenge is not just an entertaining web game; it is a meticulously designed educational tool. Built to test your rapid recall of fundamental addition, subtraction, and multiplication facts, this 60-second challenge forces your brain's prefrontal cortex into high gear. Let us explore the profound neurobiological, psychological, and educational benefits of integrating speed math games into your daily routine.</p>
+    <p>The MathHub Pro Speed Math Challenge is not just an entertaining web game; it is a meticulously designed educational tool. Built to test your rapid recall of fundamental addition, subtraction, multiplication, division, and square roots, this 60-second challenge forces your brain's prefrontal cortex into high gear. Let us explore the profound neurobiological, psychological, and educational benefits of integrating speed math games into your daily routine.</p>
 
     <h3>Understanding Neuroplasticity and Mathematical Gamification</h3>
     <p>For decades, the scientific consensus held that the human brain was a static organ, meaning that after a certain age, cognitive abilities plateaued and eventually declined. However, modern neuroscience has revolutionized this understanding through the discovery of <em>neuroplasticity</em>—the brain's incredible ability to reorganize itself by forming new neural connections throughout life.</p>
 
-    <p>Every time you engage in a mentally demanding task, such as calculating "17 × 3" within a fraction of a second, your neurons fire. When this action is repeated frequently, the myelin sheath surrounding these neural pathways thickens. This biological process allows electrical signals to travel faster, directly resulting in quicker cognitive processing speeds. Gamifying mathematics is a powerful catalyst for this process. By introducing a countdown timer and a scoring system, the brain is flooded with a healthy dose of adrenaline and dopamine. The adrenaline heightens focus and alertness, while the dopamine rewards the brain upon selecting the correct answer, creating a positive feedback loop that encourages continuous learning.</p>
+    <p>Every time you engage in a mentally demanding task, such as calculating "17 × 3" within a fraction of a second, your neurons fire. When this action is repeated frequently, the myelin sheath surrounding these neural pathways thickens. This biological process allows electrical signals to travel faster, directly resulting in quicker cognitive processing speeds. Gamifying mathematics is a powerful catalyst for this process. By introducing a countdown timer and a scoring system, the brain is flooded with a healthy dose of adrenaline and dopamine. The adrenaline heightens focus and alertness, while the dopamine rewards the brain upon submitting the correct answer, creating a positive feedback loop that encourages continuous learning.</p>
 
     <!-- MIDDLE AD UNIT -->
     <div class="ad-unit" style="margin: 2.5rem 0; padding:0; background:transparent; border:none;">
@@ -561,7 +588,7 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
     <h3>Enhancing Working Memory and Fluid Intelligence</h3>
     <p>Cognitive scientists divide intelligence into two primary categories: crystallized intelligence (the accumulation of knowledge, facts, and skills acquired throughout life) and fluid intelligence (the ability to reason, analyze novel problems, and identify patterns on the fly). Working memory—the system responsible for the transient holding and processing of new and already-stored information—is a critical component of fluid intelligence.</p>
 
-    <p>When you play a speed math game, you are heavily taxing your working memory. For example, to solve "45 - 18" mentally, your brain must hold the number 45, subtract 10 to get 35, hold the number 35, and then subtract 8 to arrive at 27, all while simultaneously monitoring a countdown timer and scanning four multiple-choice options. Consistently engaging in this specific type of multi-step mental juggling has been shown to increase the overall capacity of the working memory system. This enhanced capacity does not just make you better at math; it transfers to other academic and professional domains, improving your reading comprehension, your ability to follow complex arguments, and your aptitude for learning new programming languages or foreign vocabularies.</p>
+    <p>When you play a speed math game, you are heavily taxing your working memory. For example, to solve "45 - 18" mentally, your brain must hold the number 45, subtract 10 to get 35, hold the number 35, and then subtract 8 to arrive at 27, all while simultaneously monitoring a countdown timer. Consistently engaging in this specific type of multi-step mental juggling has been shown to increase the overall capacity of the working memory system. This enhanced capacity does not just make you better at math; it transfers to other academic and professional domains, improving your reading comprehension, your ability to follow complex arguments, and your aptitude for learning new programming languages or foreign vocabularies.</p>
 
     <h3>The Crucial Role of Mental Math in Competitive Examinations</h3>
     <p>For students preparing for rigorous competitive examinations such as the Joint Entrance Examination (JEE), National Eligibility cum Entrance Test (NEET), Common Admission Test (CAT), or various banking and civil service exams, time is the ultimate adversary. In these high-pressure scenarios, relying on paper and pen for basic arithmetic calculations is a fatal tactical error.</p>
@@ -587,7 +614,7 @@ footer{background:var(--gray-900);color:var(--gray-300);padding:3rem 1.5rem 1.5r
     <h3>Conclusion: Make Brain Training a Daily Habit</h3>
     <p>Mathematics is a beautiful, universal language, and mastering its fundamental building blocks does not have to be a tedious chore. By bridging the gap between rigorous academic requirements and engaging digital entertainment, MathHub Pro ensures that every student, professional, and adult has access to premium cognitive training tools completely free of charge.</p>
 
-    <p>We challenge you to make the Speed Math Game a part of your daily routine. Play it while waiting for the bus, during your lunch break, or as a warm-up exercise before tackling your homework. Track your high scores, observe how your reflexes improve over the weeks, and experience firsthand the profound, overarching benefits of a well-trained, highly optimized mind.</p>
+    <p>We challenge you to make the Speed Math Game a part of your daily routine. Play it while waiting for the bus, during your lunch break, or as a warm-up exercise before tackling your homework. Track your high scores on the global leaderboard, observe how your reflexes improve over the weeks, and experience firsthand the profound, overarching benefits of a well-trained, highly optimized mind.</p>
   </article>
 
   <!-- BOTTOM AD UNIT -->
